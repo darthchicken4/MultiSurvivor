@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://cffjduipbb3s5"]
+
+[ext_resource type="Script" uid="uid://c2si8gkbnde0c" path="res://scripts/player.gd" id="1_tdh26"]
+[ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/starterplayerwalk.png" id="2_7h6ip"]
+[ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/idle.png" id="2_eaoru"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pe35h"]
+font_size = 10
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wb3a5"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("./PlayerNick/Nickname:text")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:frame")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("AnimatedSprite2D:animation")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f33sr"]
+atlas = ExtResource("2_7h6ip")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eaoru"]
+atlas = ExtResource("2_7h6ip")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0o36"]
+atlas = ExtResource("2_7h6ip")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj1sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eaoru")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f33sr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eaoru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0o36")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1738487347]
+script = ExtResource("1_tdh26")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
+shape = SubResource("CircleShape2D_7h6ip")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=700549692]
+
+[node name="PlayerNick" type="Node2D" parent="." unique_id=1571172741]
+position = Vector2(0, -21)
+
+[node name="Nickname" type="Label" parent="PlayerNick" unique_id=430057764]
+offset_left = -24.0
+offset_top = -19.0
+offset_right = 25.0
+offset_bottom = 30.0
+text = "player
+"
+label_settings = SubResource("LabelSettings_pe35h")
+horizontal_alignment = 1
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1005274895]
+replication_config = SubResource("SceneReplicationConfig_wb3a5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=242576427]
+texture_filter = 3
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tj1sg")
+animation = &"walk"
+frame_progress = 0.43145117
