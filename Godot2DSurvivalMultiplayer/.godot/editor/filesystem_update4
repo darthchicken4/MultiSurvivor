@@ -1,4 +1,1 @@
-res://scenes/level/level.tscn
-res://scenes/level/selection_map_layer.gd
 res://scenes/level/player.tscn
-res://scenes/level/camera_2d.gd
