@@ -51,6 +51,13 @@ func _physics_process(_delta):
 
 	_move()
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is CharacterBody2D:
+			var push_dir = (global_position - collision.get_collider().global_position).normalized()
+			global_position += push_dir * 1.0
+			
 	_animate()
 
 func _process(_delta):

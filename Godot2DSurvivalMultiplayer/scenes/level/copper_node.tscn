@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://disp8wck7d2oj"]
+
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_drhjq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drhjq"]
+atlas = ExtResource("1_drhjq")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gppt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drhjq")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drhjq"]
+radius = 6.0
+height = 51.999996
+
+[node name="CopperNode" type="Node2D" unique_id=500400093]
+metadata/flipX = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1243455992]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gppt2")
+animation = &"new_animation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=334127795]
+position = Vector2(0, 10)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=935627433]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_drhjq")

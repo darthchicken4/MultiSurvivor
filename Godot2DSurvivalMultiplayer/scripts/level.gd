@@ -1,11 +1,12 @@
 extends Node2D
 
-@onready var players_container: Node2D = $PlayersContainer
+@onready var players_container: Node2D = $Map/SortContainer
 @onready var main_menu: MainMenuUI = $MainMenuUI
 @export var player_scene: PackedScene
 
 @onready var multiplayer_chat: MultiplayerChatUI = $MultiplayerChatUI
 @onready var inventory_ui: InventoryUI = $InventoryUI
+@onready var tilemap = $Map/TileMapLayer  # adjust path to match your scene
 
 var chat_visible = false
 var inventory_visible = false
@@ -37,11 +38,13 @@ func _ready():
 
 func _on_player_connected(peer_id, player_info):
 	_add_player(peer_id, player_info)
-
+	if peer_id != 1:
+		tilemap.sync_map_seed.rpc_id(peer_id, tilemap.map_seed)
 func _on_host_pressed(nickname: String, skin: String):
 	main_menu.hide_menu()
 	Network.start_host(nickname, skin)
-
+	tilemap._initiate(randi())  # host generates with random seed
+	
 func _on_join_pressed(nickname: String, skin: String, address: String):
 	main_menu.hide_menu()
 	Network.join_game(nickname, skin, address)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://1p1ftsastub6"]
+
+[ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/tree.png" id="1_eqwtg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gk3pd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eqwtg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqwtg"]
+
+[node name="Tree" type="Node2D" unique_id=566418907]
+metadata/flipX = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1970092302]
+texture_filter = 3
+position = Vector2(1, -48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gk3pd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1880245973]
+position = Vector2(0, 10)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=448854523]
+shape = SubResource("CircleShape2D_eqwtg")

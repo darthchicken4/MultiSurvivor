@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dgtwwx33trboo"]
+
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_cygny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4dqm"]
+atlas = ExtResource("1_cygny")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gppt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4dqm")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="TallGrass" type="Node2D" unique_id=500400093]
+metadata/flipX = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1243455992]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gppt2")
+animation = &"new_animation"
