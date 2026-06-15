@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/starterplayerwalk.png" id="2_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/idle.png" id="2_eaoru"]
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scenes/level/camera_2d.gd" id="2_f33sr"]
+[ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="4_f33sr"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f33sr"]
+radius = 12.0
+height = 42.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_pe35h"]
 font_size = 10
@@ -70,6 +73,7 @@ script = ExtResource("1_tdh26")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
 position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_7h6ip")
+shape = SubResource("CapsuleShape2D_f33sr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=700549692]
 script = ExtResource("2_f33sr")
@@ -96,3 +100,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
 animation = &"walk"
 frame_progress = 0.43145117
+
+[node name="audio" type="Node2D" parent="." unique_id=1584811411]
+
+[node name="footsteps" type="AudioStreamPlayer2D" parent="audio" unique_id=1291393864]
+stream = ExtResource("4_f33sr")

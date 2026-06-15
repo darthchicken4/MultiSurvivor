@@ -8,7 +8,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @onready var nickname: Label = $PlayerNick/Nickname
 @onready var _sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var foot_steps = $audio/footsteps
 var player_inventory: PlayerInventory
 
 var _current_speed: float
@@ -88,11 +88,17 @@ func _move() -> void:
 func _animate() -> void:
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
-		# flip horizontally based on movement direction
+
+		if not foot_steps.playing:
+			foot_steps.play()
+
 		if velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0
 	else:
 		_sprite.play("idle")
+
+		if foot_steps.playing:
+			foot_steps.stop()
 
 func is_running() -> bool:
 	if Input.is_action_pressed("shift"):
