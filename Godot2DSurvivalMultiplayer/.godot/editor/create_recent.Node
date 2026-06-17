@@ -1,3 +1,5 @@
+TileMapLayer
+TileMap
 InventoryUI
 VBoxContainer
 MarginContainer
@@ -11,5 +13,3 @@ RigidBody2D
 Button
 ColorRect
 StaticBody2D
-Node2D
-TileMapLayer
