@@ -62,7 +62,7 @@ func _create_sample_items():
 	magic_gem.id = "magic_gem"
 	magic_gem.name = "Magic Gem"
 	magic_gem.description = "A mysterious gem that glows with inner light."
-	magic_gem.item_type = Item.ItemType.MISC
+	magic_gem.item_type = Item.ItemType.RESOURCE
 	magic_gem.rarity = Item.ItemRarity.RARE
 	magic_gem.stackable = true
 	magic_gem.max_stack = 5
