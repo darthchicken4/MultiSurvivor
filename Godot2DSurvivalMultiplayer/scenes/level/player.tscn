@@ -30,6 +30,15 @@ properties/4/path = NodePath("AnimatedSprite2D:animation")
 properties/4/spawn = true
 properties/4/replication_mode = 1
 
+[sub_resource type="Gradient" id="Gradient_pe35h"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2l1sl"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pnmcy"]
+noise = SubResource("FastNoiseLite_2l1sl")
+color_ramp = SubResource("Gradient_pe35h")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f33sr"]
 atlas = ExtResource("2_7h6ip")
 region = Rect2(32, 0, 32, 32)
@@ -92,6 +101,10 @@ horizontal_alignment = 1
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1005274895]
 replication_config = SubResource("SceneReplicationConfig_wb3a5")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=547399333]
+shadow_enabled = true
+texture = SubResource("NoiseTexture2D_pnmcy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=242576427]
 texture_filter = 3

@@ -1,2 +1,3 @@
-res://scripts/autoloads/item_database.gd
-res://scripts/inventory/inventory_ui.gd
+res://scenes/level/props/tree.tscn
+res://scenes/level/level.tscn
+res://scenes/level/player.tscn
