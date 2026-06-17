@@ -3,28 +3,26 @@
 [ext_resource type="Script" uid="uid://d0dgljwwl463n" path="res://scripts/level.gd" id="1_e1sh7"]
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player.tscn" id="1_uvcbi"]
 [ext_resource type="Texture2D" uid="uid://cndx4v8bs78fa" path="res://assets/tilemaps/terraintiles.png" id="3_wcngd"]
-[ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="4_x8g2h"]
 [ext_resource type="Script" uid="uid://csr7r2f8r48b0" path="res://tile_map.gd" id="4_xv074"]
-[ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_x9g3h"]
-[ext_resource type="PackedScene" uid="uid://1p1ftsastub6" path="res://scenes/level/tree.tscn" id="5_xv074"]
-[ext_resource type="PackedScene" uid="uid://b4gd3h0uuyvbd" path="res://scenes/level/shrub.tscn" id="6_3rml5"]
+[ext_resource type="PackedScene" uid="uid://1p1ftsastub6" path="res://scenes/level/props/tree.tscn" id="5_xv074"]
+[ext_resource type="PackedScene" uid="uid://b4gd3h0uuyvbd" path="res://scenes/level/props/shrub.tscn" id="6_3rml5"]
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="6_x9g3h"]
-[ext_resource type="PackedScene" uid="uid://c1b3xyvsy4l7k" path="res://scenes/level/sharp_slab.tscn" id="7_a5iu8"]
-[ext_resource type="PackedScene" uid="uid://cxlnlmoqk6re6" path="res://scenes/level/dead_bush.tscn" id="7_b3up8"]
-[ext_resource type="PackedScene" uid="uid://bmv7f8oas0w56" path="res://scenes/level/berry_bush.tscn" id="8_b3up8"]
-[ext_resource type="PackedScene" uid="uid://xwkgvj4ako5j" path="res://scenes/level/gold_node.tscn" id="9_cqqhe"]
-[ext_resource type="PackedScene" uid="uid://bc1h4ng36idar" path="res://scenes/level/iron_node.tscn" id="10_yoh1m"]
-[ext_resource type="PackedScene" uid="uid://disp8wck7d2oj" path="res://scenes/level/copper_node.tscn" id="11_u5w0m"]
-[ext_resource type="PackedScene" uid="uid://d2ndcyb74kux8" path="res://scenes/level/large_stone.tscn" id="13_a5iu8"]
-[ext_resource type="PackedScene" uid="uid://dqack1nbr5tvu" path="res://scenes/level/small_stones.tscn" id="13_xm880"]
-[ext_resource type="PackedScene" uid="uid://vrmb0ykhu6wj" path="res://scenes/level/tree_branch.tscn" id="14_vfold"]
-[ext_resource type="PackedScene" uid="uid://bd48u8ah6bxa7" path="res://scenes/level/clay_pile.tscn" id="15_r732y"]
-[ext_resource type="PackedScene" uid="uid://dgtwwx33trboo" path="res://scenes/level/tall_grass.tscn" id="16_87pmf"]
-[ext_resource type="PackedScene" uid="uid://bwwcckh63wplv" path="res://scenes/level/ferns.tscn" id="17_mf35j"]
-[ext_resource type="PackedScene" uid="uid://c77quiys2ynum" path="res://scenes/level/red_shrooms.tscn" id="18_t51ir"]
-[ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/yellow_shroom.tscn" id="19_hfr1v"]
+[ext_resource type="PackedScene" uid="uid://c1b3xyvsy4l7k" path="res://scenes/level/props/sharp_slab.tscn" id="7_a5iu8"]
+[ext_resource type="PackedScene" uid="uid://cxlnlmoqk6re6" path="res://scenes/level/props/dead_bush.tscn" id="7_b3up8"]
+[ext_resource type="PackedScene" uid="uid://bmv7f8oas0w56" path="res://scenes/level/props/berry_bush.tscn" id="8_b3up8"]
+[ext_resource type="PackedScene" uid="uid://xwkgvj4ako5j" path="res://scenes/level/props/gold_node.tscn" id="9_cqqhe"]
+[ext_resource type="PackedScene" uid="uid://bc1h4ng36idar" path="res://scenes/level/props/iron_node.tscn" id="10_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://disp8wck7d2oj" path="res://scenes/level/props/copper_node.tscn" id="11_u5w0m"]
+[ext_resource type="PackedScene" uid="uid://d2ndcyb74kux8" path="res://scenes/level/props/large_stone.tscn" id="13_a5iu8"]
+[ext_resource type="PackedScene" uid="uid://dqack1nbr5tvu" path="res://scenes/level/props/small_stones.tscn" id="13_xm880"]
+[ext_resource type="PackedScene" uid="uid://vrmb0ykhu6wj" path="res://scenes/level/props/tree_branch.tscn" id="14_vfold"]
+[ext_resource type="PackedScene" uid="uid://bd48u8ah6bxa7" path="res://scenes/level/props/clay_pile.tscn" id="15_r732y"]
+[ext_resource type="PackedScene" uid="uid://dgtwwx33trboo" path="res://scenes/level/props/tall_grass.tscn" id="16_87pmf"]
+[ext_resource type="PackedScene" uid="uid://bwwcckh63wplv" path="res://scenes/level/props/ferns.tscn" id="17_mf35j"]
+[ext_resource type="PackedScene" uid="uid://c77quiys2ynum" path="res://scenes/level/props/red_shrooms.tscn" id="18_t51ir"]
+[ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="19_hfr1v"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
-[ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scenes/level/selection_map_layer.gd" id="22_cqqhe"]
+[ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -104,23 +102,6 @@ script = ExtResource("22_cqqhe")
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
 
-[node name="MainMenuUI" parent="." unique_id=175506846 instance=ExtResource("6_x9g3h")]
-visible = false
-offset_left = 634.0
-offset_top = 344.0
-offset_right = 634.0
-offset_bottom = 344.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 
-[node name="MultiplayerChatUI" parent="." unique_id=1207805199 instance=ExtResource("5_x9g3h")]
-visible = false
-offset_left = -12.0
-offset_top = 293.0
-offset_right = 372.0
-offset_bottom = 727.0
-
-[node name="InventoryUI" parent="." unique_id=495543312 instance=ExtResource("4_x8g2h")]
-visible = false
-offset_left = 631.0
-offset_top = 398.0
-offset_right = 631.0
-offset_bottom = 398.0
+[node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("6_x9g3h")]

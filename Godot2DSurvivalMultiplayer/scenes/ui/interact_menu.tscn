@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cjrvgag6yqopa"]
+
+[ext_resource type="Script" uid="uid://u51jqn5uvvtg" path="res://scenes/ui/interact_menu.gd" id="1_lc2fh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lksr3"]
+
+[node name="InteractMenu" type="Control" unique_id=1928950980]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1063.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.36, 0.75)
+script = ExtResource("1_lc2fh")
+
+[node name="Panel" type="Panel" parent="." unique_id=1203900582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.5
+offset_top = -124.0
+offset_right = 19.5
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.5)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=987653296]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = -2.5
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=919183147]
+layout_mode = 2
+
+[node name="InspectButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1359939131]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lksr3")
+text = "Inspect
+"
+alignment = 0
+
+[node name="Name" type="Label" parent="Panel" unique_id=916789690]
+layout_mode = 0
+offset_left = -2.2222223
+offset_top = -20.666666
+offset_right = 95.77778
+offset_bottom = 66.333336
+theme_override_font_sizes/font_size = 15
+text = "objectname"

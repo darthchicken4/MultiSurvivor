@@ -10,6 +10,7 @@ signal quit_pressed
 @onready var address_input: LineEdit = $MainContainer/MainMenu/Option3/AddressInput
 
 func _ready():
+	Network.debug_message.connect(add_debug_output)
 	pass
 
 func _on_host_pressed():
@@ -31,6 +32,15 @@ func show_menu():
 
 func hide_menu():
 	hide()
+	
+func add_debug_output(message):
+	var template: Label = $VBoxContainer/Title
+	
+	var new_label: Label = template.duplicate() as Label
+	new_label.text = message
+	
+	$VBoxContainer.add_child(new_label)
+	
 
 func is_menu_visible() -> bool:
 	return visible

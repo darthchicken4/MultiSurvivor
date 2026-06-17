@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://c2si8gkbnde0c" path="res://scripts/player.gd" id="1_tdh26"]
 [ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/starterplayerwalk.png" id="2_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/idle.png" id="2_eaoru"]
-[ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scenes/level/camera_2d.gd" id="2_f33sr"]
+[ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scripts/camera_2d.gd" id="2_f33sr"]
+[ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
+[ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
+[ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -96,3 +99,25 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
 animation = &"walk"
 frame_progress = 0.43145117
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
+
+[node name="MultiplayerChatUI" parent="CanvasLayer" unique_id=1986801077 instance=ExtResource("5_pe35h")]
+visible = false
+offset_left = -635.0
+offset_top = 28.0
+offset_right = -251.0
+offset_bottom = 462.0
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=658571058 instance=ExtResource("6_2l1sl")]
+visible = false
+offset_left = 477.0
+offset_top = 17.0
+offset_right = 477.0
+offset_bottom = 17.0
+
+[node name="InteractMenu" parent="." unique_id=1928950980 instance=ExtResource("7_pnmcy")]
+offset_left = -595.0
+offset_top = -263.0
+offset_right = -595.0
+offset_bottom = -263.0

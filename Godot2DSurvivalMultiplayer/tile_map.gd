@@ -76,7 +76,15 @@ func _process(_delta):
 
 func map_to_global(tile: Vector2i) -> Vector2:
 	return to_global(map_to_local(tile))
+	
+func get_tile_object(mouse_position: Vector2) -> Node:
+	var local_pos = to_local(mouse_position)
+	var tile = local_to_map(local_pos)
 
+	if tile_objects.has(tile):
+		return tile_objects[tile]
+	return null
+	
 func generate_chunk(position):
 	for child in tree_container.get_children():
 		if child.is_in_group("map_objects"):
@@ -156,7 +164,7 @@ func generate_chunk(position):
 						spawn_object(key, berryshrub_scene, ["lush_grass"])
 					elif s < 0.3:
 						spawn_object(key, shrub_scene, ["lush_grass"])
-					elif s < 0.35:
+					elif s < 0.39:
 						spawn_object(key, tallgrass_scene, ["lush_grass"])
 					elif s < 0.4:
 						spawn_object(key, fern_scene, ["lush_grass"])
@@ -174,7 +182,7 @@ func generate_chunk(position):
 						spawn_object(key, tree_scene, ["dry_grass"])
 					if s < 0.08:
 						spawn_object(key, shrub_scene, ["dry_grass"])
-					elif s < 0.28:
+					elif s < 0.3:
 						spawn_object(key, tallgrass_scene, ["dry_grass"])
 					elif s < 0.33:
 						spawn_object(key, fern_scene, ["dry_grass"])
@@ -190,7 +198,7 @@ func generate_chunk(position):
 						spawn_object(key, tree_branches_scene, ["dry_grass"])
 					elif s < 0.38:
 						spawn_object(key, dead_bush_scene, ["dry_grass"])
-					elif s < 0.392:
+					elif s < 0.382:
 						spawn_object(key, slab_scene, ["lush_grass"])
 
 				"rock_edge":
@@ -198,9 +206,9 @@ func generate_chunk(position):
 						spawn_object(key, pebbles_scene, ["rock_edge"])
 					elif s < 0.13:
 						spawn_object(key, rocks_scene, ["rock_edge"])
-					elif s < 0.16:
+					elif s < 0.132:
 						spawn_object(key, slab_scene, ["rock_edge"])
-					elif s < 0.22:
+					elif s < 0.32:
 						spawn_object(key, clay_scene, ["rock_edge"])
 
 				"rock":
@@ -210,7 +218,7 @@ func generate_chunk(position):
 						spawn_object(key, iron_scene, ["rock"])
 					elif s < 0.3:
 						spawn_object(key, copper_scene, ["rock"])
-					elif s < 0.32:
+					elif s < 0.31:
 						spawn_object(key, slab_scene, ["rock"])
 
 				"pebble":
@@ -220,7 +228,7 @@ func generate_chunk(position):
 						spawn_object(key, rocks_scene, ["pebble"])
 					elif s < 0.09:
 						spawn_object(key, slab_scene, ["pebble"])
-					elif s < 0.2:
+					elif s < 0.4:
 						spawn_object(key, clay_scene, ["pebble"])
 
 func spawn_object(key: Vector2i, scene: PackedScene, allowed_terrains: Array):
@@ -233,6 +241,7 @@ func spawn_object(key: Vector2i, scene: PackedScene, allowed_terrains: Array):
 		return
 	var obj = scene.instantiate()
 	obj.add_to_group("map_objects")
+	
 	tree_container.add_child(obj)
 	if obj.has_meta("flipX"):
 		if randi() % 2 == 0:

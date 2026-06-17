@@ -8,16 +8,38 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @onready var nickname: Label = $PlayerNick/Nickname
 @onready var _sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player: CharacterBody2D = $"."
+@onready var inventory: InventoryUI = $CanvasLayer/InventoryUI
+@onready var interactMenu: Control = $InteractMenu
+@onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
+
 
 var player_inventory: PlayerInventory
 
 var _current_speed: float
 var _respawn_point = Vector2(0, 0)
+var chat_visible = false
+var inventory_visible = false
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
+	
+func is_chat_visible() -> bool:
+	return chat.is_chat_visible()
 
+func _on_chat_message_sent(message_text: String) -> void:
+	var trimmed_message = message_text.strip_edges()
+	if trimmed_message == "":
+		return # do not send empty messages
+
+	var nick = Network.players[multiplayer.get_unique_id()]["nick"]
+	rpc("msg_rpc", nick, trimmed_message)
+
+@rpc("any_peer", "call_local")
+func msg_rpc(nick, msg):
+	chat.add_message(nick, msg)
+	
 func _ready():
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
@@ -33,7 +55,11 @@ func _ready():
 	else:
 		if get_multiplayer_authority() == local_client_id:
 			request_inventory_sync.rpc_id(1)
-
+	inventory.inventory_closed.connect(_on_inventory_closed)
+	chat.hide()
+	chat.set_process_input(true)
+	if chat:
+		chat.message_sent.connect(_on_chat_message_sent)
 func _physics_process(_delta):
 	if not is_multiplayer_authority(): return
 
@@ -85,6 +111,7 @@ func _move() -> void:
 
 	velocity = velocity.move_toward(Vector2.ZERO, _current_speed)
 
+	
 func _animate() -> void:
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
@@ -93,7 +120,85 @@ func _animate() -> void:
 			_sprite.flip_h = velocity.x < 0
 	else:
 		_sprite.play("idle")
+# Debug functions for testing inventory system
+func _debug_add_item():
+	var local_player = player
+	if local_player:
+		var test_items = ["iron_sword", "health_potion", "leather_armor", "magic_gem", "iron_pickaxe"]
+		var random_item = test_items[randi() % test_items.size()]
+		print("Debug: Requesting to add ", random_item, " to player ", local_player.name, " (authority: ", local_player.get_multiplayer_authority(), ")")
+		local_player.request_add_item.rpc_id(1, random_item, 1)
+	else:
+		print("Debug: No local player found!")
 
+func _debug_print_inventory():
+	var local_player = player
+	if local_player and local_player.get_inventory():
+		var inventory = local_player.get_inventory()
+		print("=== Inventory Debug ===")
+		for i in range(inventory.slots.size()):
+			var slot = inventory.get_slot(i)
+			if slot and not slot.is_empty():
+				print("Slot ", i, ": ", slot.item_id, " x", slot.quantity)
+		print("=====================")
+	else:
+		print("No inventory found for local player")
+		
+func is_inventory_visible() -> bool:
+	return inventory_visible
+	
+func update_local_inventory_display():
+	if inventory:
+		inventory.refresh_display()
+		print("Debug: Inventory display updated from server sync")
+		
+func _on_inventory_closed():
+	inventory_visible = false
+	
+func _input(event):
+	if event.is_action_pressed("toggle_chat"):
+		toggle_chat()
+	elif chat_visible and chat.message.has_focus():
+		if event is InputEventKey and event.keycode == KEY_ENTER and event.pressed:
+			chat._on_send_pressed()
+			get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("inventory"):
+		toggle_inventory()
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_F1:
+		_debug_add_item()
+	elif event is InputEventKey and event.pressed and event.keycode == KEY_F2:
+		_debug_print_inventory()
+	elif event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+
+			# Don't open another menu if one is already open
+			if interactMenu.visible:
+				return
+			var mouse_pos = get_global_mouse_position()
+			# Check if we're hovering over something interactable
+			var tilemaplayer =  get_parent().get_parent().get_node("TileMapLayer")
+			
+			if tilemaplayer:
+				var target =  tilemaplayer.get_tile_object((mouse_pos))
+				print(target)
+				
+				
+				if target:	
+					interactMenu.open(
+						get_global_mouse_position(),
+						target,
+						target.actions
+					)
+					
+				
+				
+# ---------- MULTIPLAYER CHAT ----------
+func toggle_chat():
+
+
+	chat.toggle_chat()
+	chat_visible = chat.is_chat_visible()
+	
 func is_running() -> bool:
 	if Input.is_action_pressed("shift"):
 		_current_speed = SPRINT_SPEED
@@ -272,6 +377,14 @@ func request_remove_item(item_id: String, quantity: int = 1):
 
 func get_inventory() -> PlayerInventory:
 	return player_inventory
+
+func toggle_inventory():
+
+	inventory_visible = !inventory_visible
+	if inventory_visible:
+		inventory.open_inventory(player)
+	else:
+		inventory.close_inventory()
 
 func _add_starting_items():
 	if not player_inventory:

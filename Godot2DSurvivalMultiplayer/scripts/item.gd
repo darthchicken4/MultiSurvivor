@@ -7,18 +7,17 @@ extends Resource
 @export var icon: Texture2D
 
 @export var stackable: bool = true
-@export var max_stack: int = 99
+@export var max_stack: int = 10
 
-@export var item_type: ItemType = ItemType.MISC
+@export var item_type: ItemType = ItemType.RESOURCE
 @export var rarity: ItemRarity = ItemRarity.COMMON
 @export var value: int = 0
 
 enum ItemType {
-	WEAPON,
 	ARMOR,
 	CONSUMABLE,
 	TOOL,
-	MISC
+	RESOURCE,
 }
 
 enum ItemRarity {
@@ -47,7 +46,7 @@ func from_dict(data: Dictionary) -> void:
 	description = data.get("description", "")
 	stackable = data.get("stackable", true)
 	max_stack = data.get("max_stack", 99)
-	item_type = data.get("item_type", ItemType.MISC)
+	item_type = data.get("item_type", ItemType.RESOURCE)
 	rarity = data.get("rarity", ItemRarity.COMMON)
 	value = data.get("value", 0)
 
