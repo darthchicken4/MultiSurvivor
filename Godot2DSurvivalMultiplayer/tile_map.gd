@@ -9,7 +9,7 @@ var tree_density_noise = FastNoiseLite.new()
 var spawn_noise = FastNoiseLite.new()
 
 var width = 128
-var height = 128
+var height = 16
 var last_tile_pos = Vector2i(INF, INF)
 
 var tile_objects: Dictionary = {}
@@ -123,7 +123,7 @@ func generate_chunk(position):
 			var base_row = 0 if variant_val > 0.0 else 1
 			var row = base_row + (2 if is_dry else 0)
 
-			set_cell(Vector2i(wx, wy), 0, Vector2i(col, row))
+			set_cell(Vector2i(wx, wy), 1, Vector2i(col, row))
 
 			var key = Vector2i(wx, wy)
 			if col > 5:
