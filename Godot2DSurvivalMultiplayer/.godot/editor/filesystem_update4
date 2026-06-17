@@ -1,3 +1,2 @@
-res://scenes/level/props/tree.tscn
-res://scenes/level/level.tscn
 res://scenes/level/player.tscn
+res://scripts/player.gd
