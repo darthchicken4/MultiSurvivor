@@ -1,2 +1,1 @@
-res://scripts/autoloads/item_database.gd
-res://scripts/inventory/inventory_ui.gd
+res://scenes/ui/Ui_hotbar.tscn

@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scripts/camera_2d.gd" id="2_f33sr"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
+[ext_resource type="PackedScene" uid="uid://bkgok0kvqwrap" path="res://scenes/ui/Ui_hotbar.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
@@ -115,6 +116,16 @@ offset_left = 477.0
 offset_top = 17.0
 offset_right = 477.0
 offset_bottom = 17.0
+
+[node name="UiHotbar" parent="CanvasLayer" unique_id=1734255155 instance=ExtResource("7_2l1sl")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_top = -43.28003
+offset_bottom = -43.28003
+grow_vertical = 0
+size_flags_vertical = 0
 
 [node name="InteractMenu" parent="." unique_id=1928950980 instance=ExtResource("7_pnmcy")]
 offset_left = -595.0
