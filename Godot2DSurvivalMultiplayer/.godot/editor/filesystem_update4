@@ -1,4 +1,3 @@
-res://scenes/level/level.tscn
-res://scenes/player/right_click_menu.tscn
-res://scenes/player/right_click_menu.gd
 res://scenes/zombie/zombie.tscn
+res://scenes/player/player.tscn
+res://scenes/player/right_click_menu.tscn
