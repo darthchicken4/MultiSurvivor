@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dugaivbj1o66n"]
 
 [ext_resource type="Script" uid="uid://d0dgljwwl463n" path="res://scripts/level.gd" id="1_e1sh7"]
-[ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player.tscn" id="1_uvcbi"]
+[ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/player/player.tscn" id="1_uvcbi"]
 [ext_resource type="Texture2D" uid="uid://cndx4v8bs78fa" path="res://assets/tilemaps/terraintiles.png" id="3_wcngd"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="4_x8g2h"]
 [ext_resource type="Script" uid="uid://csr7r2f8r48b0" path="res://tile_map.gd" id="4_xv074"]

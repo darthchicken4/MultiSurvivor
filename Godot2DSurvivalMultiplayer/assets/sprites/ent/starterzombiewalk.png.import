@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b50ow623it0eq"
-path="res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"
+uid="uid://cm54ouy3j62ae"
+path="res://.godot/imported/starterzombiewalk.png-e961bbc1a996add6fb2c552461e483e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/idle.png"
-dest_files=["res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"]
+source_file="res://assets/sprites/ent/starterzombiewalk.png"
+dest_files=["res://.godot/imported/starterzombiewalk.png-e961bbc1a996add6fb2c552461e483e8.ctex"]
 
 [params]
 

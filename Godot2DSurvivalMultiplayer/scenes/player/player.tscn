@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://cffjduipbb3s5"]
 
 [ext_resource type="Script" uid="uid://c2si8gkbnde0c" path="res://scripts/player.gd" id="1_tdh26"]
-[ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/starterplayerwalk.png" id="2_7h6ip"]
-[ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/idle.png" id="2_eaoru"]
+[ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/ent/starterplayerwalk.png" id="2_7h6ip"]
+[ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/ent/idle.png" id="2_eaoru"]
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scenes/level/camera_2d.gd" id="2_f33sr"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
