@@ -11,9 +11,11 @@ func _initialize_slots():
 	slots.clear()
 	for i in range(INVENTORY_SIZE):
 		slots.append(InventorySlot.new())
+	for i in 4:
+		slots.append(InventorySlot.new())
 
 func get_slot(index: int) -> InventorySlot:
-	if index >= 0 and index < slots.size():
+	if index >= 0:
 		return slots[index]
 	return null
 
@@ -53,6 +55,7 @@ func move_item(from_index: int, to_index: int, quantity: int = -1) -> bool:
 	var to_slot = get_slot(to_index)
 
 	if not from_slot or not to_slot or from_slot.is_empty():
+		
 		return false
 
 	# If quantity is -1, move entire stack
@@ -62,6 +65,7 @@ func move_item(from_index: int, to_index: int, quantity: int = -1) -> bool:
 	# Get item reference for validation
 	var item = ItemDatabase.get_item(from_slot.item_id)
 	if not item:
+		
 		return false
 
 	# Check if we can add to destination
@@ -76,6 +80,7 @@ func move_item(from_index: int, to_index: int, quantity: int = -1) -> bool:
 		to_slot.add_item(item, move_amount)
 		return true
 	else:
+		
 		# Destination slot is occupied, try to stack in other available slots
 		var remaining_after_stack = try_stack_item(item, move_amount, from_index)
 		if remaining_after_stack < move_amount:

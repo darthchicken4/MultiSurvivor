@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://cb26c63vrtmmv"]
+
+[ext_resource type="Script" uid="uid://bnmdjlowmpg5e" path="res://scenes/ui/stats_ui.gd" id="1_g0xps"]
+[ext_resource type="Texture2D" uid="uid://c5dqwmkiuhcnh" path="res://assets/spritesheets/iconsheet1.png" id="2_mtpfn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8knpq"]
+bg_color = Color(0, 0, 0, 0.07058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05eww"]
+bg_color = Color(0.38881612, 0.76969254, 0.7948365, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxyp5"]
+atlas = ExtResource("2_mtpfn")
+region = Rect2(0.46224594, 12.40885, 10.144928, 11.441647)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lymms"]
+bg_color = Color(0, 0, 0, 0.07058824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiuge"]
+bg_color = Color(0.9863426, 0.84816915, 0.31893605, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcnew"]
+atlas = ExtResource("2_mtpfn")
+region = Rect2(13.135239, 0.2433896, 10.653652, 11.831654)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0xps"]
+bg_color = Color(0, 0, 0, 0.23137255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtpfn"]
+bg_color = Color(1, 0.27928695, 0.2876854, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvan6"]
+atlas = ExtResource("2_mtpfn")
+region = Rect2(0, 0, 12.605993, 12.075043)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sq71o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsacm"]
+bg_color = Color(0.97166747, 0, 0.16441697, 1)
+
+[node name="StatsUi" type="Control" unique_id=743448863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_g0xps")
+
+[node name="Control" type="Control" parent="." unique_id=2091340084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Stamina" type="ProgressBar" parent="Control" unique_id=1119077835]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.5
+offset_top = -60.0
+offset_right = 150.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_8knpq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_05eww")
+value = 70.0
+rounded = true
+show_percentage = false
+
+[node name="Zap" type="TextureRect" parent="Control/Stamina" unique_id=1199373408]
+z_index = 1
+layout_mode = 0
+offset_left = -18.5
+offset_top = -4.0
+offset_right = 21.5
+offset_bottom = 36.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_rxyp5")
+
+[node name="Hunger" type="ProgressBar" parent="Control" unique_id=1742788002]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -60.0
+offset_right = -7.5
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_lymms")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oiuge")
+value = 70.0
+rounded = true
+show_percentage = false
+
+[node name="Bone" type="TextureRect" parent="Control/Hunger" unique_id=1405146839]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -3.0
+offset_right = 18.0
+offset_bottom = 37.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_pcnew")
+
+[node name="Health" type="ProgressBar" parent="Control" unique_id=311890757]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_g0xps")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mtpfn")
+value = 70.0
+rounded = true
+show_percentage = false
+
+[node name="Heart" type="TextureRect" parent="Control/Health" unique_id=1257078112]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -7.0
+offset_right = 16.0
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_wvan6")
+
+[node name="DamageIndicator" type="ProgressBar" parent="Control" unique_id=2033534065]
+z_index = -2
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -75.0
+offset_right = 150.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxEmpty_sq71o")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dsacm")
+value = 90.0
+rounded = true
+show_percentage = false

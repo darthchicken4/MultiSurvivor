@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scripts/camera_2d.gd" id="2_f33sr"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
+[ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
@@ -104,19 +105,23 @@ frame_progress = 0.43145117
 
 [node name="MultiplayerChatUI" parent="CanvasLayer" unique_id=1986801077 instance=ExtResource("5_pe35h")]
 visible = false
-offset_left = -635.0
-offset_top = 28.0
-offset_right = -251.0
-offset_bottom = 462.0
+offset_left = 4.0
+offset_top = 390.0
+offset_right = 388.0
+offset_bottom = 824.0
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=658571058 instance=ExtResource("6_2l1sl")]
 visible = false
-offset_left = 477.0
-offset_top = 17.0
-offset_right = 477.0
-offset_bottom = 17.0
+
+[node name="StatsUi" parent="CanvasLayer" unique_id=743448863 instance=ExtResource("7_2l1sl")]
+visible = false
+offset_left = 5.0
+offset_top = -47.0
+offset_right = 5.0
+offset_bottom = -47.0
 
 [node name="InteractMenu" parent="." unique_id=1928950980 instance=ExtResource("7_pnmcy")]
+visible = false
 offset_left = -595.0
 offset_top = -263.0
 offset_right = -595.0

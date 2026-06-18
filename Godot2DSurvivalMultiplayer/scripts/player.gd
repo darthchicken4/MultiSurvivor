@@ -12,6 +12,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var inventory: InventoryUI = $CanvasLayer/InventoryUI
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
+@onready var stats = $CanvasLayer/StatsUi
 
 
 var player_inventory: PlayerInventory
@@ -49,6 +50,8 @@ func _ready():
 	if is_local_player:
 		player_inventory = PlayerInventory.new()
 		_add_starting_items()
+		inventory.visible = true
+		stats.visible = true
 	elif multiplayer.is_server():
 		player_inventory = PlayerInventory.new()
 		_add_starting_items()
@@ -177,6 +180,8 @@ func _on_inventory_closed():
 	inventory_visible = false
 	
 func _input(event):
+	if not is_multiplayer_authority():
+		return
 	if event.is_action_pressed("toggle_chat"):
 		toggle_chat()
 	elif chat_visible and chat.message.has_focus():
@@ -279,8 +284,7 @@ func sync_inventory_to_owner(inventory_data: Dictionary):
 	if level_scene:
 		if is_multiplayer_authority() or get_multiplayer_authority() == multiplayer.get_unique_id():
 			print("Debug: This is the local player, updating UI")
-			if level_scene.has_method("update_local_inventory_display"):
-				level_scene.update_local_inventory_display()
+			update_local_inventory_display()
 			if level_scene.has_node("InventoryUI"):
 				var inventory_ui = level_scene.get_node("InventoryUI")
 				if inventory_ui.visible and inventory_ui.has_method("refresh_display"):
@@ -304,7 +308,7 @@ func request_move_item(from_slot: int, to_slot: int, quantity: int = -1):
 	if not player_inventory:
 		return
 
-	if from_slot < 0 or from_slot >= PlayerInventory.INVENTORY_SIZE or to_slot < 0 or to_slot >= PlayerInventory.INVENTORY_SIZE:
+	if from_slot < 0 or to_slot < 0:
 		push_warning("Invalid slot indices: from=" + str(from_slot) + " to=" + str(to_slot))
 		return
 
