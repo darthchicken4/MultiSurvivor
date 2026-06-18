@@ -14,6 +14,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 
 @export var stamina_player = 10
+@export var stamina_timer = 10 #sec
+
 var player_inventory: PlayerInventory
 
 var _current_speed: float
@@ -198,7 +200,10 @@ func toggle_chat():
 
 	chat.toggle_chat()
 	chat_visible = chat.is_chat_visible()
-	
+#runn
+
+
+
 func is_running() -> bool:
 	if Input.is_action_pressed("shift"):
 		_current_speed = SPRINT_SPEED
