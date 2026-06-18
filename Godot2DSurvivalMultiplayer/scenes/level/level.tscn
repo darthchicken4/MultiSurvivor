@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="19_hfr1v"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
+[ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilemaps/border_tiles.png" id="24_cqqhe"]
+[ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -52,6 +54,7 @@ texture = ExtResource("3_wcngd")
 5:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_xv074"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wcngd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoh1m"]
@@ -60,6 +63,17 @@ texture = ExtResource("21_cqqhe")
 
 [sub_resource type="TileSet" id="TileSet_yoh1m"]
 sources/1 = SubResource("TileSetAtlasSource_yoh1m")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5w0m"]
+texture = ExtResource("24_cqqhe")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+
+[sub_resource type="TileSet" id="TileSet_fhw5o"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u5w0m")
 
 [node name="World" type="Node2D" unique_id=2127375299]
 script = ExtResource("1_e1sh7")
@@ -102,6 +116,12 @@ script = ExtResource("22_cqqhe")
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
 
+[node name="border" type="TileMapLayer" parent="Map" unique_id=1095930014]
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_fhw5o")
+script = ExtResource("24_yoh1m")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("6_x9g3h")]
+visible = false
