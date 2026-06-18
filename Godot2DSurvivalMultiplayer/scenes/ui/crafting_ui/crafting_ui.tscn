@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://bckfo7cexiek"]
 
+[ext_resource type="Script" uid="uid://crmwcf7cpkik0" path="res://scenes/ui/crafting_ui/crafting_ui.gd" id="1_t1iof"]
+[ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/tree.png" id="2_hjb8q"]
+
 [node name="CraftingUi" type="Control" unique_id=988690133]
 layout_mode = 3
 anchors_preset = 15
@@ -8,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+script = ExtResource("1_t1iof")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1159593457]
 layout_mode = 1
@@ -16,56 +20,111 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 127
-theme_override_constants/margin_top = 95
-theme_override_constants/margin_right = 170
-theme_override_constants/margin_bottom = 158
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 98
+theme_override_constants/margin_right = 881
+theme_override_constants/margin_bottom = 83
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=463911780]
 layout_mode = 2
 color = Color(0.2159017, 0.21590173, 0.2159017, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1504452820]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1325005474]
 layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=183642747]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/MarginContainer" unique_id=987214409]
+layout_mode = 2
+split_offsets = PackedInt32Array(113)
+split_offset = 113
+
+[node name="select_group" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer" unique_id=183642747]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=406222418]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/MarginContainer/HSplitContainer/select_group" unique_id=355741131]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/HSplitContainer" unique_id=1406898357]
+layout_mode = 2
+texture = ExtResource("2_hjb8q")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/HSplitContainer" unique_id=406222418]
 layout_mode = 2
 text = "crafting menu "
 
-[node name="select_tab" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1982336144]
+[node name="select_tab" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/select_group" unique_id=1982336144]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/select_tab" unique_id=1643301821]
+[node name="all" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1643301821]
 layout_mode = 2
 text = "all"
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2037452934]
+[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=354761382]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 140
+text = "magic"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VSeparator" unique_id=38219944]
-layout_mode = 0
-offset_top = 7.0
-offset_right = 165.0
-offset_bottom = 38.0
+[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=2135651837]
+layout_mode = 2
+text = "cooking
+"
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VSeparator/VBoxContainer" unique_id=354761382]
+[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1753786799]
+layout_mode = 2
+text = "misc"
+
+[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1550832872]
+layout_mode = 2
+text = "pottery"
+
+[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=538340782]
+layout_mode = 2
+text = "weapons"
+
+[node name="selecting recepie" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer" unique_id=974374405]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie" unique_id=1847816129]
+layout_mode = 2
+text = "recepies"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie" unique_id=758621323]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie" unique_id=1439546822]
 layout_mode = 2
 text = "spear"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=974374405]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1189561923]
-layout_mode = 2
-text = "create"
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1057809424]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Button2" unique_id=1723500094]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -4.0
+offset_right = 194.0
+offset_bottom = -4.0
+texture = ExtResource("2_hjb8q")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Button2" unique_id=1507140952]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -27.0
+offset_right = 194.0
+offset_bottom = -4.0
+text = "materials"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Button2" unique_id=1880900683]
+layout_mode = 0
+offset_top = -4.0
+offset_right = 194.0
+offset_bottom = -4.0
+alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Button2/VBoxContainer" unique_id=1090810648]
+layout_mode = 2
+split_offsets = PackedInt32Array(44)
+collapsed = true
+split_offset = 44
