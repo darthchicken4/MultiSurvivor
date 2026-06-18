@@ -4,23 +4,21 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_r7xw6"]
 
-[node name="InventorySlotUI" type="Control"]
+[node name="InventorySlotUI" type="Control" unique_id=1287090853]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 64.0
 script = ExtResource("1_5k8m7")
 
-[node name="Background" type="NinePatchRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("ImageTexture_r7xw6")
+[node name="Background" type="ColorRect" parent="." unique_id=1549696674]
+z_index = -2
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0.16078432, 0.16078432, 0.16078432, 0.4509804)
 
-[node name="RarityBorder" type="NinePatchRect" parent="."]
+[node name="RarityBorder" type="NinePatchRect" parent="." unique_id=1899198580]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -31,21 +29,21 @@ grow_vertical = 2
 texture = SubResource("ImageTexture_r7xw6")
 region_rect = Rect2(4, 4, 56, 56)
 
-[node name="ItemIcon" type="TextureRect" parent="."]
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1423686335]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = -8.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="QuantityLabel" type="Label" parent="."]
+[node name="QuantityLabel" type="Label" parent="." unique_id=557573622]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

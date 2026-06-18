@@ -1,7 +1,7 @@
 extends Control
 class_name InventorySlotUI
 
-@onready var background: NinePatchRect = $Background
+@onready var background: ColorRect = $Background
 @onready var item_icon: TextureRect = $ItemIcon
 @onready var quantity_label: Label = $QuantityLabel
 @onready var rarity_border: NinePatchRect = $RarityBorder

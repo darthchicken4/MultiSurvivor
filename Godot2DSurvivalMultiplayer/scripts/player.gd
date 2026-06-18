@@ -124,7 +124,7 @@ func _animate() -> void:
 func _debug_add_item():
 	var local_player = player
 	if local_player:
-		var test_items = ["iron_sword", "health_potion", "leather_armor", "magic_gem", "iron_pickaxe"]
+		var test_items = ["camp_fire","red_mushroom"]
 		var random_item = test_items[randi() % test_items.size()]
 		print("Debug: Requesting to add ", random_item, " to player ", local_player.name, " (authority: ", local_player.get_multiplayer_authority(), ")")
 		local_player.request_add_item.rpc_id(1, random_item, 1)
