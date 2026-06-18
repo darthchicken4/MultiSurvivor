@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilemaps/border_tiles.png" id="24_cqqhe"]
-[ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
+[ext_resource type="Script" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -116,7 +116,8 @@ script = ExtResource("22_cqqhe")
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
 
-[node name="border" type="TileMapLayer" parent="Map" unique_id=1095930014]
+[node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
+z_index = -2
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_fhw5o")
 script = ExtResource("24_yoh1m")

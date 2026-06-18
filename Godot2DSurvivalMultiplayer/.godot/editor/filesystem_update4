@@ -5,3 +5,5 @@ res://scripts/player.gd
 res://scenes/ui/inventory_slot_ui.tscn
 res://scripts/inventory/inventory_slot_ui.gd
 res://tile_map.gd
+res://scenes/level/level.tscn
+res://scenes/level/border_gen.gd

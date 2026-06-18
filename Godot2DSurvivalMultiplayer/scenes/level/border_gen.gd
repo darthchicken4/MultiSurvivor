@@ -10,15 +10,29 @@ func _ready() -> void:
 	var offset_y = h/2
 
 	# Bottom + Top borders
-	for x in range(w):
-		# Bottom
-		border_map.set_cell(Vector2i(x-offset_x, h - offset_y), 0, Vector2i(0, 0))
-		# Top
-		border_map.set_cell(Vector2i(x-offset_x, -w + offset_y), 0, Vector2i(0, 0))
+	for x in range(-1, w + 1):
+		border_map.set_cell(
+			Vector2i(x - offset_x, h - offset_y + 1),
+			0,
+			Vector2i(0, 0)
+		)
+
+		border_map.set_cell(
+			Vector2i(x - offset_x, -h + offset_y - 1),
+			0,
+			Vector2i(0, 0)
+		)
 
 	# Left + Right borders
 	for y in range(h):
-		# Left
-		border_map.set_cell(Vector2i(w - offset_x, y-offset_y), 0, Vector2i(0, 0))
-		# Right
-		border_map.set_cell(Vector2i(-w + offset_x , y-offset_y), 0, Vector2i(0, 0))
+		border_map.set_cell(
+			Vector2i(w - offset_x + 1, y - offset_y),
+			0,
+			Vector2i(0, 0)
+		)
+
+		border_map.set_cell(
+			Vector2i(-w + offset_x - 1, y - offset_y),
+			0,
+			Vector2i(0, 0)
+	)
