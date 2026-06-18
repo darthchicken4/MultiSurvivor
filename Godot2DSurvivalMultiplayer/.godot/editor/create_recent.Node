@@ -1,3 +1,6 @@
+CollisionShape2D
+Area2D
+Path2D
 TileMapLayer
 TileMap
 InventoryUI
@@ -6,10 +9,6 @@ MarginContainer
 Label
 ProgressBar
 MultiplayerSynchronizer
-CollisionShape2D
-Area2D
 AnimatedSprite2D
 RigidBody2D
 Button
-ColorRect
-StaticBody2D

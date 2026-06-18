@@ -47,15 +47,18 @@ properties/1/path = NodePath("AnimatedSprite2D:animation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncyl7"]
+radius = 63.07139
+
 [node name="zombie" type="RigidBody2D" unique_id=2019172065]
 script = ExtResource("1_ncyl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161358289]
 shape = SubResource("CapsuleShape2D_ncyl7")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1386042921]
+[node name="damage_area" type="Area2D" parent="." unique_id=1386042921]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1296146217]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_area" unique_id=1296146217]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_nlave")
 debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
@@ -66,3 +69,14 @@ frame_progress = 0.5439438
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1859516564]
 replication_config = SubResource("SceneReplicationConfig_ncyl7")
+
+[node name="detect_area" type="Area2D" parent="." unique_id=954599079]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="detect_area" unique_id=435340683]
+shape = SubResource("CircleShape2D_ncyl7")
+debug_color = Color(0.78431374, 0.3137255, 0.75686276, 0.2)
+
+[connection signal="body_entered" from="damage_area" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_exited" from="damage_area" to="." method="_on_damage_area_body_exited"]
+[connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]
