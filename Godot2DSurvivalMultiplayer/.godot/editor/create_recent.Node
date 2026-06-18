@@ -1,5 +1,6 @@
-ColorRect
 Label
+ProgressBar
+ColorRect
 CanvasLayer
 Node2D
 MarginContainer
@@ -11,4 +12,3 @@ RigidBody2D
 CollisionShape2D
 AnimatedSprite2D
 TileMapLayer
-TileMap

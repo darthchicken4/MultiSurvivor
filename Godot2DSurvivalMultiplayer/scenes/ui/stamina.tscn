@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://1kjf12nsmp2g"]
+
+[ext_resource type="Script" uid="uid://yd0yae1yfutk" path="res://scenes/ui/stamina.gd" id="1_341b6"]
+
+[node name="Stamina" type="Control" unique_id=1142653716]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_341b6")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1791841561]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="." unique_id=288569702]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
