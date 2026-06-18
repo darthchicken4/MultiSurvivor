@@ -1,2 +1,1 @@
-res://scenes/level/border_gen.gd
-res://tile_map.gd
+res://scenes/ui/crafting_ui/crafting_ui.tscn

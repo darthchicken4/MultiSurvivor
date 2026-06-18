@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bckfo7cexiek"]
+
+[node name="CraftingUi" type="Control" unique_id=988690133]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1159593457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 127
+theme_override_constants/margin_top = 95
+theme_override_constants/margin_right = 170
+theme_override_constants/margin_bottom = 158
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=463911780]
+layout_mode = 2
+color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1504452820]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=183642747]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=406222418]
+layout_mode = 2
+text = "crafting menu "
+
+[node name="select_tab" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1982336144]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/select_tab" unique_id=1643301821]
+layout_mode = 2
+text = "all"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2037452934]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 140
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VSeparator" unique_id=38219944]
+layout_mode = 0
+offset_top = 7.0
+offset_right = 165.0
+offset_bottom = 38.0
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/VSeparator/VBoxContainer" unique_id=354761382]
+layout_mode = 2
+text = "spear"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=974374405]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1189561923]
+layout_mode = 2
+text = "create"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1057809424]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
