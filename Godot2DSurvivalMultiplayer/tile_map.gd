@@ -8,8 +8,8 @@ var tree_noise = FastNoiseLite.new()
 var tree_density_noise = FastNoiseLite.new()
 var spawn_noise = FastNoiseLite.new()
 
-@export var width =16
-@export var height = 16
+@export var width =128
+@export var height = 128
 var last_tile_pos = Vector2i(INF, INF)
 
 var tile_objects: Dictionary = {}
