@@ -27,6 +27,7 @@ Network="*res://scripts/autoloads/network.gd"
 ItemDatabase="*res://scripts/autoloads/item_database.gd"
 GameManager="*uid://cm5e77sbqldvs"
 CraftingDatabase="*uid://b0657bk0imu8n"
+SpriteSheetLoader="*uid://cbrrjw8eul01q"
 
 [display]
 

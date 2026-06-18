@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cxlnlmoqk6re6"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_072j6"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_072j6"]
 [ext_resource type="Script" uid="uid://dgxcdppt77s3j" path="res://scripts/propScripts/dead_bush.gd" id="1_v1xew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xj54e"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwwcckh63wplv"]
 
 [ext_resource type="Script" uid="uid://dpd0d4l6f6qaq" path="res://scripts/propScripts/ferns.gd" id="1_en587"]
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_iwkrg"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_iwkrg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qlfh"]
 atlas = ExtResource("1_iwkrg")

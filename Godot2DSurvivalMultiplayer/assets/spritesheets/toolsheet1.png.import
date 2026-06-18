@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfo0pd16dxfaw"
-path="res://.godot/imported/spawnobjects.png-d49782be41596c440e7ab46a2145b69a.ctex"
+uid="uid://b35pq004ddbub"
+path="res://.godot/imported/toolsheet1.png-c27c19da961af617b2c57c76e9c715e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/spawnobjects.png"
-dest_files=["res://.godot/imported/spawnobjects.png-d49782be41596c440e7ab46a2145b69a.ctex"]
+source_file="res://assets/spritesheets/toolsheet1.png"
+dest_files=["res://.godot/imported/toolsheet1.png-c27c19da961af617b2c57c76e9c715e3.ctex"]
 
 [params]
 

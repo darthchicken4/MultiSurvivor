@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkkihfrvyn00o"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_ecbfm"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_ecbfm"]
 [ext_resource type="Script" uid="uid://d4baq4xja3of5" path="res://scripts/propScripts/yellow_shroom.gd" id="1_j4dqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_siarf"]

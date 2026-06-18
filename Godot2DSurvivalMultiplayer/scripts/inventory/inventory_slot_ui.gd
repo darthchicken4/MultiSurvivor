@@ -47,8 +47,6 @@ func _show_empty_slot():
 		quantity_label.visible = false
 	if rarity_border:
 		rarity_border.visible = false
-	if background:
-		background.modulate = Color.WHITE
 
 func _show_item_slot():
 	var item = ItemDatabase.get_item(inventory_data.item_id)

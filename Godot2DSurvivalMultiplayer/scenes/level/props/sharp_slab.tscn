@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c1b3xyvsy4l7k"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_8pmgj"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_8pmgj"]
 [ext_resource type="Script" uid="uid://bctoonai0vjb" path="res://scripts/propScripts/sharp_slab.gd" id="1_a43g5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b4qh"]

@@ -84,7 +84,6 @@ func _show_tooltip(item: Item):
 	tooltip_content += "[color=#CCCCCC]" + item.description + "[/color]\n\n"
 	tooltip_content += "[color=#87CEEB]Type:[/color] " + _get_item_type_string(item.item_type) + "\n"
 	tooltip_content += "[color=#FF69B4]Rarity:[/color] " + _get_rarity_string(item.rarity) + "\n"
-	tooltip_content += "[color=#FFD700]Value:[/color] " + str(item.value) + " gold"
 
 	if item.stackable:
 		tooltip_content += "\n[color=#98FB98]Max Stack:[/color] " + str(item.max_stack)
@@ -120,6 +119,7 @@ func _position_tooltip_smartly():
 
 func _get_item_type_string(type: Item.ItemType) -> String:
 	match type:
+
 		Item.ItemType.ARMOR: return "Armor"
 		Item.ItemType.CONSUMABLE: return "Consumable"
 		Item.ItemType.TOOL: return "Tool"

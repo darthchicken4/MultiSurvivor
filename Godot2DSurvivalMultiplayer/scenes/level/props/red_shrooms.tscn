@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c77quiys2ynum"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_6wprf"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_6wprf"]
 [ext_resource type="Script" uid="uid://ddjnugsmphhed" path="res://scripts/propScripts/red_shrooms.gd" id="1_me63t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wprf"]

@@ -1,9 +1,8 @@
-res://scripts/autoloads/crafting_database.gd
-res://scripts/craftingrecipe.gd
 res://scripts/autoloads/item_database.gd
+res://sprite_sheet_loader.gd
+res://scripts/inventory/inventory_slot.gd
+res://scripts/inventory/inventory_slot_ui.gd
+res://scripts/inventory/inventory_ui.gd
+res://scripts/inventory/player_inventory.gd
 res://scripts/player.gd
 res://scenes/ui/inventory_slot_ui.tscn
-res://scripts/inventory/inventory_slot_ui.gd
-res://tile_map.gd
-res://scenes/level/level.tscn
-res://scenes/level/border_gen.gd

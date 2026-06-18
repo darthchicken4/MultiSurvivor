@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bi0mlil0a0e5i" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_5k8m7"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_r7xw6"]
-
 [node name="InventorySlotUI" type="Control" unique_id=1287090853]
 layout_mode = 3
 anchors_preset = 0
@@ -26,7 +24,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ImageTexture_r7xw6")
 region_rect = Rect2(4, 4, 56, 56)
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=1423686335]

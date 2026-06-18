@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgtwwx33trboo"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_cygny"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_cygny"]
 [ext_resource type="Script" uid="uid://bc4j0rdad6vte" path="res://scripts/propScripts/tall_grass.gd" id="1_wl0og"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4dqm"]

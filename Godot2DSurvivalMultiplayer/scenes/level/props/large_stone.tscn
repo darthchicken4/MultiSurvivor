@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2ndcyb74kux8"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_j00mj"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_j00mj"]
 [ext_resource type="Script" uid="uid://dv6817ponst1g" path="res://scripts/propScripts/large_stone.gd" id="1_j33re"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j00mj"]

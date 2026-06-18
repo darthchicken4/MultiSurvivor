@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cys14ybr1pviq"
-path="res://.godot/imported/selectiontile.png-2f3852e98ba5447f1db655a6bcef8048.ctex"
+uid="uid://dxkkn82rmx825"
+path="res://.godot/imported/zombie.png-03bc310f484585a7d5dc9d93798216f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/selectiontile.png"
-dest_files=["res://.godot/imported/selectiontile.png-2f3852e98ba5447f1db655a6bcef8048.ctex"]
+source_file="res://assets/sprites/zombie.png"
+dest_files=["res://.godot/imported/zombie.png-03bc310f484585a7d5dc9d93798216f9.ctex"]
 
 [params]
 

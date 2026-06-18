@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cndx4v8bs78fa"
-path="res://.godot/imported/terraintiles.png-44881ee7f60080caac57c3988948a527.ctex"
+uid="uid://dyo5lgux0e8x3"
+path="res://.godot/imported/gunsheet1.png-4ea32ce257f0dcc5707ad5c9d1b1dd34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/terraintiles.png"
-dest_files=["res://.godot/imported/terraintiles.png-44881ee7f60080caac57c3988948a527.ctex"]
+source_file="res://assets/spritesheets/gunsheet1.png"
+dest_files=["res://.godot/imported/gunsheet1.png-4ea32ce257f0dcc5707ad5c9d1b1dd34.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bc1h4ng36idar"]
 
 [ext_resource type="Script" uid="uid://bwahqk4h3ghud" path="res://scripts/propScripts/iron_node.gd" id="1_co0gm"]
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_d1gmu"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_d1gmu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1gmu"]
 atlas = ExtResource("1_d1gmu")

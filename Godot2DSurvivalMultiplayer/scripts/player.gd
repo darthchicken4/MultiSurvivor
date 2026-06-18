@@ -124,7 +124,28 @@ func _animate() -> void:
 func _debug_add_item():
 	var local_player = player
 	if local_player:
-		var test_items = ["camp_fire","red_mushroom"]
+		var test_items = [
+	"camp_fire",
+	"red_mushroom",
+	"branch_flint_hatchet",
+	"yellow_mushroom",
+	"tree_branch",
+	"grass_strands",
+	"small_stones",
+	"flint_shard",
+	"waxed_leaves",
+	"twigs",
+	"plant_fibre",
+	"sharp_slab",
+	"large_stone",
+	"fern_leaf",
+	"raw_clay",
+	"red_berries",
+	"thorny_bramble",
+	"twine",
+	"branch_stone_spear",
+	"branch_flint_spear"
+]
 		var random_item = test_items[randi() % test_items.size()]
 		print("Debug: Requesting to add ", random_item, " to player ", local_player.name, " (authority: ", local_player.get_multiplayer_authority(), ")")
 		local_player.request_add_item.rpc_id(1, random_item, 1)
@@ -305,9 +326,7 @@ func request_move_item(from_slot: int, to_slot: int, quantity: int = -1):
 		if owner_id != 1:
 			sync_inventory_to_owner.rpc_id(owner_id, player_inventory.to_dict())
 		else:
-			var level_scene = get_tree().get_current_scene()
-			if level_scene and level_scene.has_method("update_local_inventory_display"):
-				level_scene.update_local_inventory_display()
+			update_local_inventory_display()
 	else:
 		print("Debug: Move/swap failed")
 
@@ -345,9 +364,7 @@ func request_add_item(item_id: String, quantity: int = 1):
 		if owner_id != 1:
 			sync_inventory_to_owner.rpc_id(owner_id, player_inventory.to_dict())
 		else:
-			var level_scene = get_tree().get_current_scene()
-			if level_scene and level_scene.has_method("update_local_inventory_display"):
-				level_scene.update_local_inventory_display()
+			update_local_inventory_display()
 
 @rpc("any_peer", "call_local", "reliable")
 func request_remove_item(item_id: String, quantity: int = 1):

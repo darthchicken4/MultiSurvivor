@@ -18,7 +18,7 @@ func _load_items():
 	_create_sample_items()
 
 func _create_sample_items():
-	var placeholder_icon = load("res://icon.png")
+	
 
 	# yellow_mushroom
 	var yellow_mushroom = Item.new()
@@ -30,7 +30,7 @@ func _create_sample_items():
 	yellow_mushroom.stackable = true
 	yellow_mushroom.max_stack = 10
 	yellow_mushroom.value = 5
-	yellow_mushroom.icon = placeholder_icon
+	yellow_mushroom.icon = SpriteSheetLoader.get_texture("items1",1,1)
 	items[yellow_mushroom.id] = yellow_mushroom
 
 	# tree_branch
@@ -44,7 +44,7 @@ func _create_sample_items():
 	tree_branch.stackable = true
 	tree_branch.max_stack = 10
 	tree_branch.value = 2
-	tree_branch.icon = placeholder_icon
+	tree_branch.icon = SpriteSheetLoader.get_texture("items1",2,1)
 	items[tree_branch.id] = tree_branch
 	
 	# grass_strands
@@ -57,7 +57,7 @@ func _create_sample_items():
 	grass_strands.stackable = true
 	grass_strands.max_stack = 10
 	grass_strands.value = 1
-	grass_strands.icon = placeholder_icon
+	grass_strands.icon = SpriteSheetLoader.get_texture("items1",0,1)
 	items[grass_strands.id] = grass_strands
 	
 	# grass_strands
@@ -70,7 +70,7 @@ func _create_sample_items():
 	small_stones.stackable = true
 	small_stones.max_stack = 10
 	small_stones.value = 1
-	small_stones.icon = placeholder_icon
+	small_stones.icon = SpriteSheetLoader.get_texture("items1",3,1)
 	items[small_stones.id] = small_stones
 	
 	# flint_shard
@@ -83,7 +83,7 @@ func _create_sample_items():
 	flint_shard.stackable = true
 	flint_shard.max_stack = 10
 	flint_shard.value = 8
-	flint_shard.icon = placeholder_icon
+	flint_shard.icon = SpriteSheetLoader.get_texture("items1",4,1)
 	items[flint_shard.id] = flint_shard
 	
 	# waxed_leaves
@@ -96,7 +96,7 @@ func _create_sample_items():
 	waxed_leaves.stackable = true
 	waxed_leaves.max_stack = 10
 	waxed_leaves.value = 1
-	waxed_leaves.icon = placeholder_icon
+	waxed_leaves.icon = SpriteSheetLoader.get_texture("items1",5,1)
 	items[waxed_leaves.id] = waxed_leaves
 	
 	# twigs
@@ -109,7 +109,7 @@ func _create_sample_items():
 	twigs.stackable = true
 	twigs.max_stack = 10
 	twigs.value = 1
-	twigs.icon = placeholder_icon
+	twigs.icon = SpriteSheetLoader.get_texture("items1",0,2)
 	items[twigs.id] = twigs
 	
 	# plant_fibre
@@ -122,7 +122,7 @@ func _create_sample_items():
 	plant_fibre.stackable = true
 	plant_fibre.max_stack = 10
 	plant_fibre.value = 3
-	plant_fibre.icon = placeholder_icon
+	plant_fibre.icon = SpriteSheetLoader.get_texture("items1",1,2)
 	items[plant_fibre.id] = plant_fibre
 	
 	# sharp_slab
@@ -135,7 +135,7 @@ func _create_sample_items():
 	sharp_slab.stackable = false
 	sharp_slab.max_stack = 1
 	sharp_slab.value = 10
-	sharp_slab.icon = placeholder_icon
+	sharp_slab.icon = SpriteSheetLoader.get_texture("items1",2,2)
 	items[sharp_slab.id] = sharp_slab
 	
 	# red_mushroom
@@ -148,7 +148,7 @@ func _create_sample_items():
 	red_mushroom.stackable = true
 	red_mushroom.max_stack = 10
 	red_mushroom.value = 2
-	red_mushroom.icon = placeholder_icon
+	red_mushroom.icon = SpriteSheetLoader.get_texture("items1",3,2)
 	items[red_mushroom.id] = red_mushroom
 	
 	# large_stone
@@ -161,7 +161,7 @@ func _create_sample_items():
 	large_stone.stackable = true
 	large_stone.max_stack = 10
 	large_stone.value = 1
-	large_stone.icon = placeholder_icon
+	large_stone.icon = SpriteSheetLoader.get_texture("items1",4,2)
 	items[large_stone.id] = large_stone
 	
 	# fern_leaf
@@ -174,7 +174,7 @@ func _create_sample_items():
 	fern_leaf.stackable = true
 	fern_leaf.max_stack = 10
 	fern_leaf.value = 1
-	fern_leaf.icon = placeholder_icon
+	fern_leaf.icon = SpriteSheetLoader.get_texture("items1",5,2)
 	items[fern_leaf.id] = fern_leaf
 	
 	# raw_clay
@@ -187,7 +187,7 @@ func _create_sample_items():
 	raw_clay.stackable = true
 	raw_clay.max_stack = 10
 	raw_clay.value = 2
-	raw_clay.icon = placeholder_icon
+	raw_clay.icon = SpriteSheetLoader.get_texture("items1",3,0)
 	items[raw_clay.id] = raw_clay
 	
 	# red_berries
@@ -200,7 +200,7 @@ func _create_sample_items():
 	red_berries.stackable = true
 	red_berries.max_stack = 10
 	red_berries.value = 2
-	red_berries.icon = placeholder_icon
+	red_berries.icon = SpriteSheetLoader.get_texture("items1",1,0)
 	items[red_berries.id] = red_berries
 	
 		# red_berries
@@ -213,7 +213,7 @@ func _create_sample_items():
 	thorny_bramble.stackable = true
 	thorny_bramble.max_stack = 10
 	thorny_bramble.value = 2
-	thorny_bramble.icon = placeholder_icon
+	thorny_bramble.icon = SpriteSheetLoader.get_texture("items1",2,0)
 	items[thorny_bramble.id] = thorny_bramble
 	
 		# twine
@@ -226,7 +226,7 @@ func _create_sample_items():
 	twine.stackable = true
 	twine.max_stack = 10
 	twine.value = 2
-	twine.icon = placeholder_icon
+	twine.icon = SpriteSheetLoader.get_texture("items1",0,3)
 	items[twine.id] = twine
 	
 		# camp_fire
@@ -237,9 +237,8 @@ func _create_sample_items():
 	camp_fire.item_type = Item.ItemType.RESOURCE
 	camp_fire.rarity = Item.ItemRarity.UNCOMMON
 	camp_fire.stackable = false
-
 	camp_fire.value = 15
-	camp_fire.icon = placeholder_icon
+	camp_fire.icon = SpriteSheetLoader.get_texture("placeables1",1,1)
 	items[camp_fire.id] = camp_fire
 	
 		# branch_flint_hatchet
@@ -251,7 +250,7 @@ func _create_sample_items():
 	branch_flint_hatchet.rarity = Item.ItemRarity.UNCOMMON
 	branch_flint_hatchet.stackable = false
 	branch_flint_hatchet.value = 15
-	branch_flint_hatchet.icon = placeholder_icon
+	branch_flint_hatchet.icon = SpriteSheetLoader.get_texture("tools1",1,1)
 	items[branch_flint_hatchet.id] = branch_flint_hatchet
 	
 		# branch_stone_spear
@@ -263,7 +262,7 @@ func _create_sample_items():
 	branch_stone_spear.rarity = Item.ItemRarity.COMMON
 	branch_stone_spear.stackable = false
 	branch_stone_spear.value = 12
-	branch_stone_spear.icon = placeholder_icon
+	branch_stone_spear.icon = SpriteSheetLoader.get_texture("tools1",3,1)
 	items[branch_stone_spear.id] = branch_stone_spear
 	
 		# branch_flint_hatchet
@@ -275,7 +274,7 @@ func _create_sample_items():
 	branch_flint_spear.rarity = Item.ItemRarity.UNCOMMON
 	branch_flint_spear.stackable = false
 	branch_flint_spear.value = 15
-	branch_flint_spear.icon = placeholder_icon
+	branch_flint_spear.icon = SpriteSheetLoader.get_texture("tools1",3,2)
 	items[branch_flint_spear.id] = branch_flint_spear
 	
 	

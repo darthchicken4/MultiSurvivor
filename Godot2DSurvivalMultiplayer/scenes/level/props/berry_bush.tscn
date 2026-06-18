@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bmv7f8oas0w56"]
 
 [ext_resource type="Script" uid="uid://cp07dndx6bkt5" path="res://scripts/propScripts/berry_bush.gd" id="1_fsdch"]
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_u7a7y"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_u7a7y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puohj"]
 atlas = ExtResource("1_u7a7y")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k2uh0vpuuk0b"
-path="res://.godot/imported/border_tiles.png-85e593cd04ad2577463658fbdec8aea4.ctex"
+uid="uid://d0tm5vi4gcpkj"
+path="res://.godot/imported/zombiewalk.png-292f647b9a45c4a0b11cae6d6990811e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/border_tiles.png"
-dest_files=["res://.godot/imported/border_tiles.png-85e593cd04ad2577463658fbdec8aea4.ctex"]
+source_file="res://assets/sprites/zombiewalk.png"
+dest_files=["res://.godot/imported/zombiewalk.png-292f647b9a45c4a0b11cae6d6990811e.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://disp8wck7d2oj"]
 
-[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilemaps/spawnobjects.png" id="1_drhjq"]
+[ext_resource type="Texture2D" uid="uid://bfo0pd16dxfaw" path="res://assets/tilesheets/spawnobjects.png" id="1_drhjq"]
 [ext_resource type="Script" uid="uid://do1ohwb1nxgbq" path="res://scripts/propScripts/copper_node.gd" id="1_fq10m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_drhjq"]
