@@ -13,7 +13,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 
-
+@export var stamina_player = 10
 var player_inventory: PlayerInventory
 
 var _current_speed: float

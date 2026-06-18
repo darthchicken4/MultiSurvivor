@@ -1,2 +1,4 @@
 res://scenes/ui/stamina.tscn
 res://scenes/ui/stamina.gd
+res://scenes/level/player.tscn
+res://scripts/player.gd

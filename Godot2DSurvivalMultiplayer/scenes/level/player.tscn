@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scripts/camera_2d.gd" id="2_f33sr"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
+[ext_resource type="PackedScene" uid="uid://1kjf12nsmp2g" path="res://scenes/ui/stamina.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
@@ -115,6 +116,9 @@ offset_left = 477.0
 offset_top = 17.0
 offset_right = 477.0
 offset_bottom = 17.0
+
+[node name="Stamina" parent="CanvasLayer" unique_id=1142653716 node_paths=PackedStringArray("player") instance=ExtResource("7_2l1sl")]
+player = NodePath("../..")
 
 [node name="InteractMenu" parent="." unique_id=1928950980 instance=ExtResource("7_pnmcy")]
 offset_left = -595.0

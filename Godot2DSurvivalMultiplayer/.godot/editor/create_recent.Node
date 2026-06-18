@@ -1,10 +1,10 @@
+VBoxContainer
+MarginContainer
 Label
 ProgressBar
 ColorRect
 CanvasLayer
 Node2D
-MarginContainer
-VBoxContainer
 Button
 Tree
 StaticBody2D
