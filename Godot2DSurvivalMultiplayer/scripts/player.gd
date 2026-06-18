@@ -13,8 +13,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 
-@export var stamina_player = 10
-@export var stamina_timer = 10 #sec
+@export var stamina_value = 10.0
+@export var stamina_timer = 10.0 #sec
 
 var player_inventory: PlayerInventory
 
@@ -87,10 +87,19 @@ func _physics_process(_delta):
 			global_position += push_dir * 1.0
 			
 	_animate()
+	
 
 func _process(_delta):
 	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
+	if is_running():
+		# Drain stamina toward 0
+		stamina_value = lerp(stamina_value, 0.0, 2.0 * _delta)
+	else:
+		# Recover stamina toward max
+		stamina_value = lerp(stamina_value, stamina_timer, 2.0 * _delta)
+
+	stamina_value= clamp(stamina_value, 0.0, stamina_timer)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -205,7 +214,7 @@ func toggle_chat():
 
 
 func is_running() -> bool:
-	if Input.is_action_pressed("shift"):
+	if Input.is_action_pressed("shift") and stamina_value > 0:
 		_current_speed = SPRINT_SPEED
 		return true
 	else:

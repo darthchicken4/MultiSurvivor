@@ -6,5 +6,5 @@ extends Control
 
 
 func _process(delta: float) -> void:
-	prog.value = player.stamina_player 
+	prog.value = player.stamina_value
 	
