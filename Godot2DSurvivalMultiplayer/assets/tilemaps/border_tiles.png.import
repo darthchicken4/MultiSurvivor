@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t8uh6mdmsrod"
-path="res://.godot/imported/terraintiles_ne.png-a32c08d5460191b7a17da3c6f4deb7ef.ctex"
+uid="uid://k2uh0vpuuk0b"
+path="res://.godot/imported/border_tiles.png-85e593cd04ad2577463658fbdec8aea4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/terraintiles_ne.png"
-dest_files=["res://.godot/imported/terraintiles_ne.png-a32c08d5460191b7a17da3c6f4deb7ef.ctex"]
+source_file="res://assets/tilemaps/border_tiles.png"
+dest_files=["res://.godot/imported/border_tiles.png-85e593cd04ad2577463658fbdec8aea4.ctex"]
 
 [params]
 
