@@ -1,8 +1,3 @@
-res://scenes/ui/ui_hotbar.tscn
-res://scenes/ui/inventory_ui.tscn
-res://scenes/level/player.tscn
-res://scripts/inventory/inventory_ui.gd
-res://scripts/player.gd
-res://scripts/inventory/player_inventory.gd
-res://scenes/ui/StatsUI.tscn
-res://scenes/ui/stats_ui.gd
+res://scripts/level.gd
+res://scripts/autoloads/network.gd
+res://scenes/level/level.tscn
