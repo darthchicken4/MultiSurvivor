@@ -13,6 +13,11 @@ extends Resource
 @export var rarity: ItemRarity = ItemRarity.COMMON
 @export var value: int = 0
 
+#for consumables
+@export var consumeTime = 1
+
+
+
 enum ItemType {
 	ARMOR,
 	CONSUMABLE,

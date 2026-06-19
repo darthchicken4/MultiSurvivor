@@ -26,11 +26,12 @@ func _create_sample_items():
 	yellow_mushroom.name = "Yellow Mushroom"
 	yellow_mushroom.description = "A soft mushroom with medicinal purposes... can be processed into a dangerous paralyzant"
 	yellow_mushroom.item_type = Item.ItemType.CONSUMABLE
-	yellow_mushroom.rarity = Item.ItemRarity.UNCOMMON
+	#yellow_mushroom.rarity = Item.ItemRarity.UNCOMMON
 	yellow_mushroom.stackable = true
 	yellow_mushroom.max_stack = 10
 	yellow_mushroom.value = 5
 	yellow_mushroom.icon = SpriteSheetLoader.get_texture("items1",1,1)
+	
 	items[yellow_mushroom.id] = yellow_mushroom
 
 	# tree_branch
@@ -40,7 +41,7 @@ func _create_sample_items():
 	tree_branch.name = "Tree Branch"
 	tree_branch.description = "A useful ingredient in primitive crafting, althought slightly fragile."
 	tree_branch.item_type = Item.ItemType.RESOURCE
-	tree_branch.rarity = Item.ItemRarity.COMMON
+	#tree_branch.rarity = Item.ItemRarity.COMMON
 	tree_branch.stackable = true
 	tree_branch.max_stack = 10
 	tree_branch.value = 2
@@ -53,7 +54,7 @@ func _create_sample_items():
 	grass_strands.name = "Grass Strand"
 	grass_strands.description = "A handful of grass strands that can be further refined into plant fibre."
 	grass_strands.item_type = Item.ItemType.RESOURCE
-	grass_strands.rarity = Item.ItemRarity.COMMON
+	#grass_strands.rarity = Item.ItemRarity.COMMON
 	grass_strands.stackable = true
 	grass_strands.max_stack = 10
 	grass_strands.value = 1
@@ -66,7 +67,7 @@ func _create_sample_items():
 	small_stones.name = "Small Stones"
 	small_stones.description = "A collection of small, pebble sized stones."
 	small_stones.item_type = Item.ItemType.RESOURCE
-	small_stones.rarity = Item.ItemRarity.COMMON
+	#small_stones.rarity = Item.ItemRarity.COMMON
 	small_stones.stackable = true
 	small_stones.max_stack = 10
 	small_stones.value = 1
@@ -79,7 +80,7 @@ func _create_sample_items():
 	flint_shard.name = "Flint Shard"
 	flint_shard.description = "A sharp, brittle shard of flint that is great at sparking fire and being used to make primitive tools."
 	flint_shard.item_type = Item.ItemType.RESOURCE
-	flint_shard.rarity = Item.ItemRarity.UNCOMMON
+	#flint_shard.rarity = Item.ItemRarity.UNCOMMON
 	flint_shard.stackable = true
 	flint_shard.max_stack = 10
 	flint_shard.value = 8
@@ -92,7 +93,7 @@ func _create_sample_items():
 	waxed_leaves.name = "Waxed Leaves"
 	waxed_leaves.description = "An assortment of small, round leaves with a slightly flamable wax coating."
 	waxed_leaves.item_type = Item.ItemType.RESOURCE
-	waxed_leaves.rarity = Item.ItemRarity.COMMON
+	#waxed_leaves.rarity = Item.ItemRarity.COMMON
 	waxed_leaves.stackable = true
 	waxed_leaves.max_stack = 10
 	waxed_leaves.value = 1
@@ -105,7 +106,7 @@ func _create_sample_items():
 	twigs.name = "Twigs"
 	twigs.description = "Small, fragile brittle pieces of wood best used as fuel."
 	twigs.item_type = Item.ItemType.RESOURCE
-	twigs.rarity = Item.ItemRarity.COMMON
+	#twigs.rarity = Item.ItemRarity.COMMON
 	twigs.stackable = true
 	twigs.max_stack = 10
 	twigs.value = 1
@@ -118,7 +119,7 @@ func _create_sample_items():
 	plant_fibre.name = "Plant Fibre"
 	plant_fibre.description = "Strong, inelastic plant fibres that can be further twisted into twine"
 	plant_fibre.item_type = Item.ItemType.RESOURCE
-	plant_fibre.rarity = Item.ItemRarity.COMMON
+	#plant_fibre.rarity = Item.ItemRarity.COMMON
 	plant_fibre.stackable = true
 	plant_fibre.max_stack = 10
 	plant_fibre.value = 3
@@ -131,7 +132,7 @@ func _create_sample_items():
 	sharp_slab.name = "Sharp Slab"
 	sharp_slab.description = "A large, very hard stone slab with a particularly sharp edge. This has various purposes."
 	sharp_slab.item_type = Item.ItemType.RESOURCE
-	sharp_slab.rarity = Item.ItemRarity.UNCOMMON
+	#sharp_slab.rarity = Item.ItemRarity.UNCOMMON
 	sharp_slab.stackable = false
 	sharp_slab.max_stack = 1
 	sharp_slab.value = 10
@@ -144,7 +145,7 @@ func _create_sample_items():
 	red_mushroom.name = "Red Mushroom"
 	red_mushroom.description = "A tasty yet not super nutritious food source. May require to be cooked."
 	red_mushroom.item_type = Item.ItemType.RESOURCE
-	red_mushroom.rarity = Item.ItemRarity.COMMON
+	#red_mushroom.rarity = Item.ItemRarity.COMMON
 	red_mushroom.stackable = true
 	red_mushroom.max_stack = 10
 	red_mushroom.value = 2
@@ -157,7 +158,7 @@ func _create_sample_items():
 	large_stone.name = "Large Stone"
 	large_stone.description = "A heavy stone with mishapen sides. Can be further broken into smaller pieces."
 	large_stone.item_type = Item.ItemType.RESOURCE
-	large_stone.rarity = Item.ItemRarity.COMMON
+	#large_stone.rarity = Item.ItemRarity.COMMON
 	large_stone.stackable = true
 	large_stone.max_stack = 10
 	large_stone.value = 1
@@ -170,7 +171,7 @@ func _create_sample_items():
 	fern_leaf.name = "Fern Leaf"
 	fern_leaf.description = "A large, floppy fern leaf that can be used for many things."
 	fern_leaf.item_type = Item.ItemType.RESOURCE
-	fern_leaf.rarity = Item.ItemRarity.COMMON
+	#fern_leaf.rarity = Item.ItemRarity.COMMON
 	fern_leaf.stackable = true
 	fern_leaf.max_stack = 10
 	fern_leaf.value = 1
@@ -183,7 +184,7 @@ func _create_sample_items():
 	raw_clay.name = "Raw Clay"
 	raw_clay.description = "A clump of raw, moist, malleable clay. Can be formed to create basic pottery or meld stones together."
 	raw_clay.item_type = Item.ItemType.RESOURCE
-	raw_clay.rarity = Item.ItemRarity.COMMON
+	#raw_clay.rarity = Item.ItemRarity.COMMON
 	raw_clay.stackable = true
 	raw_clay.max_stack = 10
 	raw_clay.value = 2
@@ -196,7 +197,7 @@ func _create_sample_items():
 	red_berries.name = "Red Berries"
 	red_berries.description = "Delicious red berries with a sweet but slightly sour taste."
 	red_berries.item_type = Item.ItemType.RESOURCE
-	red_berries.rarity = Item.ItemRarity.COMMON
+	#red_berries.rarity = Item.ItemRarity.COMMON
 	red_berries.stackable = true
 	red_berries.max_stack = 10
 	red_berries.value = 2
@@ -209,7 +210,7 @@ func _create_sample_items():
 	thorny_bramble.name = "Thorny Bramble"
 	thorny_bramble.description = "Small vines with large, solid thorns that can easily prick through skin."
 	thorny_bramble.item_type = Item.ItemType.RESOURCE
-	thorny_bramble.rarity = Item.ItemRarity.COMMON
+	#thorny_bramble.rarity = Item.ItemRarity.COMMON
 	thorny_bramble.stackable = true
 	thorny_bramble.max_stack = 10
 	thorny_bramble.value = 2
@@ -222,7 +223,7 @@ func _create_sample_items():
 	twine.name = "Twine"
 	twine.description = "Twisted together plant fibre to form a strong, thick string."
 	twine.item_type = Item.ItemType.RESOURCE
-	twine.rarity = Item.ItemRarity.COMMON
+	#twine.rarity = Item.ItemRarity.COMMON
 	twine.stackable = true
 	twine.max_stack = 10
 	twine.value = 2
@@ -235,7 +236,7 @@ func _create_sample_items():
 	camp_fire.name = "Camp Fire"
 	camp_fire.description = "A placeable campfire. Useful for early cooking and drying, but more importantly, to ward off the dangers of the night..."
 	camp_fire.item_type = Item.ItemType.RESOURCE
-	camp_fire.rarity = Item.ItemRarity.UNCOMMON
+	#camp_fire.rarity = Item.ItemRarity.UNCOMMON
 	camp_fire.stackable = false
 	camp_fire.value = 15
 	camp_fire.icon = SpriteSheetLoader.get_texture("placeables1",1,1)
@@ -247,7 +248,7 @@ func _create_sample_items():
 	branch_flint_hatchet.name = "Branch Flint Hatchet"
 	branch_flint_hatchet.description = "A primitive early game survival tool, meant for hacking at wood."
 	branch_flint_hatchet.item_type = Item.ItemType.TOOL
-	branch_flint_hatchet.rarity = Item.ItemRarity.UNCOMMON
+	#branch_flint_hatchet.rarity = Item.ItemRarity.UNCOMMON
 	branch_flint_hatchet.stackable = false
 	branch_flint_hatchet.value = 15
 	branch_flint_hatchet.icon = SpriteSheetLoader.get_texture("tools1",1,1)
@@ -259,7 +260,7 @@ func _create_sample_items():
 	branch_stone_spear.name = "Branch Stone Spear"
 	branch_stone_spear.description = "An early fragile weapon. The tip isn't very sharp, but it can get the job done."
 	branch_stone_spear.item_type = Item.ItemType.TOOL
-	branch_stone_spear.rarity = Item.ItemRarity.COMMON
+	#branch_stone_spear.rarity = Item.ItemRarity.COMMON
 	branch_stone_spear.stackable = false
 	branch_stone_spear.value = 12
 	branch_stone_spear.icon = SpriteSheetLoader.get_texture("tools1",3,1)
