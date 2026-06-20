@@ -1,3 +1,4 @@
+res://scenes/caves/caves_test.tscn
+res://scenes/caves/caves_prefab.tscn
+res://scenes/caves/caves_prefab.gd
 res://scenes/level/level.tscn
-res://scripts/item.gd
-res://scripts/autoloads/item_database.gd
