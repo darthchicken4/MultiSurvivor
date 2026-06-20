@@ -1,4 +1,2 @@
-res://scenes/caves/caves_test.tscn
-res://scenes/caves/caves_prefab.tscn
-res://scenes/caves/caves_prefab.gd
 res://scenes/level/level.tscn
+res://scenes/caves/caves_prefab.gd
