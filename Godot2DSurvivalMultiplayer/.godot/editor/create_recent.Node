@@ -1,3 +1,6 @@
+MultiplayerSynchronizer
+CharacterBody2D
+Character
 CollisionShape2D
 Area2D
 Path2D
@@ -8,7 +11,4 @@ VBoxContainer
 MarginContainer
 Label
 ProgressBar
-MultiplayerSynchronizer
 AnimatedSprite2D
-RigidBody2D
-Button

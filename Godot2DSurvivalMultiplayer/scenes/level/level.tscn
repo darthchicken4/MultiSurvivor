@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scenes/level/selection_map_layer.gd" id="22_cqqhe"]
 [ext_resource type="PackedScene" uid="uid://csbtsca3owywu" path="res://scenes/prefabs/rock_temple.tscn" id="23_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/zombie/zombie.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -128,3 +129,6 @@ offset_left = 631.0
 offset_top = 398.0
 offset_right = 631.0
 offset_bottom = 398.0
+
+[node name="CharacterBody2D" parent="." unique_id=1499102670 instance=ExtResource("27_u5w0m")]
+position = Vector2(178, 192)

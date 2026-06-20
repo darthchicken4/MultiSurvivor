@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/ent/starterplayerwalk.png" id="2_7h6ip"]
 [ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/ent/idle.png" id="2_eaoru"]
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scenes/level/camera_2d.gd" id="2_f33sr"]
-[ext_resource type="PackedScene" uid="uid://dg7qilsu6vas0" path="res://scenes/player/right_click_menu.tscn" id="5_p47bc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -65,7 +64,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1738487347]
+[node name="Player" type="CharacterBody2D" unique_id=1738487347 groups=["Player"]]
 script = ExtResource("1_tdh26")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
@@ -120,9 +119,3 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
 animation = &"walk"
 frame_progress = 0.43145117
-
-[node name="RightClickMenu" parent="." unique_id=1951577224 instance=ExtResource("5_p47bc")]
-offset_left = -769.5
-offset_top = -253.0
-offset_right = -769.5
-offset_bottom = -253.0
