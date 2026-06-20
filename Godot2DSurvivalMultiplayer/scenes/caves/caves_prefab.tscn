@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bg67nbr0tu3p1" path="res://assets/tilesheets/cave_tiles.png" id="2_3cndw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cndw"]
-size = Vector2(32, 32)
+size = Vector2(21, 19)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb07j"]
 texture = ExtResource("2_3cndw")
@@ -31,6 +31,7 @@ script = ExtResource("1_3cndw")
 position = Vector2(-15.85, 16.065)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=550477390]
+position = Vector2(-0.6499996, -1.5650005)
 shape = SubResource("RectangleShape2D_3cndw")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2061073321]
@@ -39,7 +40,7 @@ tile_map_data = PackedByteArray("AAD//wEAAAAAAAEAAAD/////AAAAAAEAAAAAAAAAAAAAAAE
 tile_set = SubResource("TileSet_eixg2")
 
 [node name="exit_area" type="Area2D" parent="." unique_id=1703729617]
-position = Vector2(27.13, 130.02)
+position = Vector2(-86, 52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1413565291]
 shape = SubResource("RectangleShape2D_eb07j")
@@ -60,3 +61,5 @@ text = "e to enter"
 
 [connection signal="body_entered" from="enter_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="enter_area" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]
+[connection signal="body_exited" from="exit_area" to="." method="_on_exit_area_body_exited"]

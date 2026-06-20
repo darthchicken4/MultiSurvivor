@@ -234,7 +234,7 @@ func is_running() -> bool:
 		return false
 
 func _check_bounds_and_respawn():
-	if global_position.y > 2000.0:
+	if global_position.y > 20000000.0:
 		_respawn()
 
 func _respawn():

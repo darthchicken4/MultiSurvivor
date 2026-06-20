@@ -127,10 +127,9 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_fhw5o")
 script = ExtResource("24_yoh1m")
 
-[node name="Node2D" parent="Map" unique_id=1913555255 instance=ExtResource("25_yoh1m")]
-position = Vector2(321, -316)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("6_x9g3h")]
 visible = false
+
+[node name="Node2D" parent="." unique_id=1913555255 instance=ExtResource("25_yoh1m")]
