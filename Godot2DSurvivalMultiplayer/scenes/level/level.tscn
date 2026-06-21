@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="19_hfr1v"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
+[ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/bunker/bunker.tscn" id="22_u5w0m"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="24_cqqhe"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
 [ext_resource type="PackedScene" uid="uid://ba67irfw4myah" path="res://scenes/caves/caves_prefab.tscn" id="25_yoh1m"]
@@ -113,6 +114,10 @@ redmushrooms_scene = ExtResource("18_t51ir")
 yellowmushrooms_scene = ExtResource("19_hfr1v")
 
 [node name="Node2D" parent="Map" unique_id=1913555255 node_paths=PackedStringArray("map") instance=ExtResource("25_yoh1m")]
+map = NodePath("../TileMapLayer")
+
+[node name="Bunker" parent="Map" unique_id=1249232412 node_paths=PackedStringArray("map") instance=ExtResource("22_u5w0m")]
+position = Vector2(128, -1)
 map = NodePath("../TileMapLayer")
 
 [node name="SelectionMapLayer" type="TileMapLayer" parent="Map" unique_id=1377960773]

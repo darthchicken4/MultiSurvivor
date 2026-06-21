@@ -1,5 +1,5 @@
-res://scenes/level/level.tscn
-res://scenes/caves/caves_prefab.gd
-res://scenes/level/player.tscn
-res://scripts/player.gd
 res://scenes/caves/caves_prefab.tscn
+res://scenes/caves/caves_prefab.gd
+res://scenes/bunker/bunker.tscn
+res://scenes/bunker/bunker.gd
+res://scenes/level/level.tscn
