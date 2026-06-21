@@ -7,10 +7,11 @@ extends Node2D
 var player: Node2D = null
 var can_enter_cave = true
 
+@export var map: Node2D 
 @export var cave_pos = Vector2(200,200)
 @export var seed = 1902837
 @export var dist = 7
-@export var degree = 0 
+var degree = 0 
 @export var enter_timer = 2
 #enter  area =>
 
@@ -38,6 +39,8 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 
 func _ready() -> void:
 	gen_cave()
+	cave_pos = Vector2(map.width,map.height)
+	
 
 
 func reset_enter_delay() -> void:
@@ -51,8 +54,8 @@ func gen_cave():
 	var ray
 	#20000 area?
 	#ratio  8 to 272  1 34 
-	for i in range(359):
-		degree = degree + 1
+	for i in range(270):
+		degree = degree + 1.5
 		ray = Vector2(0,0)
 		ray = Vector2i(Vector2(dist * cos(degree) + cave_pos[0] + randf_range(1.0,1.5) , dist * sin(degree) + cave_pos[1] + randf_range(1.0,1.5)  ))
 		tile.set_cell(ray,0,Vector2(1,1))

@@ -1,5 +1,2 @@
-res://scenes/caves/caves_prefab.gd
-res://scenes/caves/caves_prefab.tscn
 res://scenes/level/level.tscn
-res://scenes/level/player.tscn
-res://scripts/player.gd
+res://scenes/caves/caves_prefab.gd
