@@ -93,6 +93,7 @@ func _process(_delta):
 	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
 
+
 func freeze():
 	velocity = Vector2.ZERO
 	_current_speed = 0
