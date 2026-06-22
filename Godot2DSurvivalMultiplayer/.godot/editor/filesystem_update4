@@ -1,5 +1,4 @@
-res://scenes/caves/caves_prefab.tscn
-res://scenes/caves/caves_prefab.gd
 res://scenes/bunker/bunker.tscn
 res://scenes/bunker/bunker.gd
+res://scenes/bunker/bunker_prefabs/prefab_1.tscn
 res://scenes/level/level.tscn

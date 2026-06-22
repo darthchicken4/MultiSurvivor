@@ -12,11 +12,11 @@ extends Node2D
 @export var enter_timer = 2
 @export var area_around_bunker = 128
 
+@export var prefab_1 :PackedScene
+@export var prefab_2 :PackedScene
+@export var prefab_3 :PackedScene
 
-var tile_set_prefabs = [1,1,1,1,1,1,1,
-						1,0,0,0,0,0,1,
-						1,0,0,0,0,0,1,
-						1,0,0,0,0,0,1,]
+
 
 var player: Node2D = null
 var can_enter_bunker = true
@@ -58,12 +58,6 @@ func reset_enter_delay() -> void:
 
 	
 func gen_bunker():
-	var ray
-	#20000 area?
-	#ratio  8 to 272  1 34 
-	for i in range(270):
-		degree = degree + 1.5
-		ray = Vector2(0,0)
-		ray = Vector2i(Vector2(dist * cos(degree) + bunker_pos[0] + randf_range(1.0,1.5) , dist * sin(degree) + bunker_pos[1] + randf_range(1.0,1.5)  ))
-		tile.set_cell(ray,0,Vector2(1,1))
-	exit_area.position = Vector2i(bunker_pos * 32)
+	print(bunker_pos)
+	exit_area.global_position = bunker_pos
+	prefab_1.instantiate()

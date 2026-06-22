@@ -1,0 +1,21 @@
+[gd_scene format=4 uid="uid://drli2u543vt3n"]
+
+[ext_resource type="Texture2D" uid="uid://c2amsfaejymnt" path="res://assets/tilesheets/brick_tiles.png" id="1_2pk83"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htk5h"]
+texture = ExtResource("1_2pk83")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+
+[sub_resource type="TileSet" id="TileSet_nlc2s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_htk5h")
+
+[node name="Prefab1" type="Node2D" unique_id=773532231]
+scale = Vector2(2, 2)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1985715514]
+tile_map_data = PackedByteArray("AAD//wIAAAAAAAAAAAAAAAIAAAABAAAAAAABAAEAAAAAAAAAAAACAAEAAAABAAAAAAABAP7/AAAAAAAAAAACAP7/AAABAAAAAAD///3/AAAAAAAAAAAAAP3/AAABAAAAAAD9//7/AAAAAAAAAAD+//7/AAABAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAABAAAAAAD8/wAAAAABAAAAAAADAP//AAABAAAAAAADAAAAAAAAAAAAAAD8////AAAAAAAAAAD+//3/AAAAAAAAAAABAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAAEAAAAAAAAAAAABAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD8/wEAAAAAAAAAAAD8//7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_nlc2s")
