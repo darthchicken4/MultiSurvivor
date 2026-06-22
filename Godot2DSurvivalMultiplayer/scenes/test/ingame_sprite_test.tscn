@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bjkdd0yuvklg"]
+
+[ext_resource type="Texture2D" uid="uid://b3kk8fkv31mlw" path="res://assets/game_covers/reference_sheet.jpg" id="1_2i012"]
+
+[node name="Node2D" type="Node2D" unique_id=84276741]
+
+[node name="reference_sheet" type="Sprite2D" parent="." unique_id=176488942]
+position = Vector2(326, 211)
+texture = ExtResource("1_2i012")
