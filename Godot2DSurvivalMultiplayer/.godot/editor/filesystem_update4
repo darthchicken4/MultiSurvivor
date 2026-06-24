@@ -1,3 +1,2 @@
 res://scenes/level/level.tscn
-res://scripts/item.gd
-res://scripts/autoloads/item_database.gd
+res://scenes/animals/chiken/chiken.tscn
