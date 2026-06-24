@@ -1,4 +1,4 @@
-res://scenes/zombie/zombie.tscn
 res://scenes/player/player.tscn
 res://scenes/zombie/zombie.gd
+res://scenes/zombie/zombie.tscn
 res://scenes/level/level.tscn

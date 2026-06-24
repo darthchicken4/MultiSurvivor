@@ -103,6 +103,9 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_yoh1m")
 script = ExtResource("22_cqqhe")
 
+[node name="CharacterBody2D" parent="Map" unique_id=1499102670 instance=ExtResource("27_u5w0m")]
+position = Vector2(178, 192)
+
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
 
@@ -129,6 +132,3 @@ offset_left = 631.0
 offset_top = 398.0
 offset_right = 631.0
 offset_bottom = 398.0
-
-[node name="CharacterBody2D" parent="." unique_id=1499102670 instance=ExtResource("27_u5w0m")]
-position = Vector2(178, 192)
