@@ -1,2 +1,3 @@
-res://scenes/level/level.tscn
 res://scenes/animals/chiken/chiken.tscn
+res://scenes/animals/chiken/chiken.gd
+res://scenes/level/level.tscn
