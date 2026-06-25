@@ -1,6 +1,8 @@
+Label
 CollisionShape2D
 Area2D
 Sprite2D
+Character
 CharacterBody2D
 TextureRect
 ProgressBar
@@ -9,6 +11,4 @@ MarginContainer
 HBoxContainer
 Panel
 ColorRect
-Label
 CanvasLayer
-Node2D

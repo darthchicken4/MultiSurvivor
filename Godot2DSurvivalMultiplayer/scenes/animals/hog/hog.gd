@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 50.0
 @export  var wander_dir = 3
 @export var wander_timer = 4
-@export var health = 30.0
+@export var health = 150.0
 
 
 
@@ -25,17 +25,14 @@ func  _ready() -> void:
 	pass
 
 
-
-
-func _on_detect_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		player = body
-
-
-
-func _on_detect_area_body_exited(body: Node2D) -> void:
+func _on_detect_body_entered(body: Node2D) -> void:
 	if body == player:
 		player = null
+
+
+func _on_detect_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		player = body
 
 
 func _process(delta: float) -> void:

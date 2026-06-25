@@ -19,6 +19,7 @@ config/description="This is a foundational template for a 3D multiplayer game, d
 config/tags=PackedStringArray("3d", "network")
 run/main_scene="res://scenes/level/level.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/max_fps=300
 config/icon="res://icon.png"
 
 [autoload]
@@ -29,12 +30,17 @@ GameManager="*uid://cm5e77sbqldvs"
 CraftingDatabase="*uid://b0657bk0imu8n"
 SpriteSheetLoader="*uid://cbrrjw8eul01q"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [input]
 
