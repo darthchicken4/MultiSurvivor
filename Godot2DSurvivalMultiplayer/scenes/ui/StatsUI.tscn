@@ -72,6 +72,7 @@ offset_right = 150.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_8knpq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_05eww")
 value = 70.0
@@ -86,6 +87,7 @@ offset_top = -4.0
 offset_right = 21.5
 offset_bottom = 36.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = SubResource("AtlasTexture_rxyp5")
 
 [node name="Hunger" type="ProgressBar" parent="Control" unique_id=1742788002]
@@ -101,6 +103,7 @@ offset_right = -7.5
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_lymms")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oiuge")
 value = 70.0
@@ -114,6 +117,7 @@ offset_top = -3.0
 offset_right = 18.0
 offset_bottom = 37.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = SubResource("AtlasTexture_pcnew")
 
 [node name="Health" type="ProgressBar" parent="Control" unique_id=311890757]
@@ -129,6 +133,7 @@ offset_right = 150.0
 offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_g0xps")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mtpfn")
 value = 70.0
@@ -142,6 +147,7 @@ offset_top = -7.0
 offset_right = 16.0
 offset_bottom = 33.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = SubResource("AtlasTexture_wvan6")
 
 [node name="DamageIndicator" type="ProgressBar" parent="Control" unique_id=2033534065]
@@ -158,6 +164,7 @@ offset_right = 150.0
 offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_sq71o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dsacm")
 value = 90.0

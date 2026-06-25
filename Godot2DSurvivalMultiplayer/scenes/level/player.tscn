@@ -49,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_eaoru")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -63,7 +63,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o0o36")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 3.0
 }]
@@ -90,6 +90,7 @@ text = "player
 "
 label_settings = SubResource("LabelSettings_pe35h")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1005274895]
 replication_config = SubResource("SceneReplicationConfig_wb3a5")
@@ -120,7 +121,7 @@ offset_top = -47.0
 offset_right = 5.0
 offset_bottom = -47.0
 
-[node name="InteractMenu" parent="." unique_id=1928950980 instance=ExtResource("7_pnmcy")]
+[node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false
 offset_left = -595.0
 offset_top = -263.0

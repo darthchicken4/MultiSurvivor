@@ -195,6 +195,7 @@ func _input(event):
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_F2:
 		_debug_print_inventory()
 	elif event is InputEventMouseButton:
+		print(get_viewport().gui_get_hovered_control())
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 
 			# Don't open another menu if one is already open

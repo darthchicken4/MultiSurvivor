@@ -1,6 +1,8 @@
+Button
+Control
+OptionButton
 TextureRect
 ProgressBar
-Control
 MarginContainer
 HBoxContainer
 Panel
@@ -9,6 +11,4 @@ Label
 CanvasLayer
 Node2D
 VBoxContainer
-Button
 Tree
-StaticBody2D

@@ -4,6 +4,9 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lksr3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n82vp"]
+content_margin_left = 10.0
+
 [node name="InteractMenu" type="Control" unique_id=1928950980]
 layout_mode = 3
 anchors_preset = 15
@@ -14,9 +17,13 @@ offset_bottom = -462.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.36, 0.75)
+mouse_filter = 2
+mouse_default_cursor_shape = 1
 script = ExtResource("1_lc2fh")
 
 [node name="Panel" type="Panel" parent="." unique_id=1203900582]
+modulate = Color(1, 1, 1, 0.827451)
+self_modulate = Color(1, 1, 1, 0.6117647)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -30,6 +37,7 @@ offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.5)
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=987653296]
 layout_mode = 1
@@ -42,6 +50,7 @@ offset_right = -2.5
 offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -49,11 +58,16 @@ theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=919183147]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="InspectButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1359939131]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.4571107, 0.45711082, 0.45711178, 1)
+theme_override_colors/font_hover_color = Color(0.6052743, 0.6052744, 0.6052742, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxEmpty_lksr3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n82vp")
 text = "Inspect
 "
 alignment = 0
@@ -66,3 +80,6 @@ offset_right = 95.77778
 offset_bottom = 66.333336
 theme_override_font_sizes/font_size = 15
 text = "objectname"
+
+[connection signal="focus_entered" from="Panel" to="Panel/MarginContainer/VBoxContainer/InspectButton" method="_on_panel_focus_entered"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/InspectButton" to="Panel/MarginContainer/VBoxContainer/InspectButton" method="_on_pressed"]
