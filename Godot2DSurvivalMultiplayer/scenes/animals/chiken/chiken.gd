@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export  var wander_dir = 3
 @export var wander_timer = 4
 @export var health = 30.0
-
+@export var drops = PackedScene
 
 
 var player: Node2D = null
@@ -72,3 +72,6 @@ func wander(delta: float) -> void:
 	if wander_timer <= 0:
 		is_thinking = true
 		think_timer = randf_range(0.5, 2.0)
+		
+func death():
+	pass

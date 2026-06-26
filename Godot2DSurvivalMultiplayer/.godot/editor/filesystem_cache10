@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1782397337
+::res://::1782475437
 icon.png::CompressedTexture2D::7745181525272711891::1781432367::1781718397::1::::<><><>0<>0<>896be222f4526152412fc7150ec81337<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 sprite_sheet_loader.gd::GDScript::4879174100566604096::1782306646::0::1::::<>Node<><>0<>0<><>::
 tile_map.gd::GDScript::6073309704332451991::1782306646::0::1::::<>TileMapLayer<><>0<>0<><>::
@@ -7,7 +7,7 @@ tile_map.gd::GDScript::6073309704332451991::1782306646::0::1::::<>TileMapLayer<>
 ::res://assets/fonts/::1781718396
 Kurland.ttf::FontFile::7721683626151354491::1781432367::1781718396::1::::<><><>0<>0<>dacc2e7578d27658799cf58f30bac804<>res://.godot/imported/Kurland.ttf-14f9cbbd8657b37f475042f6a32feeab.fontdata::
 New Piskel (5).png::CompressedTexture2D::2007127336538574867::1781432367::1781432389::1::::<><><>0<>0<>477fe95d95efa0abbd30e4c2a3b6acf7<>res://.godot/imported/New Piskel (5).png-16bcd9f232ca52d4c6325ab9a2a07e1d.ctex::
-::res://assets/sprites/::1782397320
+::res://assets/sprites/::1782397339
 chiken.png::CompressedTexture2D::1491671300412796126::1782397317::1782397339::1::::<><><>0<>0<>8140954d6e06a58115b568ac278d7bd3<>res://.godot/imported/chiken.png-d7f73ec8c19cd760645084d5414a916b.ctex::
 hand.png::CompressedTexture2D::2862934829292765971::1782306646::1782306663::1::::<><><>0<>0<>79ffdbe7f7bc505aa62ce0c3e991c60d<>res://.godot/imported/hand.png-aa70a94ecd582a85db91aae186be8a98.ctex::
 hog.png::CompressedTexture2D::7691054516848466521::1782397320::1782397339::1::::<><><>0<>0<>7ea0eb200f86f757afbf295ad7852c6c<>res://.godot/imported/hog.png-828887eea52e8dccaaf4eafcb63837bd.ctex::
