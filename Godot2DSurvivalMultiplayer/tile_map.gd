@@ -32,13 +32,15 @@ var tile_terrain: Dictionary = {}
 @export var redmushrooms_scene: PackedScene
 @export var yellowmushrooms_scene: PackedScene
 
+@export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
+
 var tree_container: Node2D
 
 var map_seed: int = 0
 
 func _ready():
 	tree_container = $"../SortContainer"
-	
+	animal_spawn_tile()
 func _initiate(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
@@ -73,6 +75,7 @@ func _process(_delta):
 	if tile_pos != last_tile_pos:
 		last_tile_pos = tile_pos
 		generate_chunk(Vector2(0, 0))
+
 
 func map_to_global(tile: Vector2i) -> Vector2:
 	return to_global(map_to_local(tile))
@@ -256,3 +259,11 @@ func remove_object(tile: Vector2i):
 	if tile_objects.has(tile):
 		tile_objects[tile].queue_free()
 		tile_objects.erase(tile)
+
+
+
+func animal_spawn_tile():
+	var rand_tile = Vector2(randi_range(0,width),randi_range(0,height))
+	print(rand_tile)
+	
+	

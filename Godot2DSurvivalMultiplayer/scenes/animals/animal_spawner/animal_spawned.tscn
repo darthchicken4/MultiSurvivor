@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bschu41uk2afi"]
+
+[ext_resource type="Script" uid="uid://bkif4sa0c46w4" path="res://scenes/animals/animal_spawner/animal_spawned.gd" id="1_rfw6o"]
+[ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="2_fe5vo"]
+[ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="3_20jlv"]
+
+[node name="AnimalSpawned" type="Node2D" unique_id=1586108228]
+script = ExtResource("1_rfw6o")
+chiken = ExtResource("2_fe5vo")
+hog = ExtResource("3_20jlv")
