@@ -260,10 +260,39 @@ func remove_object(tile: Vector2i):
 		tile_objects[tile].queue_free()
 		tile_objects.erase(tile)
 
+func _is_grass(terrain: String) -> bool:
+	return terrain == "lush_grass" or terrain == "dry_grass"
 
 
 func animal_spawn_tile():
-	var rand_tile = Vector2(randi_range(0,width),randi_range(0,height))
-	print(rand_tile)
-	
-	
+	# Cross offsets: center + up, down, left, right
+	var cross_offsets = [
+		Vector2i(0, 0),
+		Vector2i(0, -1),
+		Vector2i(0, 1),
+		Vector2i(-1, 0),
+		Vector2i(1, 0),
+	]
+
+	# Collect all grass tiles that form a full + shape
+	var valid_tiles: Array = []
+	for key in tile_terrain.keys():
+		if not _is_grass(tile_terrain[key]):
+			continue
+		var all_grass = true
+		for offset in cross_offsets:
+			var neighbor = key + offset
+			if not _is_grass(tile_terrain.get(neighbor, "")):
+				all_grass = false
+				break
+		if all_grass:
+			valid_tiles.append(key)
+
+	if valid_tiles.is_empty():
+		print("animal_spawn_tile: no valid cross-shaped grass tile found")
+		return
+
+	# Pick a random valid tile
+	var chosen: Vector2i = valid_tiles[randi() % valid_tiles.size()]
+	grass_spawn = Vector2(chosen.x, chosen.y)
+	print("animal_spawn_tile: grass_spawn set to ", grass_spawn)
