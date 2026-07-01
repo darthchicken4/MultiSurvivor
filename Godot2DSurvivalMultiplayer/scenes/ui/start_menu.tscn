@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://tqgaiwoe3j8p"]
+
+[ext_resource type="Theme" uid="uid://copnwlebnek1" path="res://assets/themes/start_menu.tres" id="1_m0hmm"]
+[ext_resource type="Script" uid="uid://bkylgva75wkqg" path="res://scenes/ui/start_menu.gd" id="2_km2yg"]
+[ext_resource type="Texture2D" uid="uid://dil3ajn1rj052" path="res://icon.png" id="3_s1kfm"]
+
+[node name="StartMenu" type="Control" unique_id=504288171]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m0hmm")
+script = ExtResource("2_km2yg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1325622595]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s1kfm")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2071836201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 29
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 29
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1028297773]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Wilderness 2"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=492300998]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="single player" type="Button" parent="MarginContainer/VBoxContainer" unique_id=200425389]
+layout_mode = 2
+text = "single player"
+
+[node name="multplayer" type="Button" parent="MarginContainer/VBoxContainer" unique_id=111857144]
+layout_mode = 2
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1491320660]
+layout_mode = 2
