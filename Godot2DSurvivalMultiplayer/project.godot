@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Multiplayer2DGame"
 config/description="This is a foundational template for a 3D multiplayer game, developed in Godot Engine."
 config/tags=PackedStringArray("3d", "network")
-run/main_scene="res://scenes/level/level.tscn"
+run/main_scene="uid://tqgaiwoe3j8p"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.png"
 

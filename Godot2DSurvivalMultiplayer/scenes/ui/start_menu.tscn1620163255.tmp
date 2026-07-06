@@ -63,5 +63,4 @@ layout_mode = 2
 text = "quit"
 script = ExtResource("5_i11hm")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/multplayer" to="MarginContainer/VBoxContainer/multplayer" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="MarginContainer/VBoxContainer/quit" method="_on_pressed"]

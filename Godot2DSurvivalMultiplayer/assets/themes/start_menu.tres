@@ -1,3 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://copnwlebnek1"]
 
+[ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_ya8dl"]
+
 [resource]
+Button/fonts/font = ExtResource("1_ya8dl")
+Label/fonts/font = ExtResource("1_ya8dl")

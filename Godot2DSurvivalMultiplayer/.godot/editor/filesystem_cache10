@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1782917651
+::res://::1783353450
 icon.png::CompressedTexture2D::7745181525272711891::1781432367::1781718397::1::::<><><>0<>0<>896be222f4526152412fc7150ec81337<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 sprite_sheet_loader.gd::GDScript::4879174100566604096::1782306646::0::1::::<>Node<><>0<>0<><>::
 tile_map.gd::GDScript::6073309704332451991::1782917645::0::1::::<>TileMapLayer<><>0<>0<><>::
-::res://assets/::1782306646
+::res://assets/::1782918002
 ::res://assets/fonts/::1781718396
 Kurland.ttf::FontFile::7721683626151354491::1781432367::1781718396::1::::<><><>0<>0<>dacc2e7578d27658799cf58f30bac804<>res://.godot/imported/Kurland.ttf-14f9cbbd8657b37f475042f6a32feeab.fontdata::
 New Piskel (5).png::CompressedTexture2D::2007127336538574867::1781432367::1781432389::1::::<><><>0<>0<>477fe95d95efa0abbd30e4c2a3b6acf7<>res://.godot/imported/New Piskel (5).png-16bcd9f232ca52d4c6325ab9a2a07e1d.ctex::
@@ -20,6 +20,8 @@ iconsheet1.png::CompressedTexture2D::6885711215258257985::1782306646::1782306663
 itemsheet1.png::CompressedTexture2D::619259484907512233::1782306646::1782306663::1::::<><><>0<>0<>2f18680eeecc98a4a1bfe771f316eb9d<>res://.godot/imported/itemsheet1.png-79ccb10f0bad7162088022555d0a6410.ctex::
 placeablesheet1.png::CompressedTexture2D::1008216210500957459::1782306646::1782306663::1::::<><><>0<>0<>4cdad49b2f9c95a4e1d2645e204ce9f3<>res://.godot/imported/placeablesheet1.png-704f5526850cb022c0d49d2225c9bd53.ctex::
 toolsheet1.png::CompressedTexture2D::4414580318799396437::1782306646::1782306663::1::::<><><>0<>0<>1ea8afcfbc55f188d04e26e648e532e1<>res://.godot/imported/toolsheet1.png-c27c19da961af617b2c57c76e9c715e3.ctex::
+::res://assets/themes/::1782918976
+start_menu.tres::Theme::170214118735307958::1782918976::0::1::::<><><>0<>0<><>::uid://diapabmalpcrj::::res://assets/fonts/Kurland.ttf
 ::res://assets/tilesheets/::1782578292
 border_tiles.png::CompressedTexture2D::758854822386304251::1782306646::1782306663::1::::<><><>0<>0<>d2f8729b8d5d340b52dc368d5a448b84<>res://.godot/imported/border_tiles.png-c025b3342f89168602c6897130e33df2.ctex::
 selectiontile.png::CompressedTexture2D::6496164107020194284::1782306646::1782306663::1::::<><><>0<>0<>17036f7b2bb36530c09494c3ec2ad01c<>res://.godot/imported/selectiontile.png-eda108dcdac7fef90ac162d294bfe892.ctex::
@@ -49,13 +51,18 @@ tall_grass.tscn::PackedScene::7620994604131232166::1782306646::0::1::::<><><>0<>
 tree.tscn::PackedScene::1857464197456147401::1782306646::0::1::::<><><>0<>0<><>::uid://d8rf347yatpo::::res://assets/sprites/tree.png<>uid://cam06xk2f0ne2::::res://scripts/propScripts/tree.gd
 tree_branch.tscn::PackedScene::1509791878548389569::1782306646::0::1::::<><><>0<>0<><>::uid://wqtsefb1sdha::::res://scripts/propScripts/tree_branch.gd<>uid://bfo0pd16dxfaw::::res://assets/tilesheets/spawnobjects.png
 yellow_shroom.tscn::PackedScene::3109451423978671116::1782306646::0::1::::<><><>0<>0<><>::uid://bfo0pd16dxfaw::::res://assets/tilesheets/spawnobjects.png<>uid://d4baq4xja3of5::::res://scripts/propScripts/yellow_shroom.gd
-::res://scenes/ui/::1782917645
+::res://scenes/ui/::1782918976
 interact_menu.gd::GDScript::1467303781186212552::1782306646::0::1::::<>Control<><>0<>0<><>::
 interact_menu.tscn::PackedScene::5440921164269077142::1782917645::0::1::::<><><>0<>0<><>::uid://u51jqn5uvvtg::::res://scenes/ui/interact_menu.gd
 inventory_slot_ui.tscn::PackedScene::2831603828855830253::1782306646::0::1::::<><><>0<>0<><>::uid://bi0mlil0a0e5i::::res://scripts/inventory/inventory_slot_ui.gd
 inventory_ui.tscn::PackedScene::2550538044364057684::1782917645::0::1::::<><><>0<>0<><>::uid://c2w12kgcvtww4::::res://scripts/inventory/inventory_ui.gd
 main_menu_ui.tscn::PackedScene::4067583116244366492::1782917645::0::1::::<><><>0<>0<><>::uid://diapabmalpcrj::::res://assets/fonts/Kurland.ttf<>uid://wfj6b11wkwx2::::res://scripts/main_menu_ui.gd
 multiplayer_chat_ui.tscn::PackedScene::4922270337668605645::1782306646::0::1::::<><><>0<>0<><>::uid://bi8re6tdr1ojt::::res://scripts/multiplayer_chat_ui.gd
+multplayer.gd::GDScript::8588820335138608138::1782918591::0::1::::<>Button<><>0<>0<><>::
+quit.gd::GDScript::8050783029505727927::1782918976::0::1::::<>Button<><>0<>0<><>::
+single_player.gd::GDScript::8460449215766887140::1782918589::0::1::::<>Button<><>0<>0<><>::
+start_menu.gd::GDScript::3138533892339973470::1782918071::0::1::::<>Control<><>0<>0<><>::
+start_menu.tscn::PackedScene::1366982829959222133::1782918976::0::1::::<><><>0<>0<><>::uid://copnwlebnek1::::res://assets/themes/start_menu.tres<>uid://bkylgva75wkqg::::res://scenes/ui/start_menu.gd<>uid://dsskmlbth3pm7::::res://scenes/ui/single_player.gd<>uid://dumqu7gkm4pda::::res://scenes/ui/multplayer.gd<>uid://dmx4hqvf3aiwl::::res://scenes/ui/quit.gd
 StatsUI.tscn::PackedScene::4900655881203419429::1782917645::0::1::::<><><>0<>0<><>::uid://bnmdjlowmpg5e::::res://scenes/ui/stats_ui.gd<>uid://c5dqwmkiuhcnh::::res://assets/spritesheets/iconsheet1.png
 stats_ui.gd::GDScript::3323847007560009104::1782306646::0::1::::PlayerStatsUI<>Control<><>0<>0<><>::
 ::res://scripts/::1782917645
