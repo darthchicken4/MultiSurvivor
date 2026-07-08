@@ -12,4 +12,4 @@ func _ready() -> void:
 	pass
 	
 func spawn():
-	pass
+	var spawn_pos = tilemap_index.grass_spawn 

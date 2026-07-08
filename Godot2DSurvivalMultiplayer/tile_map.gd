@@ -33,14 +33,13 @@ var tile_terrain: Dictionary = {}
 @export var yellowmushrooms_scene: PackedScene
 
 @export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
-
+@export var can_spawn_again = true
 var tree_container: Node2D
 
 var map_seed: int = 0
 
 func _ready():
 	tree_container = $"../SortContainer"
-	animal_spawn_tile()
 func _initiate(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
@@ -259,6 +258,10 @@ func remove_object(tile: Vector2i):
 	if tile_objects.has(tile):
 		tile_objects[tile].queue_free()
 		tile_objects.erase(tile)
+
+
+
+
 
 func _is_grass(terrain: String) -> bool:
 	return terrain == "lush_grass" or terrain == "dry_grass"

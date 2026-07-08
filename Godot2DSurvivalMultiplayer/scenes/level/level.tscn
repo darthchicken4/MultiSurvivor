@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="24_cqqhe"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
 [ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="25_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="27_fhw5o"]
 [ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
@@ -133,6 +134,9 @@ z_index = -2
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_fhw5o")
 script = ExtResource("24_yoh1m")
+
+[node name="AnimalSpawner" parent="Map" unique_id=1586108228 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("27_fhw5o")]
+tilemap_index = NodePath("../TileMapLayer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 
