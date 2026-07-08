@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://crmwcf7cpkik0" path="res://scenes/ui/crafting_ui/crafting_ui.gd" id="1_t1iof"]
 [ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/tree.png" id="2_hjb8q"]
 [ext_resource type="Texture2D" uid="uid://b4cmvm6tatqtu" path="res://assets/sprites/crafting table.png" id="3_js6hb"]
+[ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="4_ym6gd"]
+[ext_resource type="Texture2D" uid="uid://i28d353w3cr6" path="res://assets/spritesheets/itemsheet1.png" id="5_d5bnp"]
+[ext_resource type="Script" uid="uid://owrlfqck35rb" path="res://scenes/ui/crafting_ui/item_needed_display.gd" id="5_d7lbo"]
 
 [node name="CraftingUi" type="Control" unique_id=988690133]
 layout_mode = 3
@@ -48,15 +51,15 @@ split_offset = 148
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/MarginContainer/HSplitContainer/select_group" unique_id=355741131]
+[node name="split_icon_group" type="HSplitContainer" parent="MarginContainer/MarginContainer/HSplitContainer/select_group" unique_id=355741131]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/HSplitContainer" unique_id=1406898357]
+[node name="crafting menu icon" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/split_icon_group" unique_id=1406898357]
 layout_mode = 2
 texture = ExtResource("2_hjb8q")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/HSplitContainer" unique_id=406222418]
+[node name="crafting menu" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/split_icon_group" unique_id=406222418]
 layout_mode = 2
 text = "crafting menu "
 
@@ -67,129 +70,129 @@ layout_mode = 2
 layout_mode = 2
 text = "all"
 
-[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=354761382]
+[node name="magic" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=354761382]
 layout_mode = 2
 text = "magic"
 
-[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=2135651837]
+[node name="cooking" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=2135651837]
 layout_mode = 2
 text = "cooking
 "
 
-[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1753786799]
+[node name="misc" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1753786799]
 layout_mode = 2
 text = "misc"
 
-[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1550832872]
+[node name="pottery" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=1550832872]
 layout_mode = 2
 text = "pottery"
 
-[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=538340782]
+[node name="weapons" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/select_group/select_tab" unique_id=538340782]
 layout_mode = 2
 text = "weapons"
 
-[node name="selecting recepie" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer" unique_id=974374405]
+[node name="selecting recepie_category_all" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer" unique_id=974374405]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie" unique_id=1847816129]
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all" unique_id=1847816129]
 layout_mode = 2
 text = "recepies"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label" unique_id=333020784]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label" unique_id=333020784]
 layout_mode = 0
 offset_left = -0.47
 offset_top = 28.36
 offset_right = 122.180084
 offset_bottom = 511.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer" unique_id=2016236040]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer" unique_id=2016236040]
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1439546822]
+[node name="Button2" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1439546822]
 layout_mode = 2
 text = "spear"
 
-[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=772028820]
+[node name="Button3" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=772028820]
 layout_mode = 2
 text = "stone spear"
 
-[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1925066871]
+[node name="Button4" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1925066871]
 layout_mode = 2
 text = "wood pickaxe"
 
-[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1301726985]
+[node name="Button5" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1301726985]
 layout_mode = 2
 text = "stone pickaxe"
 
-[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1336033628]
+[node name="Button6" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1336033628]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button7" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1443066713]
+[node name="Button7" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1443066713]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button8" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1658558126]
+[node name="Button8" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1658558126]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button9" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=34743805]
+[node name="Button9" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=34743805]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button10" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1985105418]
+[node name="Button10" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1985105418]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button11" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1993826796]
+[node name="Button11" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1993826796]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button12" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1648551991]
+[node name="Button12" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1648551991]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button13" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1348051762]
+[node name="Button13" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1348051762]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button14" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1420772082]
+[node name="Button14" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1420772082]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button15" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=476537683]
+[node name="Button15" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=476537683]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button16" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1225674015]
+[node name="Button16" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1225674015]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button17" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=2101554864]
+[node name="Button17" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=2101554864]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button18" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1030058454]
+[node name="Button18" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1030058454]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button19" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=80577287]
+[node name="Button19" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=80577287]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button20" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=169724073]
+[node name="Button20" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=169724073]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button21" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=79366889]
+[node name="Button21" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=79366889]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button22" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=129909265]
+[node name="Button22" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=129909265]
 layout_mode = 2
 text = "place_holder"
 
-[node name="Button23" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie/Label/ScrollContainer/VBoxContainer" unique_id=1217437310]
+[node name="Button23" type="Button" parent="MarginContainer/MarginContainer/HSplitContainer/selecting recepie_category_all/Label/ScrollContainer/VBoxContainer" unique_id=1217437310]
 layout_mode = 2
 text = "place_holder"
 
@@ -212,38 +215,116 @@ anchor_bottom = 0.5
 offset_left = -151.0
 offset_top = 21.5
 offset_right = 106.0
-offset_bottom = 140.5
+offset_bottom = 189.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="description" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=1601895301]
 layout_mode = 0
-offset_left = 63.0
-offset_top = 62.0
-offset_right = 192.0
-offset_bottom = 89.0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 132.0
+offset_bottom = 31.0
 text = "poke poke  stick "
 
-[node name="description2" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=926437156]
+[node name="crafting_station2" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=926437156]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 35.0
-offset_right = 210.0
-offset_bottom = 62.0
-text = "poke poke  stick "
+offset_top = 54.0
+offset_right = 120.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 11
+text = "crafting:table required"
+
+[node name="materials" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=1426208374]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 120.0
+offset_right = 124.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 11
+text = "materials:"
 
 [node name="crafting_station" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=542469491]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 76.0
-offset_right = 47.0
-offset_bottom = 116.0
+offset_left = 3.0
+offset_top = 75.0
+offset_right = 43.0
+offset_bottom = 115.0
 texture = ExtResource("3_js6hb")
 
-[node name="spear_template" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=1813132073]
+[node name="item_selected_sprite" type="Sprite2D" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=409766476]
+position = Vector2(17, -19)
+scale = Vector2(2.26, 2.26)
+texture = ExtResource("4_ym6gd")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="material_list" type="HBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e" unique_id=1738784261]
 layout_mode = 0
-offset_left = -3.0
-offset_top = -33.0
-offset_right = 37.0
-offset_bottom = 7.0
-texture = ExtResource("3_js6hb")
+offset_left = 59.0
+offset_top = 125.0
+offset_right = 99.0
+offset_bottom = 165.0
+theme_override_constants/separation = 40
+
+[node name="item_needed2" type="Panel" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list" unique_id=2123462027]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("5_d7lbo")
+
+[node name="items" type="Sprite2D" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed2" unique_id=198705359]
+position = Vector2(21, 27)
+scale = Vector2(1.87, 1.87)
+texture = ExtResource("5_d5bnp")
+hframes = 6
+vframes = 4
+frame = 19
+
+[node name="amount" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed2/items" unique_id=525652298]
+offset_left = 6.4171157
+offset_top = -1.0695198
+offset_right = 46.417114
+offset_bottom = 21.930481
+theme_override_font_sizes/font_size = 8
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed2/items" unique_id=387596320]
+offset_left = -6.4171057
+offset_top = -16.577547
+offset_right = 33.582893
+offset_bottom = 6.422453
+theme_override_font_sizes/font_size = 6
+text = "leaf"
+metadata/_edit_use_anchors_ = true
+
+[node name="item_needed" type="Panel" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list" unique_id=1807012452]
+layout_mode = 2
+script = ExtResource("5_d7lbo")
+
+[node name="items" type="Sprite2D" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed" unique_id=749092315]
+position = Vector2(21, 27)
+scale = Vector2(1.87, 1.87)
+texture = ExtResource("5_d5bnp")
+hframes = 6
+vframes = 4
+frame = 19
+
+[node name="amount" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed/items" unique_id=1363536924]
+offset_left = 6.4171157
+offset_top = -1.0695198
+offset_right = 46.417114
+offset_bottom = 21.930481
+theme_override_font_sizes/font_size = 8
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="item_name" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/Label/main hold;e/material_list/item_needed/items" unique_id=706970537]
+offset_left = -6.4171057
+offset_top = -16.577547
+offset_right = 33.582893
+offset_bottom = 6.422453
+theme_override_font_sizes/font_size = 6
+text = "leaf"
+metadata/_edit_use_anchors_ = true
