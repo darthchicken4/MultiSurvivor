@@ -1,13 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1783519044
+::res://::1783619919
 icon.png::CompressedTexture2D::7745181525272711891::1781432367::1781718397::1::::<><><>0<>0<>896be222f4526152412fc7150ec81337<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 sprite_sheet_loader.gd::GDScript::4879174100566604096::1783516499::0::1::::<>Node<><>0<>0<><>::
-tile_map.gd::GDScript::6073309704332451991::1783519014::0::1::::<>TileMapLayer<><>0<>0<><>::
+tile_map.gd::GDScript::6073309704332451991::1783520215::0::1::::<>TileMapLayer<><>0<>0<><>::
 ::res://assets/::1783519014
 ::res://assets/fonts/::1781718396
 Kurland.ttf::FontFile::7721683626151354491::1781432367::1781718396::1::::<><><>0<>0<>dacc2e7578d27658799cf58f30bac804<>res://.godot/imported/Kurland.ttf-14f9cbbd8657b37f475042f6a32feeab.fontdata::
 New Piskel (5).png::CompressedTexture2D::2007127336538574867::1781432367::1781432389::1::::<><><>0<>0<>477fe95d95efa0abbd30e4c2a3b6acf7<>res://.godot/imported/New Piskel (5).png-16bcd9f232ca52d4c6325ab9a2a07e1d.ctex::
-::res://assets/sprites/::1783519014
+::res://assets/sprites/::1783519046
 chiken.png::CompressedTexture2D::1491671300412796126::1783519014::1783519046::1::::<><><>0<>0<>8140954d6e06a58115b568ac278d7bd3<>res://.godot/imported/chiken.png-d7f73ec8c19cd760645084d5414a916b.ctex::
 hand.png::CompressedTexture2D::2862934829292765971::1783516499::1783516700::1::::<><><>0<>0<>79ffdbe7f7bc505aa62ce0c3e991c60d<>res://.godot/imported/hand.png-aa70a94ecd582a85db91aae186be8a98.ctex::
 hog.png::CompressedTexture2D::7691054516848466521::1783519014::1783519046::1::::<><><>0<>0<>7ea0eb200f86f757afbf295ad7852c6c<>res://.godot/imported/hog.png-828887eea52e8dccaaf4eafcb63837bd.ctex::
@@ -16,7 +16,7 @@ starterplayerwalk.png::CompressedTexture2D::8876167938410500399::1782306646::178
 tree.png::CompressedTexture2D::279733631583784344::1782306646::1782306663::1::::<><><>0<>0<>931a46ab4da624d74ec8c44065e40533<>res://.godot/imported/tree.png-15cb16b197553088007c6ba3ce2f75b0.ctex::
 zombie.png::CompressedTexture2D::8794881393312729360::1783516499::1783516700::1::::<><><>0<>0<>73876d962da00dfc06a5709a95386a46<>res://.godot/imported/zombie.png-03bc310f484585a7d5dc9d93798216f9.ctex::
 zombiewalk.png::CompressedTexture2D::8953989613762122921::1783516499::1783516700::1::::<><><>0<>0<>e88bb455981631dadf71563ab9b4e150<>res://.godot/imported/zombiewalk.png-292f647b9a45c4a0b11cae6d6990811e.ctex::
-::res://assets/spritesheets/::1783519014
+::res://assets/spritesheets/::1783519046
 gunsheet1.png::CompressedTexture2D::8874537087579673534::1783516499::1783516700::1::::<><><>0<>0<>187f0fa5c6339415ed1ad19824d44cdb<>res://.godot/imported/gunsheet1.png-4ea32ce257f0dcc5707ad5c9d1b1dd34.ctex::
 iconsheet1.png::CompressedTexture2D::6885711215258257985::1783516499::1783516700::1::::<><><>0<>0<>23a99c46e6ecd3133f56ece36ac6cb55<>res://.godot/imported/iconsheet1.png-b7bdffca6e720e2728588e963589bb4b.ctex::
 itemsheet1.png::CompressedTexture2D::619259484907512233::1783516499::1783516700::1::::<><><>0<>0<>2f18680eeecc98a4a1bfe771f316eb9d<>res://.godot/imported/itemsheet1.png-79ccb10f0bad7162088022555d0a6410.ctex::
@@ -29,9 +29,9 @@ spawnobjects.png::CompressedTexture2D::2767811101316217074::1783516499::17835167
 terraintiles.png::CompressedTexture2D::5692938900839357358::1783516499::1783516700::1::::<><><>0<>0<>3ea5699ba9e6bb65c4afcb6c672467c8<>res://.godot/imported/terraintiles.png-df50dda460acd14a4711c7e50b6ae07e.ctex::
 ::res://scenes/::1782578292
 ::res://scenes/animals/::1783519014
-::res://scenes/animals/animal_spawner/::1783519014
-animal_spawned.gd::GDScript::3105180461653014701::1783519014::0::1::::<>Node2D<><>0<>0<><>::
-animal_spawned.tscn::PackedScene::3654410923778468906::1783519014::0::1::::<><><>0<>0<><>::uid://bkif4sa0c46w4::::res://scenes/animals/animal_spawner/animal_spawned.gd<>uid://cgrc50281q6fj::::res://scenes/animals/chiken/chiken.tscn<>uid://bbsinlr2myoij::::res://scenes/animals/hog/hog.tscn
+::res://scenes/animals/animal_spawner/::1783519861
+animal_spawned.gd::GDScript::3105180461653014701::1783519861::0::1::::<>Node2D<><>0<>0<><>::
+animal_spawned.tscn::PackedScene::3654410923778468906::1783519539::0::1::::<><><>0<>0<><>::uid://bkif4sa0c46w4::::res://scenes/animals/animal_spawner/animal_spawned.gd<>uid://cgrc50281q6fj::::res://scenes/animals/chiken/chiken.tscn<>uid://bbsinlr2myoij::::res://scenes/animals/hog/hog.tscn
 ::res://scenes/animals/chiken/::1783519014
 chiken.gd::GDScript::2612715280560139846::1783519014::0::1::::<>CharacterBody2D<><>0<>0<><>::
 chiken.tscn::PackedScene::5229245215164343855::1783519014::0::1::::<><><>0<>0<><>::uid://bdhvbla3curu1::::res://scenes/animals/chiken/chiken.gd<>uid://vituxj3vk6hu::::res://assets/sprites/chiken.png
@@ -39,9 +39,9 @@ chiken.tscn::PackedScene::5229245215164343855::1783519014::0::1::::<><><>0<>0<><
 ::res://scenes/animals/hog/::1783519014
 hog.gd::GDScript::1068556038430079417::1783519014::0::1::::<>CharacterBody2D<><>0<>0<><>::
 hog.tscn::PackedScene::2494277883429383665::1783519014::0::1::::<><><>0<>0<><>::uid://phu7x47w45m8::::res://scenes/animals/hog/hog.gd<>uid://dhtusrd3t6o3b::::res://assets/sprites/hog.png
-::res://scenes/level/::1783519014
+::res://scenes/level/::1783519861
 border_gen.gd::GDScript::7803037660115026983::1783519014::0::1::::<>TileMapLayer<><>0<>0<><>::
-level.tscn::PackedScene::8575440581694956823::1783519014::0::1::::<><><>0<>0<><>::uid://d0dgljwwl463n::::res://scripts/level.gd<>uid://cffjduipbb3s5::::res://scenes/level/player.tscn<>uid://cndx4v8bs78fa::::res://assets/tilesheets/terraintiles.png<>uid://csr7r2f8r48b0::::res://tile_map.gd<>uid://1p1ftsastub6::::res://scenes/level/props/tree.tscn<>uid://b4gd3h0uuyvbd::::res://scenes/level/props/shrub.tscn<>uid://bx7mq8t8hjn7q::::res://scenes/ui/main_menu_ui.tscn<>uid://c1b3xyvsy4l7k::::res://scenes/level/props/sharp_slab.tscn<>uid://cxlnlmoqk6re6::::res://scenes/level/props/dead_bush.tscn<>uid://bmv7f8oas0w56::::res://scenes/level/props/berry_bush.tscn<>uid://xwkgvj4ako5j::::res://scenes/level/props/gold_node.tscn<>uid://bc1h4ng36idar::::res://scenes/level/props/iron_node.tscn<>uid://disp8wck7d2oj::::res://scenes/level/props/copper_node.tscn<>uid://d2ndcyb74kux8::::res://scenes/level/props/large_stone.tscn<>uid://dqack1nbr5tvu::::res://scenes/level/props/small_stones.tscn<>uid://vrmb0ykhu6wj::::res://scenes/level/props/tree_branch.tscn<>uid://bd48u8ah6bxa7::::res://scenes/level/props/clay_pile.tscn<>uid://dgtwwx33trboo::::res://scenes/level/props/tall_grass.tscn<>uid://bwwcckh63wplv::::res://scenes/level/props/ferns.tscn<>uid://c77quiys2ynum::::res://scenes/level/props/red_shrooms.tscn<>uid://bkkihfrvyn00o::::res://scenes/level/props/yellow_shroom.tscn<>uid://cys14ybr1pviq::::res://assets/tilesheets/selectiontile.png<>uid://tvpl3s2sblof::::res://scripts/selection_map_layer.gd<>uid://k2uh0vpuuk0b::::res://assets/tilesheets/border_tiles.png<>uid://djf35jdmoaxud::::res://scenes/level/border_gen.gd<>uid://cgrc50281q6fj::::res://scenes/animals/chiken/chiken.tscn<>uid://bbsinlr2myoij::::res://scenes/animals/hog/hog.tscn
+level.tscn::PackedScene::8575440581694956823::1783519861::0::1::::<><><>0<>0<><>::uid://d0dgljwwl463n::::res://scripts/level.gd<>uid://cffjduipbb3s5::::res://scenes/level/player.tscn<>uid://cndx4v8bs78fa::::res://assets/tilesheets/terraintiles.png<>uid://csr7r2f8r48b0::::res://tile_map.gd<>uid://1p1ftsastub6::::res://scenes/level/props/tree.tscn<>uid://b4gd3h0uuyvbd::::res://scenes/level/props/shrub.tscn<>uid://bx7mq8t8hjn7q::::res://scenes/ui/main_menu_ui.tscn<>uid://c1b3xyvsy4l7k::::res://scenes/level/props/sharp_slab.tscn<>uid://cxlnlmoqk6re6::::res://scenes/level/props/dead_bush.tscn<>uid://bmv7f8oas0w56::::res://scenes/level/props/berry_bush.tscn<>uid://xwkgvj4ako5j::::res://scenes/level/props/gold_node.tscn<>uid://bc1h4ng36idar::::res://scenes/level/props/iron_node.tscn<>uid://disp8wck7d2oj::::res://scenes/level/props/copper_node.tscn<>uid://d2ndcyb74kux8::::res://scenes/level/props/large_stone.tscn<>uid://dqack1nbr5tvu::::res://scenes/level/props/small_stones.tscn<>uid://vrmb0ykhu6wj::::res://scenes/level/props/tree_branch.tscn<>uid://bd48u8ah6bxa7::::res://scenes/level/props/clay_pile.tscn<>uid://dgtwwx33trboo::::res://scenes/level/props/tall_grass.tscn<>uid://bwwcckh63wplv::::res://scenes/level/props/ferns.tscn<>uid://c77quiys2ynum::::res://scenes/level/props/red_shrooms.tscn<>uid://bkkihfrvyn00o::::res://scenes/level/props/yellow_shroom.tscn<>uid://cys14ybr1pviq::::res://assets/tilesheets/selectiontile.png<>uid://tvpl3s2sblof::::res://scripts/selection_map_layer.gd<>uid://k2uh0vpuuk0b::::res://assets/tilesheets/border_tiles.png<>uid://djf35jdmoaxud::::res://scenes/level/border_gen.gd<>uid://cgrc50281q6fj::::res://scenes/animals/chiken/chiken.tscn<>uid://bschu41uk2afi::::res://scenes/animals/animal_spawner/animal_spawned.tscn<>uid://bbsinlr2myoij::::res://scenes/animals/hog/hog.tscn
 player.tscn::PackedScene::5134660348171653994::1783519014::0::1::::<><><>0<>0<><>::uid://c2si8gkbnde0c::::res://scripts/player.gd<>uid://dypxgovhsop3l::::res://assets/sprites/starterplayerwalk.png<>uid://b50ow623it0eq::::res://assets/sprites/idle.png<>uid://cwt0vfbhggv5n::::res://scripts/camera_2d.gd<>uid://ccencq0lcd3ph::::res://scenes/ui/multiplayer_chat_ui.tscn<>uid://bclq8vh1x2goy::::res://scenes/ui/inventory_ui.tscn<>uid://cb26c63vrtmmv::::res://scenes/ui/StatsUI.tscn<>uid://cjrvgag6yqopa::::res://scenes/ui/interact_menu.tscn
 ::res://scenes/level/props/::1783516499
 berry_bush.tscn::PackedScene::3273992367845675995::1783516499::0::1::::<><><>0<>0<><>::uid://cp07dndx6bkt5::::res://scripts/propScripts/berry_bush.gd<>uid://bfo0pd16dxfaw::::res://assets/tilesheets/spawnobjects.png

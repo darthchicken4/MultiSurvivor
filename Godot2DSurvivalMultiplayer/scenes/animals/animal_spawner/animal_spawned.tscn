@@ -4,7 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="2_fe5vo"]
 [ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="3_20jlv"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fe5vo"]
+properties/0/path = NodePath(".:animal_ammount")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:animal")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="AnimalSpawner" type="Node2D" unique_id=1586108228]
 script = ExtResource("1_rfw6o")
 chiken = ExtResource("2_fe5vo")
 hog = ExtResource("3_20jlv")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1112327833]
+replication_config = SubResource("SceneReplicationConfig_fe5vo")
