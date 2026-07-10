@@ -3,6 +3,7 @@ class_name Character
 
 const NORMAL_SPEED = 100.0
 const SPRINT_SPEED = 200.0
+const exast_SPEED = 50.0
 
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
@@ -23,6 +24,7 @@ var _respawn_point = Vector2(0, 0)
 var chat_visible = false
 var inventory_visible = false
 
+var can_sprint_again = false
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
@@ -92,14 +94,7 @@ func _physics_process(_delta):
 func _process(_delta):
 	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
-	if is_running():
-		# Drain stamina toward 0
-		stamina_value = lerp(stamina_value, 0.0, 2.0 * _delta)
-	else:
-		# Recover stamina toward max
-		stamina_value = lerp(stamina_value, stamina_timer, 2.0 * _delta)
-
-	stamina_value= clamp(stamina_value, 0.0, stamina_timer)
+	update_stamina(_delta)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -114,7 +109,7 @@ func _move() -> void:
 			"move_forward", "move_backward"
 			)
 
-	is_running()
+
 
 	if _input_direction != Vector2.ZERO:
 		velocity = _input_direction.normalized() * _current_speed
@@ -213,13 +208,24 @@ func toggle_chat():
 
 
 
-func is_running() -> bool:
+func is_running(delta: float) -> bool:
 	if Input.is_action_pressed("shift") and stamina_value > 0:
 		_current_speed = SPRINT_SPEED
 		return true
 	else:
 		_current_speed = NORMAL_SPEED
 		return false
+
+
+func update_stamina(delta: float) -> void:
+	if is_running(delta):
+		# Drain stamina toward 0
+		stamina_value = lerp(stamina_value, 0.0, 2.0 * delta)
+	else:
+		# Recover stamina toward max
+		stamina_value = lerp(stamina_value, stamina_timer, 2.0 * delta)
+
+	stamina_value = clamp(stamina_value, 0.0, stamina_timer)
 
 func _check_bounds_and_respawn():
 	if global_position.y > 2000.0:
