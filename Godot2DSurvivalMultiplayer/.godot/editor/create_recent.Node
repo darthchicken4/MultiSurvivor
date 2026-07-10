@@ -1,9 +1,6 @@
 TextureRect
 HBoxContainer
 Panel
-PointLight2D
-LightOccluder2D
-WorldEnvironment
 Label
 Sprite2D
 AnimatedSprite2D

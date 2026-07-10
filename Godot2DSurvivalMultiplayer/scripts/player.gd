@@ -14,7 +14,6 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
 
-@onready var light = $PointLight2D
 
 var player_inventory: PlayerInventory
 
@@ -43,8 +42,6 @@ func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
 	
 func _ready():
-	if light:
-		light.visible = is_multiplayer_authority()
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
 
