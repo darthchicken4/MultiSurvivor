@@ -51,9 +51,6 @@ properties/1/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499102670]
 script = ExtResource("1_ncyl7")
-speed = null
-wander_dir = null
-wander_timer = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161358289]
 position = Vector2(0, 12)

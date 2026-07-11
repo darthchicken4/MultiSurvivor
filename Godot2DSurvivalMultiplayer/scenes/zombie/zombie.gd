@@ -43,10 +43,10 @@ func _process(delta: float) -> void:
 		var direction = (player.global_position - global_position).normalized()
 		position += direction * speed * delta
 	if player == null:
-		wander()
+		wander(delta)
 
 
-func wander():
+func wander(delta):
 	var vec_dir = Vector2i(randi_range(0,10),randi_range(0,10))
 	var direction = (player.global_position - global_position).normalized()
 	position += direction * speed * delta
