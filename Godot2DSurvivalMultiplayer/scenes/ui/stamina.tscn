@@ -30,3 +30,4 @@ text = "stamina"
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1791841561]
 layout_mode = 2
+max_value = 10.0

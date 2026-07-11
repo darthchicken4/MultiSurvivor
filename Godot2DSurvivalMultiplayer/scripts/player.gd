@@ -2,9 +2,8 @@ extends CharacterBody2D
 class_name Character
 
 const NORMAL_SPEED = 100.0
-const SPRINT_SPEED = 200.0
-const exast_SPEED = 50.0
-
+const SPRINT_SPEED = 150.0
+const EXHAUST_SPEED = 70.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @onready var nickname: Label = $PlayerNick/Nickname
@@ -208,25 +207,27 @@ func toggle_chat():
 
 
 
-func is_running(delta: float) -> bool:
-	if Input.is_action_pressed("shift") and stamina_value > 0:
+func is_running(_delta: float) -> bool:
+	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
 		return true
 	else:
-		_current_speed = NORMAL_SPEED
+		_current_speed = NORMAL_SPEED if can_sprint_again else EXHAUST_SPEED
 		return false
-
 
 func update_stamina(delta: float) -> void:
 	if is_running(delta):
-		# Drain stamina toward 0
-		stamina_value = lerp(stamina_value, 0.0, 2.0 * delta)
+		stamina_value -= 2.0 * delta
+		if stamina_value <= 0.0:
+			stamina_value = 0.0
+			can_sprint_again = false
 	else:
-		# Recover stamina toward max
-		stamina_value = lerp(stamina_value, stamina_timer, 2.0 * delta)
+		stamina_value += 2.0 * delta
+		if stamina_value >= stamina_timer:
+			stamina_value = stamina_timer
+			can_sprint_again = true
 
 	stamina_value = clamp(stamina_value, 0.0, stamina_timer)
-
 func _check_bounds_and_respawn():
 	if global_position.y > 2000.0:
 		_respawn()
