@@ -9,6 +9,10 @@ radius = 9.95
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlave"]
 size = Vector2(43, 33)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncyl7"]
+atlas = ExtResource("1_nlave")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6mvc3"]
 atlas = ExtResource("1_nlave")
 region = Rect2(32, 0, 32, 32)
@@ -25,6 +29,14 @@ region = Rect2(0, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ncyl7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6mvc3")
 }, {
 "duration": 1.0,
@@ -34,7 +46,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rovuw")
 }],
 "loop": true,
-"name": &"default",
+"name": &"run",
 "speed": 3.0
 }]
 
@@ -48,6 +60,12 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath("detect_area:monitoring")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:frame")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499102670]
 script = ExtResource("1_ncyl7")
@@ -67,7 +85,7 @@ debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
 position = Vector2(0, 1)
 scale = Vector2(1.845, 1.845)
 sprite_frames = SubResource("SpriteFrames_d2kyw")
-frame_progress = 0.5439438
+animation = &"idle"
 
 [node name="detect_area" type="Area2D" parent="." unique_id=954599079]
 

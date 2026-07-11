@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/yellow_shroom.tscn" id="19_hfr1v"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scenes/level/selection_map_layer.gd" id="22_cqqhe"]
-[ext_resource type="PackedScene" uid="uid://csbtsca3owywu" path="res://scenes/prefabs/rock_temple.tscn" id="23_yoh1m"]
 [ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/zombie/zombie.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
@@ -108,9 +107,6 @@ position = Vector2(178, 192)
 
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
-
-[node name="RockTemple" parent="Map" unique_id=1968115241 instance=ExtResource("23_yoh1m")]
-position = Vector2(100, 50)
 
 [node name="MainMenuUI" parent="." unique_id=175506846 instance=ExtResource("6_x9g3h")]
 visible = false
