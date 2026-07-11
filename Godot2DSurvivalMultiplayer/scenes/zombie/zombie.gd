@@ -16,9 +16,9 @@ extends CharacterBody2D
 var player: Node2D = null
 var player_priority = 0
 var player_pos = Vector2(0,0)
-
-
-
+var is_thinking = false
+var think_timer = 3.0
+var wander_direction = Vector2(0,0)
 func  _ready() -> void:
 	pass
 
@@ -46,7 +46,27 @@ func _process(delta: float) -> void:
 		wander(delta)
 
 
-func wander(delta):
-	var vec_dir = Vector2i(randi_range(0,10),randi_range(0,10))
-	var direction = (player.global_position - global_position).normalized()
-	position += direction * speed * delta
+func wander(delta: float) -> void:
+	if is_thinking:
+		think_timer -= delta
+
+		if think_timer <= 0:
+			wander_direction = Vector2(
+				randf_range(-1.0, 1.0),
+				randf_range(-1.0, 1.0)
+			).normalized()
+
+			wander_timer = randf_range(1.0, 3.0)
+			is_thinking = false
+
+		return
+
+	# Moving
+	position += wander_direction * speed * delta
+
+	wander_timer -= delta
+
+	if wander_timer <= 0:
+		is_thinking = true
+		think_timer = randf_range(0.5, 2.0)
+		
