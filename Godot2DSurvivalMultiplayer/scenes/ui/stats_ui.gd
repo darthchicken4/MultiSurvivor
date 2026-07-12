@@ -10,6 +10,8 @@ class_name PlayerStatsUI
 @export var max_hunger := 100.0
 @export var max_stamina := 100.0
 
+@export var player: CharacterBody2D
+
 var health := 100.0
 var hunger := 100.0
 var stamina := 100.0
@@ -32,13 +34,13 @@ func _process(delta):
 			health_bar.value,
 			damage_lerp_speed * delta
 		)
-
+	stamina_bar.value = player.stamina_value * 10
 func update_bars(force := false):
 	health_bar.max_value = max_health
 	damage_indicator.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
-
+	
 	health_bar.value = health
 	hunger_bar.value = hunger
 	stamina_bar.value = stamina
