@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://mo7o1dmqq8hg"]
 
 [ext_resource type="Script" uid="uid://p16665fisxk8" path="res://scenes/level/props/spiked_floor.gd" id="1_vmgah"]
+[ext_resource type="Texture2D" uid="uid://idrt5ddydyh7" path="res://assets/tilesheets/spikes.png" id="2_uk2lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk2lt"]
 
 [node name="SpikedFloor" type="Node2D" unique_id=10139130]
+scale = Vector2(2, 2)
 script = ExtResource("1_vmgah")
+damage = 4.865
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=115279828]
+texture = ExtResource("2_uk2lt")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1388792496]
 

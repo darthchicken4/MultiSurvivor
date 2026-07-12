@@ -39,6 +39,8 @@ func _process(delta):
 		)
 	update_bars(true)
 func update_bars(force := false):
+	health = player.health
+	print(player.health,'fart',health)
 	stamina = player.stamina_value  * 10
 	health_bar.max_value = max_health
 	damage_indicator.max_value = max_health
