@@ -31,9 +31,6 @@ var tile_terrain: Dictionary = {}
 @export var fern_scene: PackedScene
 @export var redmushrooms_scene: PackedScene
 @export var yellowmushrooms_scene: PackedScene
-#prefabs
-@export var stone_temple : PackedScene
-
 
 var tree_container: Node2D
 
