@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/yellow_shroom.tscn" id="19_hfr1v"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilemaps/selectiontile.png" id="21_cqqhe"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scenes/level/selection_map_layer.gd" id="22_cqqhe"]
-[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/zombie/zombie.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -101,9 +100,6 @@ texture_filter = 3
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_yoh1m")
 script = ExtResource("22_cqqhe")
-
-[node name="CharacterBody2D" parent="Map" unique_id=1499102670 instance=ExtResource("27_u5w0m")]
-position = Vector2(178, 192)
 
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
