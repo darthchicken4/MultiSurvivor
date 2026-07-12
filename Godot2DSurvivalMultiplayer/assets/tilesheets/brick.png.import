@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b50ow623it0eq"
-path="res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"
+uid="uid://dorg735tjmtof"
+path="res://.godot/imported/brick.png-d7f97270567dbb91ca0773ab8895d792.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/idle.png"
-dest_files=["res://.godot/imported/idle.png-1800f7c06d5908763d656a0f3f46e8e3.ctex"]
+source_file="res://assets/tilemaps/brick.png"
+dest_files=["res://.godot/imported/brick.png-d7f97270567dbb91ca0773ab8895d792.ctex"]
 
 [params]
 

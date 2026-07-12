@@ -1,0 +1,17 @@
+[gd_scene format=4 uid="uid://csbtsca3owywu"]
+
+[ext_resource type="Texture2D" uid="uid://dorg735tjmtof" path="res://assets/tilemaps/brick.png" id="1_8f8g4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8f8g4"]
+texture = ExtResource("1_8f8g4")
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nq5qh"]
+sources/0 = SubResource("TileSetAtlasSource_8f8g4")
+
+[node name="RockTemple" type="Node2D" unique_id=1968115241]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1598293272]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD+//3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_nq5qh")

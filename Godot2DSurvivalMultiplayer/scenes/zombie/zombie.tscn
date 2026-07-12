@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bahabkjx151cw"]
+
+[ext_resource type="Script" uid="uid://bgy2l7e0qpt2n" path="res://scenes/zombie/zombie.gd" id="1_ncyl7"]
+[ext_resource type="Texture2D" uid="uid://cm54ouy3j62ae" path="res://assets/sprites/ent/starterzombiewalk.png" id="1_nlave"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mvc3"]
+radius = 9.95
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlave"]
+size = Vector2(43, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncyl7"]
+atlas = ExtResource("1_nlave")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mvc3"]
+atlas = ExtResource("1_nlave")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1l86"]
+atlas = ExtResource("1_nlave")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rovuw"]
+atlas = ExtResource("1_nlave")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2kyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncyl7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mvc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1l86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rovuw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ncyl7"]
+radius = 133.00375
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ncyl7"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("detect_area:monitoring")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:frame")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499102670]
+script = ExtResource("1_ncyl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161358289]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_6mvc3")
+
+[node name="damage_area" type="Area2D" parent="." unique_id=1386042921]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_area" unique_id=1296146217]
+position = Vector2(1.5, -10)
+shape = SubResource("RectangleShape2D_nlave")
+debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1766827081]
+position = Vector2(0, 1)
+scale = Vector2(1.845, 1.845)
+sprite_frames = SubResource("SpriteFrames_d2kyw")
+animation = &"idle"
+
+[node name="detect_area" type="Area2D" parent="." unique_id=954599079]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="detect_area" unique_id=435340683]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ncyl7")
+debug_color = Color(0.78431374, 0.3137255, 0.75686276, 0.2)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1960907273]
+replication_config = SubResource("SceneReplicationConfig_ncyl7")
+
+[connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]
