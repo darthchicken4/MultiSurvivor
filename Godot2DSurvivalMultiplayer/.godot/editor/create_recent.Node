@@ -1,8 +1,10 @@
+Area2D
+CollisionShape2D
+Sprite2D
 TextureRect
 HBoxContainer
 Panel
 Label
-Sprite2D
 AnimatedSprite2D
 ColorRect
 VBoxContainer
@@ -10,5 +12,3 @@ ScrollContainer
 Button
 MarginContainer
 Control
-OptionButton
-ProgressBar

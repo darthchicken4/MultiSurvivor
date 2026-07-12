@@ -14,6 +14,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
 
+@export var health = 20.0
 @export var stamina_value = 10.0
 @export var stamina_timer = 10.0 #sec
 

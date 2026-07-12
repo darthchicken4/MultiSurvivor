@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
-[ext_resource type="PackedScene" uid="uid://1kjf12nsmp2g" path="res://scenes/ui/stamina.tscn" id="8_pnmcy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -31,6 +30,9 @@ properties/3/replication_mode = 1
 properties/4/path = NodePath("AnimatedSprite2D:animation")
 properties/4/spawn = true
 properties/4/replication_mode = 1
+properties/5/path = NodePath(".:health")
+properties/5/spawn = true
+properties/5/replication_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f33sr"]
 atlas = ExtResource("2_7h6ip")
@@ -121,9 +123,6 @@ offset_left = 5.0
 offset_top = -47.0
 offset_right = 5.0
 offset_bottom = -47.0
-player = NodePath("../..")
-
-[node name="Stamina" parent="CanvasLayer" unique_id=1142653716 node_paths=PackedStringArray("player") instance=ExtResource("8_pnmcy")]
 player = NodePath("../..")
 
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]

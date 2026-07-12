@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://mo7o1dmqq8hg"]
+
+[ext_resource type="Script" uid="uid://p16665fisxk8" path="res://scenes/level/props/spiked_floor.gd" id="1_vmgah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk2lt"]
+
+[node name="SpikedFloor" type="Node2D" unique_id=10139130]
+script = ExtResource("1_vmgah")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=115279828]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1388792496]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1053749020]
+shape = SubResource("RectangleShape2D_uk2lt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
