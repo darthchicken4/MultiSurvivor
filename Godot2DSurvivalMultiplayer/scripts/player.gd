@@ -14,9 +14,15 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
 
-@export var health = 20.0
 @export var stamina_value = 10.0
 @export var stamina_timer = 10.0 #sec
+
+@export var health = 20.0
+@export var max_health = 20.0
+
+@export var hunger_value = 20.0
+@export var hunger_time = 1.2 #time to hunger go down
+@export var hunger_max = 50.0
 
 var player_inventory: PlayerInventory
 
@@ -98,6 +104,7 @@ func _process(_delta):
 	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
 	update_stamina(_delta)
+	update_saturation(_delta)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -256,6 +263,12 @@ func update_stamina(delta: float) -> void:
 			can_sprint_again = true
 
 	stamina_value = clamp(stamina_value, 0.0, stamina_timer)
+
+func update_saturation(_delta):
+	hunger_value -= hunger_time * _delta
+	if hunger_value < 0.0:
+		hunger_value = 0.0
+		health -= 1.2 * _delta
 func _check_bounds_and_respawn():
 	if global_position.y > 2000.0:
 		_respawn()
