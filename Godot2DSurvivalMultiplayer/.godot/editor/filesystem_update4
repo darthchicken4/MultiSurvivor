@@ -1,6 +1,0 @@
-res://scripts/level.gd
-res://scripts/autoloads/network.gd
-res://scenes/level/level.tscn
-res://scripts/item.gd
-res://scripts/autoloads/item_database.gd
-res://scripts/player.gd
