@@ -13,6 +13,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
+@onready var respawnUI = $CanvasLayer/RespawnUi
+
 
 @export var stamina_value = 10.0
 @export var stamina_timer = 10.0 #sec
@@ -239,7 +241,8 @@ func toggle_chat():
 	chat.toggle_chat()
 	chat_visible = chat.is_chat_visible()
 #runn
-
+func show_respawn_ui():
+	pass
 
 
 func is_running(_delta: float) -> bool:

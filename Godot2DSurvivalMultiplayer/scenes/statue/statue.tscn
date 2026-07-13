@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://busoi8emfk0q0"]
+
+[ext_resource type="Script" uid="uid://4l8dchiqqxt4" path="res://scenes/statue/statue.gd" id="1_lu4y2"]
+[ext_resource type="Texture2D" uid="uid://cmglpdlavia8h" path="res://assets/sprites/statue.png" id="1_xnrpm"]
+[ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="3_qxoj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnrpm"]
+size = Vector2(15, 3.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lu4y2"]
+font = ExtResource("3_qxoj2")
+font_size = 8
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4y2"]
+size = Vector2(30.5, 5.25)
+
+[node name="respawn_statue" type="Node2D" unique_id=1374369680]
+scale = Vector2(2, 2)
+script = ExtResource("1_lu4y2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1201245771]
+texture = ExtResource("1_xnrpm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1228553189]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=613462390]
+position = Vector2(0.5, 14.25)
+shape = SubResource("RectangleShape2D_xnrpm")
+
+[node name="Label" type="Label" parent="." unique_id=99306139]
+texture_filter = 3
+texture_repeat = 1
+offset_left = -51.5
+offset_top = -26.0
+offset_right = 53.5
+offset_bottom = -3.0
+text = "E :sacrafice 15 hp and 200 gold"
+label_settings = SubResource("LabelSettings_lu4y2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=249081061]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=141940211]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_lu4y2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1719311556]
+position = Vector2(0, 19.375)
+shape = SubResource("RectangleShape2D_lu4y2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
