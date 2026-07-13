@@ -1,3 +1,5 @@
+AudioStreamPlayer2D
+Node2D
 ColorRect
 TextureRect
 Button
@@ -11,4 +13,3 @@ StaticBody2D
 Sprite2D
 HBoxContainer
 AnimatedSprite2D
-ScrollContainer

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 class_name Character
 
-const NORMAL_SPEED = 100.0
-const SPRINT_SPEED = 150.0
-const EXHAUST_SPEED = 70.0
+const NORMAL_SPEED : float = 100.0
+const SPRINT_SPEED : float  = 150.0
+const EXHAUST_SPEED : float  = 70.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @onready var nickname: Label = $PlayerNick/Nickname
@@ -14,26 +14,27 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
 @onready var respawnUI = $CanvasLayer/RespawnUi
+@onready var foot_steps = $audio/foot_steps
 
+@export var stamina_value : float = 10.0
+@export var stamina_timer : float = 10.0 #sec
+@export var stamina_tick_rate : float = 0.3
 
-@export var stamina_value = 10.0
-@export var stamina_timer = 10.0 #sec
+@export var health : float= 20.0
+@export var max_health : float = 20.0
 
-@export var health = 20.0
-@export var max_health = 20.0
-
-@export var hunger_value = 20.0
-@export var hunger_time = 1.2 #time to hunger go down
-@export var hunger_max = 50.0
+@export var hunger_value : float= 20.0
+@export var hunger_tick : float= 0.3 #time to hunger go down
+@export var hunger_max : float = 50.0
 
 var player_inventory: PlayerInventory
 
-var _current_speed: float
-var _respawn_point = Vector2(0, 0)
-var chat_visible = false
-var inventory_visible = false
+var _current_speed : float
+var _respawn_point :Vector2 = Vector2(0, 0)
+var chat_visible :bool = false
+var inventory_visible :bool = false
 
-var can_sprint_again = false
+var can_sprint_again :bool = false
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
@@ -54,6 +55,11 @@ func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
 	
 func _ready():
+	update_stamina()
+	update_saturation()
+	if not is_multiplayer_authority(): return
+	
+	
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
 
@@ -76,8 +82,11 @@ func _ready():
 	if chat:
 		chat.message_sent.connect(_on_chat_message_sent)
 func _physics_process(_delta):
-	if not is_multiplayer_authority(): return
-
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is CharacterBody2D:
+			var push_dir = (global_position - collision.get_collider().global_position).normalized()
+			global_position += push_dir * 1.0
 	var current_scene = get_tree().get_current_scene()
 	if current_scene:
 		var should_freeze = false
@@ -92,21 +101,11 @@ func _physics_process(_delta):
 
 	_move()
 	move_and_slide()
-	
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		if collision.get_collider() is CharacterBody2D:
-			var push_dir = (global_position - collision.get_collider().global_position).normalized()
-			global_position += push_dir * 1.0
-			
-	_animate()
-	
-
-func _process(_delta):
-	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
-	update_stamina(_delta)
-	update_saturation(_delta)
+func _process(_delta):
+	_animate()
+
+
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -133,12 +132,18 @@ func _move() -> void:
 func _animate() -> void:
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
-		# flip horizontally based on movement direction
+
+		if not foot_steps.playing:
+			foot_steps.play()
+
 		if velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0
 	else:
 		_sprite.play("idle")
-# Debug functions for testing inventory system
+
+		if foot_steps.playing:
+			foot_steps.stop()
+
 func _debug_add_item():
 	var local_player = player
 	if local_player:
@@ -245,7 +250,7 @@ func show_respawn_ui():
 	pass
 
 
-func is_running(_delta: float) -> bool:
+func is_running() -> bool:
 	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
 		return true
@@ -253,25 +258,30 @@ func is_running(_delta: float) -> bool:
 		_current_speed = NORMAL_SPEED if can_sprint_again else EXHAUST_SPEED
 		return false
 
-func update_stamina(delta: float) -> void:
-	if is_running(delta):
-		stamina_value -= 2.0 * delta
-		if stamina_value <= 0.0:
-			stamina_value = 0.0
-			can_sprint_again = false
-	else:
-		stamina_value += 2.0 * delta
-		if stamina_value >= stamina_timer:
-			stamina_value = stamina_timer
-			can_sprint_again = true
+func update_stamina() -> void:
+	while true:
+		await Utils.wait(0.01)
+		if is_running():
+			stamina_value -= stamina_tick_rate / 10
+			if stamina_value <= 0.0:
+				stamina_value = 0.0
+				can_sprint_again = false
+		else:
+			stamina_value += stamina_tick_rate / 10
+			if stamina_value >= stamina_timer:
+				stamina_value = stamina_timer
+				can_sprint_again = true
+		stamina_value = clamp(stamina_value, 0.0, stamina_timer)
 
-	stamina_value = clamp(stamina_value, 0.0, stamina_timer)
+func update_saturation() -> void:
+	while true:
+		await Utils.wait(1.0)
+		hunger_value -= hunger_tick
+		if hunger_value < 0.0:
+			hunger_value = 0.0
+			health -= 1.2
 
-func update_saturation(_delta):
-	hunger_value -= hunger_time * _delta
-	if hunger_value < 0.0:
-		hunger_value = 0.0
-		health -= 1.2 * _delta
+
 func _check_bounds_and_respawn():
 	if global_position.y > 10000.0:
 		_respawn()

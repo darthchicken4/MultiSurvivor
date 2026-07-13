@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
+[ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="11_d2uvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -78,7 +79,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=1738487347]
 script = ExtResource("1_tdh26")
-hunger_time = 0.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
 position = Vector2(0, 14)
@@ -140,3 +140,8 @@ offset_left = -595.0
 offset_top = -263.0
 offset_right = -595.0
 offset_bottom = -263.0
+
+[node name="audio" type="Node2D" parent="." unique_id=2101094527]
+
+[node name="foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=1952119913]
+stream = ExtResource("11_d2uvk")

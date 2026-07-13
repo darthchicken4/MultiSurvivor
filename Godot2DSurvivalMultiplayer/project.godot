@@ -28,6 +28,7 @@ ItemDatabase="*res://scripts/autoloads/item_database.gd"
 GameManager="*uid://cm5e77sbqldvs"
 CraftingDatabase="*uid://b0657bk0imu8n"
 SpriteSheetLoader="*uid://cbrrjw8eul01q"
+Utils="*uid://oqr3nl0y2q44"
 
 [display]
 
@@ -35,6 +36,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [input]
 
@@ -93,6 +95,11 @@ interact={
 
 3d_physics/layer_1="player"
 3d_physics/layer_2="world"
+
+[physics]
+
+2d/run_on_separate_thread=true
+common/physics_interpolation=true
 
 [rendering]
 
