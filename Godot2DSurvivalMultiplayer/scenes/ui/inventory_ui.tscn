@@ -10,9 +10,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_h7x4v")
 
 [node name="Panel" type="Panel" parent="." unique_id=1096998955]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -103,10 +105,12 @@ fit_content = true
 
 [node name="HotbarPanel" type="Panel" parent="." unique_id=1248992317]
 layout_mode = 0
-offset_left = 495.0
-offset_top = 638.0
-offset_right = 785.0
-offset_bottom = 718.0
+anchor_left = 0.38671875
+anchor_top = 0.88611114
+anchor_right = 0.61328125
+anchor_bottom = 0.99722224
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="HotbarPanel" unique_id=1028365177]
 layout_mode = 1
@@ -115,6 +119,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -122,3 +127,4 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HotbarPanel/MarginContainer" unique_id=1022022842]
 layout_mode = 2
+mouse_filter = 2

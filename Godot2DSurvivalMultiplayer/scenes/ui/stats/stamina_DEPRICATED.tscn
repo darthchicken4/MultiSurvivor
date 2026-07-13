@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://1kjf12nsmp2g"]
+
+[ext_resource type="Script" uid="uid://yd0yae1yfutk" path="res://scenes/ui/stats/stamina.gd" id="1_341b6"]
+
+
+[node name="Stamina" type="Control" unique_id=1142653716]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_341b6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=198348296]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=717332028]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=288569702]
+layout_mode = 2
+text = "stamina"
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1791841561]
+layout_mode = 2
+max_value = 10.0

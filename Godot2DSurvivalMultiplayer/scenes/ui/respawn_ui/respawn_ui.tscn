@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c8eax56hm1bax"]
+
+[ext_resource type="Script" uid="uid://duijmu4dibrbi" path="res://scenes/ui/respawn_ui/respawn_ui.gd" id="1_x3wpy"]
+
+[node name="RespawnUi" type="Control" unique_id=985377646]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3wpy")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=178070913]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 280
+theme_override_constants/margin_top = 47
+theme_override_constants/margin_right = 280
+theme_override_constants/margin_bottom = 180
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1436813313]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel" unique_id=731422183]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 58.0
+grow_horizontal = 2
+
+[node name="title" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=1925763155]
+layout_mode = 2
+text = "sacrafice statue "
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/VBoxContainer" unique_id=1877377943]
+layout_mode = 2
+text = "sacrafice"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=846768855]
+layout_mode = 2

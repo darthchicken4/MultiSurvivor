@@ -6,9 +6,11 @@ class_name PlayerStatsUI
 @onready var hunger_bar: ProgressBar = $Control/Hunger
 @onready var stamina_bar: ProgressBar = $Control/Stamina
 
-@export var max_health := 100.0
+@export var max_health := 20.0
 @export var max_hunger := 100.0
 @export var max_stamina := 100.0
+
+@export var player: CharacterBody2D
 
 var health := 100.0
 var hunger := 100.0
@@ -22,6 +24,9 @@ var _damage_timer := 0.0
 
 func _ready():
 	update_bars(true)
+	if not is_multiplayer_authority():
+		# This isn't "my" player, hide their UI from my screen
+		self.visible = false
 
 func _process(delta):
 	if _damage_timer > 0:
@@ -32,13 +37,16 @@ func _process(delta):
 			health_bar.value,
 			damage_lerp_speed * delta
 		)
-
+	update_bars(true)
 func update_bars(force := false):
+	hunger = player.hunger_value
+	health = player.health
+	stamina = player.stamina_value  * 10
 	health_bar.max_value = max_health
 	damage_indicator.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
-
+	
 	health_bar.value = health
 	hunger_bar.value = hunger
 	stamina_bar.value = stamina

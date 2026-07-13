@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 res://scenes/level/
 res://assets/spritesheets/
 res://scripts/propScripts/
 res://scripts/
+=======
+res://assets/fonts/
+res://scenes/statue/
+res://scenes/ui/
+res://assets/themes/
+res://scripts/propScripts/
+res://scripts/
+res://scenes/level/
+>>>>>>> d64adad382d79e82c4fbbd89da812e119ff64af6
 res://assets/sprites/
 res://

@@ -12,7 +12,7 @@ func _ready() -> void:
 	# Bottom + Top borders
 	for x in range(-1, w + 1):
 		border_map.set_cell(
-			Vector2i(x - offset_x, h - offset_y + 1),
+			Vector2i(x - offset_x, h - offset_y),
 			0,
 			Vector2i(0, 0)
 		)
@@ -26,7 +26,7 @@ func _ready() -> void:
 	# Left + Right borders
 	for y in range(h):
 		border_map.set_cell(
-			Vector2i(w - offset_x + 1, y - offset_y),
+			Vector2i(w - offset_x, y - offset_y),
 			0,
 			Vector2i(0, 0)
 		)

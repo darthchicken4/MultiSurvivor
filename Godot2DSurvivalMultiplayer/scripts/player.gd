@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name Character
 
 const NORMAL_SPEED = 100.0
-const SPRINT_SPEED = 200.0
-
+const SPRINT_SPEED = 150.0
+const EXHAUST_SPEED = 70.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @onready var nickname: Label = $PlayerNick/Nickname
@@ -13,7 +13,18 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
 @onready var stats = $CanvasLayer/StatsUi
+@onready var respawnUI = $CanvasLayer/RespawnUi
 
+
+@export var stamina_value = 10.0
+@export var stamina_timer = 10.0 #sec
+
+@export var health = 20.0
+@export var max_health = 20.0
+
+@export var hunger_value = 20.0
+@export var hunger_time = 1.2 #time to hunger go down
+@export var hunger_max = 50.0
 
 var player_inventory: PlayerInventory
 
@@ -22,6 +33,7 @@ var _respawn_point = Vector2(0, 0)
 var chat_visible = false
 var inventory_visible = false
 
+var can_sprint_again = false
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
@@ -88,10 +100,13 @@ func _physics_process(_delta):
 			global_position += push_dir * 1.0
 			
 	_animate()
+	
 
 func _process(_delta):
 	if not is_multiplayer_authority(): return
 	_check_bounds_and_respawn()
+	update_stamina(_delta)
+	update_saturation(_delta)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -106,7 +121,7 @@ func _move() -> void:
 			"move_forward", "move_backward"
 			)
 
-	is_running()
+
 
 	if _input_direction != Vector2.ZERO:
 		velocity = _input_direction.normalized() * _current_speed
@@ -195,6 +210,7 @@ func _input(event):
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_F2:
 		_debug_print_inventory()
 	elif event is InputEventMouseButton:
+		print(get_viewport().gui_get_hovered_control())
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 
 			# Don't open another menu if one is already open
@@ -224,15 +240,38 @@ func toggle_chat():
 
 	chat.toggle_chat()
 	chat_visible = chat.is_chat_visible()
-	
-func is_running() -> bool:
-	if Input.is_action_pressed("shift"):
+#runn
+func show_respawn_ui():
+	pass
+
+
+func is_running(_delta: float) -> bool:
+	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
 		return true
 	else:
-		_current_speed = NORMAL_SPEED
+		_current_speed = NORMAL_SPEED if can_sprint_again else EXHAUST_SPEED
 		return false
 
+func update_stamina(delta: float) -> void:
+	if is_running(delta):
+		stamina_value -= 2.0 * delta
+		if stamina_value <= 0.0:
+			stamina_value = 0.0
+			can_sprint_again = false
+	else:
+		stamina_value += 2.0 * delta
+		if stamina_value >= stamina_timer:
+			stamina_value = stamina_timer
+			can_sprint_again = true
+
+	stamina_value = clamp(stamina_value, 0.0, stamina_timer)
+
+func update_saturation(_delta):
+	hunger_value -= hunger_time * _delta
+	if hunger_value < 0.0:
+		hunger_value = 0.0
+		health -= 1.2 * _delta
 func _check_bounds_and_respawn():
 	if global_position.y > 10000.0:
 		_respawn()
