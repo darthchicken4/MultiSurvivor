@@ -25,7 +25,6 @@
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="24_cqqhe"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
-[ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="25_yoh1m"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/statue/statue.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
@@ -132,9 +131,6 @@ script = ExtResource("24_yoh1m")
 
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("6_x9g3h")]
 visible = false
-
-[node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("25_yoh1m")]
-position = Vector2(83, -51)
 
 [node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("27_u5w0m")]
 position = Vector2(57, -114)
