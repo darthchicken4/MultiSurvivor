@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://1xnan6b1ttrx"]
+
+[ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="1_dalwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f4bf"]
+atlas = ExtResource("1_dalwq")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_360fu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f4bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1774495734]
+
+[node name="Weapon" type="Node2D" parent="." unique_id=621430649]
+position = Vector2(0, 6)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Weapon" unique_id=690707161]
+rotation = 2.4626596
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_360fu")
