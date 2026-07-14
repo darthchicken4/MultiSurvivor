@@ -1,20 +1,18 @@
-extends Node2D
+extends MultiplayerSpawner
 
 
 @export var chiken: PackedScene 
 @export var hog :PackedScene
 @export var tilemap_index = TileMapLayer
-@onready var multiplayer_spawner = $MultiplayerSpawner
+@onready var multiplayer_spawner = $"."
 @export var animal_ammount  = 20
 
 @export var animal = 0
 func _ready() -> void:
-	spawn()
+	pass
 	
 
-func spawn():
-	pass
-###
+
 	#if not multiplayer_spawner.is_server():
 	#	return
 

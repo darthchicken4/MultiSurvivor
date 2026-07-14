@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var speed: float = 50.0
 @export  var wander_dir = 3
 @export var wander_timer = 4
-@export var health = 30.0
+@export var health = 20.0
 @export var drops = PackedScene
 
 

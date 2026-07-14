@@ -39,6 +39,8 @@ func _process(delta: float) -> void:
 	if player:
 		var direction = (player.global_position - global_position).normalized()
 		position -= direction * speed * delta
+		if health < 50:
+			position -= -direction * speed * delta
 	else:
 		wander(delta)
 

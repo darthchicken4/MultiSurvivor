@@ -1,3 +1,4 @@
+MeshInstance2D
 MultiplayerSpawner
 MultiplayerSynchronizer
 Label
@@ -12,4 +13,3 @@ Control
 MarginContainer
 HBoxContainer
 Panel
-ColorRect

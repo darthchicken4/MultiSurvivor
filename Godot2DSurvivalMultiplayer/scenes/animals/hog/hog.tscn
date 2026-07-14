@@ -16,6 +16,7 @@ properties/0/replication_mode = 1
 
 [node name="hog" type="CharacterBody2D" unique_id=1795996454]
 script = ExtResource("1_d3cwh")
+health = 40.0
 metadata/_custom_type_script = "uid://c2si8gkbnde0c"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=414231049]

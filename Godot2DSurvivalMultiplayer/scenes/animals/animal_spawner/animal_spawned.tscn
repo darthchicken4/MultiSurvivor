@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bschu41uk2afi"]
 
 [ext_resource type="Script" uid="uid://bkif4sa0c46w4" path="res://scenes/animals/animal_spawner/animal_spawned.gd" id="1_rfw6o"]
-[ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="2_fe5vo"]
-[ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="3_20jlv"]
 
-[node name="AnimalSpawner" type="Node2D" unique_id=1586108228]
+[sub_resource type="QuadMesh" id="QuadMesh_rfw6o"]
+
+[node name="animal_spawner" type="MultiplayerSpawner" unique_id=1876205315]
 script = ExtResource("1_rfw6o")
-chiken = ExtResource("2_fe5vo")
-hog = ExtResource("3_20jlv")
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1876205315]
-_spawnable_scenes = PackedStringArray("uid://cgrc50281q6fj", "uid://cgrc50281q6fj")
-spawn_limit = 5
+[node name="AnimalSpawner" type="Node2D" parent="." unique_id=1586108228]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1760088905]
+position = Vector2(3, 2.000001)
+scale = Vector2(46.499996, 30.5)
+mesh = SubResource("QuadMesh_rfw6o")
