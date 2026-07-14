@@ -1,9 +1,10 @@
 extends Node2D
 
-@export var damage = 20.0
+@export var damage : float = 2.0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	body.health = body.health - damage
+	if body.has_method("damage_player"):
+		body.damage_player(damage)
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

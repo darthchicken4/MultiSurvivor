@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bbsinlr2myoij"]
+
+[ext_resource type="Script" uid="uid://phu7x47w45m8" path="res://scenes/animals/hog/hog.gd" id="1_d3cwh"]
+[ext_resource type="Texture2D" uid="uid://dhtusrd3t6o3b" path="res://assets/sprites/hog.png" id="2_ywsm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywsm8"]
+size = Vector2(53, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1fvb3"]
+radius = 65.03076
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ywsm8"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="hog" type="CharacterBody2D" unique_id=1795996454]
+script = ExtResource("1_d3cwh")
+health = 40.0
+metadata/_custom_type_script = "uid://c2si8gkbnde0c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=414231049]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ywsm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=336711386]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ywsm8")
+
+[node name="detect" type="Area2D" parent="." unique_id=653189624]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect" unique_id=1050779207]
+shape = SubResource("CircleShape2D_1fvb3")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=263923210]
+replication_config = SubResource("SceneReplicationConfig_ywsm8")
+
+[connection signal="body_entered" from="detect" to="." method="_on_detect_body_entered"]
+[connection signal="body_exited" from="detect" to="." method="_on_detect_body_exited"]

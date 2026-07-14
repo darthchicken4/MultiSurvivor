@@ -25,7 +25,12 @@
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="24_cqqhe"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="27_fhw5o"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/statue/statue.tscn" id="27_u5w0m"]
+[ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="28_fhw5o"]
+[ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="25_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="27_fhw5o"]
+[ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="27_u5w0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -110,6 +115,12 @@ fern_scene = ExtResource("17_mf35j")
 redmushrooms_scene = ExtResource("18_t51ir")
 yellowmushrooms_scene = ExtResource("19_hfr1v")
 
+[node name="Chiken" parent="Map" unique_id=166180109 instance=ExtResource("25_yoh1m")]
+position = Vector2(47, -6)
+
+[node name="hog" parent="Map" unique_id=1795996454 instance=ExtResource("27_u5w0m")]
+position = Vector2(-75, 82)
+
 [node name="SelectionMapLayer" type="TileMapLayer" parent="Map" unique_id=1377960773]
 modulate = Color(1, 1, 1, 0.22745098)
 y_sort_enabled = true
@@ -127,6 +138,9 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_fhw5o")
 script = ExtResource("24_yoh1m")
 
+[node name="AnimalSpawner" parent="Map" unique_id=1586108228 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("27_fhw5o")]
+tilemap_index = NodePath("../TileMapLayer")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("6_x9g3h")]
@@ -134,3 +148,9 @@ visible = false
 
 [node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("27_u5w0m")]
 position = Vector2(57, -114)
+
+[node name="CharacterBody2D" parent="." unique_id=1499102670 instance=ExtResource("27_fhw5o")]
+position = Vector2(196, -57)
+
+[node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("28_fhw5o")]
+position = Vector2(3, -37)

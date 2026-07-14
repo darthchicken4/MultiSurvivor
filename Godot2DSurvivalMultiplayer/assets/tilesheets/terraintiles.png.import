@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cndx4v8bs78fa"
-path="res://.godot/imported/terraintiles.png-df50dda460acd14a4711c7e50b6ae07e.ctex"
+path.s3tc="res://.godot/imported/terraintiles.png-df50dda460acd14a4711c7e50b6ae07e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/tilesheets/terraintiles.png"
-dest_files=["res://.godot/imported/terraintiles.png-df50dda460acd14a4711c7e50b6ae07e.ctex"]
+dest_files=["res://.godot/imported/terraintiles.png-df50dda460acd14a4711c7e50b6ae07e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

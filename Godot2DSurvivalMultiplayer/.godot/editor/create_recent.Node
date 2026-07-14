@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 HBoxContainer
+=======
+<<<<<<< HEAD
+AudioStreamPlayer2D
+Node2D
+>>>>>>> d662cecfe9077ee8d5c6fdfb6a7095613f24679c
 ColorRect
 TextureRect
 Button
@@ -11,4 +17,20 @@ Area2D
 StaticBody2D
 Sprite2D
 AnimatedSprite2D
-ScrollContainer
+=======
+MeshInstance2D
+MultiplayerSpawner
+MultiplayerSynchronizer
+Label
+CollisionShape2D
+Area2D
+Sprite2D
+Character
+CharacterBody2D
+TextureRect
+ProgressBar
+Control
+MarginContainer
+HBoxContainer
+Panel
+>>>>>>> animals_spawn
