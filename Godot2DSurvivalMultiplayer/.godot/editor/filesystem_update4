@@ -1,12 +1,5 @@
+res://scenes/animals/animal_spawner/animal_spawned.tscn
+res://scenes/animals/animal_spawner/animal_spawned.gd
 res://scenes/ui/crafting_ui/crafting_ui.tscn
-res://scripts/craftingrecipe.gd
-res://scripts/autoloads/crafting_database.gd
-res://scenes/ui/crafting_ui/crafting_ui.gd
-res://sprite_sheet_loader.gd
-res://scripts/autoloads/item_database.gd
-res://tile_map.gd
-res://scenes/level/props/spiked_floor.gd
-res://scenes/ui/multplayer.gd
-res://scripts/player.gd
-res://scripts/autoloads/network.gd
-res://scripts/propScripts/tree.gd
+res://scenes/level/main_level/level.tscn
+res://scenes/animals/hog/hog.tscn

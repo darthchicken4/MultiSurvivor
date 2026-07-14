@@ -8,9 +8,15 @@ extends MultiplayerSpawner
 @export var animal_ammount  = 20
 
 @export var animal = 0
+
 func _ready() -> void:
-	pass
-	
+	spawn_function = _spawn_animal
+	spawn(hog.resource_path)
+	spawn(hog.resource_path)
+
+func _spawn_animal(scene_path: String) -> Node:
+	var scene: PackedScene = load(scene_path)
+	return scene.instantiate()
 
 
 	#if not multiplayer_spawner.is_server():
