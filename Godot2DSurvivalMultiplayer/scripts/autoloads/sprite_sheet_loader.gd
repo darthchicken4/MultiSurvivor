@@ -1,7 +1,7 @@
 # SpritesheetLoader.gd
 extends Node
 
-const TILE_SIZE := 16
+const TILE_SIZE :int= 16
 
 var sheets := {
 	"items1": preload("res://assets/spritesheets/itemsheet1.png"),

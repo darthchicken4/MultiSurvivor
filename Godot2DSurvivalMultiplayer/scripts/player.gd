@@ -6,12 +6,15 @@ const SPRINT_SPEED : float  = 150.0
 const EXHAUST_SPEED : float  = 70.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
+
+
 @onready var nickname: Label = $PlayerNick/Nickname
 @onready var _sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
 @onready var inventory: InventoryUI = $CanvasLayer/InventoryUI
 @onready var interactMenu: Control = $InteractMenu
 @onready var chat: MultiplayerChatUI = $CanvasLayer/MultiplayerChatUI
+@onready var pause_menu : Control = $CanvasLayer/PauseMenu
 @onready var stats = $CanvasLayer/StatsUi
 @onready var respawnUI = $CanvasLayer/RespawnUi
 @onready var foot_steps = $audio/foot_steps
@@ -103,6 +106,7 @@ func _physics_process(_delta):
 	_move()
 	move_and_slide()
 	_check_bounds_and_respawn()
+	pause_menu_show()
 func _process(_delta):
 	_animate()
 
@@ -290,8 +294,12 @@ func update_health()-> void:
 func damage_player(amount): 
 	if amount < 1.0:
 		health = health - amount * damage_reduction
-		health.emit(health)
 
+
+
+func pause_menu_show():
+	if Input.is_action_just_pressed("quit"):
+		pause_menu.visible = !pause_menu.visible
 
 func _check_bounds_and_respawn():
 	if global_position.y > 10000.0:

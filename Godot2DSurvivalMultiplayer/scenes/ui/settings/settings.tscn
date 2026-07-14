@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://b6r0y8c7gut00"]
+
+[ext_resource type="Script" uid="uid://d1bllwoae2grq" path="res://scenes/ui/settings/settings.gd" id="1_1m5ku"]
+[ext_resource type="Script" uid="uid://kqinl7hbic0x" path="res://scenes/ui/settings/close_settings.gd" id="2_347px"]
+
+[node name="Settings" type="Control" unique_id=1066357830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1m5ku")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=498871783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=1214886597]
+layout_mode = 2
+current_tab = 1
+
+[node name="general" type="TabBar" parent="MarginContainer/TabContainer" unique_id=18082719]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/general" unique_id=1114891152]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="camera_smoothing" type="CheckButton" parent="MarginContainer/TabContainer/general/MarginContainer" unique_id=1568214252]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "camera smoothing"
+
+[node name="video" type="TabBar" parent="MarginContainer/TabContainer" unique_id=634969346]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/video" unique_id=145484290]
+layout_mode = 1
+offset_right = 125.0
+offset_bottom = 31.0
+theme_override_constants/margin_left = 41
+theme_override_constants/margin_top = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/video/MarginContainer" unique_id=65894579]
+layout_mode = 2
+
+[node name="vsync" type="CheckButton" parent="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer" unique_id=974211332]
+layout_mode = 2
+text = "vsync"
+
+[node name="fullscreen" type="OptionButton" parent="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer" unique_id=1513525257]
+layout_mode = 2
+selected = 1
+item_count = 3
+popup/item_0/text = "fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "windowed"
+popup/item_1/id = 1
+popup/item_2/text = "borderless"
+popup/item_2/id = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer" unique_id=247989946]
+layout_mode = 2
+text = "Fps:0"
+
+[node name="resolutions" type="OptionButton" parent="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer" unique_id=2102319579]
+layout_mode = 2
+selected = 3
+item_count = 6
+popup/item_0/text = "300x 50"
+popup/item_0/id = 0
+popup/item_1/text = "200 x400"
+popup/item_1/id = 1
+popup/item_2/text = "2000 x 300"
+popup/item_2/id = 2
+popup/item_3/text = "1920 x 1080"
+popup/item_3/id = 3
+popup/item_4/text = "fuck you res"
+popup/item_4/id = 4
+popup/item_5/text = "200 x 200"
+popup/item_5/id = 5
+
+[node name="client" type="TabBar" parent="MarginContainer/TabContainer" unique_id=430175485]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="server" type="TabBar" parent="MarginContainer/TabContainer" unique_id=2099657871]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/server" unique_id=433020669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/server/MarginContainer" unique_id=1186305751]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer" unique_id=973998218]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2125649113]
+layout_mode = 2
+text = "physics tick rate "
+
+[node name="physics_tick rate" type="OptionButton" parent="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1558045142]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+selected = 0
+item_count = 4
+popup/item_0/text = "60 "
+popup/item_0/id = 0
+popup/item_1/text = "30 "
+popup/item_1/id = 1
+popup/item_2/text = "15"
+popup/item_2/id = 2
+popup/item_3/text = "3"
+popup/item_3/id = 3
+
+[node name="physics interpolate" type="CheckBox" parent="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer" unique_id=1737636098]
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+button_pressed = true
+text = "physics interpolate "
+
+[node name="close_settings" type="Button" parent="MarginContainer" unique_id=375411345]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "close settings"
+script = ExtResource("2_347px")
+
+[connection signal="toggled" from="MarginContainer/TabContainer/general/MarginContainer/camera_smoothing" to="." method="_on_camera_smoothing_toggled"]
+[connection signal="toggled" from="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer/vsync" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer/fullscreen" to="." method="_on_option_button_item_selected"]
+[connection signal="text_submitted" from="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/video/MarginContainer/VBoxContainer/resolutions" to="." method="_on_resolutions_item_selected"]
+[connection signal="item_selected" from="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer/HBoxContainer/physics_tick rate" to="." method="_on_physics_tick_rate_item_selected"]
+[connection signal="toggled" from="MarginContainer/TabContainer/server/MarginContainer/VBoxContainer/physics interpolate" to="." method="_on_physics_interpolate_toggled"]
+[connection signal="pressed" from="MarginContainer/close_settings" to="." method="_on_close_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/close_settings" to="MarginContainer/close_settings" method="_on_pressed"]

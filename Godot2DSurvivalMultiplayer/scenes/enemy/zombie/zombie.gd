@@ -11,10 +11,10 @@ extends CharacterBody2D
 
 
 var player: Node2D = null
-var player_priority = 0
-var player_pos = Vector2(0,0)
-var is_thinking = false
-var think_timer = 3.0
+var player_priority : int= 0
+var player_pos : Vector2= Vector2(0,0)
+var is_thinking : bool= false
+var think_timer : float= 3.0
 var wander_direction = Vector2(0,0)
 
 
@@ -38,7 +38,7 @@ func _on_detect_area_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if not is_multiplayer_authority():
 		update_animation()
 		return

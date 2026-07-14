@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://20qdhe08y7sp"]
+
+[ext_resource type="Script" uid="uid://vhj280ajgv1n" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_kgchh"]
+[ext_resource type="PackedScene" uid="uid://b6r0y8c7gut00" path="res://scenes/ui/settings/settings.tscn" id="2_rbnsh"]
+
+[node name="PauseMenu" type="Control" unique_id=709786106 node_paths=PackedStringArray("setting")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kgchh")
+setting = NodePath("Settings")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1777652177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=991189102]
+layout_mode = 2
+color = Color(0, 0, 0, 0.09411765)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1892732550]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="back to game" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1132483731]
+layout_mode = 2
+text = "back to game"
+
+[node name="settings" type="Button" parent="MarginContainer/VBoxContainer" unique_id=212235835]
+layout_mode = 2
+text = "settings"
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1525436725]
+layout_mode = 2
+text = "quit to main menu"
+
+[node name="Settings" parent="." unique_id=1066357830 instance=ExtResource("2_rbnsh")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/back to game" to="." method="_on_back_to_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
