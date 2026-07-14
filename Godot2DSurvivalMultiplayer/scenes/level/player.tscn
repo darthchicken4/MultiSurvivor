@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
+[ext_resource type="PackedScene" uid="uid://bckfo7cexiek" path="res://scenes/ui/crafting_ui/crafting_ui.tscn" id="10_d2uvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -133,6 +134,8 @@ player = NodePath("../..")
 
 [node name="RespawnUi" parent="CanvasLayer" unique_id=985377646 instance=ExtResource("9_rtsbg")]
 visible = false
+
+[node name="CraftingUi" parent="CanvasLayer" unique_id=988690133 instance=ExtResource("10_d2uvk")]
 
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false

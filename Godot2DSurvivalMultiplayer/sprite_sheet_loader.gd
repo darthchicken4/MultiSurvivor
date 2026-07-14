@@ -7,7 +7,8 @@ var sheets := {
 	"items1": preload("res://assets/spritesheets/itemsheet1.png"),
 	"guns1": preload("res://assets/spritesheets/gunsheet1.png"),
 	"tools1": preload("res://assets/spritesheets/toolsheet1.png"),
-	"placeables1": preload("res://assets/spritesheets/placeablesheet1.png")
+	"placeables1": preload("res://assets/spritesheets/placeablesheet1.png"),
+	"icons2:": preload("res://assets/spritesheets/iconsheet2.png")
 }
 var texture_cache := {}
 
@@ -21,10 +22,9 @@ func register_sheet(id: String, path: String) -> void:
 
 func get_texture(sheet_id: String, col: int, row: int, tile_size: int = TILE_SIZE) -> AtlasTexture:
 	var cache_key = "%s:%s:%s:%s" % [sheet_id, col, row, tile_size]
-
 	if texture_cache.has(cache_key):
 		return texture_cache[cache_key]
-	print(sheets)
+
 	if !sheets.has(sheet_id):
 		push_error("Spritesheet '%s' not found" % sheet_id)
 		return null
@@ -39,6 +39,7 @@ func get_texture(sheet_id: String, col: int, row: int, tile_size: int = TILE_SIZ
 	)
 
 	texture_cache[cache_key] = tex
+	
 	return tex
 
 

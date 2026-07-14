@@ -4,10 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/tree.png" id="2_hjb8q"]
 [ext_resource type="Texture2D" uid="uid://b4cmvm6tatqtu" path="res://assets/sprites/crafting table.png" id="3_js6hb"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="4_ym6gd"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dtldf"]
-width = 16
-height = 16
+[ext_resource type="Texture2D" uid="uid://i28d353w3cr6" path="res://assets/spritesheets/itemsheet1.png" id="5_d5bnp"]
+[ext_resource type="Script" uid="uid://owrlfqck35rb" path="res://scenes/ui/crafting_ui/item_needed_display.gd" id="5_d7lbo"]
 
 [node name="CraftingUi" type="Control" unique_id=988690133]
 layout_mode = 3
@@ -161,6 +159,14 @@ offset_bottom = 136.0
 theme_override_font_sizes/font_size = 11
 text = "materials:"
 
+[node name="crafting_station" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer" unique_id=542469491]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 75.0
+offset_right = 43.0
+offset_bottom = 115.0
+texture = ExtResource("3_js6hb")
+
 [node name="item_selected_sprite" type="Sprite2D" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer" unique_id=409766476]
 position = Vector2(17, -19)
 scale = Vector2(2.26, 2.26)
@@ -171,20 +177,24 @@ frame = 1
 
 [node name="material_list" type="HBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer" unique_id=1738784261]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 59.0
 offset_top = 125.0
-offset_right = 255.0
+offset_right = 99.0
 offset_bottom = 165.0
 theme_override_constants/separation = 40
 
 [node name="materialtemplate" type="Panel" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer/material_list" unique_id=2123462027]
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("5_d7lbo")
 
 [node name="items" type="Sprite2D" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer/material_list/materialtemplate" unique_id=198705359]
-position = Vector2(22, 20)
+position = Vector2(21, 27)
 scale = Vector2(1.87, 1.87)
-texture = SubResource("NoiseTexture2D_dtldf")
+texture = ExtResource("5_d5bnp")
+hframes = 6
+vframes = 4
+frame = 19
 
 [node name="amount" type="Label" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer/material_list/materialtemplate/items" unique_id=525652298]
 anchors_preset = -1
@@ -192,10 +202,10 @@ anchor_left = -1.9652404
 anchor_top = -0.68750006
 anchor_right = -1.9652404
 anchor_bottom = -0.68750006
-offset_left = 35.187164
-offset_top = 11.000002
-offset_right = 75.187164
-offset_bottom = 34.000004
+offset_left = 38.395718
+offset_top = 8.860965
+offset_right = 78.39572
+offset_bottom = 31.860966
 theme_override_font_sizes/font_size = 8
 text = "1"
 metadata/_edit_use_anchors_ = true
@@ -204,24 +214,10 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_left = -1.3302135
 anchor_right = -1.3302135
-offset_left = 10.588234
-offset_top = -13.368982
-offset_right = 50.588234
-offset_bottom = 9.631018
+offset_left = 10.053474
+offset_top = -17.112307
+offset_right = 50.053474
+offset_bottom = 5.8876934
 theme_override_font_sizes/font_size = 6
 text = "leaf"
 metadata/_edit_use_anchors_ = true
-
-[node name="craftingtable_list" type="HBoxContainer" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer" unique_id=1864414250]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 74.0
-offset_right = 255.0
-offset_bottom = 114.0
-theme_override_constants/separation = 16
-
-[node name="craftingstationtemplate" type="TextureRect" parent="MarginContainer/MarginContainer/HSplitContainer/item_requierment/recipename/maincontainer/craftingtable_list" unique_id=542469491]
-layout_mode = 2
-texture = ExtResource("3_js6hb")
-expand_mode = 2
-stretch_mode = 4

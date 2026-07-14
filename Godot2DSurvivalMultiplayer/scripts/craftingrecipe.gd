@@ -4,6 +4,7 @@ extends Resource
 
 @export var id: String = ""
 @export var name: String = ""
+@export var description: String = ""
 @export var icon: Texture2D
 
 
@@ -12,25 +13,9 @@ extends Resource
 
 
 @export var ingredients: Dictionary = {}
-
+@export var craftingtag = ""
 
 @export var crafting_time: float = 0.0
-
-enum CraftingStationType {
-	HAND,
-	CAMPFIRE,
-	FURNACE,
-	FORGE,
-	WORKBENCH_1,
-	WORKBENCH_2,
-	WORKBENCH_3,
-	SLAB_ANVIL,
-	HAMMERING_SURFACE,
-	IRON_ANVIL,
-	MIXING_TABLE,
-	ALCHEMY_BENCH,
-	SAWING_TABLE,
-}
 
 @export var craftableStations = []
 
@@ -39,7 +24,7 @@ enum CraftingStationType {
 # Helper Functions
 # -------------------------
 
-func can_craft_at(station: CraftingStationType) -> bool:
+func can_craft_at(station: String) -> bool:
 	# If no stations are required, can craft anywhere
 	if craftableStations.is_empty():
 		return true
