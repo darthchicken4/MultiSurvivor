@@ -4,3 +4,9 @@ res://scripts/autoloads/crafting_database.gd
 res://scenes/ui/crafting_ui/crafting_ui.gd
 res://sprite_sheet_loader.gd
 res://scripts/autoloads/item_database.gd
+res://tile_map.gd
+res://scenes/level/props/spiked_floor.gd
+res://scenes/ui/multplayer.gd
+res://scripts/player.gd
+res://scripts/autoloads/network.gd
+res://scripts/propScripts/tree.gd

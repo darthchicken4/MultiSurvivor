@@ -29,7 +29,7 @@ func dprint(msg):
  
  
 func _process(_delta):
-	if Input.is_action_just_pressed("quit"):
+	if Input.is_action_just_pressed("network_quit"):
 		dprint("Quit pressed -> exiting game")
 		_teardown_upnp()
 		get_tree().quit(0)

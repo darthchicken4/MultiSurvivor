@@ -67,7 +67,7 @@ properties/3/path = NodePath("AnimatedSprite2D:frame")
 properties/3/spawn = true
 properties/3/replication_mode = 1
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499102670]
+[node name="zombie" type="CharacterBody2D" unique_id=1499102670]
 script = ExtResource("1_ncyl7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161358289]

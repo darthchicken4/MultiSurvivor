@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
-<<<<<<< HEAD
+
 [ext_resource type="PackedScene" uid="uid://bckfo7cexiek" path="res://scenes/ui/crafting_ui/crafting_ui.tscn" id="10_d2uvk"]
-=======
+
+[ext_resource type="PackedScene" uid="uid://20qdhe08y7sp" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="10_nk0bp"]
+
 [ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="11_d2uvk"]
->>>>>>> d662cecfe9077ee8d5c6fdfb6a7095613f24679c
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -83,21 +85,13 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" unique_id=1738487347 groups=["player"]]
 script = ExtResource("1_tdh26")
-stamina_value = null
-stamina_timer = null
-stamina_tick_rate = null
-health = null
-max_health = null
-damage_reduction = null
-hunger_value = null
-hunger_tick = null
-hunger_max = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
 position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_7h6ip")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=700549692]
+position_smoothing_speed = 76.9
 script = ExtResource("2_f33sr")
 
 [node name="PlayerNick" type="Node2D" parent="." unique_id=1571172741]
@@ -148,6 +142,8 @@ player = NodePath("../..")
 visible = false
 
 [node name="CraftingUi" parent="CanvasLayer" unique_id=988690133 instance=ExtResource("10_d2uvk")]
+[node name="PauseMenu" parent="CanvasLayer" unique_id=709786106 instance=ExtResource("10_nk0bp")]
+visible = false
 
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false

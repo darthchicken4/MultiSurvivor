@@ -1,6 +1,6 @@
 extends Button
 
-var start_game = preload("res://scenes/level/level.tscn")
+var start_game = preload("res://scenes/level/main_level/level.tscn")
 
 
 
