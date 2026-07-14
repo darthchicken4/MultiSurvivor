@@ -77,8 +77,17 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1738487347]
+[node name="Player" type="CharacterBody2D" unique_id=1738487347 groups=["player"]]
 script = ExtResource("1_tdh26")
+stamina_value = null
+stamina_timer = null
+stamina_tick_rate = null
+health = null
+max_health = null
+damage_reduction = null
+hunger_value = null
+hunger_tick = null
+hunger_max = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
 position = Vector2(0, 14)

@@ -22,6 +22,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @export var health : float= 20.0
 @export var max_health : float = 20.0
+@export var damage_reduction : float = 0.0
 
 @export var hunger_value : float= 20.0
 @export var hunger_tick : float= 0.3 #time to hunger go down
@@ -280,6 +281,16 @@ func update_saturation() -> void:
 		if hunger_value < 0.0:
 			hunger_value = 0.0
 			health -= 1.2
+
+func update_health()-> void:
+	while true:
+		await Utils.wait(0.01)
+
+
+func damage_player(amount): 
+	if amount < 1.0:
+		health = health - amount * damage_reduction
+		health.emit(health)
 
 
 func _check_bounds_and_respawn():

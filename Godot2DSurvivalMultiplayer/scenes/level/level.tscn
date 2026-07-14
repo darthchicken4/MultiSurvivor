@@ -25,7 +25,9 @@
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_cqqhe"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="24_cqqhe"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/border_gen.gd" id="24_yoh1m"]
+[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="27_fhw5o"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/statue/statue.tscn" id="27_u5w0m"]
+[ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="28_fhw5o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_wcngd")
@@ -134,3 +136,9 @@ visible = false
 
 [node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("27_u5w0m")]
 position = Vector2(57, -114)
+
+[node name="CharacterBody2D" parent="." unique_id=1499102670 instance=ExtResource("27_fhw5o")]
+position = Vector2(196, -57)
+
+[node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("28_fhw5o")]
+position = Vector2(3, -37)
