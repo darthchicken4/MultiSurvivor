@@ -22,7 +22,7 @@ var think_timer := 0.0
 
 
 func  _ready() -> void:
-	pass
+	set_multiplayer_authority(1)
 
 
 func _on_detect_body_entered(body: Node2D) -> void:

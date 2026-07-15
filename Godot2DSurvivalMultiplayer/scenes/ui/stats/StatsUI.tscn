@@ -75,7 +75,8 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_8knpq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_05eww")
-value = 70.0
+max_value = 10.0
+value = 10.0
 rounded = true
 show_percentage = false
 
@@ -106,7 +107,8 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_lymms")
 theme_override_styles/fill = SubResource("StyleBoxFlat_oiuge")
-value = 70.0
+max_value = 20.0
+value = 20.0
 rounded = true
 show_percentage = false
 
@@ -136,7 +138,7 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_g0xps")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mtpfn")
-value = 70.0
+max_value = 20.0
 rounded = true
 show_percentage = false
 
@@ -150,7 +152,7 @@ scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = SubResource("AtlasTexture_wvan6")
 
-[node name="DamageIndicator" type="ProgressBar" parent="Control" unique_id=2033534065]
+[node name="Damage_lerp_bar" type="ProgressBar" parent="Control" unique_id=2033534065]
 z_index = -2
 layout_mode = 1
 anchors_preset = 7
@@ -167,6 +169,6 @@ grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxEmpty_sq71o")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dsacm")
-value = 90.0
+value = 72.0
 rounded = true
 show_percentage = false

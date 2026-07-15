@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbsinlr2myoij"]
 
 [ext_resource type="Script" uid="uid://phu7x47w45m8" path="res://scenes/animals/hog/hog.gd" id="1_d3cwh"]
-[ext_resource type="Texture2D" uid="uid://dhtusrd3t6o3b" path="res://assets/sprites/hog.png" id="2_ywsm8"]
+[ext_resource type="Texture2D" uid="uid://dhtusrd3t6o3b" path="res://assets/sprites/animals/hog.png" id="2_ywsm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywsm8"]
 size = Vector2(53, 31)

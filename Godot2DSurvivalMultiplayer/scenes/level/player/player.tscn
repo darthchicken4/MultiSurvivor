@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c2si8gkbnde0c" path="res://scripts/player.gd" id="1_tdh26"]
 [ext_resource type="Texture2D" uid="uid://dypxgovhsop3l" path="res://assets/sprites/starterplayerwalk.png" id="2_7h6ip"]
-[ext_resource type="Texture2D" uid="uid://b50ow623it0eq" path="res://assets/sprites/idle.png" id="2_eaoru"]
 [ext_resource type="Script" uid="uid://cwt0vfbhggv5n" path="res://scripts/camera_2d.gd" id="2_f33sr"]
 [ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="3_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
@@ -10,19 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
-
 [ext_resource type="PackedScene" uid="uid://bckfo7cexiek" path="res://scenes/ui/crafting_ui/crafting_ui.tscn" id="10_d2uvk"]
-
 [ext_resource type="PackedScene" uid="uid://20qdhe08y7sp" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="10_nk0bp"]
-
 [ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="11_d2uvk"]
-
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pe35h"]
 font = ExtResource("3_pnmcy")
-font_size = 13
+font_size = 26
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
@@ -46,6 +41,10 @@ properties/5/path = NodePath(".:health")
 properties/5/spawn = true
 properties/5/replication_mode = 1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk0bp"]
+atlas = ExtResource("2_7h6ip")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_f33sr"]
 atlas = ExtResource("2_7h6ip")
 region = Rect2(32, 0, 32, 32)
@@ -62,7 +61,7 @@ region = Rect2(0, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_eaoru")
+"texture": SubResource("AtlasTexture_nk0bp")
 }],
 "loop": true,
 "name": &"idle",
@@ -98,10 +97,11 @@ script = ExtResource("2_f33sr")
 position = Vector2(0, -21)
 
 [node name="Nickname" type="Label" parent="PlayerNick" unique_id=430057764]
-offset_left = -24.0
-offset_top = -19.0
-offset_right = 25.0
-offset_bottom = 30.0
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 51.0
+offset_bottom = 44.0
+scale = Vector2(0.5, 0.5)
 text = "player
 "
 label_settings = SubResource("LabelSettings_pe35h")
@@ -115,8 +115,7 @@ replication_config = SubResource("SceneReplicationConfig_wb3a5")
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
-animation = &"walk"
-frame_progress = 0.43145117
+animation = &"idle"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 
@@ -142,6 +141,7 @@ player = NodePath("../..")
 visible = false
 
 [node name="CraftingUi" parent="CanvasLayer" unique_id=988690133 instance=ExtResource("10_d2uvk")]
+
 [node name="PauseMenu" parent="CanvasLayer" unique_id=709786106 instance=ExtResource("10_nk0bp")]
 visible = false
 

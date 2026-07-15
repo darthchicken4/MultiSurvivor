@@ -5,6 +5,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_rfw6o"]
 
 [node name="animal_spawner" type="MultiplayerSpawner" unique_id=1876205315]
+spawn_path = NodePath(".")
 script = ExtResource("1_rfw6o")
 
 [node name="AnimalSpawner" type="Node2D" parent="." unique_id=1586108228]

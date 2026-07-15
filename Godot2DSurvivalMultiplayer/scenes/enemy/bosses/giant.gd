@@ -8,7 +8,9 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
+@export var wander_speed = 50.0
 
+@export var chase_speed = 80.0
 
 var player: Node2D = null
 var player_priority : int= 0
@@ -23,8 +25,7 @@ func  _ready() -> void:
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	Utils.wait(2)
-	pass
+	pass # Replace with function body.
 
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
@@ -45,14 +46,14 @@ func _physics_process(delta: float) -> void:
 		return
 	if player:
 		var direction = (player.global_position - global_position).normalized()
-		velocity = direction * speed
+		velocity = direction * chase_speed
 		global_position += velocity * delta
 	else:
 		velocity = Vector2.ZERO
 		wander(delta)
 
 	if velocity.length() > 0.1:
-		anim.play("run")
+		anim.play("walk")
 	else:
 		anim.play("idle")
 	if velocity.x != 0:
@@ -74,7 +75,7 @@ func wander(delta: float) -> void:
 
 		return
 	# Moving
-	velocity = wander_direction * speed
+	velocity = wander_direction * wander_speed
 	global_position += velocity * delta
 	wander_timer -= delta
 
@@ -85,6 +86,6 @@ func wander(delta: float) -> void:
 		
 func update_animation() -> void:
 	if velocity.length() > 0.1:
-		anim.play("run")
-	else:
-		anim.play("idle")
+		anim.play("walk")
+	#else:
+		#anim.play("idle")

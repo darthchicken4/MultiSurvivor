@@ -1,23 +1,18 @@
 extends MultiplayerSpawner
 
-
 @export var chiken: PackedScene 
-@export var hog :PackedScene
-@export var tilemap_index = TileMapLayer
-@onready var multiplayer_spawner = $"."
-@export var animal_ammount  = 20
-
+@export var hog: PackedScene
+@export var tilemap_index: TileMapLayer
+@export var animal_ammount = 20
 @export var animal = 0
 
-func _ready() -> void:
-	spawn_function = _spawn_animal
+func _ready() -> void:     
 	spawn(hog.resource_path)
-	spawn(hog.resource_path)
+
 
 func _spawn_animal(scene_path: String) -> Node:
 	var scene: PackedScene = load(scene_path)
 	return scene.instantiate()
-
 
 	#if not multiplayer_spawner.is_server():
 	#	return

@@ -10,6 +10,9 @@ func _ready() -> void:
 		await Utils.wait(0.03)
 		if setting.visible == false:
 			menu.show()
+	if not is_multiplayer_authority():
+		# This isn't "my" player, hide their UI from my screen
+		self.visible = false
 
 func _on_back_to_game_pressed() -> void:
 	self.visible = false

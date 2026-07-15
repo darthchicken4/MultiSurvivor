@@ -2,17 +2,17 @@ extends Control
 class_name PlayerStatsUI
 
 @onready var health_bar: ProgressBar = $Control/Health
-@onready var damage_indicator: ProgressBar = $Control/DamageIndicator
+@onready var damage_indicator: ProgressBar = $Control/Damage_lerp_bar
 @onready var hunger_bar: ProgressBar = $Control/Hunger
 @onready var stamina_bar: ProgressBar = $Control/Stamina
 
 @export var max_health := 20.0
-@export var max_hunger := 100.0
-@export var max_stamina := 100.0
+@export var max_hunger := 20.0
+@export var max_stamina := 10.0
 
 @export var player: CharacterBody2D
 
-var health := 100.0
+var health := 20.0
 var hunger := 100.0
 var stamina := 100.0
 
@@ -39,17 +39,15 @@ func _process(delta):
 		)
 	update_bars(true)
 func update_bars(force := false):
-	hunger = player.hunger_value
-	health = player.health
-	stamina = player.stamina_value  * 10
+
 	health_bar.max_value = max_health
 	damage_indicator.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
 	
-	health_bar.value = health
-	hunger_bar.value = hunger
-	stamina_bar.value = stamina
+	health_bar.value = player.health
+	hunger_bar.value = player.hunger_value
+	stamina_bar.value = player.stamina_value
 
 	if force:
 		damage_indicator.value = health

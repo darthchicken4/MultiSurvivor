@@ -22,7 +22,7 @@ grow_vertical = 2
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=1214886597]
 layout_mode = 2
-current_tab = 1
+current_tab = 2
 
 [node name="general" type="TabBar" parent="MarginContainer/TabContainer" unique_id=18082719]
 visible = false
@@ -44,6 +44,7 @@ size_flags_vertical = 0
 text = "camera smoothing"
 
 [node name="video" type="TabBar" parent="MarginContainer/TabContainer" unique_id=634969346]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -94,7 +95,6 @@ popup/item_5/text = "200 x 200"
 popup/item_5/id = 5
 
 [node name="client" type="TabBar" parent="MarginContainer/TabContainer" unique_id=430175485]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

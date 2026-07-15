@@ -23,8 +23,7 @@ func  _ready() -> void:
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	Utils.wait(2)
-	pass
+	pass # Replace with function body.
 
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
@@ -46,7 +45,7 @@ func _physics_process(delta: float) -> void:
 	if player:
 		var direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
-		global_position += velocity * delta
+		global_position -= velocity * delta
 	else:
 		velocity = Vector2.ZERO
 		wander(delta)
@@ -88,3 +87,11 @@ func update_animation() -> void:
 		anim.play("run")
 	else:
 		anim.play("idle")
+
+
+func _on_detect_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_detect_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

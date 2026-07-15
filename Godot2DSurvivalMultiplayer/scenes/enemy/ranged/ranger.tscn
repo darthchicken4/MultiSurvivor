@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ccuu80e2ljvq5"]
+
+[ext_resource type="Script" uid="uid://x3eu66l54nmy" path="res://scenes/enemy/ranged/ranger.gd" id="1_kb80e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajvrj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1835q"]
+radius = 110.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kb80e"]
+
+[node name="Ranger" type="CharacterBody2D" unique_id=58468175]
+script = ExtResource("1_kb80e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039224451]
+shape = SubResource("CircleShape2D_ajvrj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2059052049]
+
+[node name="detect_area" type="Area2D" parent="." unique_id=1038037104]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area" unique_id=1678732807]
+shape = SubResource("CircleShape2D_1835q")
+debug_color = Color(0.7388112, 0.43412632, 0.47492707, 0.41960785)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=394639989]
+position = Vector2(0, 1)
+scale = Vector2(29.5, 26.5)
+mesh = SubResource("QuadMesh_kb80e")
+
+[connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]

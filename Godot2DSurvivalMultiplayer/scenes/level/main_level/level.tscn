@@ -23,13 +23,14 @@
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="21_0y1en"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_jdltj"]
 [ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="23_6sct8"]
-[ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="24_lvb4c"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="26_qj7ud"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/world_border/border_gen.gd" id="27_sri58"]
 [ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="28_uoiqr"]
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="28_xpe6n"]
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="29_gmhj2"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
+[ext_resource type="PackedScene" uid="uid://bxhjxxjafyufa" path="res://scenes/enemy/bosses/Giant.tscn" id="31_iutpc"]
+[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_voa3t")
@@ -126,6 +127,10 @@ script = ExtResource("22_jdltj")
 y_sort_enabled = true
 position = Vector2(12, 6)
 
+[node name="animal_spawner" parent="Map/SortContainer" unique_id=1876205315 instance=ExtResource("28_uoiqr")]
+spawn_path = NodePath(".")
+hog = ExtResource("23_6sct8")
+
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2
 scale = Vector2(2, 2)
@@ -143,8 +148,8 @@ position = Vector2(3, -37)
 [node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("30_0cqhs")]
 position = Vector2(103, -99)
 
-[node name="animal_spawner" parent="." unique_id=1876205315 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("28_uoiqr")]
-spawn_path = NodePath("../Map/SortContainer")
-chiken = ExtResource("24_lvb4c")
-hog = ExtResource("23_6sct8")
-tilemap_index = NodePath("../Map/TileMapLayer")
+[node name="Giant" parent="." unique_id=2140278742 instance=ExtResource("31_iutpc")]
+position = Vector2(172, -32)
+
+[node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
+position = Vector2(-166, -192)

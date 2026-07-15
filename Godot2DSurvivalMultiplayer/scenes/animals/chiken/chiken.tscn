@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgrc50281q6fj"]
 
 [ext_resource type="Script" uid="uid://bdhvbla3curu1" path="res://scenes/animals/chiken/chiken.gd" id="1_c46ms"]
-[ext_resource type="Texture2D" uid="uid://vituxj3vk6hu" path="res://assets/sprites/chiken.png" id="2_lr2vm"]
+[ext_resource type="Texture2D" uid="uid://vituxj3vk6hu" path="res://assets/sprites/animals/chiken.png" id="2_lr2vm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfwvt"]
 

@@ -34,6 +34,7 @@ Utils="*uid://oqr3nl0y2q44"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
 window/vsync/vsync_mode=0
 

@@ -9,7 +9,7 @@ size = Vector2(15, 3.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lu4y2"]
 font = ExtResource("3_qxoj2")
-font_size = 8
+font_size = 18
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
@@ -30,12 +30,13 @@ position = Vector2(0.5, 14.25)
 shape = SubResource("RectangleShape2D_xnrpm")
 
 [node name="Label" type="Label" parent="." unique_id=99306139]
-texture_filter = 3
+texture_filter = 5
 texture_repeat = 1
-offset_left = -51.5
-offset_top = -26.0
-offset_right = 53.5
-offset_bottom = -3.0
+offset_left = -38.500004
+offset_top = -25.500002
+offset_right = 196.5
+offset_bottom = -2.500002
+scale = Vector2(0.325, 0.325)
 text = "E :sacrafice 15 hp and 200 gold"
 label_settings = SubResource("LabelSettings_lu4y2")
 

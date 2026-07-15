@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vituxj3vk6hu"
-path="res://.godot/imported/chiken.png-d7f73ec8c19cd760645084d5414a916b.ctex"
+path="res://.godot/imported/chiken.png-4eae3f85005f5c7ad8de76bceca4a70d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/chiken.png"
-dest_files=["res://.godot/imported/chiken.png-d7f73ec8c19cd760645084d5414a916b.ctex"]
+source_file="res://assets/sprites/animals/chiken.png"
+dest_files=["res://.godot/imported/chiken.png-4eae3f85005f5c7ad8de76bceca4a70d.ctex"]
 
 [params]
 
