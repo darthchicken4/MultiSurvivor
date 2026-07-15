@@ -27,6 +27,13 @@ func dprint(msg):
 	debug_message.emit(msg)
 	
  
+func hash_method(external_ip):
+	var data = external_ip
+	var encoded = Marshalls.utf8_to_base64(data)
+	print(encoded)  # base64 string
+
+	var decoded = Marshalls.base64_to_utf8(encoded)
+	print(decoded)  # "Hello, Godot!"
  
 func _process(_delta):
 	if Input.is_action_just_pressed("network_quit"):
@@ -121,6 +128,8 @@ func _setup_upnp() -> void:
 		return
  
 	dprint("UPnP success! Share this address with friends: " + external_ip)
+	dprint("HASH function")
+	hash_method(external_ip)
 	await step_pause()
 	upnp_setup_done.emit(true, external_ip)
  
