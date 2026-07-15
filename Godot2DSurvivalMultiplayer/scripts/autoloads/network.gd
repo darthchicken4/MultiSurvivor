@@ -1,7 +1,7 @@
 extends Node
  
 const SERVER_ADDRESS: String = "127.0.0.1"
-const SERVER_PORT: int = 8000
+const SERVER_PORT: int = 8001
 const MAX_PLAYERS: int = 10
  
 const DEBUG_NETWORK := true

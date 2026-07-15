@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://vhj280ajgv1n" path="res://scenes/ui/pause_menu/pause_menu.gd" id="1_kgchh"]
 [ext_resource type="PackedScene" uid="uid://b6r0y8c7gut00" path="res://scenes/ui/settings/settings.tscn" id="2_rbnsh"]
+[ext_resource type="Script" uid="uid://cb73d586qn6pj" path="res://scenes/ui/pause_menu/host_controls.gd" id="3_xgg5q"]
 
 [node name="PauseMenu" type="Control" unique_id=709786106 node_paths=PackedStringArray("setting")]
 layout_mode = 3
@@ -47,6 +48,42 @@ text = "quit to main menu"
 [node name="Settings" parent="." unique_id=1066357830 instance=ExtResource("2_rbnsh")]
 visible = false
 layout_mode = 1
+
+[node name="host_controls" type="MarginContainer" parent="." unique_id=2116872515]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_xgg5q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="host_controls" unique_id=1513731216]
+layout_mode = 2
+
+[node name="show code" type="HBoxContainer" parent="host_controls/VBoxContainer" unique_id=462529404]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="host_controls/VBoxContainer/show code" unique_id=1314087010]
+layout_mode = 2
+text = "show code"
+
+[node name="Label" type="Label" parent="host_controls/VBoxContainer/show code" unique_id=1880709643]
+layout_mode = 2
+text = ":"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="host_controls/VBoxContainer" unique_id=710149215]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="host_controls/VBoxContainer/HBoxContainer" unique_id=828187760]
+layout_mode = 2
+text = "show ip"
+
+[node name="Label" type="Label" parent="host_controls/VBoxContainer/HBoxContainer" unique_id=1065229057]
+layout_mode = 2
+text = ":"
+
+[node name="Button3" type="Button" parent="host_controls/VBoxContainer" unique_id=1008491141]
+layout_mode = 2
+text = "copy code to clipboard"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/back to game" to="." method="_on_back_to_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]

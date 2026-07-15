@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1784128582
+::res://::1784129125
 icon.png::CompressedTexture2D::7745181525272711891::1781432367::1781718397::1::::<><><>0<>0<>896be222f4526152412fc7150ec81337<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 tile_map.gd::GDScript::6073309704332451991::1784030803::0::1::::<>TileMapLayer<><>0<>0<><>::
 ::res://assets/::1784029845
@@ -93,9 +93,9 @@ statue.gd::GDScript::2060193755186456767::1784029845::0::1::::<>Node2D<><>0<>0<>
 statue.tscn::PackedScene::3828222420278896061::1784117732::0::1::::<><><>0<>0<><>::uid://4l8dchiqqxt4::::res://scenes/level/props/statue/statue.gd<>uid://cmglpdlavia8h::::res://assets/sprites/statue.png<>uid://diapabmalpcrj::::res://assets/fonts/Kurland.ttf
 ::res://scenes/level/world_border/::1784032091
 border_gen.gd::GDScript::7803037660115026983::1784029845::0::1::::<>TileMapLayer<><>0<>0<><>::
-::res://scenes/start_menu/::1784031067
+::res://scenes/start_menu/::1784129043
 start_menu.gd::GDScript::3138533892339973470::1784029845::0::1::::<>Control<><>0<>0<><>::
-start_menu.tscn::PackedScene::1366982829959222133::1784031067::0::1::::<><><>0<>0<><>::uid://copnwlebnek1::::res://assets/themes/start_menu.tres<>uid://dsskmlbth3pm7::::res://scenes/ui/single_player.gd<>uid://dumqu7gkm4pda::::res://scenes/ui/multplayer.gd<>uid://dmx4hqvf3aiwl::::res://scenes/ui/quit.gd
+start_menu.tscn::PackedScene::1366982829959222133::1784129043::0::1::::<><><>0<>0<><>::uid://copnwlebnek1::::res://assets/themes/start_menu.tres<>uid://dsskmlbth3pm7::::res://scenes/ui/single_player.gd<>uid://dumqu7gkm4pda::::res://scenes/ui/multplayer.gd<>uid://dmx4hqvf3aiwl::::res://scenes/ui/quit.gd
 ::res://scenes/ui/::1784033296
 interact_menu.gd::GDScript::1467303781186212552::1784025687::0::1::::<>Control<><>0<>0<><>::
 interact_menu.tscn::PackedScene::5440921164269077142::1784029845::0::1::::<><><>0<>0<><>::uid://u51jqn5uvvtg::::res://scenes/ui/interact_menu.gd
@@ -133,11 +133,11 @@ main_menu_ui.gd::GDScript::1555078355252365937::1784029845::0::1::::MainMenuUI<>
 multiplayer_chat_ui.gd::GDScript::3017096888469182973::1781432367::0::1::::MultiplayerChatUI<>Control<><>0<>0<><>::
 player.gd::GDScript::6705643942978221932::1784037780::0::1::::Character<>CharacterBody2D<><>0<>0<><>::
 selection_map_layer.gd::GDScript::1377871860293467925::1784025687::0::1::::<>TileMapLayer<><>0<>0<><>::
-::res://scripts/autoloads/::1784055277
+::res://scripts/autoloads/::1784129003
 crafting_database.gd::GDScript::4207016209326180799::1784055277::0::1::::<>Node<><>0<>0<><>::
 game_manager.gd::GDScript::5677340545661343968::1784025687::0::1::::<>Node<><>0<>0<><>::
 item_database.gd::GDScript::3684940158497481577::1784025687::0::1::::<>Node<><>0<>0<><>::
-network.gd::GDScript::5061006158354274844::1784033476::0::1::::<>Node<><>0<>0<><>::
+network.gd::GDScript::5061006158354274844::1784129003::0::1::::<>Node<><>0<>0<><>::
 settings.gd::GDScript::2980551160367618540::1784040160::0::1::::<>Node<><>0<>0<><>::
 sprite_sheet_loader.gd::GDScript::4879174100566604096::1784055277::0::1::::<>Node<><>0<>0<><>::
 utils.gd::GDScript::1016756747069215599::1784029845::0::1::::<>Node<><>0<>0<><>::

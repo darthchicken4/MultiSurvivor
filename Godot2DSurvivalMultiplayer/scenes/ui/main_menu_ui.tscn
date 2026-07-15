@@ -48,10 +48,10 @@ text = "Multi Survivor Test
 "
 
 [node name="MainMenu" type="VBoxContainer" parent="MainContainer" unique_id=357974246]
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-layout_direction = 1
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -101,7 +101,6 @@ theme_override_font_sizes/font_size = 35
 alignment = 1
 selected = 0
 allow_reselect = true
-search_bar_enabled = true
 item_count = 1
 popup/item_0/text = "Default"
 popup/item_0/id = 0
@@ -124,6 +123,27 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_font")
 theme_override_font_sizes/font_size = 35
 placeholder_text = "127.0.0.1"
+alignment = 1
+expand_to_text_length = true
+
+[node name="hash_input" type="HBoxContainer" parent="MainContainer/MainMenu" unique_id=2135081087]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="MainContainer/MainMenu/hash_input" unique_id=888758101]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 35
+text = "hash_key : "
+
+[node name="AddressInput" type="LineEdit" parent="MainContainer/MainMenu/hash_input" unique_id=232047887]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_font")
+theme_override_font_sizes/font_size = 35
+placeholder_text = "???"
 alignment = 1
 expand_to_text_length = true
 
