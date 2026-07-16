@@ -6,14 +6,26 @@ extends MultiplayerSpawner
 @export var animal_ammount = 20
 @export var animal = 0
 
-func _ready() -> void:     
-	spawn(hog.resource_path)
+
+@export_file("*.tscn") var hog_scene_path: String
 
 
-func _spawn_animal(scene_path: String) -> Node:
-	var scene: PackedScene = load(scene_path)
-	return scene.instantiate()
+func _ready() -> void:
+	spawn_function = _spawn_animal
 
+	if multiplayer.is_server():
+		spawn({
+			"scene": hog_scene_path,
+			"position": Vector2(200, 100)
+		})
+
+func _spawn_animal(data: Dictionary) -> Node:
+	var scene := load(data["scene"]) as PackedScene
+	var animal := scene.instantiate()
+
+	animal.position = data["position"]
+
+	return animal
 	#if not multiplayer_spawner.is_server():
 	#	return
 

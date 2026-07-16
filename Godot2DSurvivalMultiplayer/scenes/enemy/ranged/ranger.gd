@@ -50,12 +50,12 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		wander(delta)
 
-	if velocity.length() > 0.1:
-		anim.play("run")
-	else:
-		anim.play("idle")
-	if velocity.x != 0:
-		anim.flip_h = velocity.x < 0
+	#if velocity.length() > 0.1:
+		#anim.play("run")
+	#else:
+	#	anim.play("idle")
+	#if velocity.x != 0:
+		#anim.flip_h = velocity.x < 0
 
 
 func wander(delta: float) -> void:
