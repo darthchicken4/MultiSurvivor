@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bckfo7cexiek" path="res://scenes/ui/crafting_ui/crafting_ui.tscn" id="10_d2uvk"]
 [ext_resource type="PackedScene" uid="uid://20qdhe08y7sp" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="10_nk0bp"]
 [ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="11_d2uvk"]
+[ext_resource type="PackedScene" uid="uid://duecbuu32k62u" path="res://scenes/ui/debug_menu/debug_ui.tscn" id="11_du4ox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -141,9 +142,13 @@ player = NodePath("../..")
 visible = false
 
 [node name="CraftingUi" parent="CanvasLayer" unique_id=988690133 instance=ExtResource("10_d2uvk")]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=709786106 instance=ExtResource("10_nk0bp")]
 visible = false
+
+[node name="DebugUi" parent="CanvasLayer" unique_id=95695039 node_paths=PackedStringArray("player") instance=ExtResource("11_du4ox")]
+player = NodePath("../..")
 
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false

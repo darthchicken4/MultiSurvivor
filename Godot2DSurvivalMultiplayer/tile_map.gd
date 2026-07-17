@@ -43,6 +43,7 @@ func _ready():
 func _initiate(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
+	animal_spawn_tile()
 func _apply_seed_and_generate():
 	var rng = RandomNumberGenerator.new()
 	rng.seed = map_seed

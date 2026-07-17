@@ -54,7 +54,7 @@ func _on_chat_message_sent(message_text: String) -> void:
 	var nick = Network.players[multiplayer.get_unique_id()]["nick"]
 	rpc("msg_rpc", nick, trimmed_message)
 
-@rpc("any_peer", "call_local")
+@rpc("any_peer", "call_local", "reliable")
 func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
 	
@@ -288,8 +288,9 @@ func update_saturation() -> void:
 
 func update_health()-> void:
 	while true:
-		await Utils.wait(0.01)
-
+		await Utils.wait(0.03)
+		if hunger_value > hunger_max * 0.75:
+			health += 0.2
 
 func damage_player(amount): 
 	if amount < 1.0:

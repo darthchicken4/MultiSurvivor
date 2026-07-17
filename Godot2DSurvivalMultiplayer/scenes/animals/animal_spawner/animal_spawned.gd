@@ -7,25 +7,16 @@ extends MultiplayerSpawner
 @export var animal = 0
 
 
-@export_file("*.tscn") var hog_scene_path: String
-
-
 func _ready() -> void:
-	spawn_function = _spawn_animal
+	await tilemap_index
+	spawn_animal()
 
-	if multiplayer.is_server():
-		spawn({
-			"scene": hog_scene_path,
-			"position": Vector2(200, 100)
-		})
+func spawn_animal() -> void:
+	var world_pos: Vector2i = tilemap_index.grass_spawn
 
-func _spawn_animal(data: Dictionary) -> Node:
-	var scene := load(data["scene"]) as PackedScene
-	var animal := scene.instantiate()
-
-	animal.position = data["position"]
-
-	return animal
+	var instance := hog.instantiate()
+	instance.position = world_pos
+	add_child(instance)
 	#if not multiplayer_spawner.is_server():
 	#	return
 

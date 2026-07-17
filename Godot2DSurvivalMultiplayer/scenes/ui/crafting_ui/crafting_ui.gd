@@ -29,7 +29,7 @@ extends Control
 
 
 func _ready():
-
+	
 	# Save button template
 	recipebuttontemplate = originalrbutton.duplicate()
 	originalrbutton.queue_free()
@@ -45,6 +45,8 @@ func _ready():
 	# Connect tab buttons
 	for tab in tabs:
 		tab.pressed.connect(_on_tab_button_pressed.bind(tab))
+		
+		
 
 
 func _on_tab_button_pressed(button: Button) -> void:

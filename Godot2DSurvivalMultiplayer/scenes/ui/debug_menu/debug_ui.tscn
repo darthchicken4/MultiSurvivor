@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://duecbuu32k62u"]
+
+[ext_resource type="Script" uid="uid://csgg04cbe17rw" path="res://scenes/ui/debug_menu/debug_ui.gd" id="1_0qlkh"]
+
+[node name="DebugUi" type="Control" unique_id=95695039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0qlkh")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=494277609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=472062806]
+layout_mode = 2
+
+[node name="fps" type="Label" parent="MarginContainer/VBoxContainer" unique_id=484201070]
+layout_mode = 2
+
+[node name="player pos" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1609522796]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=606216891]
+layout_mode = 2

@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="20_416ji"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="21_0y1en"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_jdltj"]
-[ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="23_6sct8"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="26_qj7ud"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/world_border/border_gen.gd" id="27_sri58"]
 [ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="28_uoiqr"]
@@ -61,6 +60,10 @@ texture = ExtResource("3_voa3t")
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 6:0/0 = 0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
 
 [sub_resource type="TileSet" id="TileSet_xv074"]
 physics_layer_0/collision_layer = 1
@@ -126,8 +129,9 @@ script = ExtResource("22_jdltj")
 y_sort_enabled = true
 position = Vector2(12, 6)
 
-[node name="animal_spawner" parent="Map/SortContainer" unique_id=1876205315 instance=ExtResource("28_uoiqr")]
-hog = ExtResource("23_6sct8")
+[node name="animal_spawner" parent="Map/SortContainer" unique_id=1876205315 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("28_uoiqr")]
+hog = ExtResource("29_gmhj2")
+tilemap_index = NodePath("../../TileMapLayer")
 
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2

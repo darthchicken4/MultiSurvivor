@@ -54,3 +54,15 @@ func _limit_chat_history():
 
 func clear_chat():
 	chat.text = ""
+
+
+@rpc("any_peer", "call_local", "reliable")
+func send_chat(nick,text: String):
+	var id = multiplayer.get_remote_sender_id()
+
+	if id == 0:
+		id = multiplayer.get_unique_id()
+
+	var name = nick
+
+	$MultiplayerChatUI.add_message(name, text)

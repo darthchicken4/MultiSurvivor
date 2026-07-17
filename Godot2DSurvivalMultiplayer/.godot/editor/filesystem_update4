@@ -1,3 +1,2 @@
 res://scenes/level/player/player.tscn
-res://scenes/enemy/zombie/zombie.tscn
-res://scenes/animals/hog/hog.tscn
+res://scripts/player.gd
