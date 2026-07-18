@@ -12,7 +12,7 @@ class_name PlayerStatsUI
 
 @export var player: CharacterBody2D
 
-var health := 20.0
+
 var hunger := 100.0
 var stamina := 100.0
 
@@ -49,27 +49,7 @@ func update_bars(force := false):
 	hunger_bar.value = player.hunger_value
 	stamina_bar.value = player.stamina_value
 
-	if force:
-		damage_indicator.value = health
 
-func set_health(value: float):
-	var previous := health
-	health = clampf(value, 0.0, max_health)
-
-	health_bar.value = health
-
-	# Only trigger delay when taking damage
-	if health < previous:
-		_damage_timer = damage_delay
-	elif health > previous:
-		# Healing updates both bars immediately
-		damage_indicator.value = health
-
-func damage(amount: float):
-	set_health(health - amount)
-
-func heal(amount: float):
-	set_health(health + amount)
 
 func set_hunger(value: float):
 	hunger = clampf(value, 0.0, max_hunger)

@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var speed: float = 50.0
 @export  var wander_dir = 3
 @export var wander_timer = 4
-
+@export var damage = 2.0
 @onready var anim = $AnimatedSprite2D
 
 
@@ -19,13 +19,16 @@ var wander_direction = Vector2(0,0)
 
 
 func  _ready() -> void:
-	set_multiplayer_authority(1)
+	pass
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
-	Utils.wait(2)
-	pass
-
+	if body.is_in_group("player"):
+		print('player find')
+		if body.has_method("damage_player"):
+			print("methods")
+			body.damage_player(damage)
+			print("methods_works")
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
 	if not is_multiplayer_authority():
@@ -88,3 +91,7 @@ func update_animation() -> void:
 		anim.play("run")
 	else:
 		anim.play("idle")
+
+
+func _on_damage_area_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -4,7 +4,7 @@ extends Control
 
 @onready var fps = $MarginContainer/VBoxContainer/fps
 @onready var player_pos = $"MarginContainer/VBoxContainer/player pos"
-@onready var speed = LineEdit 
+
 
 func _ready() -> void:
 	if not is_multiplayer_authority():

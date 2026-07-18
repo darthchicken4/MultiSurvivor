@@ -28,5 +28,5 @@ layout_mode = 2
 [node name="player pos" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1609522796]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer" unique_id=606216891]
+[node name="player_hp?" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1153290641]
 layout_mode = 2

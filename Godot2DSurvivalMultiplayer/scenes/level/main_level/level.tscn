@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="20_416ji"]
 [ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="21_0y1en"]
 [ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_jdltj"]
+[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="25_86s6a"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="26_qj7ud"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/world_border/border_gen.gd" id="27_sri58"]
 [ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="28_uoiqr"]
@@ -132,6 +133,9 @@ position = Vector2(12, 6)
 [node name="animal_spawner" parent="Map/SortContainer" unique_id=1876205315 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("28_uoiqr")]
 hog = ExtResource("29_gmhj2")
 tilemap_index = NodePath("../../TileMapLayer")
+
+[node name="zombie" parent="Map/SortContainer" unique_id=1499102670 instance=ExtResource("25_86s6a")]
+position = Vector2(-397, -278)
 
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2

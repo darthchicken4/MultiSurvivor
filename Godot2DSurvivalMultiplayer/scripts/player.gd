@@ -59,6 +59,7 @@ func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
 	
 func _ready():
+	update_health()
 	update_stamina()
 	update_saturation()
 	if not is_multiplayer_authority(): return
@@ -271,6 +272,7 @@ func update_stamina() -> void:
 			if stamina_value <= 0.0:
 				stamina_value = 0.0
 				can_sprint_again = false
+
 		else:
 			stamina_value += stamina_tick_rate / 10
 			if stamina_value >= stamina_timer:
@@ -286,16 +288,18 @@ func update_saturation() -> void:
 			hunger_value = 0.0
 			health -= 1.2
 
-func update_health()-> void:
+
+func update_health() -> void:
 	while true:
-		await Utils.wait(0.03)
+		await Utils.wait(0.3)
+		print(hunger_value)
 		if hunger_value > hunger_max * 0.75:
+			print("passive_healed?")
 			health += 0.2
 
-func damage_player(amount): 
-	if amount < 1.0:
-		health = health - amount * damage_reduction
 
+func damage_player(amount):
+	health -= amount * damage_reduction
 
 
 func pause_menu_show():

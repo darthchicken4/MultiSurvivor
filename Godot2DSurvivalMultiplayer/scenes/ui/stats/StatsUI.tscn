@@ -139,6 +139,7 @@ mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_g0xps")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mtpfn")
 max_value = 20.0
+value = 1.0
 rounded = true
 show_percentage = false
 
@@ -153,6 +154,7 @@ mouse_filter = 2
 texture = SubResource("AtlasTexture_wvan6")
 
 [node name="Damage_lerp_bar" type="ProgressBar" parent="Control" unique_id=2033534065]
+visible = false
 z_index = -2
 layout_mode = 1
 anchors_preset = 7

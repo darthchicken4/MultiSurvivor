@@ -97,5 +97,7 @@ debug_color = Color(0.78431374, 0.3137255, 0.75686276, 0.2)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1960907273]
 replication_config = SubResource("SceneReplicationConfig_ncyl7")
 
+[connection signal="body_entered" from="damage_area" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_exited" from="damage_area" to="." method="_on_damage_area_body_exited"]
 [connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]
