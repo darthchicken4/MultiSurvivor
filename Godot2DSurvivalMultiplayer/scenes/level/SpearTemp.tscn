@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dalwq"]
 atlas = ExtResource("1_dalwq")
-region = Rect2(32, 16, 16, 16)
+region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_360fu"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
@@ -31,6 +31,7 @@ position = Vector2(0, 6)
 rotation = 2.4626596
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_360fu")
+frame_progress = 0.7434209
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]
 replication_config = SubResource("SceneReplicationConfig_dalwq")
