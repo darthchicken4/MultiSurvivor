@@ -1,2 +1,6 @@
-res://scenes/level/SpearTemp.tscn
+res://scenes/level/main_level/level.tscn
+res://tile_map.gd
+res://scenes/sun/sun_system.tscn
+res://scenes/sun/sun_system.gd
+res://scenes/level/player/player.tscn
 res://scripts/player.gd

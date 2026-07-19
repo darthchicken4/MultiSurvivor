@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="28_xpe6n"]
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="29_gmhj2"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
+[ext_resource type="PackedScene" uid="uid://ba67irfw4myah" path="res://scenes/caves/caves_prefab.tscn" id="31_iutpc"]
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
@@ -137,6 +138,10 @@ tilemap_index = NodePath("../../TileMapLayer")
 [node name="zombie" parent="Map/SortContainer" unique_id=1499102670 instance=ExtResource("25_86s6a")]
 position = Vector2(-397, -278)
 
+[node name="Node2D" parent="Map/SortContainer" unique_id=1913555255 node_paths=PackedStringArray("map") instance=ExtResource("31_iutpc")]
+position = Vector2(84, -112)
+map = NodePath("../../TileMapLayer")
+
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2
 scale = Vector2(2, 2)
@@ -148,11 +153,8 @@ script = ExtResource("27_sri58")
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("28_xpe6n")]
 visible = false
 
-[node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("29_gmhj2")]
-position = Vector2(3, -37)
-
 [node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("30_0cqhs")]
-position = Vector2(103, -99)
+position = Vector2(190, -255)
 
 [node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
 position = Vector2(-166, -192)

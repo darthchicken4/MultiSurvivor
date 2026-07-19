@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://20qdhe08y7sp" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="10_nk0bp"]
 [ext_resource type="AudioStream" uid="uid://1fh2lspwn1ni" path="res://assets/audio/walk_on_grass.mp3" id="11_d2uvk"]
 [ext_resource type="PackedScene" uid="uid://duecbuu32k62u" path="res://scenes/ui/debug_menu/debug_ui.tscn" id="11_du4ox"]
-[ext_resource type="PackedScene" uid="uid://1xnan6b1ttrx" path="res://scenes/level/SpearTemp.tscn" id="14_4x2hf"]
+[ext_resource type="PackedScene" uid="uid://1xnan6b1ttrx" path="res://scenes/weapons/spear/SpearTemp.tscn" id="14_4x2hf"]
 [ext_resource type="Script" uid="uid://bdqclivw5ny8a" path="res://scenes/level/player/tool_pivot.gd" id="14_ek3jh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]

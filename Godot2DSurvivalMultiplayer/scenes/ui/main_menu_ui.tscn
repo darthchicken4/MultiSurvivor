@@ -44,14 +44,14 @@ size_flags_horizontal = 6
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_font")
 theme_override_font_sizes/font_size = 70
-text = "Multi Survivor Test
+text = "Wilderness 2
 "
 
 [node name="MainMenu" type="VBoxContainer" parent="MainContainer" unique_id=357974246]
+layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-layout_direction = 1
 theme_override_constants/separation = 20
 alignment = 1
 
@@ -101,7 +101,6 @@ theme_override_font_sizes/font_size = 35
 alignment = 1
 selected = 0
 allow_reselect = true
-search_bar_enabled = true
 item_count = 1
 popup/item_0/text = "Default"
 popup/item_0/id = 0

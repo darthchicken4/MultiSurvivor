@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var wander_timer = 4
 @export var damage = 2.0
 @onready var anim = $AnimatedSprite2D
-
+@onready var slow_down = 2.0
 
 
 var player: Node2D = null
@@ -17,15 +17,17 @@ var is_thinking : bool= false
 var think_timer : float= 3.0
 var wander_direction = Vector2(0,0)
 
+var direction = Vector2(0,0)
 
 func  _ready() -> void:
 	pass
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
+	anim.play("downslam")
+	velocity = direction * slow_down
 	if body.is_in_group("player"):
 		if body.has_method("damage_player"):
-			anim.play("downslam")
 			body.damage_player(damage)
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
@@ -45,14 +47,14 @@ func _physics_process(delta: float) -> void:
 		update_animation()
 		return
 	if player:
-		var direction = (player.global_position - global_position).normalized()
+		direction = (player.global_position - global_position).normalized()
 		velocity = direction * speed
 		global_position += velocity * delta
 	else:
 		velocity = Vector2.ZERO
 		wander(delta)
 
-	if velocity.length() > 0.1:
+	if velocity.length() > 3.0:
 		anim.play("run")
 	else:
 		anim.play("idle")

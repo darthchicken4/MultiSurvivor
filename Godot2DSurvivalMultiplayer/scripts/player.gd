@@ -293,9 +293,7 @@ func update_saturation() -> void:
 func update_health() -> void:
 	while true:
 		await Utils.wait(0.3)
-		print(hunger_value)
 		if hunger_value > hunger_max * 0.75:
-			print("passive_healed?")
 			health += 0.2
 
 

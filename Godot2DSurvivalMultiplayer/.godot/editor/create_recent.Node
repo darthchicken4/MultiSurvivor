@@ -1,3 +1,6 @@
+Camera2D
+MultiplayerSynchronizer
+ColorRect
 TileMapLayer
 Label
 CollisionShape2D
@@ -9,6 +12,4 @@ Control
 MarginContainer
 HBoxContainer
 Panel
-ColorRect
 CanvasLayer
-VBoxContainer

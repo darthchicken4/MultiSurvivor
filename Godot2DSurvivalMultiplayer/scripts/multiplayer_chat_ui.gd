@@ -29,12 +29,15 @@ func toggle_chat():
 func is_chat_visible() -> bool:
 	return chat_visible
 
-func _on_send_pressed():
+func _on_send_pressed(_unused = null):
 	var message_text = message.text.strip_edges()
 	if message_text.is_empty():
 		return
-
 	message_sent.emit(message_text)
+
+	# Send to everyone (including ourselves, since call_local is set)
+	var nick = str(multiplayer.get_unique_id())
+	send_chat.rpc(nick, message_text)
 
 	message.text = ""
 	message.grab_focus()
@@ -55,14 +58,6 @@ func _limit_chat_history():
 func clear_chat():
 	chat.text = ""
 
-
 @rpc("any_peer", "call_local", "reliable")
-func send_chat(nick,text: String):
-	var id = multiplayer.get_remote_sender_id()
-
-	if id == 0:
-		id = multiplayer.get_unique_id()
-
-	var name = nick
-
-	$MultiplayerChatUI.add_message(name, text)
+func send_chat(nick: String, text: String):
+	add_message(nick, text)
