@@ -2,20 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="1_dalwq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2f4bf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dalwq"]
 atlas = ExtResource("1_dalwq")
-region = Rect2(48, 16, 16, 16)
+region = Rect2(32, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_360fu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2f4bf")
+"texture": SubResource("AtlasTexture_dalwq")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
+properties/0/path = NodePath("Weapon/Sprite:frame")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Node2D" type="Node2D" unique_id=1774495734]
 
@@ -26,3 +31,6 @@ position = Vector2(0, 6)
 rotation = 2.4626596
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_360fu")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]
+replication_config = SubResource("SceneReplicationConfig_dalwq")

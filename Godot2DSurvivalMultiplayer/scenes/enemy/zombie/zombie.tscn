@@ -133,8 +133,8 @@ debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
 position = Vector2(0, 1)
 scale = Vector2(1.845, 1.845)
 sprite_frames = SubResource("SpriteFrames_d2kyw")
-animation = &"downslam"
-frame_progress = 0.15274994
+animation = &"run"
+frame_progress = 0.39480805
 
 [node name="detect_area" type="Area2D" parent="." unique_id=954599079]
 

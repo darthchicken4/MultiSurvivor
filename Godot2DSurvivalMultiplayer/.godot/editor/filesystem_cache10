@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1784466921
+::res://::1784471664
 icon.png::CompressedTexture2D::7745181525272711891::1781432367::1781718397::1::::<><><>0<>0<>896be222f4526152412fc7150ec81337<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 tile_map.gd::GDScript::6073309704332451991::1784295325::0::1::::<>TileMapLayer<><>0<>0<><>::
 ::res://assets/::1784029845
@@ -11,7 +11,7 @@ walk_on_grass.mp3::AudioStreamMP3::1835705665018741586::1784029845::1784029845::
 ::res://assets/fonts/::1781718396
 Kurland.ttf::FontFile::7721683626151354491::1781432367::1781718396::1::::<><><>0<>0<>dacc2e7578d27658799cf58f30bac804<>res://.godot/imported/Kurland.ttf-14f9cbbd8657b37f475042f6a32feeab.fontdata::
 New Piskel (5).png::CompressedTexture2D::2007127336538574867::1781432367::1781432389::1::::<><><>0<>0<>477fe95d95efa0abbd30e4c2a3b6acf7<>res://.godot/imported/New Piskel (5).png-16bcd9f232ca52d4c6325ab9a2a07e1d.ctex::
-::res://assets/sprites/::1784469257
+::res://assets/sprites/::1784469258
 crafting table.png::CompressedTexture2D::4426792689322537746::1784029845::1784029845::1::::<><><>0<>0<>c6fa05049e25284cde7bcf45dd70fbf1<>res://.godot/imported/crafting table.png-f1d5e93d83ebe3292c149f6ad1775575.ctex::
 hand.png::CompressedTexture2D::2862934829292765971::1784025687::1784029100::1::::<><><>0<>0<>79ffdbe7f7bc505aa62ce0c3e991c60d<>res://.godot/imported/hand.png-aa70a94ecd582a85db91aae186be8a98.ctex::
 starterplayerwalk.png::CompressedTexture2D::8876167938410500399::1784025687::1784025687::1::::<><><>0<>0<>9dba624d047c179f9afefb24f23fc78b<>res://.godot/imported/starterplayerwalk.png-bfacd1106b3280c4249e8aefa88a2eb6.ctex::
@@ -61,9 +61,9 @@ Giant.tscn::PackedScene::4015803479788916426::1784125712::0::1::::<><><>0<>0<><>
 ::res://scenes/enemy/ranged/::1784294606
 ranger.gd::GDScript::1672426241291408716::1784225590::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ranger.tscn::PackedScene::4955781201302459242::1784294606::0::1::::<><><>0<>0<><>::uid://x3eu66l54nmy::::res://scenes/enemy/ranged/ranger.gd
-::res://scenes/enemy/zombie/::1784382684
-zombie.gd::GDScript::2858759502240680071::1784382638::0::1::::<>CharacterBody2D<><>0<>0<><>::
-zombie.tscn::PackedScene::2400873653983134322::1784382684::0::1::::<><><>0<>0<><>::uid://bgy2l7e0qpt2n::::res://scenes/enemy/zombie/zombie.gd<>uid://d0tm5vi4gcpkj::::res://assets/sprites/zombiewalk.png
+::res://scenes/enemy/zombie/::1784469606
+zombie.gd::GDScript::2858759502240680071::1784469564::0::1::::<>CharacterBody2D<><>0<>0<><>::
+zombie.tscn::PackedScene::2400873653983134322::1784469606::0::1::::<><><>0<>0<><>::uid://bgy2l7e0qpt2n::::res://scenes/enemy/zombie/zombie.gd<>uid://d0tm5vi4gcpkj::::res://assets/sprites/zombiewalk.png<>uid://doxt6snld8k37::::res://assets/sprites/zombie_swing.png
 ::res://scenes/level/::1784032522
 SpearTemp.tscn::PackedScene::1873180674611619133::1784029845::0::1::::<><><>0<>0<><>::uid://b35pq004ddbub::::res://assets/spritesheets/toolsheet1.png
 ::res://scenes/level/main_level/::1784381648
@@ -124,10 +124,10 @@ respawn_ui.tscn::PackedScene::7097373415641870795::1784029845::0::1::::<><><>0<>
 close_settings.gd::GDScript::735428059218470433::1784035453::0::1::::<>Button<><>0<>0<><>::
 settings.gd::GDScript::8986925071222968962::1784117066::0::1::::<>Control<><>0<>0<><>::
 settings.tscn::PackedScene::4598931779986924343::1784117028::0::1::::<><><>0<>0<><>::uid://d1bllwoae2grq::::res://scenes/ui/settings/settings.gd<>uid://kqinl7hbic0x::::res://scenes/ui/settings/close_settings.gd
-::res://scenes/ui/stats/::1784467844
+::res://scenes/ui/stats/::1784469566
 stamina.gd::GDScript::1692286171840666696::1784029845::0::1::::<>Control<><>0<>0<><>::
 stamina_DEPRICATED.tscn::PackedScene::1846110501965889848::1784029845::0::1::::<><><>0<>0<><>::uid://yd0yae1yfutk::::res://scenes/ui/stats/stamina.gd
-StatsUI.tscn::PackedScene::4900655881203419429::1784467844::0::1::::<><><>0<>0<><>::uid://bnmdjlowmpg5e::::res://scenes/ui/stats/stats_ui.gd<>uid://c5dqwmkiuhcnh::::res://assets/spritesheets/iconsheet1.png
+StatsUI.tscn::PackedScene::4900655881203419429::1784469566::0::1::::<><><>0<>0<><>::uid://bnmdjlowmpg5e::::res://scenes/ui/stats/stats_ui.gd<>uid://c5dqwmkiuhcnh::::res://assets/spritesheets/iconsheet1.png
 stats_ui.gd::GDScript::3323847007560009104::1784467844::0::1::::PlayerStatsUI<>Control<><>0<>0<><>::
 ::res://scripts/::1784467455
 camera_2d.gd::GDScript::6357774795729096973::1784025687::0::1::::<>Camera2D<><>0<>0<><>::

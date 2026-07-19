@@ -1,6 +1,7 @@
-res://scenes/level/player/player.tscn
-res://scripts/player.gd
-res://scenes/ui/stats/StatsUI.tscn
-res://scenes/ui/stats/stats_ui.gd
 res://scenes/enemy/zombie/zombie.tscn
-res://scenes/enemy/zombie/zombie.gd
+res://scenes/enemy/ranged/ranger.tscn
+res://scenes/animals/hog/hog.tscn
+res://scenes/level/player/player.tscn
+res://scenes/level/player/tool_pivot.gd
+res://scenes/level/SpearTemp.tscn
+res://scenes/ui/debug_menu/debug_ui.tscn
