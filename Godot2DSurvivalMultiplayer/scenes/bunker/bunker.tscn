@@ -1,0 +1,56 @@
+[gd_scene format=4 uid="uid://dpa6angju4bxg"]
+
+[ext_resource type="Script" uid="uid://g22pb0r350ge" path="res://scenes/bunker/bunker.gd" id="1_cl7vn"]
+[ext_resource type="Texture2D" uid="uid://c2amsfaejymnt" path="res://assets/tilesheets/brick_tiles.png" id="2_1jcf7"]
+[ext_resource type="PackedScene" uid="uid://drli2u543vt3n" path="res://scenes/bunker/bunker_prefabs/prefab_1.tscn" id="2_lonmt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lonmt"]
+texture = ExtResource("2_1jcf7")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_64wpq"]
+sources/0 = SubResource("TileSetAtlasSource_lonmt")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cndw"]
+size = Vector2(44.075, 42.065002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb07j"]
+size = Vector2(31, 30)
+
+[node name="Bunker" type="Node2D" unique_id=1249232412]
+script = ExtResource("1_cl7vn")
+prefab_1 = ExtResource("2_lonmt")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1466527430]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAABAAAAAAD//wEAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_64wpq")
+
+[node name="enter_area" type="Area2D" parent="." unique_id=561163069]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=550477390]
+shape = SubResource("RectangleShape2D_3cndw")
+
+[node name="enter label" type="Label" parent="enter_area" unique_id=362515190]
+offset_left = -39.0
+offset_top = -43.0
+offset_right = 37.0
+offset_bottom = -20.0
+text = "e to enter"
+
+[node name="exit_area" type="Area2D" parent="." unique_id=1703729617]
+position = Vector2(-74, 210)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1413565291]
+shape = SubResource("RectangleShape2D_eb07j")
+
+[node name="exit label" type="Label" parent="exit_area" unique_id=2001100421]
+offset_left = -31.0
+offset_top = -39.0
+offset_right = 36.0
+offset_bottom = -16.0
+text = "e to exit "
+
+[connection signal="body_entered" from="enter_area" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_entered" from="exit_area" to="." method="_on_exit_area_body_entered"]

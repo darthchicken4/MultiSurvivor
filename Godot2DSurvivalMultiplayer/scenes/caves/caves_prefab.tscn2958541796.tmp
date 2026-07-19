@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://ba67irfw4myah"]
+
+[ext_resource type="Script" uid="uid://dcgmkvc4f2e3f" path="res://scenes/caves/caves_prefab.gd" id="1_3cndw"]
+[ext_resource type="Texture2D" uid="uid://bg67nbr0tu3p1" path="res://assets/tilesheets/cave_tiles.png" id="2_3cndw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cndw"]
+size = Vector2(32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb07j"]
+texture = ExtResource("2_3cndw")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eixg2"]
+sources/0 = SubResource("TileSetAtlasSource_eb07j")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb07j"]
+size = Vector2(31, 30)
+
+[node name="Node2D" type="Node2D" unique_id=1913555255]
+script = ExtResource("1_3cndw")
+
+[node name="enter_area" type="Area2D" parent="." unique_id=561163069]
+position = Vector2(-15.85, 16.065)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=550477390]
+shape = SubResource("RectangleShape2D_3cndw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2061073321]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAEAAAD/////AAAAAAEAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAAAAP//AAABAAAAAAD//wIAAAABAAAAAAAAAAIAAAABAAEAAAABAAIAAAABAAAAAAABAAEAAAABAAEAAAABAAAAAAAAAAEAAAABAP//AAABAAEAAAAAAP7/AAAAAAEAAAD///7/AAABAAEAAAACAP//AAAAAAEAAAACAAAAAAAAAAEAAAACAAEAAAAAAAEAAAACAAIAAAAAAAAAAAABAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_eixg2")
+
+[node name="exit_area" type="Area2D" parent="." unique_id=1703729617]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_area" unique_id=1413565291]
+position = Vector2(-16, 121)
+shape = SubResource("RectangleShape2D_eb07j")
+
+[node name="exit label" type="Label" parent="exit_area" unique_id=2001100421]
+offset_left = -45.0
+offset_top = 88.0
+offset_right = 22.0
+offset_bottom = 111.0
+text = "e to exit "
+
+[node name="enter label" type="Label" parent="." unique_id=362515190]
+offset_left = -38.0
+offset_top = -34.0
+offset_right = 38.0
+offset_bottom = -11.0
+text = "e to enter"
+
+[connection signal="body_entered" from="enter_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="enter_area" to="." method="_on_area_2d_body_exited"]

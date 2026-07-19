@@ -113,6 +113,7 @@ func _process(_delta):
 
 
 
+
 func freeze():
 	velocity = Vector2.ZERO
 	_current_speed = 0
@@ -307,7 +308,7 @@ func pause_menu_show():
 		pause_menu.visible = !pause_menu.visible
 
 func _check_bounds_and_respawn():
-	if global_position.y > 10000.0:
+	if global_position.y > 20000000.0:
 		_respawn()
 
 func _respawn():
