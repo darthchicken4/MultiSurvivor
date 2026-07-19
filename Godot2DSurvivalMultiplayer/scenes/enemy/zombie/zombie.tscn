@@ -2,12 +2,37 @@
 
 [ext_resource type="Script" uid="uid://bgy2l7e0qpt2n" path="res://scenes/enemy/zombie/zombie.gd" id="1_ncyl7"]
 [ext_resource type="Texture2D" uid="uid://d0tm5vi4gcpkj" path="res://assets/sprites/zombiewalk.png" id="1_nlave"]
+[ext_resource type="Texture2D" uid="uid://doxt6snld8k37" path="res://assets/sprites/zombie_swing.png" id="2_r8isk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6mvc3"]
 radius = 9.95
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlave"]
 size = Vector2(43, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w50ss"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twsc6"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd2mu"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnx7e"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvdd2"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv318"]
+atlas = ExtResource("2_r8isk")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ncyl7"]
 atlas = ExtResource("1_nlave")
@@ -27,6 +52,29 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d2kyw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w50ss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twsc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd2mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnx7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvdd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv318")
+}],
+"loop": true,
+"name": &"downslam",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ncyl7")
@@ -85,7 +133,8 @@ debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
 position = Vector2(0, 1)
 scale = Vector2(1.845, 1.845)
 sprite_frames = SubResource("SpriteFrames_d2kyw")
-animation = &"run"
+animation = &"downslam"
+frame_progress = 0.15274994
 
 [node name="detect_area" type="Area2D" parent="." unique_id=954599079]
 

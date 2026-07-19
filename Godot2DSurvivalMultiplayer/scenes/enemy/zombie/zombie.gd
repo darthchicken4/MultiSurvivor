@@ -24,11 +24,9 @@ func  _ready() -> void:
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print('player find')
 		if body.has_method("damage_player"):
-			print("methods")
+			anim.play("downslam")
 			body.damage_player(damage)
-			print("methods_works")
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
 	if not is_multiplayer_authority():

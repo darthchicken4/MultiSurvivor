@@ -23,7 +23,7 @@ var stamina := 100.0
 var _damage_timer := 0.0
 
 func _ready():
-	update_bars(true)
+	update_bars()
 	if not is_multiplayer_authority():
 		# This isn't "my" player, hide their UI from my screen
 		self.visible = false
@@ -37,36 +37,33 @@ func _process(delta):
 			health_bar.value,
 			damage_lerp_speed * delta
 		)
-	update_bars(true)
-func update_bars(force := false):
+func update_bars():
+	while true:
+		await Utils.wait(0.01)
+		health_bar.max_value = max_health
+		damage_indicator.max_value = max_health
+		hunger_bar.max_value = max_hunger
+		stamina_bar.max_value = max_stamina
+		health_bar.value = player.health
+		hunger_bar.value = player.hunger_value
+		stamina_bar.value = player.stamina_value
 
-	health_bar.max_value = max_health
-	damage_indicator.max_value = max_health
-	hunger_bar.max_value = max_hunger
-	stamina_bar.max_value = max_stamina
-	
-	health_bar.value = player.health
-	hunger_bar.value = player.hunger_value
-	stamina_bar.value = player.stamina_value
+#func set_hunger(value: float):
+	#hunger = clampf(value, 0.0, max_hunger)
+	#hunger_bar.value = hunger
 
+#func add_hunger(amount: float):
+	#set_hunger(hunger + amount)
 
+#func consume_hunger(amount: float):
+	#set_hunger(hunger - amount)
 
-func set_hunger(value: float):
-	hunger = clampf(value, 0.0, max_hunger)
-	hunger_bar.value = hunger
+#func set_stamina(value: float):
+	#stamina = clampf(value, 0.0, max_stamina)
+	#stamina_bar.value = stamina
 
-func add_hunger(amount: float):
-	set_hunger(hunger + amount)
+#func restore_stamina(amount: float):
+	#set_stamina(stamina + amount)
 
-func consume_hunger(amount: float):
-	set_hunger(hunger - amount)
-
-func set_stamina(value: float):
-	stamina = clampf(value, 0.0, max_stamina)
-	stamina_bar.value = stamina
-
-func restore_stamina(amount: float):
-	set_stamina(stamina + amount)
-
-func consume_stamina(amount: float):
-	set_stamina(stamina - amount)
+#func consume_stamina(amount: float):
+#	set_stamina(stamina - amount)

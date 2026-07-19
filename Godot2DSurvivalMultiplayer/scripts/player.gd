@@ -25,11 +25,11 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @export var health : float= 20.0
 @export var max_health : float = 20.0
-@export var damage_reduction : float = 0.0
+@export var damage_reduction : float = 1.0
 
 @export var hunger_value : float= 20.0
 @export var hunger_tick : float= 0.3 #time to hunger go down
-@export var hunger_max : float = 50.0
+@export var hunger_max : float = 20.0
 
 var player_inventory: PlayerInventory
 
