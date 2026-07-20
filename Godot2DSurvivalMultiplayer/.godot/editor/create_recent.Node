@@ -1,6 +1,7 @@
 Camera2D
-MultiplayerSynchronizer
+MeshInstance2D
 ColorRect
+MultiplayerSynchronizer
 TileMapLayer
 Label
 CollisionShape2D
@@ -11,5 +12,3 @@ ProgressBar
 Control
 MarginContainer
 HBoxContainer
-Panel
-CanvasLayer

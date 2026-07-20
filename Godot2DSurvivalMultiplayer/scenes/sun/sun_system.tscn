@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://c7l3nsvmtn01w"]
 
 [ext_resource type="Script" uid="uid://hg7jf1pn35xr" path="res://scenes/sun/sun_system.gd" id="1_5qiwt"]
+[ext_resource type="Shader" uid="uid://cko1ocjehaa8" path="res://scenes/sun/sun_system.gdshader" id="2_tfrol"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qiwt"]
 blend_mode = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tfrol"]
+shader = ExtResource("2_tfrol")
+shader_parameter/saturation = 1.0
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5qiwt"]
+properties/0/path = NodePath("ColorRect:color")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="SunSystem" type="Control" unique_id=138067836]
 layout_mode = 3
@@ -16,21 +24,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5qiwt")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1784366740]
+[node name="gamma" type="ColorRect" parent="." unique_id=1784366740]
 material = SubResource("CanvasItemMaterial_5qiwt")
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -4078.0
-offset_top = -2414.0
-offset_right = 3505.0
-offset_bottom = 2543.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
+[node name="sat" type="ColorRect" parent="." unique_id=1168797715]
+material = SubResource("ShaderMaterial_tfrol")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1690288937]
 replication_config = SubResource("SceneReplicationConfig_5qiwt")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=258151740]

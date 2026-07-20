@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="29_gmhj2"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
 [ext_resource type="PackedScene" uid="uid://ba67irfw4myah" path="res://scenes/caves/caves_prefab.tscn" id="31_iutpc"]
+[ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="32_spd3i"]
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
@@ -158,3 +159,9 @@ position = Vector2(190, -255)
 
 [node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
 position = Vector2(-166, -192)
+
+[node name="SunSystem" parent="." unique_id=138067836 instance=ExtResource("32_spd3i")]
+offset_left = 14.0
+offset_top = 3.0
+offset_right = 14.0
+offset_bottom = 3.0
