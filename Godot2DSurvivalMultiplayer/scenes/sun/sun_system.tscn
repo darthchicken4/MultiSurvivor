@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://hg7jf1pn35xr" path="res://scenes/sun/sun_system.gd" id="1_5qiwt"]
 [ext_resource type="Shader" uid="uid://cko1ocjehaa8" path="res://scenes/sun/sun_system.gdshader" id="2_tfrol"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5qiwt"]
-blend_mode = 2
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfrol"]
 shader = ExtResource("2_tfrol")
 shader_parameter/saturation = 1.0
@@ -24,22 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5qiwt")
 
-[node name="gamma" type="ColorRect" parent="." unique_id=1784366740]
-material = SubResource("CanvasItemMaterial_5qiwt")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -640.0
-offset_bottom = -360.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-
 [node name="sat" type="ColorRect" parent="." unique_id=1168797715]
 material = SubResource("ShaderMaterial_tfrol")
 layout_mode = 1
@@ -57,3 +38,8 @@ grow_vertical = 2
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1690288937]
 replication_config = SubResource("SceneReplicationConfig_5qiwt")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=727077338]
+color = Color(1, 1, 1, 0)
+blend_mode = 1
+shadow_enabled = true

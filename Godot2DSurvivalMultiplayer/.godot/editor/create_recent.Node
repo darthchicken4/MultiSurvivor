@@ -1,6 +1,9 @@
+DirectionalLight2D
+PointLight2D
+ColorRect
+ColorPickerButton
 Camera2D
 MeshInstance2D
-ColorRect
 MultiplayerSynchronizer
 TileMapLayer
 Label
@@ -9,6 +12,3 @@ Area2D
 Node2D
 TextureRect
 ProgressBar
-Control
-MarginContainer
-HBoxContainer
