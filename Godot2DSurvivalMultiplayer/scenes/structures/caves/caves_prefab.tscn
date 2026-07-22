@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ba67irfw4myah"]
 
-[ext_resource type="Script" uid="uid://dcgmkvc4f2e3f" path="res://scenes/caves/caves_prefab.gd" id="1_3cndw"]
+[ext_resource type="Script" uid="uid://dcgmkvc4f2e3f" path="res://scenes/structures/caves/caves_prefab.gd" id="1_3cndw"]
 [ext_resource type="Texture2D" uid="uid://bg67nbr0tu3p1" path="res://assets/tilesheets/cave_tiles.png" id="2_3cndw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cndw"]
