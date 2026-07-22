@@ -1,3 +1,6 @@
-res://scenes/caves/caves_prefab.tscn
+res://scenes/level/player/player.tscn
 res://scenes/sun/sun_system.gdshader
-res://scenes/caves/caves_prefab.gd
+res://scenes/sun/sun_system.tscn
+res://scenes/sun/sun_system.gd
+res://scenes/level/main_level/level.tscn
+res://scenes/level/dev_level/devlevel.tscn

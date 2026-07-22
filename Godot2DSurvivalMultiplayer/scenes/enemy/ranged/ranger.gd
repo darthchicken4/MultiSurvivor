@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var wander_timer = 4
 
 @onready var anim = $AnimatedSprite2D
-
+@export  var projectile :PackedScene
 
 
 var player: Node2D = null
@@ -94,4 +94,23 @@ func _on_detect_body_entered(body: Node2D) -> void:
 
 
 func _on_detect_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+func _on_range_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		var arrow: Node2D = projectile.instantiate()
+		get_tree().current_scene.add_child(arrow)  # add wherever makes sense in your tree
+
+		var origin: Vector2 = self.global_position
+		arrow.global_position = origin
+
+		var direction: Vector2 = (body.global_position - origin).normalized()
+		arrow.rotation = direction.angle()
+
+
+func _on_range_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.

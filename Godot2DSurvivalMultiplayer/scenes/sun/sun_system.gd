@@ -31,7 +31,7 @@ func time_cycle():
 			alpha = alpha + sun_tick
 			saturation = saturation - saturation_tick
 		alpha = clamp(alpha, 0.0, 0.7)
-		saturation =clamp(saturation, 0.0, 1.0)
+		saturation =clamp(saturation, 0.0, 0.4)
 		if alpha >= 1.0:
 			flip_color = true
 		elif alpha <= 0.0:
