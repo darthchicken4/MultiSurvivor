@@ -1,6 +1,3 @@
-res://scenes/level/player/player.tscn
+res://scenes/ui/death_screen/death_screen.tscn
 res://scenes/sun/sun_system.gdshader
-res://scenes/sun/sun_system.tscn
-res://scenes/sun/sun_system.gd
-res://scenes/level/main_level/level.tscn
-res://scenes/level/dev_level/devlevel.tscn
+res://scenes/ui/death_screen/death_screen.gd

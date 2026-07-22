@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://737mscvdi7l6"]
+
+[node name="LoreScreen" type="Control" unique_id=538433135]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1362506582]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=988918490]
+layout_mode = 2
+color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1218188846]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "continue"
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=862633132]
+layout_mode = 2
+text = "the events of this game take place after garden massacres ending , the world has been corrupted by the nuke and now you must get off the isalnd . or learn how to survive it,
+adapt , overcome and terrorise the creature on this island . "

@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://dpa6angju4bxg"]
 
-[ext_resource type="Script" uid="uid://g22pb0r350ge" path="res://scenes/bunker/bunker.gd" id="1_cl7vn"]
+[ext_resource type="Script" uid="uid://g22pb0r350ge" path="res://scenes/structures/bunker/bunker.gd" id="1_cl7vn"]
 [ext_resource type="Texture2D" uid="uid://c2amsfaejymnt" path="res://assets/tilesheets/brick_tiles.png" id="2_1jcf7"]
-[ext_resource type="PackedScene" uid="uid://drli2u543vt3n" path="res://scenes/bunker/bunker_prefabs/prefab_1.tscn" id="2_lonmt"]
+[ext_resource type="PackedScene" uid="uid://drli2u543vt3n" path="res://scenes/structures/bunker/bunker_prefabs/prefab_1.tscn" id="2_lonmt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lonmt"]
 texture = ExtResource("2_1jcf7")
