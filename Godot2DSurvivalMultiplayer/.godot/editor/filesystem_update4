@@ -1,6 +1,8 @@
-res://scenes/level/player/player.tscn
+res://scenes/enemy/zombie/zombie.tscn
 res://scenes/sun/sun_system.gdshader
-res://scenes/sun/sun_system.tscn
-res://scenes/sun/sun_system.gd
-res://scenes/level/main_level/level.tscn
-res://scenes/level/dev_level/devlevel.tscn
+res://scenes/level/player/player.tscn
+res://scripts/inventory/player_inventory.gd
+res://scripts/player.gd
+res://scripts/inventory/inventory_ui.gd
+res://scenes/ui/inventory_ui.tscn
+res://scripts/inventory/inventory_slot_ui.gd

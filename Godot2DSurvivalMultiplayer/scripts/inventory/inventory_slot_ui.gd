@@ -9,9 +9,10 @@ class_name InventorySlotUI
 var slot_index: int = 0
 var inventory_data: InventorySlot
 var parent_inventory: Control
+var container_type:String
 
-signal slot_clicked(slot_index: int, button: int)
-signal item_hovered(slot_index: int, item: Item)
+signal slot_clicked(container_type: String, slot_index: int, button: int)
+signal item_hovered(container_type: String, slot_index: int, item: Item)
 signal item_unhovered
 
 const RARITY_COLORS = {
@@ -29,9 +30,10 @@ func _ready():
 
 	update_display()
 
-func set_slot_data(slot_data: InventorySlot, index: int):
+func set_slot_data(slot_data: InventorySlot, index: int, container: String):
 	inventory_data = slot_data
 	slot_index = index
+	container_type = container
 	update_display()
 
 func update_display():
@@ -71,13 +73,13 @@ func _show_item_slot():
 func _on_gui_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			slot_clicked.emit(slot_index, event.button_index)
+			slot_clicked.emit(container_type, slot_index, event.button_index)
 
 func _on_mouse_entered():
 	if inventory_data and not inventory_data.is_empty():
 		var item = ItemDatabase.get_item(inventory_data.item_id)
 		if item:
-			item_hovered.emit(slot_index, item)
+			item_hovered.emit(container_type, slot_index, item)
 
 	background.modulate = Color(1.2, 1.2, 1.2)
 
@@ -87,13 +89,15 @@ func _on_mouse_exited():
 	background.modulate = Color.WHITE
 
 func _can_drop_data(_position: Vector2, data) -> bool:
-	return data is Dictionary and data.has("slot_index") and data.has("inventory_type")
-
+	return data is Dictionary and data.has("slot_index") and data.has("container")
+	
 func _drop_data(_position: Vector2, data):
+	print("Dropped from ", data["container"], " to ", container_type)
 	if parent_inventory and parent_inventory.has_method("handle_item_drop"):
-		parent_inventory.handle_item_drop(data.slot_index, slot_index, data.inventory_type)
+		parent_inventory.handle_item_drop(data["container"], data["slot_index"], container_type, slot_index)
 
 func _get_drag_data(_position: Vector2):
+	print("Dragging ", container_type, " slot ", slot_index)
 	if not inventory_data or inventory_data.is_empty():
 		return null
 
@@ -115,9 +119,10 @@ func _get_drag_data(_position: Vector2):
 
 	return {
 		"slot_index": slot_index,
+		"container": container_type,
 		"item_id": inventory_data.item_id,
 		"quantity": inventory_data.quantity,
-		"inventory_type": "player"  # Can be extended for different inventory types
+		"inventory_type": "player"
 	}
 
 func _notification(what):

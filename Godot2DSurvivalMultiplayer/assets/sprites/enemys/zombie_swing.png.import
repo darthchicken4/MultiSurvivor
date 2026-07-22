@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmglpdlavia8h"
-path="res://.godot/imported/statue.png-c46eaa03313501411856c4261326a7c4.ctex"
+uid="uid://doxt6snld8k37"
+path="res://.godot/imported/zombie_swing.png-27e7f2bc7b5b47e2a1ad17653d37c20d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/statue.png"
-dest_files=["res://.godot/imported/statue.png-c46eaa03313501411856c4261326a7c4.ctex"]
+source_file="res://assets/sprites/enemys/zombie_swing.png"
+dest_files=["res://.godot/imported/zombie_swing.png-27e7f2bc7b5b47e2a1ad17653d37c20d.ctex"]
 
 [params]
 

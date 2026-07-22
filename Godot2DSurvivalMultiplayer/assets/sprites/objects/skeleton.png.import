@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doxt6snld8k37"
-path="res://.godot/imported/zombie_swing.png-085396418c0f4e67dafc6b3b70f9fef8.ctex"
+uid="uid://byml7f0vl52lo"
+path="res://.godot/imported/skeleton.png-c1d65c1f944daa672648e7d9d9889d42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/zombie_swing.png"
-dest_files=["res://.godot/imported/zombie_swing.png-085396418c0f4e67dafc6b3b70f9fef8.ctex"]
+source_file="res://assets/sprites/objects/skeleton.png"
+dest_files=["res://.godot/imported/skeleton.png-c1d65c1f944daa672648e7d9d9889d42.ctex"]
 
 [params]
 

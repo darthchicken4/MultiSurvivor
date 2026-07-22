@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://1p1ftsastub6"]
 
-[ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/tree.png" id="1_eqwtg"]
+[ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/objects/tree.png" id="1_eqwtg"]
 [ext_resource type="Script" uid="uid://cam06xk2f0ne2" path="res://scripts/propScripts/tree.gd" id="1_gk3pd"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gk3pd"]
 animations = [{

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d8rf347yatpo"
-path="res://.godot/imported/tree.png-15cb16b197553088007c6ba3ce2f75b0.ctex"
+uid="uid://d0tm5vi4gcpkj"
+path="res://.godot/imported/zombiewalk.png-3a5f661a26185fcbe7728d20739c9f2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tree.png"
-dest_files=["res://.godot/imported/tree.png-15cb16b197553088007c6ba3ce2f75b0.ctex"]
+source_file="res://assets/sprites/enemys/zombiewalk.png"
+dest_files=["res://.godot/imported/zombiewalk.png-3a5f661a26185fcbe7728d20739c9f2d.ctex"]
 
 [params]
 

@@ -187,10 +187,17 @@ func _debug_print_inventory():
 	if local_player and local_player.get_inventory():
 		var inventory = local_player.get_inventory()
 		print("=== Inventory Debug ===")
-		for i in range(inventory.slots.size()):
-			var slot = inventory.get_slot(i)
+
+		for i in range(inventory.inventory_slots.size()):
+			var slot = inventory.get_inventory_slot(i)
 			if slot and not slot.is_empty():
-				print("Slot ", i, ": ", slot.item_id, " x", slot.quantity)
+				print("Inventory Slot ", i, ": ", slot.item_id, " x", slot.quantity)
+
+		for i in range(inventory.hotbar_slots.size()):
+			var slot = inventory.get_hotbar_slot(i)
+			if slot and not slot.is_empty():
+				print("Hotbar Slot ", i, ": ", slot.item_id, " x", slot.quantity)
+
 		print("=====================")
 	else:
 		print("No inventory found for local player")
@@ -351,7 +358,7 @@ func sync_inventory_to_owner(inventory_data: Dictionary):
 	if not player_inventory:
 		player_inventory = PlayerInventory.new()
 	player_inventory.from_dict(inventory_data)
-
+	print("Debug: Inventory synced. Slot 0:", player_inventory.get_inventory_slot(0).item_id)
 	var level_scene = get_tree().get_current_scene()
 	if level_scene:
 		if is_multiplayer_authority() or get_multiplayer_authority() == multiplayer.get_unique_id():
@@ -366,8 +373,8 @@ func sync_inventory_to_owner(inventory_data: Dictionary):
 			print("Debug: Not the local player, skipping UI update")
 
 @rpc("any_peer", "call_local", "reliable")
-func request_move_item(from_slot: int, to_slot: int, quantity: int = -1):
-	print("Debug: request_move_item called - from:", from_slot, " to:", to_slot, " on player ", name, " (authority: ", get_multiplayer_authority(), ") by client ", multiplayer.get_remote_sender_id())
+func request_move_item(from_container: String, from_slot: int, to_container: String, to_slot: int, quantity: int = -1):
+	print("Debug: request_move_item called - from ", from_container, ":", from_slot, " to ", to_container, ":", to_slot, " on player ", name, " (authority: ", get_multiplayer_authority(), ") by client ", multiplayer.get_remote_sender_id())
 
 	if not multiplayer.is_server():
 		return
@@ -385,20 +392,27 @@ func request_move_item(from_slot: int, to_slot: int, quantity: int = -1):
 		return
 
 	var success = false
-	if quantity == -1:
-		success = player_inventory.move_item(from_slot, to_slot)
-		if not success:
-			success = player_inventory.swap_items(from_slot, to_slot)
-			print("Debug: Swapped items between slots ", from_slot, " and ", to_slot)
-		else:
-			print("Debug: Moved item from slot ", from_slot, " to ", to_slot)
-	else:
-		success = player_inventory.move_item(from_slot, to_slot, quantity)
-		print("Debug: Moved ", quantity, " items from slot ", from_slot, " to ", to_slot)
 
+	if quantity == -1:
+		
+		success = player_inventory.move_item(from_container, from_slot, to_container, to_slot)
+		print("Debug: move result = ", success)
+
+		if not success:
+			success = player_inventory.swap_items(from_container, from_slot, to_container, to_slot)
+			print("Debug: Swapped ", from_container, ":", from_slot, " with ", to_container, ":", to_slot)
+		else:
+			print("Debug: Moved item from ", from_container, ":", from_slot, " to ", to_container, ":", to_slot)
+
+	else:
+		print("Debug: move result = ", success)
+		success = player_inventory.move_item(from_container, from_slot, to_container, to_slot, quantity)
+		print("Debug: Moved ", quantity, " items from ", from_container, ":", from_slot, " to ", to_container, ":", to_slot)
 	if success:
-		print("Debug: Move successful, syncing inventory to owner ", get_multiplayer_authority())
+		print("Debug: Move successful, refreshing inventory")
+
 		var owner_id = get_multiplayer_authority()
+
 		if owner_id != 1:
 			sync_inventory_to_owner.rpc_id(owner_id, player_inventory.to_dict())
 		else:

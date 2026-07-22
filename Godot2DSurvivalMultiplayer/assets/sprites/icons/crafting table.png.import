@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dypxgovhsop3l"
-path="res://.godot/imported/starterplayerwalk.png-bfacd1106b3280c4249e8aefa88a2eb6.ctex"
+uid="uid://b4cmvm6tatqtu"
+path="res://.godot/imported/crafting table.png-070b6303644d2c5a11964f9b22649034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/starterplayerwalk.png"
-dest_files=["res://.godot/imported/starterplayerwalk.png-bfacd1106b3280c4249e8aefa88a2eb6.ctex"]
+source_file="res://assets/sprites/icons/crafting table.png"
+dest_files=["res://.godot/imported/crafting table.png-070b6303644d2c5a11964f9b22649034.ctex"]
 
 [params]
 
