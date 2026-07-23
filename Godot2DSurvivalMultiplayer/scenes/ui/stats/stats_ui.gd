@@ -1,10 +1,10 @@
 extends Control
 class_name PlayerStatsUI
 
-@onready var health_bar: ProgressBar = $Control/Health
-@onready var damage_indicator: ProgressBar = $Control/Damage_lerp_bar
-@onready var hunger_bar: ProgressBar = $Control/Hunger
-@onready var stamina_bar: ProgressBar = $Control/Stamina
+@onready var health_bar: ProgressBar = $MarginContainer/Control/Health
+@onready var damage_indicator: ProgressBar = $MarginContainer/Control/Damage_lerp_bar
+@onready var hunger_bar: ProgressBar = $MarginContainer/Control/Hunger
+@onready var stamina_bar: ProgressBar = $MarginContainer/Control/Stamina
 
 @export var max_health := 20.0
 @export var max_hunger := 20.0

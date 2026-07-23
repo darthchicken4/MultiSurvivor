@@ -27,6 +27,7 @@ grow_vertical = 2
 region_rect = Rect2(4, 4, 56, 56)
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=1423686335]
+custom_minimum_size = Vector2(-0.001, -0.001)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +38,7 @@ offset_right = -4.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 5
 
 [node name="QuantityLabel" type="Label" parent="." unique_id=557573622]
