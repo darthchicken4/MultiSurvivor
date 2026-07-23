@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bclq8vh1x2goy"]
 
+[ext_resource type="Theme" uid="uid://bdh0g6bxphyex" path="res://assets/themes/inventory.tres" id="1_4ycse"]
 [ext_resource type="Script" uid="uid://c2w12kgcvtww4" path="res://scripts/inventory/inventory_ui.gd" id="1_h7x4v"]
+[ext_resource type="Script" uid="uid://dto3eafbmvwbq" path="res://scenes/ui/panel.gd" id="3_drsq2"]
 
 [node name="InventoryUI" type="Control" unique_id=658571058]
 process_mode = 3
@@ -11,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_4ycse")
 script = ExtResource("1_h7x4v")
 
 [node name="Panel" type="Panel" parent="." unique_id=1096998955]
@@ -21,12 +24,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = -200.0
-offset_right = 145.0
-offset_bottom = 200.0
+offset_left = 99.0
+offset_top = -207.0
+offset_right = 628.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_drsq2")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1810218656]
 layout_mode = 1
@@ -128,3 +132,7 @@ theme_override_constants/margin_bottom = 10
 [node name="HBoxContainer" type="HBoxContainer" parent="HotbarPanel/MarginContainer" unique_id=1022022842]
 layout_mode = 2
 mouse_filter = 2
+
+[connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
