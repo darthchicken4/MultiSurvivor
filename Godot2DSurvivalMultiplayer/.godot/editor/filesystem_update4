@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-res://scenes/enemy/zombie/zombie.tscn
+res://scenes/ui/crafting_ui/crafting_ui.tscn
+res://assets/themes/crafdting_theme.tres
 res://scenes/sun/sun_system.gdshader
-res://scenes/level/player/player.tscn
-res://scripts/inventory/player_inventory.gd
-res://scripts/player.gd
-res://scripts/inventory/inventory_ui.gd
-res://scenes/ui/inventory_ui.tscn
-res://scripts/inventory/inventory_slot_ui.gd
-=======
-res://scenes/ui/death_screen/death_screen.tscn
-res://scenes/sun/sun_system.gdshader
-res://scenes/ui/death_screen/death_screen.gd
->>>>>>> d09124c0df01704116ce0002173c630829cfb7c9
+res://scenes/ui/crafting_ui/crafting_ui.gd
+res://scenes/ui/crafting_ui/items.gd
+res://scenes/structures/caves/caves_prefab.tscn
+res://scenes/ui/stats/StatsUI.tscn
+res://scenes/level/main_level/level.tscn

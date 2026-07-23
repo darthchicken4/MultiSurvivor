@@ -23,6 +23,11 @@ sources/0 = SubResource("TileSetAtlasSource_eb07j")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eb07j"]
 size = Vector2(31, 30)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hui4m"]
+properties/0/path = NodePath(".:seed")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Node2D" type="Node2D" unique_id=1913555255]
 script = ExtResource("1_3cndw")
 
@@ -57,6 +62,9 @@ offset_top = -34.0
 offset_right = 38.0
 offset_bottom = -11.0
 text = "e to enter"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=907259361]
+replication_config = SubResource("SceneReplicationConfig_hui4m")
 
 [connection signal="body_entered" from="enter_area" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="enter_area" to="." method="_on_area_2d_body_exited"]

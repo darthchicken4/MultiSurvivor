@@ -11,6 +11,17 @@ export_credentials.cfg
 *.translation
 
 # Mono-specific ignores
+mono_crash.*.json
+
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
 .mono/
 data_*/
-mono_crash.*.json
+
+# System/IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
