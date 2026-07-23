@@ -96,7 +96,7 @@ func _handle_right_click(slot_index: int):
 		if item:
 			print("Right clicked on: ", item.name)
 
-func _on_item_hovered(_slot_index: int, item: Item):
+func _on_item_hovered(container,_slot_index: int, item: Item):
 	_show_tooltip(item)
 
 func _on_item_unhovered():

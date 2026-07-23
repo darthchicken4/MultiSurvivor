@@ -26,12 +26,12 @@ func _create_sample_items():
 	yellow_mushroom.name = "Yellow Mushroom"
 	yellow_mushroom.description = "A soft mushroom with medicinal purposes... can be processed into a dangerous paralyzant"
 	yellow_mushroom.item_type = Item.ItemType.CONSUMABLE
+	yellow_mushroom.template
 	#yellow_mushroom.rarity = Item.ItemRarity.UNCOMMON
 	yellow_mushroom.stackable = true
 	yellow_mushroom.max_stack = 10
 	yellow_mushroom.value = 5
 	yellow_mushroom.icon = SpriteSheetLoader.get_texture("items1",1,1)
-	
 	items[yellow_mushroom.id] = yellow_mushroom
 
 	# tree_branch
