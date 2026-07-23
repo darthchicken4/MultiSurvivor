@@ -1,8 +1,3 @@
-res://scenes/ui/crafting_ui/crafting_ui.tscn
+res://scenes/ui/inventory_slot_ui.tscn
 res://assets/themes/crafdting_theme.tres
 res://scenes/sun/sun_system.gdshader
-res://scenes/ui/crafting_ui/crafting_ui.gd
-res://scenes/ui/crafting_ui/items.gd
-res://scenes/structures/caves/caves_prefab.tscn
-res://scenes/ui/stats/StatsUI.tscn
-res://scenes/level/main_level/level.tscn
