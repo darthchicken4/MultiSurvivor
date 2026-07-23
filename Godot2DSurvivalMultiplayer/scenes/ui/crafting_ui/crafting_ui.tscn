@@ -30,6 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme = ExtResource("1_ym6gd")
 script = ExtResource("1_t1iof")
 
@@ -43,7 +44,7 @@ grow_vertical = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 98
 theme_override_constants/margin_right = 623
-theme_override_constants/margin_bottom = 83
+theme_override_constants/margin_bottom = 227
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=463911780]
 layout_mode = 2

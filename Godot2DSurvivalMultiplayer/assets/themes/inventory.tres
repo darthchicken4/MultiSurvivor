@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://bdh0g6bxphyex"]
+
+[ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_lviod"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lviod"]
+bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+corner_detail = 1
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/fonts/font = ExtResource("1_lviod")
+Panel/styles/panel = SubResource("StyleBoxFlat_lviod")

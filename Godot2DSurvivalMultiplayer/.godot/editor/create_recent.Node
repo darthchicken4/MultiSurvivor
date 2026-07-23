@@ -1,10 +1,10 @@
+TextureRect
 Control
 MultiplayerSynchronizer
 ColorRect
 Panel
 Sprite2D
 Container
-TextureRect
 VBoxContainer
 Label
 MarginContainer
