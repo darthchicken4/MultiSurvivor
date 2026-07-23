@@ -8,7 +8,7 @@ var sheets := {
 	"guns1": preload("res://assets/spritesheets/gunsheet1.png"),
 	"tools1": preload("res://assets/spritesheets/toolsheet1.png"),
 	"placeables1": preload("res://assets/spritesheets/placeablesheet1.png"),
-	"icons2:": preload("res://assets/spritesheets/iconsheet2.png")
+	"icons2": preload("res://assets/spritesheets/iconsheet2.png")
 }
 var texture_cache := {}
 

@@ -174,4 +174,4 @@ stream = ExtResource("11_d2uvk")
 [node name="ToolPivot" type="Node2D" parent="." unique_id=2085541174]
 script = ExtResource("14_ek3jh")
 
-[node name="Node2D" parent="ToolPivot" unique_id=1774495734 instance=ExtResource("14_4x2hf")]
+[node name="SpearTemplate" parent="ToolPivot" unique_id=1774495734 instance=ExtResource("14_4x2hf")]
