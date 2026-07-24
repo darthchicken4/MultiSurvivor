@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_font"]
 [ext_resource type="Script" uid="uid://wfj6b11wkwx2" path="res://scripts/main_menu_ui.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://jbqlfxa4aeri" path="res://scenes/ui/pick_bg.gd" id="3_b8bkt"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_npnbc"]
 color = Color(0, 0, 0, 0)
@@ -21,6 +22,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 413.0
+offset_top = 18.0
+offset_right = -404.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0901961, 0.0901961, 0.0901961, 1)
@@ -207,6 +212,13 @@ theme_override_font_sizes/font_size = 20
 text = "Host/Join Connection Process
 "
 horizontal_alignment = 1
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1784614144]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+mouse_filter = 2
+script = ExtResource("3_b8bkt")
 
 [connection signal="pressed" from="MainContainer/MainMenu/Buttons/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="MainContainer/MainMenu/Buttons/Host" to="MainContainer/MainMenu/Buttons/Host" method="_on_pressed"]

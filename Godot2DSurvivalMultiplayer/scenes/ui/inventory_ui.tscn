@@ -17,14 +17,13 @@ theme = ExtResource("1_4ycse")
 script = ExtResource("1_h7x4v")
 
 [node name="Panel" type="Panel" parent="." unique_id=1096998955]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 99.0
+offset_left = 199.0
 offset_top = -207.0
 offset_right = 628.0
 offset_bottom = 193.0

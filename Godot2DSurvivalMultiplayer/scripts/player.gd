@@ -31,6 +31,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var hunger_tick : float= 0.3 #time to hunger go down
 @export var hunger_max : float = 20.0
 
+@export var can_die = false
+
 var player_inventory: PlayerInventory
 
 var _current_speed : float
@@ -62,6 +64,7 @@ func _ready():
 	update_health()
 	update_stamina()
 	update_saturation()
+	death_check(can_die)
 	if not is_multiplayer_authority(): return
 	
 	
@@ -117,7 +120,6 @@ func _process(_delta):
 func freeze():
 	velocity = Vector2.ZERO
 	_current_speed = 0
-	_sprite.play("idle")
 
 func _move() -> void:
 	var _input_direction: Vector2 = Vector2.ZERO
@@ -303,6 +305,17 @@ func update_health() -> void:
 		if hunger_value > hunger_max * 0.75:
 			health += 0.2
 
+func death_check(can_die):
+	while true:
+		await Utils.wait(1)
+		if can_die == true:
+			if health < 0:
+				_sprite.play("death")
+				can_die = false
+				await _sprite.animation_finished
+
+				
+			
 
 func damage_player(amount):
 	health -= amount * damage_reduction
@@ -317,7 +330,9 @@ func _check_bounds_and_respawn():
 		_respawn()
 
 func _respawn():
-	global_position = _respawn_point
+	var respawn_area_size = 100
+	var respawn_area =Vector2(randi_range(-respawn_area_size,respawn_area_size),randi_range(-respawn_area_size,respawn_area_size))
+	global_position = respawn_area
 	velocity = Vector2.ZERO
 
 @rpc("any_peer", "reliable")

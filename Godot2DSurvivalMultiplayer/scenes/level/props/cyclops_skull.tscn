@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d1uukq42w5xng"]
+
+[ext_resource type="Texture2D" uid="uid://cscyviqamipcd" path="res://assets/sprites/objects/cyclops_skull.png" id="1_fy6r0"]
+
+[node name="CyclopsSkull" type="Node2D" unique_id=1039149053]
+
+[node name="CyclopsSkull" type="Sprite2D" parent="." unique_id=148433805]
+scale = Vector2(2, 2)
+texture = ExtResource("1_fy6r0")

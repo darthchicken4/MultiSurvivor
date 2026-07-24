@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bikom25b7pj54"
-path="res://.godot/imported/border.png-44746afff25d0cf6b9a38c6d89e7a4d2.ctex"
+uid="uid://bibrvm1a8hd1q"
+path="res://.godot/imported/death_sprites.png-26bcd51a407ce9ac3642f727125b69db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesheets/border.png"
-dest_files=["res://.godot/imported/border.png-44746afff25d0cf6b9a38c6d89e7a4d2.ctex"]
+source_file="res://assets/fonts/death_sprites.png"
+dest_files=["res://.godot/imported/death_sprites.png-26bcd51a407ce9ac3642f727125b69db.ctex"]
 
 [params]
 
