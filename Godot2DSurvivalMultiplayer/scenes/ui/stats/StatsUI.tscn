@@ -55,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="MarginContainer" unique_id=2091340084]
 layout_mode = 2
@@ -174,3 +175,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_dsacm")
 value = 31.0
 rounded = true
 show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1631606790]
+layout_mode = 2

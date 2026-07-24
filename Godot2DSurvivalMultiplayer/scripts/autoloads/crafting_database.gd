@@ -3,7 +3,7 @@ extends Node
 var recipes: Dictionary = {}
 
 @onready var craftingStations = {
-	"Hand": SpriteSheetLoader.get_texture("items1",0,0),
+	"Hand": SpriteSheetLoader.get_texture("icons2",0,0),
 	"Crafting Table": SpriteSheetLoader.get_texture("icons2",1,0),
 	"Workbench": SpriteSheetLoader.get_texture("icons2",2,0),
 	"Work Station": SpriteSheetLoader.get_texture("icons2",3,0),

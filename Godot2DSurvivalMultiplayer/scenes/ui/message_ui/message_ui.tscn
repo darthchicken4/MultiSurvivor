@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dkfywhyf70j30"]
+
+[ext_resource type="FontFile" uid="uid://bsuq3n86s1a4" path="res://assets/fonts/Ghostbumbs-KVKxe.ttf" id="1_bav1e"]
+[ext_resource type="Texture2D" uid="uid://d1tskd2ugttha" path="res://scenes/ui/message_ui/paper_message322.png" id="2_bav1e"]
+[ext_resource type="Script" uid="uid://dj0mkjngxg61n" path="res://scenes/ui/message_ui/message_ui.gd" id="2_fr1hp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sxmr5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ljkr"]
+
+[sub_resource type="Theme" id="Theme_fr1hp"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 8
+Button/fonts/font = ExtResource("1_bav1e")
+Button/styles/normal = SubResource("StyleBoxEmpty_sxmr5")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5ljkr")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_bav1e")
+
+[node name="MessageUi" type="Control" unique_id=1678374970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fr1hp")
+script = ExtResource("2_fr1hp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=286534259]
+layout_direction = 4
+layout_mode = 0
+offset_left = 436.0
+offset_top = 203.0
+offset_right = 838.0
+offset_bottom = 564.0
+size_flags_horizontal = 4
+texture = ExtResource("2_bav1e")
+stretch_mode = 4
+
+[node name="main_text" type="Label" parent="TextureRect" unique_id=258477882]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 67.0
+offset_right = 191.0
+offset_bottom = 172.0
+scale = Vector2(2.065, 2.065)
+text = "hello 
+we are about to lanch an
+ all out attaack on your houze 
+sincerely,  the zombies"
+
+[node name="title" type="Label" parent="TextureRect" unique_id=42286319]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 48.0
+offset_right = 148.0
+offset_bottom = 72.0
+text = "tittle"
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=2045534999]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 262.0
+offset_right = 305.0
+offset_bottom = 302.0
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1694715603]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 21.000002
+offset_right = 284.0
+offset_bottom = 53.0
+scale = Vector2(3.1, 3.1)
+text = "x"

@@ -1,4 +1,8 @@
 TextureRect
+Button
+Label
+CenterContainer
+MarginContainer
 Control
 MultiplayerSynchronizer
 ColorRect
@@ -6,9 +10,5 @@ Panel
 Sprite2D
 Container
 VBoxContainer
-Label
-MarginContainer
 HBoxContainer
-Button
 PointLight2D
-Camera2D

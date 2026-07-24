@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
 [ext_resource type="PackedScene" uid="uid://ba67irfw4myah" path="res://scenes/structures/caves/caves_prefab.tscn" id="31_iutpc"]
 [ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="32_spd3i"]
+[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_voa3t")
@@ -161,3 +162,6 @@ offset_left = 14.0
 offset_top = 3.0
 offset_right = 14.0
 offset_bottom = 3.0
+
+[node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
+position = Vector2(-202, -470)

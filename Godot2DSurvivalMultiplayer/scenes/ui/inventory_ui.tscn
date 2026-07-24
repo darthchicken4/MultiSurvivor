@@ -37,8 +37,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = -15.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -75,6 +80,7 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 180.0
+theme = ExtResource("1_4ycse")
 
 [node name="Panel" type="Panel" parent="ItemTooltip" unique_id=745507354]
 layout_mode = 1
@@ -98,6 +104,7 @@ theme_override_constants/margin_bottom = 8
 
 [node name="TooltipText" type="RichTextLabel" parent="ItemTooltip/Panel/MarginContainer" unique_id=807347606]
 layout_mode = 2
+theme = ExtResource("1_4ycse")
 bbcode_enabled = true
 text = "[b]Item Name[/b]
 Item description goes here.

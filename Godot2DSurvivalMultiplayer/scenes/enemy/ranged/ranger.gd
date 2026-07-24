@@ -109,7 +109,7 @@ func _on_range_body_entered(body: Node2D) -> void:
 		arrow.global_position = origin
 
 		var direction: Vector2 = (body.global_position - origin).normalized()
-		arrow.rotation = direction.angle()
+		arrow.global_rotation = direction.angle()
 
 
 func _on_range_body_exited(body: Node2D) -> void:

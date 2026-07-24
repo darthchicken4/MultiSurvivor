@@ -1,7 +1,7 @@
-res://scenes/ui/inventory_slot_ui.tscn
+res://scenes/enemy/ranged/ranger.tscn
+res://assets/themes/inventory.tres
 res://assets/themes/crafdting_theme.tres
 res://scenes/sun/sun_system.gdshader
-res://scenes/ui/inventory_ui.tscn
-res://assets/themes/inventory.tres
-res://scenes/ui/panel.gd
-res://scenes/ui/crafting_ui/crafting_ui.tscn
+res://scenes/enemy/ranged/ranger.gd
+res://scenes/level/main_level/level.tscn
+res://scenes/ui/stats/StatsUI.tscn
