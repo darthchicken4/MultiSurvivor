@@ -1,15 +1,5 @@
-res://scenes/ui/main_menu_ui.tscn
+res://scenes/level/main_level/level.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/crafdting_theme.tres
-res://scenes/sun/sun_system.gdshader
-res://scenes/enemy/zombie/zombie.tscn
-res://scenes/enemy/zombie/zombie.gd
-res://scenes/level/player/player.tscn
-res://scenes/level/player/audio.gd
-res://default_bus_layout.tres
-res://scenes/ui/settings/settings.tscn
 res://assets/themes/settings.tres
-res://scenes/ui/settings/settings.gd
-res://scenes/ui/settings/audio.gd
-res://scenes/ui/inventory_ui.tscn
-res://scenes/projectiles/arrow/arrow_projectile.tscn
+res://scenes/sun/sun_system.gdshader

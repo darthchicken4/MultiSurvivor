@@ -1,1 +1,1 @@
-extends VBoxContainer
+extends MarginContainer
