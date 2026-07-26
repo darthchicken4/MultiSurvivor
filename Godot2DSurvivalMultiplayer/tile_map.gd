@@ -34,12 +34,12 @@ var tile_terrain: Dictionary = {}
 @export var hog : PackedScene
 @export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
 @export var can_spawn_again = true
-var tree_container: Node2D
+@export var tree_container: Node2D
 
 var map_seed: int = 0
 
 func _ready():
-	tree_container = $"../SortContainer"
+	pass
 func _initiate(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://p0amae4y61co"]
+
+[ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="1_fsj2u"]
+[ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="2_eamha"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoh1m"]
+texture = ExtResource("1_fsj2u")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yoh1m"]
+sources/1 = SubResource("TileSetAtlasSource_yoh1m")
+
+[node name="SelectionMapLayer" type="TileMapLayer" unique_id=1045206275]
+modulate = Color(1, 1, 1, 0.22745098)
+y_sort_enabled = true
+texture_filter = 3
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_yoh1m")
+script = ExtResource("2_eamha")

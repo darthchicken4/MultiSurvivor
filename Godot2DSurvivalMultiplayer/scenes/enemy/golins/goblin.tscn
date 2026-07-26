@@ -14,12 +14,25 @@ radius = 90.088844
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtpdm"]
 shader = ExtResource("2_tftw2")
 shader_parameter/animation_progress = 0.0
-shader_parameter/random_influence = 0.05
+shader_parameter/random_influence = -0.135
 shader_parameter/melting_point = Vector2(0.5, 0.5)
 shader_parameter/atlas_size = Vector2(1, 1)
 shader_parameter/melting_time = 0.1
 shader_parameter/falling_time = 0.2
 shader_parameter/fall_distance = 16
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hesha"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [node name="Goblin" type="CharacterBody2D" unique_id=1252994455]
 script = ExtResource("1_hn42m")
@@ -46,6 +59,10 @@ shape = SubResource("CircleShape2D_hesha")
 material = SubResource("ShaderMaterial_wtpdm")
 position = Vector2(1, 0)
 texture = ExtResource("2_hesha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=118527930]
+sprite_frames = SubResource("SpriteFrames_hesha")
+animation = &"run"
 
 [connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
 [connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]

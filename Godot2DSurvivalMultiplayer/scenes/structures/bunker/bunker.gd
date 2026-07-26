@@ -16,11 +16,11 @@ extends Node2D
 @export var prefab_2 :PackedScene
 @export var prefab_3 :PackedScene
 
-
+var rng = RandomNumberGenerator.new()
 
 var player: Node2D = null
 var can_enter_bunker = true
-var degree = 0 
+
 
 func _on_enter_area_body_entered(body: Node2D) -> void:
 	if not can_enter_bunker:
@@ -45,7 +45,7 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 
 func _ready() -> void:
 	bunker_pos = Vector2i(map.width / 2,map.height / 2)
-	bunker_pos = bunker_pos + bunker_side_offset
+	bunker_pos = bunker_pos  + bunker_side_offset * 5
 	gen_bunker()
 	
 
@@ -58,6 +58,11 @@ func reset_enter_delay() -> void:
 
 	
 func gen_bunker():
-	print(bunker_pos)
 	exit_area.global_position = bunker_pos
-	prefab_1.instantiate()
+	var cave_list = [prefab_1,prefab_2,prefab_3]
+	rng.seed = 12345
+	var value = rng.randi_range(0, cave_list.size() - 1)
+	var cave_instance = cave_list[value].instantiate()  # use .instance() if this is Godot 3.x
+	add_child(cave_instance)
+	cave_instance.global_position = bunker_pos
+	
