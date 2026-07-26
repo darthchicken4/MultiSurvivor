@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ajmdn")
 }],
-"loop": 1,
+"loop": true,
 "name": &"death",
 "speed": 12.0
 }, {
@@ -136,7 +136,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nk0bp")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o0o36")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 3.0
 }]
@@ -190,8 +190,8 @@ replication_config = SubResource("SceneReplicationConfig_wb3a5")
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
-animation = &"idle"
-frame_progress = 0.057383295
+animation = &"walk"
+frame_progress = 0.003913927
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 
