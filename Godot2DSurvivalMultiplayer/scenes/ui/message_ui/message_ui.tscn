@@ -29,13 +29,13 @@ theme = SubResource("Theme_fr1hp")
 script = ExtResource("2_fr1hp")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=286534259]
-layout_direction = 4
 layout_mode = 0
 offset_left = 436.0
 offset_top = 203.0
 offset_right = 838.0
 offset_bottom = 564.0
 size_flags_horizontal = 4
+layout_direction = 4
 texture = ExtResource("2_bav1e")
 stretch_mode = 4
 
@@ -74,3 +74,5 @@ offset_right = 284.0
 offset_bottom = 53.0
 scale = Vector2(3.1, 3.1)
 text = "x"
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

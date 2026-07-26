@@ -1,5 +1,12 @@
-res://scenes/level/main_level/level.tscn
+res://scenes/level/props/tree.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://scenes/sun/sun_system.gdshader
+res://scripts/propScripts/tree.gd
+res://scenes/ui/message_ui/message_ui.gd
+res://scenes/ui/message_ui/message_ui.tscn
+res://scripts/autoloads/game_manager.gd
+res://scenes/level/player/player.tscn
+res://scripts/player.gd
+res://scenes/ui/interact_menu.gd
