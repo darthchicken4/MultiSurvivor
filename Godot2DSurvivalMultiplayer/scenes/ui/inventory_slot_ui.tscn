@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://bglwdpf2mf7g0"]
 
 [ext_resource type="Script" uid="uid://bi0mlil0a0e5i" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_5k8m7"]
+<<<<<<< HEAD
 [ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_k1d76"]
 [ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/spritesheets/border.png" id="2_bpgql"]
 [ext_resource type="Texture2D" uid="uid://im5x2eqcm2fi" path="res://assets/sprites/icons/border (1).png" id="4_opn8x"]
+=======
+[ext_resource type="Theme" uid="uid://bdh0g6bxphyex" path="res://assets/themes/inventory.tres" id="1_k1d76"]
+[ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/sprites/icons/border.png" id="2_bpgql"]
+>>>>>>> 0e72eda1347c614a10bac879ec9d75205490e974
 
 [node name="InventorySlotUI" type="Control" unique_id=1287090853]
 layout_mode = 3

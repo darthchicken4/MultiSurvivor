@@ -6,8 +6,10 @@ extends CharacterBody2D
 @export  var wander_dir = 3
 @export var wander_timer = 4
 @export var damage = 2.0
+
+@onready var bite_sound = $audio/bite
 @onready var anim = $AnimatedSprite2D
-@onready var slow_down = 2.0
+var slow_down = 2.0
 
 
 var player: Node2D = null
@@ -29,6 +31,7 @@ func _on_damage_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if body.has_method("damage_player"):
 			body.damage_player(damage)
+			bite_sound.play()
 
 func _on_detect_area_body_entered(body: Node2D) -> void:
 	if not is_multiplayer_authority():

@@ -263,7 +263,7 @@ func _create_sample_items():
 	#branch_stone_spear.rarity = Item.ItemRarity.COMMON
 	branch_stone_spear.stackable = false
 	branch_stone_spear.value = 12
-	branch_stone_spear.icon = SpriteSheetLoader.get_texture("tools1",3,1)
+	branch_stone_spear.icon = SpriteSheetLoader.get_texture("tools1",2,0)
 	items[branch_stone_spear.id] = branch_stone_spear
 	
 		# branch_flint_hatchet

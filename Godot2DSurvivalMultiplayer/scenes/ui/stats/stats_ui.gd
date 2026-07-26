@@ -6,6 +6,8 @@ class_name PlayerStatsUI
 @onready var hunger_bar: ProgressBar = $MarginContainer/Control/Hunger
 @onready var stamina_bar: ProgressBar = $MarginContainer/Control/Stamina
 
+@onready var damage_overlay = $MarginContainer/damage
+
 @export var max_health := 20.0
 @export var max_hunger := 20.0
 @export var max_stamina := 10.0
@@ -21,7 +23,7 @@ var stamina := 100.0
 @export var damage_lerp_speed := 4.0
 
 var _damage_timer := 0.0
-
+var damage_color_value = 0.0
 func _ready():
 	update_bars()
 	if not is_multiplayer_authority():
@@ -47,7 +49,8 @@ func update_bars():
 		health_bar.value = player.health
 		hunger_bar.value = player.hunger_value
 		stamina_bar.value = player.stamina_value
-
+		damage_color_value = 1 - health_bar.value  / health_bar.max_value
+		damage_overlay.self_modulate = Color(1.0, 1.0, 1.0, damage_color_value)
 #func set_hunger(value: float):
 	#hunger = clampf(value, 0.0, max_hunger)
 	#hunger_bar.value = hunger

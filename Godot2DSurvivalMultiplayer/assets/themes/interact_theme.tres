@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://dvduplpwatjt1"]
+
+[ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_ilgf8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee8l1"]
+bg_color = Color(0.3106171, 0.31061712, 0.310617, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26djs"]
+bg_color = Color(0.41215244, 0.4121525, 0.41215235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44obo"]
+
+[resource]
+Button/fonts/font = ExtResource("1_ilgf8")
+Button/styles/focus = SubResource("StyleBoxFlat_ee8l1")
+Button/styles/hover = SubResource("StyleBoxFlat_26djs")
+Button/styles/normal = null
+Button/styles/pressed = SubResource("StyleBoxFlat_44obo")
+Label/fonts/font = ExtResource("1_ilgf8")

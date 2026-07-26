@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bfrpmwg68837r"]
+
+[ext_resource type="Theme" uid="uid://copnwlebnek1" path="res://assets/themes/start_menu.tres" id="1_6kjgw"]
+[ext_resource type="Script" uid="uid://cv2oo6kvo01ef" path="res://scenes/ui/single_player_select_screen/single_player_select.gd" id="1_602na"]
+
+[node name="SinglePlayerSelect" type="Control" unique_id=1334708700]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6kjgw")
+script = ExtResource("1_602na")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1605862879]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1718891322]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel" unique_id=2015841254]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -194.095
+offset_right = 80.0
+offset_bottom = -136.09494
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/VBoxContainer" unique_id=847092869]
+layout_mode = 2
+text = "single player options"
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/VBoxContainer" unique_id=604380748]
+layout_mode = 2
+text = "commence"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/Panel/VBoxContainer" unique_id=946974578]
+layout_mode = 2
+selected = 1
+item_count = 4
+popup/item_0/text = "64 x 64 : best stability"
+popup/item_0/id = 0
+popup/item_1/text = "128 x 128 : default stability"
+popup/item_1/id = 1
+popup/item_2/text = "256 x 256 : moderate unstability"
+popup/item_2/id = 2
+popup/item_3/text = "400 x 400 :very unstable"
+popup/item_3/id = 3
+
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="MarginContainer/Panel/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

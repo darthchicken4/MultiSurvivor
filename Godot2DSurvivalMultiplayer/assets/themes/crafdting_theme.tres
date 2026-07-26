@@ -2,18 +2,40 @@
 
 [ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_uiu84"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiu84"]
+bg_color = Color(0.23031491, 0.23031494, 0.23031494, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09239706, 0.09239709, 0.09239695, 1)
+corner_detail = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvs7e"]
-bg_color = Color(0.41215244, 0.4121525, 0.41215235, 1)
+bg_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09239706, 0.09239709, 0.09239695, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vyhq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiu84"]
-bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+bg_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.09239706, 0.09239709, 0.09239695, 1)
 corner_detail = 1
 
 [resource]
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 2
 Button/fonts/font = ExtResource("1_uiu84")
-Button/styles/hover = SubResource("StyleBoxFlat_gvs7e")
-Button/styles/normal = SubResource("StyleBoxFlat_5vyhq")
-Button/styles/pressed = SubResource("StyleBoxFlat_uiu84")
+Button/styles/hover = SubResource("StyleBoxFlat_uiu84")
+Button/styles/normal = SubResource("StyleBoxFlat_gvs7e")
+Button/styles/pressed = SubResource("StyleBoxFlat_5vyhq")
+Label/colors/font_color = Color(0.92099476, 0.9209946, 0.9209946, 1)
+Label/constants/outline_size = 2
 Label/fonts/font = ExtResource("1_uiu84")

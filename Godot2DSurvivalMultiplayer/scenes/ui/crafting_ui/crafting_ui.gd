@@ -4,28 +4,28 @@ extends Control
 @onready var recipes: Dictionary = CraftingDatabase.get_all_recipes()
 
 # Button template
-@onready var originalrbutton = $"MarginContainer/MarginContainer/HBoxContainer/selecting recepie_category_all/ScrollContainer/VBoxContainer/recipebuttontemplate"
+@onready var originalrbutton = $"MarginContainer/ColorRect/MarginContainer/HBoxContainer/selecting recepie_category_all/ScrollContainer/VBoxContainer/recipebuttontemplate"
 @onready var recipebuttontemplate
 
 # Station image template
-@onready var originalcraftingstationimage =$MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/craftingtable_list/crafting_station_holder
+@onready var originalcraftingstationimage =$MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/craftingtable_list/crafting_station_holder
 @onready var craftingstationimagetemplate
 
 # Material template
-@onready var originalmaterial = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder
+@onready var originalmaterial = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder
 @onready var materialtemplate
 
 # UI references
-@onready var tabs = $MarginContainer/MarginContainer/HBoxContainer/select_group/select_tab.get_children()
-@onready var recipebuttoncontainer = $"MarginContainer/MarginContainer/HBoxContainer/selecting recepie_category_all/ScrollContainer/VBoxContainer"
+@onready var tabs = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/select_group/select_tab.get_children()
+@onready var recipebuttoncontainer = $"MarginContainer/ColorRect/MarginContainer/HBoxContainer/selecting recepie_category_all/ScrollContainer/VBoxContainer"
 
-@onready var maincontainer = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/recipename/maincontainer
-@onready var craftingtableimagelist = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/craftingtable_list
-@onready var materiallist = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list
-@onready var recipename = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/recipename
-@onready var description = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/description
-@onready var crafting_station_text = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/crafting_station2
-@onready var materials_text = $MarginContainer/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/materials
+@onready var maincontainer = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/recipename/maincontainer
+@onready var craftingtableimagelist = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/craftingtable_list
+@onready var materiallist = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list
+@onready var recipename = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/recipename
+@onready var description = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/description
+@onready var crafting_station_text = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/crafting_station2
+@onready var materials_text = $MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/materials
 
 
 func _ready():

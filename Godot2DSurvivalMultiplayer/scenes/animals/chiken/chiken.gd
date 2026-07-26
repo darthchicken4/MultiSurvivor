@@ -52,7 +52,6 @@ func _process(delta: float) -> void:
 func wander(delta: float) -> void:
 	if is_thinking:
 		think_timer -= delta
-
 		if think_timer <= 0:
 			wander_direction = Vector2(
 				randf_range(-1.0, 1.0),

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://tqgaiwoe3j8p"]
 
 [ext_resource type="Theme" uid="uid://copnwlebnek1" path="res://assets/themes/start_menu.tres" id="1_m0hmm"]
+[ext_resource type="PackedScene" uid="uid://bvi2vvfuja281" path="res://scenes/ui/simulation_bg/scene_loader.tscn" id="2_4v5wy"]
 [ext_resource type="Script" uid="uid://dsskmlbth3pm7" path="res://scenes/ui/single_player.gd" id="3_s1kfm"]
 [ext_resource type="Script" uid="uid://dumqu7gkm4pda" path="res://scenes/ui/multplayer.gd" id="4_x0g8l"]
 [ext_resource type="Script" uid="uid://dmx4hqvf3aiwl" path="res://scenes/ui/quit.gd" id="5_i11hm"]
@@ -13,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_m0hmm")
+
+[node name="SceneLoader" parent="." unique_id=1242238909 instance=ExtResource("2_4v5wy")]
+position = Vector2(655, 393)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1325622595]
 layout_mode = 1
@@ -64,5 +68,6 @@ layout_mode = 2
 text = "quit"
 script = ExtResource("5_i11hm")
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/single player" to="MarginContainer/VBoxContainer/single player" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/multplayer" to="MarginContainer/VBoxContainer/multplayer" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="MarginContainer/VBoxContainer/quit" method="_on_pressed"]
