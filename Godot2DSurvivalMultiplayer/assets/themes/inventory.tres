@@ -17,3 +17,7 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/fonts/font = ExtResource("1_lviod")
 Panel/styles/panel = SubResource("StyleBoxFlat_lviod")
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/fonts/bold_font = ExtResource("1_lviod")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_lviod")
+RichTextLabel/fonts/normal_font = ExtResource("1_lviod")
