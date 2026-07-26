@@ -241,6 +241,7 @@ bus = &"sfx"
 
 [node name="nature" type="AudioStreamPlayer" parent="audio" unique_id=1961446982]
 stream = ExtResource("16_h3ilt")
+volume_db = -9.645
 bus = &"ambience"
 playback_type = 1
 

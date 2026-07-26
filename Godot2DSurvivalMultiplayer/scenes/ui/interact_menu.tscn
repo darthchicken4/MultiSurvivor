@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cjrvgag6yqopa"]
 
 [ext_resource type="Script" uid="uid://u51jqn5uvvtg" path="res://scenes/ui/interact_menu.gd" id="1_lc2fh"]
+[ext_resource type="Theme" uid="uid://dvduplpwatjt1" path="res://assets/themes/interact_theme.tres" id="1_n82vp"]
+[ext_resource type="PackedScene" uid="uid://dj02qrfbo3ing" path="res://scenes/ui/inspect_menu/inspect_menu.tscn" id="3_0cqhx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lksr3"]
 
@@ -19,6 +21,7 @@ grow_vertical = 2
 scale = Vector2(0.36, 0.75)
 mouse_filter = 2
 mouse_default_cursor_shape = 1
+theme = ExtResource("1_n82vp")
 script = ExtResource("1_lc2fh")
 
 [node name="Panel" type="Panel" parent="." unique_id=1203900582]
@@ -80,6 +83,14 @@ offset_right = 95.77778
 offset_bottom = 66.333336
 theme_override_font_sizes/font_size = 15
 text = "objectname"
+
+[node name="InspectMenu" parent="Panel" unique_id=1791158098 instance=ExtResource("3_0cqhx")]
+visible = false
+layout_mode = 1
+offset_left = 197.77774
+offset_top = 48.66667
+offset_right = 74.77777
+offset_bottom = 2.6666718
 
 [connection signal="focus_entered" from="Panel" to="Panel/MarginContainer/VBoxContainer/InspectButton" method="_on_panel_focus_entered"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/InspectButton" to="Panel/MarginContainer/VBoxContainer/InspectButton" method="_on_pressed"]

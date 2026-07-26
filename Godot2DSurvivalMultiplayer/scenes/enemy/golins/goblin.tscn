@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d2wm12rml2tkv"]
+
+[ext_resource type="Script" uid="uid://c2vscv7s575qt" path="res://scenes/enemy/golins/goblin.gd" id="1_hn42m"]
+[ext_resource type="Texture2D" uid="uid://bdmsohlduv2ae" path="res://assets/sprites/enemys/goblin/goblin.png" id="2_hesha"]
+[ext_resource type="Shader" uid="uid://cu6hxu41wjd3f" path="res://scenes/enemy/golins/camo.gdshader" id="2_tftw2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjv1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hn42m"]
+radius = 90.088844
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hesha"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtpdm"]
+shader = ExtResource("2_tftw2")
+shader_parameter/animation_progress = 0.0
+shader_parameter/random_influence = 0.05
+shader_parameter/melting_point = Vector2(0.5, 0.5)
+shader_parameter/atlas_size = Vector2(1, 1)
+shader_parameter/melting_time = 0.1
+shader_parameter/falling_time = 0.2
+shader_parameter/fall_distance = 16
+
+[node name="Goblin" type="CharacterBody2D" unique_id=1252994455]
+script = ExtResource("1_hn42m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=446733456]
+shape = SubResource("CircleShape2D_vjv1o")
+
+[node name="detect_area" type="Area2D" parent="." unique_id=2011412920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area" unique_id=353613113]
+shape = SubResource("CircleShape2D_hn42m")
+debug_color = Color(0.6509804, 0.47843137, 0.54901963, 0.24705882)
+
+[node name="attack_area" type="Area2D" parent="." unique_id=1031725762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area" unique_id=1556214261]
+shape = SubResource("CircleShape2D_hesha")
+
+[node name="audio" type="Node2D" parent="." unique_id=1654846765]
+
+[node name="giggle" type="AudioStreamPlayer2D" parent="audio" unique_id=921165738]
+
+[node name="Goblin" type="Sprite2D" parent="." unique_id=706468842]
+material = SubResource("ShaderMaterial_wtpdm")
+position = Vector2(1, 0)
+texture = ExtResource("2_hesha")
+
+[connection signal="body_entered" from="detect_area" to="." method="_on_detect_area_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_detect_area_body_exited"]
+[connection signal="body_entered" from="attack_area" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="attack_area" to="." method="_on_attack_area_body_exited"]

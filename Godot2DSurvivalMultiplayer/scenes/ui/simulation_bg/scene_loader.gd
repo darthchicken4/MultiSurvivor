@@ -9,8 +9,9 @@ func _ready() -> void:
 	
 
 func pick_scene():
-	rng.seed = 12345
-	var value = rng.randi_range(0,2)
-	print(value)
-	anim_main.play("scene_1")
-	
+	for i in range(3):
+		var scene_list = ["scene_1","scene_2"]
+		rng.seed = 12345
+		var value = rng.randi_range(0, scene_list.size() - 1)
+		anim_main.play(scene_list[value])
+		await  anim_main.animation_finished

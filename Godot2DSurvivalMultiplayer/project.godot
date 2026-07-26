@@ -41,6 +41,7 @@ window/vsync/vsync_mode=0
 [global_group]
 
 player="the main dud"
+objects="static_objects"
 
 [input]
 
@@ -123,7 +124,6 @@ common/physics_interpolation=true
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
-occlusion_culling/jitter_projection=false
 textures/canvas_textures/default_texture_filter=3
 occlusion_culling/occlusion_rays_per_thread=128
 occlusion_culling/use_occlusion_culling=true

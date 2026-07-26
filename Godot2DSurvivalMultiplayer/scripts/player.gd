@@ -23,6 +23,9 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var stamina_timer : float = 10.0 #sec
 @export var stamina_tick_rate : float = 0.3
 
+@export var recovery_delay: float = 1.0  
+@export var recovery_rate: float = 1.0
+
 @export var health : float= 20.0
 @export var max_health : float = 20.0
 @export var damage_reduction : float = 1.0
@@ -40,7 +43,10 @@ var _respawn_point :Vector2 = Vector2(0, 0)
 var chat_visible :bool = false
 var inventory_visible :bool = false
 
+var max_stamina: float = 10.0
 var can_sprint_again :bool = false
+var _time_since_stopped_running: float = 0.0
+
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
@@ -269,6 +275,7 @@ func show_respawn_ui():
 func is_running() -> bool:
 	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
+		_time_since_stopped_running = 0.0
 		return true
 	else:
 		_current_speed = NORMAL_SPEED if can_sprint_again else EXHAUST_SPEED
@@ -277,19 +284,22 @@ func is_running() -> bool:
 func update_stamina() -> void:
 	while true:
 		await Utils.wait(0.01)
+
 		if is_running():
 			stamina_value -= stamina_tick_rate / 10
 			if stamina_value <= 0.0:
 				stamina_value = 0.0
 				can_sprint_again = false
-
 		else:
-			stamina_value += stamina_tick_rate / 10
-			if stamina_value >= stamina_timer:
-				stamina_value = stamina_timer
-				can_sprint_again = true
-		stamina_value = clamp(stamina_value, 0.0, stamina_timer)
+			_time_since_stopped_running += 0.01
 
+			# only start regenerating after the delay has passed
+			if _time_since_stopped_running >= recovery_delay:
+				stamina_value += recovery_rate / 10
+				if stamina_value >= max_stamina:
+					stamina_value = max_stamina
+					can_sprint_again = true
+					
 func update_saturation() -> void:
 	while true:
 		await Utils.wait(1.0)
@@ -307,7 +317,7 @@ func update_health() -> void:
 
 func death_check(can_die):
 	while true:
-		await Utils.wait(1)
+		await Utils.wait(0.1)
 		if can_die == true:
 			if health < 0:
 				_sprite.play("death")

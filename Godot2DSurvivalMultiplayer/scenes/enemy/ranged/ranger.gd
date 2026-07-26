@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @export  var projectile :PackedScene
 
+@export var audio : AudioStreamPlayer2D
 
 var player: Node2D = null
 var player_priority : int= 0
@@ -102,6 +103,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		audio.play()
 		var arrow: Node2D = projectile.instantiate()
 		var origin: Vector2 = self.global_position
 		var direction: Vector2 = (body.global_position - origin).normalized()

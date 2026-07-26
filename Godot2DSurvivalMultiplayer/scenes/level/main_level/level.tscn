@@ -95,6 +95,8 @@ player_scene = ExtResource("2_iutpc")
 
 [node name="Map" type="Node2D" parent="." unique_id=84173827]
 
+[node name="building_layer" type="TileMapLayer" parent="Map" unique_id=1220804939]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=1767721526]
 z_index = -2
 y_sort_enabled = true

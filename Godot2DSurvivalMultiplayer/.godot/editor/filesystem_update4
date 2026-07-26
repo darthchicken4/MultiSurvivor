@@ -1,5 +1,7 @@
-res://scenes/level/main_level/level.tscn
+res://scenes/enemy/golins/goblin.tscn
 res://assets/themes/inventory.tres
+res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://scenes/sun/sun_system.gdshader
+res://scenes/enemy/golins/camo.gdshader
