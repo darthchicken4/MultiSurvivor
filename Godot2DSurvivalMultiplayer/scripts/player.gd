@@ -76,10 +76,11 @@ func _ready():
 	
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
-
+	
 	print("Debug: Player ", name, " ready - authority: ", get_multiplayer_authority(), ", local client: ", local_client_id, ", is_local: ", is_local_player)
 
 	if is_local_player:
+		GameManager.setPlayer(self)
 		player_inventory = PlayerInventory.new()
 		_add_starting_items()
 		inventory.visible = true
