@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://cgfrxdjgkag25"]
+[gd_scene format=3 uid="uid://c1nl06evxrpud"]
 
-[ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="1_dalwq"]
+[ext_resource type="Texture2D" uid="uid://i28d353w3cr6" path="res://assets/spritesheets/itemsheet1.png" id="1_kyy26"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dalwq"]
-atlas = ExtResource("1_dalwq")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqm0x"]
+atlas = ExtResource("1_kyy26")
+region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gdlv4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyy26"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dalwq")
+"texture": SubResource("AtlasTexture_rqm0x")
 }],
 "loop": true,
 "name": &"default",
@@ -22,15 +22,14 @@ properties/0/path = NodePath("Weapon/Sprite:frame")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Node2D" type="Node2D" unique_id=1774495734]
+[node name="ItemTemp" type="Node2D" unique_id=1774495734]
 
 [node name="Weapon" type="Node2D" parent="." unique_id=621430649]
 position = Vector2(0, 6)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Weapon" unique_id=690707161]
-rotation = 2.4626596
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_gdlv4")
+sprite_frames = SubResource("SpriteFrames_kyy26")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]
 replication_config = SubResource("SceneReplicationConfig_dalwq")

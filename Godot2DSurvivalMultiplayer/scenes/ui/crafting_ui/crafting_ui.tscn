@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/objects/tree.png" id="2_hjb8q"]
 [ext_resource type="Texture2D" uid="uid://b4cmvm6tatqtu" path="res://assets/sprites/icons/crafting table.png" id="3_js6hb"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="4_ym6gd"]
-[ext_resource type="Script" uid="uid://dxuihun2yo62o" path="res://scenes/ui/crafting_ui/items.gd" id="5_d5bnp"]
+[ext_resource type="Script" path="res://scenes/ui/crafting_ui/items.gd" id="5_d5bnp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d5bnp"]
 line_spacing = -3.415
@@ -41,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 98
 theme_override_constants/margin_right = 623

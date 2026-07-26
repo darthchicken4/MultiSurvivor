@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bglwdpf2mf7g0"]
 
 [ext_resource type="Script" uid="uid://bi0mlil0a0e5i" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_5k8m7"]
-[ext_resource type="Theme" uid="uid://bdh0g6bxphyex" path="res://assets/themes/inventory.tres" id="1_k1d76"]
+[ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_k1d76"]
 [ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/spritesheets/border.png" id="2_bpgql"]
+[ext_resource type="Texture2D" uid="uid://im5x2eqcm2fi" path="res://assets/sprites/icons/border (1).png" id="4_opn8x"]
 
 [node name="InventorySlotUI" type="Control" unique_id=1287090853]
 layout_mode = 3
@@ -44,12 +45,22 @@ grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=815010247]
+[node name="Border" type="TextureRect" parent="." unique_id=815010247]
 self_modulate = Color(1, 1, 1, 0.19215687)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 63.0
 texture = ExtResource("2_bpgql")
+
+[node name="SelectBorder" type="TextureRect" parent="." unique_id=1563519521]
+visible = false
+layout_mode = 0
+offset_left = -11.999999
+offset_top = -11.0
+offset_right = 52.0
+offset_bottom = 52.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_opn8x")
 
 [node name="QuantityLabel" type="Label" parent="." unique_id=557573622]
 layout_mode = 1

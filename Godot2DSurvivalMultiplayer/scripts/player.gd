@@ -18,6 +18,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var stats = $CanvasLayer/StatsUi
 @onready var respawnUI = $CanvasLayer/RespawnUi
 @onready var foot_steps = $audio/foot_steps
+@onready var tool_pivot = $ToolPivot
 
 @export var stamina_value : float = 10.0
 @export var stamina_timer : float = 10.0 #sec
@@ -32,6 +33,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var hunger_max : float = 20.0
 
 var player_inventory: PlayerInventory
+var selected_hotbar_slot := -1
 
 var _current_speed : float
 var _respawn_point :Vector2 = Vector2(0, 0)
@@ -111,9 +113,6 @@ func _physics_process(_delta):
 func _process(_delta):
 	_animate()
 
-
-
-
 func freeze():
 	velocity = Vector2.ZERO
 	_current_speed = 0
@@ -135,7 +134,6 @@ func _move() -> void:
 
 	velocity = velocity.move_toward(Vector2.ZERO, _current_speed)
 
-	
 func _animate() -> void:
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
@@ -155,27 +153,27 @@ func _debug_add_item():
 	var local_player = player
 	if local_player:
 		var test_items = [
-	"camp_fire",
-	"red_mushroom",
-	"branch_flint_hatchet",
-	"yellow_mushroom",
-	"tree_branch",
-	"grass_strands",
-	"small_stones",
-	"flint_shard",
-	"waxed_leaves",
-	"twigs",
-	"plant_fibre",
-	"sharp_slab",
-	"large_stone",
-	"fern_leaf",
-	"raw_clay",
-	"red_berries",
-	"thorny_bramble",
-	"twine",
-	"branch_stone_spear",
-	"branch_flint_spear"
-]
+		"camp_fire",
+		"red_mushroom",
+		"branch_flint_hatchet",
+		"yellow_mushroom",
+		"tree_branch",
+		"grass_strands",
+		"small_stones",
+		"flint_shard",
+		"waxed_leaves",
+		"twigs",
+		"plant_fibre",
+		"sharp_slab",
+		"large_stone",
+		"fern_leaf",
+		"raw_clay",
+		"red_berries",
+		"thorny_bramble",
+		"twine",
+		"branch_stone_spear",
+		"branch_flint_spear"
+		]
 		var random_item = test_items[randi() % test_items.size()]
 		print("Debug: Requesting to add ", random_item, " to player ", local_player.name, " (authority: ", local_player.get_multiplayer_authority(), ")")
 		local_player.request_add_item.rpc_id(1, random_item, 1)
@@ -213,6 +211,17 @@ func update_local_inventory_display():
 func _on_inventory_closed():
 	inventory_visible = false
 	
+func _select_hotbar_slot(slot: int):
+	if selected_hotbar_slot == slot:
+		selected_hotbar_slot = -1
+		print("Deselected hotbar")
+	else:
+		selected_hotbar_slot = slot
+		var item_id = get_inventory().get_hotbar_slot(slot);
+		if ItemDatabase.has_item(item_id):
+			ItemDatabase.get_item(item_id)
+		
+		
 func _input(event):
 	if not is_multiplayer_authority():
 		return
@@ -231,7 +240,6 @@ func _input(event):
 	elif event is InputEventMouseButton:
 		print(get_viewport().gui_get_hovered_control())
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-
 			# Don't open another menu if one is already open
 			if interactMenu.visible:
 				return
@@ -250,19 +258,22 @@ func _input(event):
 						target,
 						target.actions
 					)
-					
-				
-				
-# ---------- MULTIPLAYER CHAT ----------
+	elif event is InputEventKey and event.pressed:
+		match event.keycode:
+			KEY_1:
+				_select_hotbar_slot(0)
+			KEY_2:
+				_select_hotbar_slot(1)
+			KEY_3:
+				_select_hotbar_slot(2)
+			KEY_4:
+				_select_hotbar_slot(3)
 func toggle_chat():
-
-
 	chat.toggle_chat()
 	chat_visible = chat.is_chat_visible()
 #runn
 func show_respawn_ui():
 	pass
-
 
 func is_running() -> bool:
 	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
@@ -296,17 +307,14 @@ func update_saturation() -> void:
 			hunger_value = 0.0
 			health -= 1.2
 
-
 func update_health() -> void:
 	while true:
 		await Utils.wait(0.3)
 		if hunger_value > hunger_max * 0.75:
 			health += 0.2
 
-
 func damage_player(amount):
 	health -= amount * damage_reduction
-
 
 func pause_menu_show():
 	if Input.is_action_just_pressed("quit"):
@@ -397,22 +405,18 @@ func request_move_item(from_container: String, from_slot: int, to_container: Str
 		
 		success = player_inventory.move_item(from_container, from_slot, to_container, to_slot)
 		print("Debug: move result = ", success)
-
 		if not success:
 			success = player_inventory.swap_items(from_container, from_slot, to_container, to_slot)
 			print("Debug: Swapped ", from_container, ":", from_slot, " with ", to_container, ":", to_slot)
 		else:
 			print("Debug: Moved item from ", from_container, ":", from_slot, " to ", to_container, ":", to_slot)
-
 	else:
 		print("Debug: move result = ", success)
 		success = player_inventory.move_item(from_container, from_slot, to_container, to_slot, quantity)
 		print("Debug: Moved ", quantity, " items from ", from_container, ":", from_slot, " to ", to_container, ":", to_slot)
 	if success:
 		print("Debug: Move successful, refreshing inventory")
-
 		var owner_id = get_multiplayer_authority()
-
 		if owner_id != 1:
 			sync_inventory_to_owner.rpc_id(owner_id, player_inventory.to_dict())
 		else:

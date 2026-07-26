@@ -5,6 +5,7 @@ class_name InventorySlotUI
 @onready var item_icon: TextureRect = $ItemIcon
 @onready var quantity_label: Label = $QuantityLabel
 @onready var rarity_border: NinePatchRect = $RarityBorder
+@onready var select_border: TextureRect = $SelectBorder
 
 var slot_index: int = 0
 var inventory_data: InventorySlot
@@ -34,6 +35,8 @@ func set_slot_data(slot_data: InventorySlot, index: int, container: String):
 	inventory_data = slot_data
 	slot_index = index
 	container_type = container
+	if select_border and container_type != "hotbar":
+		select_border.queue_free()
 	update_display()
 
 func update_display():

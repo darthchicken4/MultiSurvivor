@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bclq8vh1x2goy"]
 
-[ext_resource type="Theme" uid="uid://bdh0g6bxphyex" path="res://assets/themes/inventory.tres" id="1_4ycse"]
+[ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_4ycse"]
 [ext_resource type="Script" uid="uid://c2w12kgcvtww4" path="res://scripts/inventory/inventory_ui.gd" id="1_h7x4v"]
-[ext_resource type="Script" uid="uid://dto3eafbmvwbq" path="res://scenes/ui/panel.gd" id="3_drsq2"]
+[ext_resource type="Script" path="res://scenes/ui/panel.gd" id="3_drsq2"]
 
 [node name="InventoryUI" type="Control" unique_id=658571058]
 process_mode = 3
@@ -30,6 +30,7 @@ offset_right = 628.0
 offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("3_drsq2")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1810218656]
@@ -83,6 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ItemTooltip/Panel" unique_id=1140209611]
 layout_mode = 1
