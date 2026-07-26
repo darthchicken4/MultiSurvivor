@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://bgy2l7e0qpt2n" path="res://scenes/enemy/zombie/zombie.gd" id="1_ncyl7"]
 [ext_resource type="Texture2D" uid="uid://d0tm5vi4gcpkj" path="res://assets/sprites/enemys/zombiewalk.png" id="1_nlave"]
 [ext_resource type="Texture2D" uid="uid://doxt6snld8k37" path="res://assets/sprites/enemys/zombie_swing.png" id="2_r8isk"]
-[ext_resource type="AudioStream" uid="uid://oqe57aat2omk" path="res://assets/audio/bite.mp3" id="4_w50ss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6mvc3"]
 radius = 9.95
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlave"]
-size = Vector2(67, 56)
+size = Vector2(43, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w50ss"]
 atlas = ExtResource("2_r8isk")
@@ -126,7 +125,7 @@ shape = SubResource("CircleShape2D_6mvc3")
 [node name="damage_area" type="Area2D" parent="." unique_id=1386042921]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage_area" unique_id=1296146217]
-position = Vector2(0.5, 0)
+position = Vector2(1.5, -10)
 shape = SubResource("RectangleShape2D_nlave")
 debug_color = Color(0.92041546, 0.17519557, 0.55336773, 0.41960785)
 
@@ -146,11 +145,6 @@ debug_color = Color(0.78431374, 0.3137255, 0.75686276, 0.2)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1960907273]
 replication_config = SubResource("SceneReplicationConfig_ncyl7")
-
-[node name="audio" type="Node2D" parent="." unique_id=2007655109]
-
-[node name="bite" type="AudioStreamPlayer2D" parent="audio" unique_id=1135263298]
-stream = ExtResource("4_w50ss")
 
 [connection signal="body_entered" from="damage_area" to="." method="_on_damage_area_body_entered"]
 [connection signal="body_exited" from="damage_area" to="." method="_on_damage_area_body_exited"]

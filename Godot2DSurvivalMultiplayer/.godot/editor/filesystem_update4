@@ -1,0 +1,8 @@
+res://scenes/weapons/spear/SpearTemp.tscn
+res://scenes/level/player/player.tscn
+res://assets/themes/inventory.tres
+res://assets/themes/crafdting_theme.tres
+res://scenes/sun/sun_system.gdshader
+res://scenes/weapons/axe/AxeTemp.tscn
+res://scenes/weapons/generic/ItemTemp.tscn
+res://scripts/player.gd

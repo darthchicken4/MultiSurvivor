@@ -29,8 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="28_xpe6n"]
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="29_gmhj2"]
 [ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
+[ext_resource type="PackedScene" uid="uid://ba67irfw4myah" path="res://scenes/structures/caves/caves_prefab.tscn" id="31_iutpc"]
 [ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="32_spd3i"]
-[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_voa3t")
@@ -95,16 +95,12 @@ player_scene = ExtResource("2_iutpc")
 
 [node name="Map" type="Node2D" parent="." unique_id=84173827]
 
-[node name="building_layer" type="TileMapLayer" parent="Map" unique_id=1220804939]
-
 [node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=1767721526]
 z_index = -2
 y_sort_enabled = true
 texture_filter = 3
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_xv074")
-physics_quadrant_size = 32
-navigation_enabled = false
 script = ExtResource("4_spd3i")
 tree_scene = ExtResource("5_s8vhn")
 shrub_scene = ExtResource("6_8naku")
@@ -142,6 +138,10 @@ tilemap_index = NodePath("../../TileMapLayer")
 [node name="zombie" parent="Map/SortContainer" unique_id=1499102670 instance=ExtResource("25_86s6a")]
 position = Vector2(-397, -278)
 
+[node name="Node2D" parent="Map/SortContainer" unique_id=1913555255 node_paths=PackedStringArray("map") instance=ExtResource("31_iutpc")]
+position = Vector2(521, -320)
+map = NodePath("../../TileMapLayer")
+
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2
 scale = Vector2(2, 2)
@@ -161,6 +161,3 @@ offset_left = 14.0
 offset_top = 3.0
 offset_right = 14.0
 offset_bottom = 3.0
-
-[node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
-position = Vector2(-202, -470)

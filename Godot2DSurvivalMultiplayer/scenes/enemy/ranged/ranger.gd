@@ -9,7 +9,6 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 @export  var projectile :PackedScene
 
-@export var audio : AudioStreamPlayer2D
 
 var player: Node2D = null
 var player_priority : int= 0
@@ -103,15 +102,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		audio.play()
 		var arrow: Node2D = projectile.instantiate()
+		get_tree().current_scene.add_child(arrow)  # add wherever makes sense in your tree
+
 		var origin: Vector2 = self.global_position
-		var direction: Vector2 = (body.global_position - origin).normalized()
-
 		arrow.global_position = origin
-		arrow.global_rotation = direction.angle()
 
-		get_tree().current_scene.add_child(arrow)  # now _ready() sees correct rotation
+		var direction: Vector2 = (body.global_position - origin).normalized()
+		arrow.rotation = direction.angle()
+
 
 func _on_range_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.

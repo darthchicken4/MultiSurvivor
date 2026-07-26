@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://x3eu66l54nmy" path="res://scenes/enemy/ranged/ranger.gd" id="1_kb80e"]
 [ext_resource type="PackedScene" uid="uid://bw0l0qrvdd6bc" path="res://scenes/projectiles/arrow/arrow_projectile.tscn" id="2_1835q"]
-[ext_resource type="AudioStream" uid="uid://csw183qj6bf6m" path="res://assets/audio/arrow_release.mp3" id="3_g6w3e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ajvrj"]
 
@@ -14,10 +13,9 @@ radius = 110.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_kb80e"]
 
-[node name="Ranger" type="CharacterBody2D" unique_id=58468175 node_paths=PackedStringArray("audio")]
+[node name="Ranger" type="CharacterBody2D" unique_id=58468175]
 script = ExtResource("1_kb80e")
 projectile = ExtResource("2_1835q")
-audio = NodePath("audio/release")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039224451]
 shape = SubResource("CircleShape2D_ajvrj")
@@ -40,13 +38,6 @@ debug_color = Color(0.7388112, 0.43412632, 0.47492707, 0.41960785)
 position = Vector2(0, 1)
 scale = Vector2(29.5, 26.5)
 mesh = SubResource("QuadMesh_kb80e")
-
-[node name="audio" type="Node2D" parent="." unique_id=233666595]
-
-[node name="release" type="AudioStreamPlayer2D" parent="audio" unique_id=744267857]
-stream = ExtResource("3_g6w3e")
-volume_db = 4.747
-bus = &"sfx"
 
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]

@@ -2,13 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_4ycse"]
 [ext_resource type="Script" uid="uid://c2w12kgcvtww4" path="res://scripts/inventory/inventory_ui.gd" id="1_h7x4v"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://scenes/ui/panel.gd" id="3_drsq2"]
-=======
-[ext_resource type="Script" uid="uid://dto3eafbmvwbq" path="res://scenes/ui/panel.gd" id="3_drsq2"]
-[ext_resource type="Script" uid="uid://c5sj0xs0umnd7" path="res://scenes/ui/armor_ui.gd" id="4_bsps8"]
-[ext_resource type="Texture2D" uid="uid://bhjhypivoojqm" path="res://scenes/armor/armor.png" id="4_nuief"]
->>>>>>> 0e72eda1347c614a10bac879ec9d75205490e974
 
 [node name="InventoryUI" type="Control" unique_id=658571058]
 process_mode = 3
@@ -30,7 +24,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 199.0
+offset_left = 99.0
 offset_top = -207.0
 offset_right = 628.0
 offset_bottom = 193.0
@@ -44,13 +38,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 12.0
-offset_right = -15.0
-offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -87,7 +76,6 @@ layout_mode = 1
 anchors_preset = 0
 offset_right = 280.0
 offset_bottom = 180.0
-theme = ExtResource("1_4ycse")
 
 [node name="Panel" type="Panel" parent="ItemTooltip" unique_id=745507354]
 layout_mode = 1
@@ -112,7 +100,6 @@ theme_override_constants/margin_bottom = 8
 
 [node name="TooltipText" type="RichTextLabel" parent="ItemTooltip/Panel/MarginContainer" unique_id=807347606]
 layout_mode = 2
-theme = ExtResource("1_4ycse")
 bbcode_enabled = true
 text = "[b]Item Name[/b]
 Item description goes here.
@@ -148,60 +135,6 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 mouse_filter = 2
 
-[node name="ArmorUI" type="Control" parent="." unique_id=1203784065]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("4_bsps8")
-
-[node name="Panel" type="Panel" parent="ArmorUI" unique_id=35854773]
-visible = false
-layout_mode = 0
-offset_left = 627.0
-offset_top = 155.0
-offset_right = 832.0
-offset_bottom = 382.0
-script = ExtResource("3_drsq2")
-
-[node name="MarginContainer" type="MarginContainer" parent="ArmorUI/Panel" unique_id=2128782879]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="TextureRect" type="TextureRect" parent="ArmorUI/Panel/MarginContainer" unique_id=1191269478]
-layout_mode = 2
-texture = ExtResource("4_nuief")
-stretch_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ArmorUI/Panel/MarginContainer" unique_id=1734667497]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 71
-
-[node name="Label" type="Label" parent="ArmorUI/Panel/MarginContainer/VBoxContainer" unique_id=1704280499]
-layout_mode = 2
-text = "arrmor"
-
-[node name="close" type="Button" parent="ArmorUI/Panel/MarginContainer" unique_id=1725766483]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "x
-"
-
 [connection signal="gui_input" from="Panel" to="Panel" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Panel" to="Panel" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel" to="Panel" method="_on_mouse_exited"]
-[connection signal="gui_input" from="ArmorUI/Panel" to="ArmorUI/Panel" method="_on_gui_input"]
-[connection signal="mouse_entered" from="ArmorUI/Panel" to="ArmorUI/Panel" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ArmorUI/Panel" to="ArmorUI/Panel" method="_on_mouse_exited"]

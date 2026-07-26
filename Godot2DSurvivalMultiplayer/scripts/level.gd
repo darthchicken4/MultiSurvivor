@@ -2,30 +2,29 @@ extends Node2D
 @onready var players_container: Node2D = $Map/SortContainer
 @onready var main_menu: MainMenuUI = $CanvasLayer/MainMenuUI
 @export var player_scene: PackedScene
-@export var single_player :bool  = false
 @onready var tilemap = $Map/TileMapLayer  # adjust path to match your scene
  
 func _ready():
-	if single_player == false:
-		if DisplayServer.get_name() == "headless":
-			print("Dedicated server starting...")
-			Network.start_host("", "")
-	 
-		main_menu.show_menu()
-	 
-		main_menu.host_pressed.connect(_on_host_pressed)
-		main_menu.join_pressed.connect(_on_join_pressed)
-		main_menu.quit_pressed.connect(_on_quit_pressed)
-	 
-		# Fires once start_host() finishes trying UPnP, on whichever peer
-		# ends up hosting. Lets us show the player the address to share.
-		Network.upnp_setup_done.connect(_on_upnp_ready)
-	 
-		if not multiplayer.is_server():
-			return
-	 
-		Network.connect("player_connected", Callable(self, "_on_player_connected"))
-		multiplayer.peer_disconnected.connect(_remove_player)
+ 
+	if DisplayServer.get_name() == "headless":
+		print("Dedicated server starting...")
+		Network.start_host("", "")
+ 
+	main_menu.show_menu()
+ 
+	main_menu.host_pressed.connect(_on_host_pressed)
+	main_menu.join_pressed.connect(_on_join_pressed)
+	main_menu.quit_pressed.connect(_on_quit_pressed)
+ 
+	# Fires once start_host() finishes trying UPnP, on whichever peer
+	# ends up hosting. Lets us show the player the address to share.
+	Network.upnp_setup_done.connect(_on_upnp_ready)
+ 
+	if not multiplayer.is_server():
+		return
+ 
+	Network.connect("player_connected", Callable(self, "_on_player_connected"))
+	multiplayer.peer_disconnected.connect(_remove_player)
  
  
 func _on_upnp_ready(success: bool, external_ip: String) -> void:

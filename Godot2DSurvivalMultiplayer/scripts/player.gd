@@ -24,9 +24,6 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var stamina_timer : float = 10.0 #sec
 @export var stamina_tick_rate : float = 0.3
 
-@export var recovery_delay: float = 1.0  
-@export var recovery_rate: float = 1.0
-
 @export var health : float= 20.0
 @export var max_health : float = 20.0
 @export var damage_reduction : float = 1.0
@@ -34,8 +31,6 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var hunger_value : float= 20.0
 @export var hunger_tick : float= 0.3 #time to hunger go down
 @export var hunger_max : float = 20.0
-
-@export var can_die = false
 
 var player_inventory: PlayerInventory
 var selected_hotbar_slot := -1
@@ -45,10 +40,7 @@ var _respawn_point :Vector2 = Vector2(0, 0)
 var chat_visible :bool = false
 var inventory_visible :bool = false
 
-var max_stamina: float = 10.0
 var can_sprint_again :bool = false
-var _time_since_stopped_running: float = 0.0
-
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
@@ -72,17 +64,15 @@ func _ready():
 	update_health()
 	update_stamina()
 	update_saturation()
-	death_check(can_die)
 	if not is_multiplayer_authority(): return
 	
 	
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
-	
+
 	print("Debug: Player ", name, " ready - authority: ", get_multiplayer_authority(), ", local client: ", local_client_id, ", is_local: ", is_local_player)
 
 	if is_local_player:
-		GameManager.setPlayer(self)
 		player_inventory = PlayerInventory.new()
 		_add_starting_items()
 		inventory.visible = true
@@ -126,6 +116,7 @@ func _process(_delta):
 func freeze():
 	velocity = Vector2.ZERO
 	_current_speed = 0
+	_sprite.play("idle")
 
 func _move() -> void:
 	var _input_direction: Vector2 = Vector2.ZERO
@@ -287,7 +278,6 @@ func show_respawn_ui():
 func is_running() -> bool:
 	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
-		_time_since_stopped_running = 0.0
 		return true
 	else:
 		_current_speed = NORMAL_SPEED if can_sprint_again else EXHAUST_SPEED
@@ -296,22 +286,19 @@ func is_running() -> bool:
 func update_stamina() -> void:
 	while true:
 		await Utils.wait(0.01)
-
 		if is_running():
 			stamina_value -= stamina_tick_rate / 10
 			if stamina_value <= 0.0:
 				stamina_value = 0.0
 				can_sprint_again = false
-		else:
-			_time_since_stopped_running += 0.01
 
-			# only start regenerating after the delay has passed
-			if _time_since_stopped_running >= recovery_delay:
-				stamina_value += recovery_rate / 10
-				if stamina_value >= max_stamina:
-					stamina_value = max_stamina
-					can_sprint_again = true
-					
+		else:
+			stamina_value += stamina_tick_rate / 10
+			if stamina_value >= stamina_timer:
+				stamina_value = stamina_timer
+				can_sprint_again = true
+		stamina_value = clamp(stamina_value, 0.0, stamina_timer)
+
 func update_saturation() -> void:
 	while true:
 		await Utils.wait(1.0)
@@ -326,21 +313,6 @@ func update_health() -> void:
 		if hunger_value > hunger_max * 0.75:
 			health += 0.2
 
-<<<<<<< HEAD
-=======
-func death_check(can_die):
-	while true:
-		await Utils.wait(0.1)
-		if can_die == true:
-			if health < 0:
-				_sprite.play("death")
-				can_die = false
-				await _sprite.animation_finished
-
-				
-			
-
->>>>>>> 0e72eda1347c614a10bac879ec9d75205490e974
 func damage_player(amount):
 	health -= amount * damage_reduction
 
@@ -353,9 +325,7 @@ func _check_bounds_and_respawn():
 		_respawn()
 
 func _respawn():
-	var respawn_area_size = 100
-	var respawn_area =Vector2(randi_range(-respawn_area_size,respawn_area_size),randi_range(-respawn_area_size,respawn_area_size))
-	global_position = respawn_area
+	global_position = _respawn_point
 	velocity = Vector2.ZERO
 
 @rpc("any_peer", "reliable")

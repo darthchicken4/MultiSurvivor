@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://o65p1tljlbhk"]
-
-[ext_resource type="Texture2D" uid="uid://dps4055fy47m5" path="res://assets/sprites/objects/3 eyed skull.png" id="1_5tufk"]
-
-[node name="3EyedSkull" type="Node2D" unique_id=448128124]
-
-[node name="3EyedSkull" type="Sprite2D" parent="." unique_id=990898915]
-scale = Vector2(2, 2)
-texture = ExtResource("1_5tufk")

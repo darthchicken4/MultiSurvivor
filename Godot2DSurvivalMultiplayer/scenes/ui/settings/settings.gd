@@ -6,7 +6,7 @@ extends Control
 var is_on_server = false
 
 var phy_tickrate = 60 
-var vsync = false
+var vsyn = false
 
 func _ready():
 	pass
@@ -38,8 +38,7 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	var fps = 0 
-	pass
-	
+	new_text = fps
 
 
 func _on_physics_interpolate_toggled(toggled_on: bool) -> void:
