@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Control
 CollisionShape2D
 StaticBody2D
@@ -13,3 +14,19 @@ HBoxContainer
 Label
 SpinBox
 Button
+=======
+AnimationPlayer
+Sprite2D
+AudioStreamPlayer2D
+Node2D
+CollisionShape2D
+Area2D
+CharacterBody2D
+Character
+StaticBody2D
+TileMapLayer
+Button
+VBoxContainer
+Label
+Panel
+>>>>>>> 9e779e95aa8efc7349f624a9f233dcfae990f21e

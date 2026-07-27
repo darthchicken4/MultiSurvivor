@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cgfrxdjgkag25"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke40s"]
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
 properties/0/path = NodePath("Weapon/Sprite:frame")
 properties/0/spawn = true
@@ -12,7 +14,10 @@ position = Vector2(0, 6)
 
 [node name="Sprite" type="Sprite2D" parent="Weapon" unique_id=1052999554]
 rotation = 2.4626596
-scale = Vector2(2, 2)
+scale = Vector2(1.9952362, 1.9984112)
+texture = SubResource("AtlasTexture_ke40s")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]
 replication_config = SubResource("SceneReplicationConfig_dalwq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=53198904]

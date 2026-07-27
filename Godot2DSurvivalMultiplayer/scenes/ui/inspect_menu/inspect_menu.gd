@@ -1,17 +1,16 @@
 extends Control
 
-@export var title :String  = "title"
-@export var descrition :String  = "description"
 
 @onready var text_title = $Panel/MarginContainer/VBoxContainer/title
 @onready var text_description  =$Panel/MarginContainer/VBoxContainer/description
 
-func _ready() -> void:
-	update() 
 	
-func update():
-	while true:
-		await Utils.wait(0.1)
-		text_description.text = descrition
+func update(title,description):
+		text_description.text = description
 		text_title.text = title
 		
+
+
+func _on_button_pressed() -> void:
+	queue_free()
+	pass # Replace with function body.

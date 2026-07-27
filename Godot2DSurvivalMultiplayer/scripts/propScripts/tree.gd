@@ -1,7 +1,7 @@
 extends Node2D
 
 var actions: Array[String] = ["Inspect"]
-var objectname : String = "Pine Tree"
+@export var objectname : String = "Pine Tree"
 
 @export var inspect_text: String = "A sturdy pine tree, slightly twisted in some places."
 

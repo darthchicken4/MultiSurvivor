@@ -27,9 +27,19 @@ func open(pos: Vector2, target: Node, actions: Array):
 	for action in actions:
 		var btn = inspect_button.duplicate()
 		btn.text = action
-		btn.show()
-		btn.pressed.connect(_on_action_pressed.bind(action))
-		print("Connected:", action)
+		btn.visible = true
+		btn.disabled = false
+		btn.mouse_filter = Control.MOUSE_FILTER_STOP
+
+		# Remove any existing signal connections inherited from the duplicate
+		for connection in btn.pressed.get_connections():
+			btn.pressed.disconnect(connection.callable)
+
+		btn.pressed.connect(func():
+			print("Pressed:", action)
+			_on_action_pressed(action)
+		)
+
 		vbox.add_child(btn)
 
 	show()
@@ -39,7 +49,6 @@ func open(pos: Vector2, target: Node, actions: Array):
 
 func _on_action_pressed(action: String):
 	GameManager.action_selected.emit(action, target_node)
-	print("YEAH")
 	hide()
 
 func _input(event):
@@ -50,5 +59,6 @@ func _input(event):
 		print(global_position)
 		visible = false
 	if event is InputEventMouseButton and event.pressed:
-		if not panel.get_global_rect().has_point(get_viewport().get_mouse_position()):
+		await get_tree().process_frame
+		if visible and !panel.get_global_rect().has_point(panel.get_global_mouse_position()):
 			hide()
