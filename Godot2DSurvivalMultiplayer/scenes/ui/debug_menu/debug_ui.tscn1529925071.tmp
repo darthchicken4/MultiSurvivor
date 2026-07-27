@@ -15,8 +15,11 @@ script = ExtResource("1_0qlkh")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=494277609]
 layout_mode = 1
-offset_right = 194.0
-offset_bottom = 167.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=472062806]
@@ -42,30 +45,4 @@ text = "hp"
 layout_mode = 2
 text = "teleport when press t"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1754778680]
-layout_mode = 2
-
-[node name="SpinBox2" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1233116744]
-layout_mode = 2
-max_value = 1000.0
-select_all_on_focus = true
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=937617719]
-layout_mode = 2
-text = "speed"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1738849972]
-layout_mode = 2
-
-[node name="SpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1644771711]
-layout_mode = 2
-max_value = 1000.0
-select_all_on_focus = true
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1722887645]
-layout_mode = 2
-text = "health"
-
 [connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/SpinBox2" to="." method="_on_spin_box_2_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/SpinBox" to="." method="_on_spin_box_value_changed"]

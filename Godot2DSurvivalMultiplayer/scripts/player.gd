@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Character
 
-const NORMAL_SPEED : float = 100.0
+@export var NORMAL_SPEED : float = 100.0
 const SPRINT_SPEED : float  = 150.0
 const EXHAUST_SPEED : float  = 70.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }

@@ -238,6 +238,7 @@ visible = false
 visible = false
 
 [node name="DebugUi" parent="CanvasLayer" unique_id=95695039 node_paths=PackedStringArray("player") instance=ExtResource("11_du4ox")]
+visible = false
 player = NodePath("../..")
 
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]

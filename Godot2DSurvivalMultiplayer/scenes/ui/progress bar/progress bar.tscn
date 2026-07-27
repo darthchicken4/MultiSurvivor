@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bgfqyh6orae3b"]
+
+[ext_resource type="Theme" uid="uid://c7v5420q2wxob" path="res://assets/themes/progress.tres" id="1_vj2va"]
+[ext_resource type="Script" uid="uid://dvdevu1h2mi3i" path="res://scenes/ui/progress bar/progress_bar_ui.gd" id="2_itthj"]
+[ext_resource type="Texture2D" uid="uid://gmexj78gmkbl" path="res://assets/spritesheets/iconsheet2.png" id="2_wq7uv"]
+
+[node name="ProgressBar" type="Control" unique_id=232815070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vj2va")
+script = ExtResource("2_itthj")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=204112692]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 27.0
+value = 65.63
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1035280299]
+modulate = Color(0.723566, 0.23615828, 0, 1)
+position = Vector2(82, 14)
+scale = Vector2(1.99, 1.99)
+texture = ExtResource("2_wq7uv")
+hframes = 4
+vframes = 3
+frame = 11
