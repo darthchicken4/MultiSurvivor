@@ -1,5 +1,8 @@
-Camera2D
+Control
+CollisionShape2D
+StaticBody2D
 Sprite2D
+Camera2D
 TextureRect
 ProgressBar
 TextureProgressBar
@@ -10,6 +13,3 @@ HBoxContainer
 Label
 SpinBox
 Button
-CheckBox
-TextEdit
-AudioStreamPlayer2D

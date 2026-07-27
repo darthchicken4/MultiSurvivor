@@ -135,28 +135,29 @@ func _teardown_upnp() -> void:
 func join_game(nickname: String, skin_color_str: String, address: String = SERVER_ADDRESS, port: int = SERVER_PORT):
 	dprint("Joining game at " + address)
 	await step_pause()
- 
+
+	# Set the local player's info BEFORE opening the connection.
+	# Otherwise connected_to_server can fire (during the awaits below)
+	# while player_info still holds the default "host" nick.
+	if !nickname or nickname.strip_edges() == "":
+		nickname = "Player_" + str(multiplayer.get_unique_id())
+
+	player_info["nick"] = nickname
+	player_info["skin"] = skin_str_to_e(skin_color_str)
+
+	dprint("Client local player_info set: " + str(player_info))
+	await step_pause()
+
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_client(address, port)
- 
+
 	if error:
 		dprint("ERROR: Failed to join -> " + str(error))
 		await step_pause()
 		return error
- 
+
 	multiplayer.multiplayer_peer = peer
 	dprint("Client connecting...")
-	await step_pause()
- 
-	if !nickname or nickname.strip_edges() == "":
-		nickname = "Player_" + str(multiplayer.get_unique_id())
- 
-	var skin_enum = skin_str_to_e(skin_color_str)
- 
-	player_info["nick"] = nickname
-	player_info["skin"] = skin_enum
- 
-	dprint("Client local player_info set: " + str(player_info))
 	await step_pause()
  
  

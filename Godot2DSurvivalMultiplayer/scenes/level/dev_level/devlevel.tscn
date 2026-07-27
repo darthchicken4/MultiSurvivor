@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="8_08plu"]
 [ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="9_xdwti"]
 [ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/structures/bunker/bunker.tscn" id="11_j7rnb"]
+[ext_resource type="PackedScene" uid="uid://ekwi6e84g3ys" path="res://scenes/level/props/obelisc/wasd_obelisc.tscn" id="12_4lbsc"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -42,6 +43,9 @@ position = Vector2(-552, -117)
 
 [node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("9_xdwti")]
 position = Vector2(-276, 237)
+
+[node name="WasdObelisc" parent="sort_contain" unique_id=1411056946 instance=ExtResource("12_4lbsc")]
+position = Vector2(59, -101)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=150256932]
 

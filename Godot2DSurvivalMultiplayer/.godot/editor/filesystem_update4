@@ -1,7 +1,0 @@
-res://scenes/ui/progress bar/progress bar.tscn
-res://assets/themes/inventory.tres
-res://assets/themes/interact_theme.tres
-res://assets/themes/crafdting_theme.tres
-res://assets/themes/settings.tres
-res://assets/themes/progress.tres
-res://scenes/ui/progress bar/progress_bar_ui.gd
