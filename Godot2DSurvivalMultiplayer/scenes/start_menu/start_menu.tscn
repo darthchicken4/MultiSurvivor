@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dsskmlbth3pm7" path="res://scenes/ui/single_player.gd" id="3_s1kfm"]
 [ext_resource type="Script" uid="uid://dumqu7gkm4pda" path="res://scenes/ui/multplayer.gd" id="4_x0g8l"]
 [ext_resource type="Script" uid="uid://dmx4hqvf3aiwl" path="res://scenes/ui/quit.gd" id="5_i11hm"]
+[ext_resource type="Script" uid="uid://bf4hxe08ahb4v" path="res://scenes/start_menu/devmnu'.gd" id="5_tj3dw"]
 
 [node name="StartMenu" type="Control" unique_id=504288171]
 layout_mode = 3
@@ -63,6 +64,11 @@ layout_mode = 2
 text = "multiplayer"
 script = ExtResource("4_x0g8l")
 
+[node name="devmenu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=164428598]
+layout_mode = 2
+text = "dev_menu"
+script = ExtResource("5_tj3dw")
+
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1491320660]
 layout_mode = 2
 text = "quit"
@@ -70,4 +76,5 @@ script = ExtResource("5_i11hm")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/single player" to="MarginContainer/VBoxContainer/single player" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/multplayer" to="MarginContainer/VBoxContainer/multplayer" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/devmenu" to="MarginContainer/VBoxContainer/devmenu" method="_on_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="MarginContainer/VBoxContainer/quit" method="_on_pressed"]

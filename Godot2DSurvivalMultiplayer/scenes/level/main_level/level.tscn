@@ -20,17 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://bwwcckh63wplv" path="res://scenes/level/props/ferns.tscn" id="18_huim6"]
 [ext_resource type="PackedScene" uid="uid://c77quiys2ynum" path="res://scenes/level/props/red_shrooms.tscn" id="19_ibvpc"]
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="20_416ji"]
-[ext_resource type="Texture2D" uid="uid://cys14ybr1pviq" path="res://assets/tilesheets/selectiontile.png" id="21_0y1en"]
-[ext_resource type="Script" uid="uid://tvpl3s2sblof" path="res://scripts/selection_map_layer.gd" id="22_jdltj"]
-[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="25_86s6a"]
+[ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="21_aalvb"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="26_qj7ud"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/world_border/border_gen.gd" id="27_sri58"]
-[ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="28_uoiqr"]
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="28_xpe6n"]
-[ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="29_gmhj2"]
-[ext_resource type="PackedScene" uid="uid://busoi8emfk0q0" path="res://scenes/level/props/statue/statue.tscn" id="30_0cqhs"]
 [ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="32_spd3i"]
-[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="32_voa3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
 texture = ExtResource("3_voa3t")
@@ -71,13 +65,6 @@ texture = ExtResource("3_voa3t")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wcngd")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yoh1m"]
-texture = ExtResource("21_0y1en")
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_yoh1m"]
-sources/1 = SubResource("TileSetAtlasSource_yoh1m")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5w0m"]
 texture = ExtResource("26_qj7ud")
 0:0/0 = 0
@@ -97,7 +84,7 @@ player_scene = ExtResource("2_iutpc")
 
 [node name="building_layer" type="TileMapLayer" parent="Map" unique_id=1220804939]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=1767721526]
+[node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=1767721526 node_paths=PackedStringArray("tree_container")]
 z_index = -2
 y_sort_enabled = true
 texture_filter = 3
@@ -122,25 +109,13 @@ tallgrass_scene = ExtResource("17_oh5ry")
 fern_scene = ExtResource("18_huim6")
 redmushrooms_scene = ExtResource("19_ibvpc")
 yellowmushrooms_scene = ExtResource("20_416ji")
+tree_container = NodePath("../SortContainer")
 
-[node name="SelectionMapLayer" type="TileMapLayer" parent="Map" unique_id=1377960773]
-modulate = Color(1, 1, 1, 0.22745098)
-y_sort_enabled = true
-texture_filter = 3
-scale = Vector2(2, 2)
-tile_set = SubResource("TileSet_yoh1m")
-script = ExtResource("22_jdltj")
+[node name="SelectionMapLayer" parent="Map" unique_id=1045206275 instance=ExtResource("21_aalvb")]
 
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
 position = Vector2(12, 6)
-
-[node name="animal_spawner" parent="Map/SortContainer" unique_id=1876205315 node_paths=PackedStringArray("tilemap_index") instance=ExtResource("28_uoiqr")]
-hog = ExtResource("29_gmhj2")
-tilemap_index = NodePath("../../TileMapLayer")
-
-[node name="zombie" parent="Map/SortContainer" unique_id=1499102670 instance=ExtResource("25_86s6a")]
-position = Vector2(-397, -278)
 
 [node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
 z_index = -2
@@ -153,14 +128,4 @@ script = ExtResource("27_sri58")
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("28_xpe6n")]
 visible = false
 
-[node name="respawn_statue" parent="." unique_id=1374369680 instance=ExtResource("30_0cqhs")]
-position = Vector2(190, -255)
-
 [node name="SunSystem" parent="." unique_id=138067836 instance=ExtResource("32_spd3i")]
-offset_left = 14.0
-offset_top = 3.0
-offset_right = 14.0
-offset_bottom = 3.0
-
-[node name="Ranger" parent="." unique_id=58468175 instance=ExtResource("32_voa3t")]
-position = Vector2(-202, -470)
