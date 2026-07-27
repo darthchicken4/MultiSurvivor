@@ -80,6 +80,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 1
 	recipe.result_item = ItemDatabase.items["plant_fibre"]
 	recipe.result_amount = 1
+	recipe.description = "Extract plant fibre from grass"
 	
 	recipes[recipe.id] = recipe
 	#################################################################
@@ -95,6 +96,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 2
 	recipe.result_item = ItemDatabase.items["plant_fibre"]
 	recipe.result_amount = 1
+	recipe.description = "Dry grass into plant fibre"
 	recipes[recipe.id] = recipe
 	
 	#################################################################
@@ -109,6 +111,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 2
 	recipe.result_item = ItemDatabase.items["plant_fibre"]
 	recipe.result_amount = 1
+	recipe.description = "Cook mushroom using heat"
 	recipes[recipe.id] = recipe
 	
 	
@@ -126,6 +129,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 5
 	recipe.result_item = ItemDatabase.items["camp_fire"]
 	recipe.result_amount = 1
+	recipe.description = "Create a campfire using branches, twigs and some stones."
 	recipes[recipe.id] = recipe
 	
 	
@@ -141,6 +145,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 3
 	recipe.result_item = ItemDatabase.items["twine"]
 	recipe.result_amount = 1
+	recipe.description = "Twist plant fibre into usable, stronger, twine"
 	recipes[recipe.id] = recipe
 	
 	#################################################################
@@ -157,6 +162,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 8
 	recipe.result_item = ItemDatabase.items["branch_flint_hatchet"]
 	recipe.result_amount = 1
+	recipe.description = "Create a hatchet with a flint tip wrapped in twine."
 	recipes[recipe.id] = recipe
 	
 	
@@ -171,7 +177,8 @@ func _create_sample_recipes():
 	recipe.craftableStations = ["Slab Anvil","Hammering Surface","Work Station"]
 	recipe.crafting_time = 3
 	recipe.result_item = ItemDatabase.items["small_stones"]
-	recipe.result_amount = 1
+	recipe.result_amount = 5
+	recipe.description = "Smash a large stone into smaller stones"
 	recipes[recipe.id] = recipe
 	
 	
@@ -190,6 +197,7 @@ func _create_sample_recipes():
 	recipe.crafting_time = 8
 	recipe.result_item = ItemDatabase.items["branch_stone_spear"]
 	recipe.result_amount = 1
+	recipe.description = "Create a spear with a sharpened stone tip, although very fragile."
 	recipes[recipe.id] = recipe
 	
 	
@@ -210,4 +218,5 @@ func _create_sample_recipes():
 	recipe.crafting_time = 8
 	recipe.result_item = ItemDatabase.items["branch_flint_spear"]
 	recipe.result_amount = 1
+	recipe.description = "Create a spear with a flint shard, sharper than stone."
 	recipes[recipe.id] = recipe

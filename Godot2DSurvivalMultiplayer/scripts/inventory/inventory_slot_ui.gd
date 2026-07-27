@@ -6,6 +6,7 @@ class_name InventorySlotUI
 @onready var quantity_label: Label = $QuantityLabel
 @onready var rarity_border: NinePatchRect = $RarityBorder
 @onready var select_border: TextureRect = $SelectBorder
+@onready var animation_player = $AnimationPlayer
 
 var slot_index: int = 0
 var inventory_data: InventorySlot
@@ -38,7 +39,14 @@ func set_slot_data(slot_data: InventorySlot, index: int, container: String):
 	if select_border and container_type != "hotbar":
 		select_border.queue_free()
 	update_display()
-
+	
+func toggle_select(value):
+	
+	select_border.visible = value
+	if value == true:
+		animation_player.play("select")
+	else:
+		animation_player.play("RESET")
 func update_display():
 	if not inventory_data or inventory_data.is_empty():
 		_show_empty_slot()

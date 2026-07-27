@@ -221,14 +221,27 @@ func _on_inventory_closed():
 	inventory_visible = false
 	
 func _select_hotbar_slot(slot: int):
-	if selected_hotbar_slot == slot:
-		selected_hotbar_slot = -1
-		print("Deselected hotbar")
-	else:
-		selected_hotbar_slot = slot
-		var item_id = get_inventory().get_hotbar_slot(slot);
-		if ItemDatabase.has_item(item_id):
-			ItemDatabase.get_item(item_id)
+		if inventory:
+			var inventory_ui = inventory
+			if selected_hotbar_slot == slot:
+				if selected_hotbar_slot!=-1: inventory_ui.slot_uis[PlayerInventory.INVENTORY_SIZE+selected_hotbar_slot].toggle_select(false)
+				if tool_pivot.get_child(0): tool_pivot.get_child(0).queue_free()
+				selected_hotbar_slot = -1
+				print("Deselected hotbar")
+			else:
+				if selected_hotbar_slot!=-1: inventory_ui.slot_uis[PlayerInventory.INVENTORY_SIZE+selected_hotbar_slot].toggle_select(false)
+				selected_hotbar_slot = slot
+				var item_id = get_inventory().get_hotbar_slot(selected_hotbar_slot).item_id;
+				if ItemDatabase.has_item(item_id):
+					var template = ItemDatabase.get_item(item_id).template.instantiate()
+					var icon = ItemDatabase.get_item(item_id).icon
+					if tool_pivot.get_child(0): tool_pivot.get_child(0).queue_free()
+					tool_pivot.add_child(template)
+					var sprite = template.get_node("Weapon").get_node("Sprite")
+					if sprite:
+						sprite.texture = icon
+				inventory_ui.slot_uis[PlayerInventory.INVENTORY_SIZE+selected_hotbar_slot].toggle_select(true)
+		
 		
 		
 func _input(event):

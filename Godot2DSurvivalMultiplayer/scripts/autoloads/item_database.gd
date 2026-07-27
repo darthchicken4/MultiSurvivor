@@ -26,13 +26,14 @@ func _create_sample_items():
 	yellow_mushroom.name = "Yellow Mushroom"
 	yellow_mushroom.description = "A soft mushroom with medicinal purposes... can be processed into a dangerous paralyzant"
 	yellow_mushroom.item_type = Item.ItemType.CONSUMABLE
-	yellow_mushroom.template
 	#yellow_mushroom.rarity = Item.ItemRarity.UNCOMMON
 	yellow_mushroom.stackable = true
 	yellow_mushroom.max_stack = 10
 	yellow_mushroom.value = 5
 	yellow_mushroom.icon = SpriteSheetLoader.get_texture("items1",1,1)
+	yellow_mushroom.template = Item.itemTemp
 	items[yellow_mushroom.id] = yellow_mushroom
+	
 
 	# tree_branch
 	
@@ -46,6 +47,7 @@ func _create_sample_items():
 	tree_branch.max_stack = 10
 	tree_branch.value = 2
 	tree_branch.icon = SpriteSheetLoader.get_texture("items1",2,1)
+	tree_branch.template = Item.itemTemp
 	items[tree_branch.id] = tree_branch
 	
 	# grass_strands
@@ -59,6 +61,7 @@ func _create_sample_items():
 	grass_strands.max_stack = 10
 	grass_strands.value = 1
 	grass_strands.icon = SpriteSheetLoader.get_texture("items1",0,1)
+	grass_strands.template = Item.itemTemp
 	items[grass_strands.id] = grass_strands
 	
 	# grass_strands
@@ -72,6 +75,7 @@ func _create_sample_items():
 	small_stones.max_stack = 10
 	small_stones.value = 1
 	small_stones.icon = SpriteSheetLoader.get_texture("items1",3,1)
+	small_stones.template = Item.itemTemp
 	items[small_stones.id] = small_stones
 	
 	# flint_shard
@@ -85,6 +89,7 @@ func _create_sample_items():
 	flint_shard.max_stack = 10
 	flint_shard.value = 8
 	flint_shard.icon = SpriteSheetLoader.get_texture("items1",4,1)
+	flint_shard.template = Item.itemTemp
 	items[flint_shard.id] = flint_shard
 	
 	# waxed_leaves
@@ -98,6 +103,7 @@ func _create_sample_items():
 	waxed_leaves.max_stack = 10
 	waxed_leaves.value = 1
 	waxed_leaves.icon = SpriteSheetLoader.get_texture("items1",5,1)
+	waxed_leaves.template = Item.itemTemp
 	items[waxed_leaves.id] = waxed_leaves
 	
 	# twigs
@@ -111,6 +117,7 @@ func _create_sample_items():
 	twigs.max_stack = 10
 	twigs.value = 1
 	twigs.icon = SpriteSheetLoader.get_texture("items1",0,2)
+	twigs.template = Item.itemTemp
 	items[twigs.id] = twigs
 	
 	# plant_fibre
@@ -124,6 +131,7 @@ func _create_sample_items():
 	plant_fibre.max_stack = 10
 	plant_fibre.value = 3
 	plant_fibre.icon = SpriteSheetLoader.get_texture("items1",1,2)
+	plant_fibre.template = Item.itemTemp
 	items[plant_fibre.id] = plant_fibre
 	
 	# sharp_slab
@@ -137,6 +145,7 @@ func _create_sample_items():
 	sharp_slab.max_stack = 1
 	sharp_slab.value = 10
 	sharp_slab.icon = SpriteSheetLoader.get_texture("items1",2,2)
+	sharp_slab.template = Item.itemTemp
 	items[sharp_slab.id] = sharp_slab
 	
 	# red_mushroom
@@ -150,6 +159,7 @@ func _create_sample_items():
 	red_mushroom.max_stack = 10
 	red_mushroom.value = 2
 	red_mushroom.icon = SpriteSheetLoader.get_texture("items1",3,2)
+	red_mushroom.template = Item.itemTemp
 	items[red_mushroom.id] = red_mushroom
 	
 	# large_stone
@@ -163,6 +173,7 @@ func _create_sample_items():
 	large_stone.max_stack = 10
 	large_stone.value = 1
 	large_stone.icon = SpriteSheetLoader.get_texture("items1",4,2)
+	large_stone.template = Item.itemTemp
 	items[large_stone.id] = large_stone
 	
 	# fern_leaf
@@ -176,6 +187,7 @@ func _create_sample_items():
 	fern_leaf.max_stack = 10
 	fern_leaf.value = 1
 	fern_leaf.icon = SpriteSheetLoader.get_texture("items1",5,2)
+	fern_leaf.template = Item.itemTemp
 	items[fern_leaf.id] = fern_leaf
 	
 	# raw_clay
@@ -189,6 +201,7 @@ func _create_sample_items():
 	raw_clay.max_stack = 10
 	raw_clay.value = 2
 	raw_clay.icon = SpriteSheetLoader.get_texture("items1",3,0)
+	raw_clay.template = Item.itemTemp
 	items[raw_clay.id] = raw_clay
 	
 	# red_berries
@@ -202,6 +215,7 @@ func _create_sample_items():
 	red_berries.max_stack = 10
 	red_berries.value = 2
 	red_berries.icon = SpriteSheetLoader.get_texture("items1",1,0)
+	red_berries.template = Item.itemTemp
 	items[red_berries.id] = red_berries
 	
 		# red_berries
@@ -215,6 +229,7 @@ func _create_sample_items():
 	thorny_bramble.max_stack = 10
 	thorny_bramble.value = 2
 	thorny_bramble.icon = SpriteSheetLoader.get_texture("items1",2,0)
+	thorny_bramble.template = Item.itemTemp
 	items[thorny_bramble.id] = thorny_bramble
 	
 		# twine
@@ -228,6 +243,7 @@ func _create_sample_items():
 	twine.max_stack = 10
 	twine.value = 2
 	twine.icon = SpriteSheetLoader.get_texture("items1",0,3)
+	twine.template = Item.itemTemp
 	items[twine.id] = twine
 	
 		# camp_fire
@@ -240,6 +256,7 @@ func _create_sample_items():
 	camp_fire.stackable = false
 	camp_fire.value = 15
 	camp_fire.icon = SpriteSheetLoader.get_texture("placeables1",1,1)
+	camp_fire.template = Item.itemTemp
 	items[camp_fire.id] = camp_fire
 	
 		# branch_flint_hatchet
@@ -252,6 +269,7 @@ func _create_sample_items():
 	branch_flint_hatchet.stackable = false
 	branch_flint_hatchet.value = 15
 	branch_flint_hatchet.icon = SpriteSheetLoader.get_texture("tools1",1,1)
+	branch_flint_hatchet.template = Item.axeTemp
 	items[branch_flint_hatchet.id] = branch_flint_hatchet
 	
 		# branch_stone_spear
@@ -264,6 +282,7 @@ func _create_sample_items():
 	branch_stone_spear.stackable = false
 	branch_stone_spear.value = 12
 	branch_stone_spear.icon = SpriteSheetLoader.get_texture("tools1",2,0)
+	branch_stone_spear.template = Item.spearTemp
 	items[branch_stone_spear.id] = branch_stone_spear
 	
 		# branch_flint_hatchet
@@ -276,6 +295,7 @@ func _create_sample_items():
 	branch_flint_spear.stackable = false
 	branch_flint_spear.value = 15
 	branch_flint_spear.icon = SpriteSheetLoader.get_texture("tools1",3,2)
+	branch_flint_spear.template = Item.spearTemp
 	items[branch_flint_spear.id] = branch_flint_spear
 	
 	

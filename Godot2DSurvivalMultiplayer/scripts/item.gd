@@ -17,7 +17,10 @@ extends Resource
 #for consumables
 @export var consumeTime = 1
 
-
+static var spearTemp = preload("res://scenes/weapons/spear/SpearTemp.tscn")
+static var placeableTemp = preload("res://scenes/weapons/placeable/PlaceableTemp.tscn")
+static var itemTemp = preload("res://scenes/weapons/generic/ItemTemp.tscn")
+static var axeTemp = preload("res://scenes/weapons/axe/AxeTemp.tscn")
 
 enum ItemType {
 	ARMOR,
@@ -25,6 +28,7 @@ enum ItemType {
 	TOOL,
 	RESOURCE,
 }
+
 
 enum ItemRarity {
 	COMMON,

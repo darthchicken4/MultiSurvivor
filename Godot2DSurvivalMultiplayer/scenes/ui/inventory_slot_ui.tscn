@@ -1,11 +1,142 @@
 [gd_scene format=3 uid="uid://bglwdpf2mf7g0"]
 
 [ext_resource type="Script" uid="uid://bi0mlil0a0e5i" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_5k8m7"]
-
 [ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_k1d76"]
-[ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/spritesheets/border.png" id="2_bpgql"]
+[ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/sprites/icons/border.png" id="2_bpgql"]
 [ext_resource type="Texture2D" uid="uid://im5x2eqcm2fi" path="res://assets/sprites/icons/border (1).png" id="4_opn8x"]
 
+[sub_resource type="Animation" id="Animation_opn8x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 63)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.4, 1.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11.999999, -11.999999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_njc13"]
+resource_name = "select"
+length = 0.06666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1.4, 1.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(-11.999999, -11.999999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.18039216), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4uq2"]
+_data = {
+&"RESET": SubResource("Animation_opn8x"),
+&"select": SubResource("Animation_njc13")
+}
 
 [node name="InventorySlotUI" type="Control" unique_id=1287090853]
 layout_mode = 3
@@ -54,17 +185,8 @@ offset_right = 64.0
 offset_bottom = 63.0
 texture = ExtResource("2_bpgql")
 
-[node name="SelectBorder" type="TextureRect" parent="." unique_id=1563519521]
-visible = false
-layout_mode = 0
-offset_left = -11.999999
-offset_top = -11.0
-offset_right = 52.0
-offset_bottom = 52.0
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("4_opn8x")
-
 [node name="QuantityLabel" type="Label" parent="." unique_id=557573622]
+z_index = 2
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -78,3 +200,16 @@ grow_vertical = 0
 text = "99"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1838713053]
+root_node = NodePath("../SelectBorder")
+libraries/ = SubResource("AnimationLibrary_s4uq2")
+
+[node name="SelectBorder" type="TextureRect" parent="." unique_id=1563519521]
+layout_mode = 0
+offset_left = -11.999999
+offset_top = -11.999999
+offset_right = 52.0
+offset_bottom = 51.0
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_opn8x")

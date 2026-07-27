@@ -1,3 +1,5 @@
+AnimationPlayer
+Sprite2D
 AudioStreamPlayer2D
 Node2D
 CollisionShape2D
@@ -5,7 +7,6 @@ Area2D
 CharacterBody2D
 Character
 StaticBody2D
-Sprite2D
 TileMapLayer
 Button
 VBoxContainer

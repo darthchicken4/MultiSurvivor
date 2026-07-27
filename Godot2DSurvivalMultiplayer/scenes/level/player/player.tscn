@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bibrvm1a8hd1q" path="res://assets/fonts/death_sprites.png" id="4_jpxjg"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
+[ext_resource type="Texture2D" uid="uid://by4mrj6op5kl8" path="res://assets/spritesheets/starterplayer (1).png" id="6_h3ilt"]
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
@@ -89,17 +90,25 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("2_7h6ip")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f33sr"]
-atlas = ExtResource("2_7h6ip")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eaoru"]
-atlas = ExtResource("2_7h6ip")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pp7o"]
+atlas = ExtResource("6_h3ilt")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o0o36"]
-atlas = ExtResource("2_7h6ip")
+[sub_resource type="AtlasTexture" id="AtlasTexture_wupxq"]
+atlas = ExtResource("6_h3ilt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6t0g"]
+atlas = ExtResource("6_h3ilt")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhrs1"]
+atlas = ExtResource("6_h3ilt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ig8ak"]
+atlas = ExtResource("6_h3ilt")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj1sg"]
 animations = [{
@@ -142,17 +151,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f33sr")
+"texture": SubResource("AtlasTexture_0pp7o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eaoru")
+"texture": SubResource("AtlasTexture_wupxq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o0o36")
+"texture": SubResource("AtlasTexture_r6t0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhrs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ig8ak")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 8.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1738487347 groups=["player"]]
@@ -191,7 +206,7 @@ texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
 animation = &"walk"
-frame_progress = 0.003913927
+frame_progress = 0.12966886
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 
