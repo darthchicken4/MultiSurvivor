@@ -2,21 +2,76 @@
 
 [ext_resource type="Texture2D" uid="uid://d8rf347yatpo" path="res://assets/sprites/objects/tree.png" id="1_eqwtg"]
 [ext_resource type="Script" uid="uid://cam06xk2f0ne2" path="res://scripts/propScripts/tree.gd" id="1_gk3pd"]
+[ext_resource type="Texture2D" uid="uid://kxqc8gn4kqr4" path="res://assets/sprites/objects/tree_rustle.png" id="3_5apyp"]
 [ext_resource type="AudioStream" uid="uid://b7qp5h1j3lr27" path="res://assets/audio/leaves_rustling.mp3" id="3_y4q7f"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gk3pd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4cc"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnro8"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nml01"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aswlv"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6mes"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va8v2"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvcrx"]
+atlas = ExtResource("3_5apyp")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgfkj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_eqwtg")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nml01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aswlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6mes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va8v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvcrx")
+}],
+"loop": false,
+"name": &"rustle",
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjpnl"]
-radius = 7.0
+radius = 6.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjpnl"]
 size = Vector2(64, 26)
@@ -25,11 +80,11 @@ size = Vector2(64, 26)
 script = ExtResource("1_gk3pd")
 metadata/flipX = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1970092302]
-texture_filter = 3
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1363437960]
 position = Vector2(1, -48)
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_gk3pd")
+sprite_frames = SubResource("SpriteFrames_pgfkj")
+animation = &"idle"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2047576716 groups=["objects"]]
 

@@ -131,6 +131,7 @@ text = "spear"
 [node name="item_requierment" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer" unique_id=760681329]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_constants/separation = 69
 
 [node name="item_selected_sprite" type="Sprite2D" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment" unique_id=409766476]
 position = Vector2(-12.999996, 9.000004)
@@ -223,12 +224,21 @@ scale = Vector2(0.465, 0.465)
 theme_override_font_sizes/font_size = 34
 text = "leaf"
 
+[node name="Button" type="Button" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment" unique_id=1479640432]
+layout_mode = 2
+text = "craft"
+
 [node name="close button" type="Button" parent="MarginContainer/ColorRect" unique_id=2031764023]
-layout_mode = 0
-offset_left = 606.0
-offset_top = 375.0
-offset_right = 642.0
-offset_bottom = 395.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "close"
@@ -238,3 +248,4 @@ text = "close"
 [connection signal="mouse_exited" from="MarginContainer/ColorRect" to="MarginContainer/ColorRect" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder/items/interactrect" to="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder" method="_on_interactrect_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder/items/interactrect" to="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer/material_list/item_holder" method="_on_interactrect_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/ColorRect/close button" to="." method="_on_close_button_pressed"]

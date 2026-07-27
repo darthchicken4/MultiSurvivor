@@ -1,16 +1,12 @@
-<<<<<<< HEAD
-res://assets/spritesheets/
-=======
-res://scenes/level/main_level/
->>>>>>> 6c3fadda7fcec4cac70955e6983b51dd1d1ae52c
 res://assets/themes/
+res://assets/sprites/objects/
+res://assets/tilesheets/
+res://assets/spritesheets/
+res://scenes/level/main_level/
 res://scenes/ui/settings/
 res://assets/fonts/
 res://scenes/ui/crafting_ui/
-<<<<<<< HEAD
-=======
 res://assets/spritesheets/
->>>>>>> 6c3fadda7fcec4cac70955e6983b51dd1d1ae52c
 res://assets/sprites/
 res://scenes/animals/hog/
 res://scenes/animals/chiken/
