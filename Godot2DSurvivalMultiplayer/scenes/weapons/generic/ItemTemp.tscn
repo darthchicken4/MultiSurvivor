@@ -11,6 +11,7 @@ properties/0/replication_mode = 1
 position = Vector2(0, 6)
 
 [node name="Sprite" type="Sprite2D" parent="Weapon" unique_id=1871149027]
+position = Vector2(7, -1)
 scale = Vector2(2, 2)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]

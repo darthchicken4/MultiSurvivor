@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var message = preload("res://scenes/ui/message_ui/message_ui.tscn")
+@export var message = preload("res://scenes/ui/inspect_menu/inspect_menu.tscn")
 @export var player = null
 
 signal action_selected(action: String, target: Node)
@@ -50,6 +50,6 @@ func _inspect(target: Node):
 	if "inspect_text" in target:
 		
 		var message = message.instantiate()
-		player.get_node(CanvasLayer).add_child(message)
-		message.setupMessage(target.inspect_text,"Object")
+		player.get_node("CanvasLayer").add_child(message)
+		message.update(target.objectname,target.inspect_text)
 	pass

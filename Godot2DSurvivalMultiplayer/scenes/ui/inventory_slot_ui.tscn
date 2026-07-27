@@ -206,6 +206,7 @@ root_node = NodePath("../SelectBorder")
 libraries/ = SubResource("AnimationLibrary_s4uq2")
 
 [node name="SelectBorder" type="TextureRect" parent="." unique_id=1563519521]
+visible = false
 layout_mode = 0
 offset_left = -11.999999
 offset_top = -11.999999
