@@ -1,5 +1,7 @@
-res://assets/spritesheets/
+res://assets/tilesheets/
 res://scenes/level/main_level/
+res://
+res://assets/spritesheets/
 res://assets/themes/
 res://scenes/ui/settings/
 res://assets/fonts/
@@ -10,4 +12,3 @@ res://scenes/animals/chiken/
 res://scripts/propScripts/
 res://scripts/
 res://scenes/level/
-res://

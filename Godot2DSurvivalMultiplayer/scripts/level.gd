@@ -3,7 +3,7 @@ extends Node2D
 @onready var main_menu: MainMenuUI = $CanvasLayer/MainMenuUI
 @export var player_scene: PackedScene
 @export var single_player :bool  = false
-@onready var tilemap = $Map/TileMapLayer  # adjust path to match your scene
+@export var tilemap : TileMapLayer # adjust path to match your scene
  
 func _ready():
 	if single_player == false:

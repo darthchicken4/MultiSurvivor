@@ -19,7 +19,6 @@ theme = ExtResource("1_4ycse")
 script = ExtResource("1_h7x4v")
 
 [node name="Panel" type="Panel" parent="." unique_id=1096998955]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -192,6 +191,7 @@ text = "arrmor"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+theme = ExtResource("1_4ycse")
 text = "x
 "
 

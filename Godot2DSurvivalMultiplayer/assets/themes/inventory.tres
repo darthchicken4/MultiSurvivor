@@ -1,22 +1,25 @@
 [gd_resource type="Theme" format=3 uid="uid://dnp12fbsgn0wg"]
 
 [ext_resource type="FontFile" uid="uid://diapabmalpcrj" path="res://assets/fonts/Kurland.ttf" id="1_lviod"]
+[ext_resource type="Texture2D" uid="uid://dkk7q8gytq2uw" path="res://assets/ui/ui_revamp.png" id="2_7asol"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lviod"]
-bg_color = Color(0.18000486, 0.1800049, 0.18000478, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
-corner_detail = 1
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7asol"]
+color = Color(0.6862745, 0.58431375, 0.3372549, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nck3p"]
+texture = ExtResource("2_7asol")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [resource]
+HSeparator/styles/separator = SubResource("StyleBoxLine_7asol")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/fonts/font = ExtResource("1_lviod")
-Panel/styles/panel = SubResource("StyleBoxFlat_lviod")
+Panel/styles/panel = SubResource("StyleBoxTexture_nck3p")
 RichTextLabel/constants/outline_size = 3
 RichTextLabel/fonts/bold_font = ExtResource("1_lviod")
 RichTextLabel/fonts/bold_italics_font = ExtResource("1_lviod")

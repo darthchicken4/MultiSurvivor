@@ -5,13 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_7byda"]
 [ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="2_ppamu"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_kslto"]
-[ext_resource type="PackedScene" uid="uid://d2wm12rml2tkv" path="res://scenes/enemy/golins/goblin.tscn" id="5_qb3xs"]
-[ext_resource type="PackedScene" uid="uid://bbsinlr2myoij" path="res://scenes/animals/hog/hog.tscn" id="6_j7rnb"]
-[ext_resource type="PackedScene" uid="uid://cgrc50281q6fj" path="res://scenes/animals/chiken/chiken.tscn" id="7_4lbsc"]
+[ext_resource type="PackedScene" uid="uid://ekwi6e84g3ys" path="res://scenes/level/props/obelisc/wasd_obelisc.tscn" id="8_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="8_08plu"]
-[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="9_xdwti"]
 [ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/structures/bunker/bunker.tscn" id="11_j7rnb"]
-[ext_resource type="PackedScene" uid="uid://ekwi6e84g3ys" path="res://scenes/level/props/obelisc/wasd_obelisc.tscn" id="12_4lbsc"]
+[ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="12_08plu"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -29,23 +26,17 @@ tree_container = NodePath("../sort_contain")
 [node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
 y_sort_enabled = true
 
-[node name="Goblin" parent="sort_contain" unique_id=1252994455 instance=ExtResource("5_qb3xs")]
-position = Vector2(-27, -192)
-
-[node name="hog" parent="sort_contain" unique_id=1795996454 instance=ExtResource("6_j7rnb")]
-position = Vector2(372, 192)
-
-[node name="Chiken" parent="sort_contain" unique_id=166180109 instance=ExtResource("7_4lbsc")]
-position = Vector2(153, 365)
-
 [node name="Ranger" parent="sort_contain" unique_id=58468175 instance=ExtResource("8_08plu")]
 position = Vector2(-552, -117)
 
-[node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("9_xdwti")]
-position = Vector2(-276, 237)
+[node name="Bunker" parent="sort_contain" unique_id=1249232412 node_paths=PackedStringArray("map") instance=ExtResource("11_j7rnb")]
+position = Vector2(350, -283)
+map = NodePath("../../TileMapLayer")
 
-[node name="WasdObelisc" parent="sort_contain" unique_id=1411056946 instance=ExtResource("12_4lbsc")]
-position = Vector2(59, -101)
+[node name="animal_spawner" parent="sort_contain" unique_id=1876205315 node_paths=PackedStringArray("tilemap_index", "multiplayer_spawner") instance=ExtResource("12_08plu")]
+hog = ExtResource("8_3j0n3")
+tilemap_index = NodePath("../../TileMapLayer")
+multiplayer_spawner = NodePath(".")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=150256932]
 
@@ -55,7 +46,3 @@ offset_left = 1.0
 offset_top = 10.0
 offset_right = 1.0
 offset_bottom = 10.0
-
-[node name="Bunker" parent="." unique_id=1249232412 node_paths=PackedStringArray("map") instance=ExtResource("11_j7rnb")]
-position = Vector2(350, -283)
-map = NodePath("../TileMapLayer")

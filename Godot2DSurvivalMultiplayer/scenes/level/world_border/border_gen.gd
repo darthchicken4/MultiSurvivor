@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-@onready var tile_map = $"../TileMapLayer"
+@export var tile_map : TileMapLayer
 @onready var border_map = $"."
 
 func _ready() -> void:

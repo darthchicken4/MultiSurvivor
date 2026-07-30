@@ -9,9 +9,16 @@ func _ready() -> void:
 	
 
 func pick_scene():
-	for i in range(3):
-		var scene_list = ["scene_1","scene_2"]
-		rng.seed = 12345
-		var value = rng.randi_range(0, scene_list.size() - 1)
-		anim_main.play(scene_list[value])
-		await  anim_main.animation_finished
+	var scene_list = ["scene_1", "scene_2", "scene_3"]
+	var last_scene = ""
+
+	for i in range(10):
+		var value = randi_range(0, scene_list.size() - 1)
+
+		# Re-roll until we get something different from the last scene
+		while scene_list[value] == last_scene:
+			value = randi_range(0, scene_list.size() - 1)
+
+		last_scene = scene_list[value]
+		anim_main.play(last_scene)
+		await anim_main.animation_finished

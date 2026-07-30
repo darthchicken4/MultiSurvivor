@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://crmwcf7cpkik0" path="res://scenes/ui/crafting_ui/crafting_ui.gd" id="1_t1iof"]
 [ext_resource type="Theme" uid="uid://cdo36f15ffimp" path="res://assets/themes/crafdting_theme.tres" id="1_ym6gd"]
 [ext_resource type="Texture2D" uid="uid://d0xajxcc8g4hu" path="res://assets/sprites/icons/book.png" id="3_d7lbo"]
+[ext_resource type="Texture2D" uid="uid://dkk7q8gytq2uw" path="res://assets/ui/ui_revamp.png" id="3_jhtqr"]
 [ext_resource type="Texture2D" uid="uid://b4cmvm6tatqtu" path="res://assets/sprites/icons/crafting table.png" id="3_js6hb"]
 [ext_resource type="Script" uid="uid://61bs0eywwb18" path="res://scenes/ui/crafting_ui/drag.gd" id="3_l5blk"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="4_ym6gd"]
@@ -42,7 +43,7 @@ theme_override_constants/margin_bottom = 227
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=463911780]
 layout_mode = 2
 mouse_filter = 1
-color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+color = Color(0.1764706, 0.16862746, 0.14901961, 1)
 script = ExtResource("3_l5blk")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect" unique_id=1325005474]
@@ -244,6 +245,19 @@ grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "close"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/ColorRect" unique_id=1119663045]
+z_index = -1
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 645.0
+offset_bottom = 496.0
+texture = ExtResource("3_jhtqr")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [connection signal="gui_input" from="MarginContainer/ColorRect" to="MarginContainer/ColorRect" method="_on_gui_input"]
 [connection signal="mouse_entered" from="MarginContainer/ColorRect" to="MarginContainer/ColorRect" method="_on_mouse_entered"]
