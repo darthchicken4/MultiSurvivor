@@ -294,7 +294,7 @@ func _create_sample_items():
 	branch_flint_spear.rarity = Item.ItemRarity.UNCOMMON
 	branch_flint_spear.stackable = false
 	branch_flint_spear.value = 15
-	branch_flint_spear.icon = SpriteSheetLoader.get_texture("tools1",3,2)
+	branch_flint_spear.icon = SpriteSheetLoader.get_texture("tools1",2,1)
 	branch_flint_spear.template = Item.spearTemp
 	items[branch_flint_spear.id] = branch_flint_spear
 	

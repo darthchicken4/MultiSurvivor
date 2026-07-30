@@ -192,7 +192,6 @@ text = "arrmor"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("1_4ycse")
 text = "x
 "
 

@@ -242,8 +242,18 @@ func _select_hotbar_slot(slot: int):
 						sprite.texture = icon
 				inventory_ui.slot_uis[PlayerInventory.INVENTORY_SIZE+selected_hotbar_slot].toggle_select(true)
 		
-		
-		
+func _unhandled_input(event):
+	if event is InputEventMouseButton \
+			and event.pressed \
+			and event.button_index == MOUSE_BUTTON_LEFT:
+
+		var mouse_position = get_global_mouse_position()
+		var direction = (mouse_position - global_position).normalized()
+
+		if tool_pivot.get_child_count() > 0:
+			var tool = tool_pivot.get_child(0)
+			if tool.has_method("_activate"):
+				tool._activate()
 func _input(event):
 	if not is_multiplayer_authority():
 		return
@@ -259,6 +269,7 @@ func _input(event):
 		_debug_add_item()
 	elif event is InputEventKey and event.pressed and event.keycode == KEY_F2:
 		_debug_print_inventory()
+
 	elif event is InputEventMouseButton:
 		print(get_viewport().gui_get_hovered_control())
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:

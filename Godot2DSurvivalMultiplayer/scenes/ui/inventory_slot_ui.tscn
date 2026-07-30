@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bi0mlil0a0e5i" path="res://scripts/inventory/inventory_slot_ui.gd" id="1_5k8m7"]
 [ext_resource type="Theme" uid="uid://dnp12fbsgn0wg" path="res://assets/themes/inventory.tres" id="1_k1d76"]
-[ext_resource type="Texture2D" uid="uid://dkk7q8gytq2uw" path="res://assets/ui/ui_revamp.png" id="4_njc13"]
+[ext_resource type="Texture2D" uid="uid://bikom25b7pj54" path="res://assets/sprites/icons/border.png" id="2_bpgql"]
 [ext_resource type="Texture2D" uid="uid://im5x2eqcm2fi" path="res://assets/sprites/icons/border (1).png" id="4_opn8x"]
 
 [sub_resource type="Animation" id="Animation_opn8x"]
@@ -146,16 +146,6 @@ offset_bottom = 64.0
 theme = ExtResource("1_k1d76")
 script = ExtResource("1_5k8m7")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1895245699]
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 64.0
-texture = ExtResource("4_njc13")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
-
 [node name="Background" type="ColorRect" parent="." unique_id=1549696674]
 z_index = -2
 layout_mode = 0
@@ -187,6 +177,13 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Border" type="TextureRect" parent="." unique_id=815010247]
+self_modulate = Color(1, 1, 1, 0.19215687)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 63.0
+texture = ExtResource("2_bpgql")
 
 [node name="QuantityLabel" type="Label" parent="." unique_id=557573622]
 z_index = 2

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://1xnan6b1ttrx"]
 
+[ext_resource type="Script" uid="uid://bajj8tkujca1l" path="res://scenes/weapons/axe/axe_temp.gd" id="1_ci64p"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ux2"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
@@ -8,6 +10,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="AxeTemp" type="Node2D" unique_id=1774495734]
+script = ExtResource("1_ci64p")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=621430649]
 position = Vector2(0, 6)

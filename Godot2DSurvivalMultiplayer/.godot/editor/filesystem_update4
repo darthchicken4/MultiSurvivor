@@ -1,0 +1,11 @@
+res://scenes/weapons/spear/SpearTemp.tscn
+res://assets/themes/inventory.tres
+res://assets/themes/interact_theme.tres
+res://assets/themes/crafdting_theme.tres
+res://assets/themes/settings.tres
+res://scenes/level/props/tree.tscn
+res://scenes/ui/inventory_slot_ui.tscn
+res://scenes/ui/settings/settings.tscn
+res://scenes/ui/simulation_bg/scene_loader.gd
+res://scripts/autoloads/network.gd
+res://scripts/propScripts/tree.gd
