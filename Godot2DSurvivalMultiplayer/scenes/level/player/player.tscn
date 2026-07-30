@@ -24,7 +24,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_pe35h"]
 font = ExtResource("3_pnmcy")
-font_size = 26
+font_size = 15
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
@@ -187,11 +187,11 @@ script = ExtResource("2_f33sr")
 position = Vector2(0, -21)
 
 [node name="Nickname" type="Label" parent="PlayerNick" unique_id=430057764]
-offset_left = -16.0
-offset_top = -15.0
-offset_right = 51.0
-offset_bottom = 44.0
-scale = Vector2(0.5, 0.5)
+offset_left = -35.0
+offset_top = -23.0
+offset_right = 32.0
+offset_bottom = 36.0
+scale = Vector2(1.05, 1.05)
 text = "player
 "
 label_settings = SubResource("LabelSettings_pe35h")

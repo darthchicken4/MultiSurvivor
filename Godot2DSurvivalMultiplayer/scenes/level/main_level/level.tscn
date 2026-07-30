@@ -2,74 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d0dgljwwl463n" path="res://scripts/level.gd" id="1_86s6a"]
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_iutpc"]
-[ext_resource type="Texture2D" uid="uid://cndx4v8bs78fa" path="res://assets/tilesheets/terraintiles.png" id="3_voa3t"]
-[ext_resource type="Script" uid="uid://csr7r2f8r48b0" path="res://tile_map.gd" id="4_spd3i"]
-[ext_resource type="PackedScene" uid="uid://1p1ftsastub6" path="res://scenes/level/props/tree.tscn" id="5_s8vhn"]
-[ext_resource type="PackedScene" uid="uid://b4gd3h0uuyvbd" path="res://scenes/level/props/shrub.tscn" id="6_8naku"]
-[ext_resource type="PackedScene" uid="uid://cxlnlmoqk6re6" path="res://scenes/level/props/dead_bush.tscn" id="7_epihc"]
-[ext_resource type="PackedScene" uid="uid://c1b3xyvsy4l7k" path="res://scenes/level/props/sharp_slab.tscn" id="8_0qrx1"]
-[ext_resource type="PackedScene" uid="uid://bmv7f8oas0w56" path="res://scenes/level/props/berry_bush.tscn" id="9_ebhbo"]
-[ext_resource type="PackedScene" uid="uid://xwkgvj4ako5j" path="res://scenes/level/props/gold_node.tscn" id="10_uwlko"]
-[ext_resource type="PackedScene" uid="uid://bc1h4ng36idar" path="res://scenes/level/props/iron_node.tscn" id="11_7fw8u"]
-[ext_resource type="PackedScene" uid="uid://disp8wck7d2oj" path="res://scenes/level/props/copper_node.tscn" id="12_wtpff"]
-[ext_resource type="PackedScene" uid="uid://d2ndcyb74kux8" path="res://scenes/level/props/large_stone.tscn" id="13_6tobk"]
-[ext_resource type="PackedScene" uid="uid://dqack1nbr5tvu" path="res://scenes/level/props/small_stones.tscn" id="14_6m7w0"]
-[ext_resource type="PackedScene" uid="uid://vrmb0ykhu6wj" path="res://scenes/level/props/tree_branch.tscn" id="15_51dw6"]
-[ext_resource type="PackedScene" uid="uid://bd48u8ah6bxa7" path="res://scenes/level/props/clay_pile.tscn" id="16_773ps"]
-[ext_resource type="PackedScene" uid="uid://dgtwwx33trboo" path="res://scenes/level/props/tall_grass.tscn" id="17_oh5ry"]
-[ext_resource type="PackedScene" uid="uid://bwwcckh63wplv" path="res://scenes/level/props/ferns.tscn" id="18_huim6"]
-[ext_resource type="PackedScene" uid="uid://c77quiys2ynum" path="res://scenes/level/props/red_shrooms.tscn" id="19_ibvpc"]
-[ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="20_416ji"]
+[ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="3_bnfn5"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="21_aalvb"]
 [ext_resource type="Texture2D" uid="uid://k2uh0vpuuk0b" path="res://assets/tilesheets/border_tiles.png" id="26_qj7ud"]
 [ext_resource type="Script" uid="uid://djf35jdmoaxud" path="res://scenes/level/world_border/border_gen.gd" id="27_sri58"]
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="28_xpe6n"]
 [ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="32_spd3i"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcngd"]
-texture = ExtResource("3_voa3t")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-6:3/0 = 0
-6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aalvb"]
-texture = ExtResource("26_qj7ud")
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_xv074"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wcngd")
-sources/1 = SubResource("TileSetAtlasSource_aalvb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5w0m"]
 texture = ExtResource("26_qj7ud")
@@ -82,52 +20,29 @@ texture = ExtResource("26_qj7ud")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_u5w0m")
 
-[node name="World" type="Node2D" unique_id=2127375299]
+[node name="World" type="Node2D" unique_id=2127375299 node_paths=PackedStringArray("tilemap")]
 script = ExtResource("1_86s6a")
 player_scene = ExtResource("2_iutpc")
+tilemap = NodePath("Map/TileMapLayer2")
 
 [node name="Map" type="Node2D" parent="." unique_id=84173827]
 
-[node name="building_layer" type="TileMapLayer" parent="Map" unique_id=1220804939]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Map" unique_id=1767721526 node_paths=PackedStringArray("tree_container")]
-z_index = -2
-y_sort_enabled = true
-texture_filter = 3
-scale = Vector2(2, 2)
-tile_set = SubResource("TileSet_xv074")
-physics_quadrant_size = 32
-navigation_enabled = false
-script = ExtResource("4_spd3i")
-tree_scene = ExtResource("5_s8vhn")
-shrub_scene = ExtResource("6_8naku")
-dead_bush_scene = ExtResource("7_epihc")
-slab_scene = ExtResource("8_0qrx1")
-berryshrub_scene = ExtResource("9_ebhbo")
-gold_scene = ExtResource("10_uwlko")
-iron_scene = ExtResource("11_7fw8u")
-copper_scene = ExtResource("12_wtpff")
-rocks_scene = ExtResource("13_6tobk")
-pebbles_scene = ExtResource("14_6m7w0")
-tree_branches_scene = ExtResource("15_51dw6")
-clay_scene = ExtResource("16_773ps")
-tallgrass_scene = ExtResource("17_oh5ry")
-fern_scene = ExtResource("18_huim6")
-redmushrooms_scene = ExtResource("19_ibvpc")
-yellowmushrooms_scene = ExtResource("20_416ji")
+[node name="TileMapLayer2" parent="Map" unique_id=2132692132 node_paths=PackedStringArray("tree_container") instance=ExtResource("3_bnfn5")]
 tree_container = NodePath("../SortContainer")
+
+[node name="building_layer" type="TileMapLayer" parent="Map" unique_id=1220804939]
 
 [node name="SelectionMapLayer" parent="Map" unique_id=1045206275 instance=ExtResource("21_aalvb")]
 
 [node name="SortContainer" type="Node2D" parent="Map" unique_id=1052217944]
 y_sort_enabled = true
-position = Vector2(12, 6)
 
-[node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014]
+[node name="WorldBorder" type="TileMapLayer" parent="Map" unique_id=1095930014 node_paths=PackedStringArray("tile_map")]
 z_index = -2
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_fhw5o")
 script = ExtResource("27_sri58")
+tile_map = NodePath("../TileMapLayer2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=23129141]
 

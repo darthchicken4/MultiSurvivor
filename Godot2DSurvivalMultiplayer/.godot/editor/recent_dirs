@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 res://assets/spritesheets/particles/
 res://assets/spritesheets/
+=======
+res://assets/tilesheets/
+>>>>>>> 0f1ba3a8f53a6d4cd3074a64a44eba365db59b79
 res://scenes/level/main_level/
+res://
+res://assets/spritesheets/
 res://assets/themes/
 res://scenes/ui/settings/
 res://assets/fonts/
@@ -11,4 +17,3 @@ res://scenes/animals/chiken/
 res://scripts/propScripts/
 res://scripts/
 res://scenes/level/
-res://

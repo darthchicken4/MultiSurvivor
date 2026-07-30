@@ -8,13 +8,14 @@ var actions: Array[String] = ["Inspect"]
 
 @onready var tree_sprite = $AnimatedSprite2D
 @onready var audio_russle = $russle
-
+@onready var gpu_particle = $GPUParticles2D
 var anim_can_play = true
 
 func _on_rustle_trigger_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("objects"):
 		audio_russle.play()
 		tree_sprite.play("rustle")
+		gpu_particle.emitting = true
 
 
 func _on_rustle_trigger_body_exited(body: Node2D) -> void:
