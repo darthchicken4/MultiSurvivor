@@ -100,7 +100,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncyl7"]
-radius = 133.00375
+radius = 197.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ncyl7"]
 properties/0/path = NodePath(".:position")
@@ -151,6 +151,10 @@ replication_config = SubResource("SceneReplicationConfig_ncyl7")
 
 [node name="bite" type="AudioStreamPlayer2D" parent="audio" unique_id=1135263298]
 stream = ExtResource("4_w50ss")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1197860424]
+avoidance_enabled = true
+debug_enabled = true
 
 [connection signal="body_entered" from="damage_area" to="." method="_on_damage_area_body_entered"]
 [connection signal="body_exited" from="damage_area" to="." method="_on_damage_area_body_exited"]

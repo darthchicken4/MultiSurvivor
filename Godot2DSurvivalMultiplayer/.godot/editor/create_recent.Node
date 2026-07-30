@@ -1,4 +1,10 @@
+CollisionShape2D
+StaticBody2D
 Polygon2D
+NavigationObstacle2D
+NavigationAgent2D
+NavigationLink2D
+Marker2D
 Camera2D
 NinePatchRect
 TabBar
@@ -7,9 +13,3 @@ Panel
 TextureRect
 ColorRect
 GPUParticles2D
-CPUParticles2D
-Sprite2D
-Control
-CollisionShape2D
-StaticBody2D
-ProgressBar

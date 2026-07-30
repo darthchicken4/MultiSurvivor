@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wj1m5464kjrc"]
+
+[ext_resource type="Texture2D" uid="uid://byml7f0vl52lo" path="res://assets/sprites/objects/skeleton.png" id="1_5lkyj"]
+
+[node name="Skeleton" type="Node2D" unique_id=1549877129]
+
+[node name="Skeleton" type="Sprite2D" parent="." unique_id=1455434169]
+scale = Vector2(2, 2)
+texture = ExtResource("1_5lkyj")

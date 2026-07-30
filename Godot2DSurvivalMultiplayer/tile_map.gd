@@ -31,6 +31,7 @@ var tile_terrain: Dictionary = {}
 @export var fern_scene: PackedScene
 @export var redmushrooms_scene: PackedScene
 @export var yellowmushrooms_scene: PackedScene
+@export var wasd_obelisk: PackedScene
 @export var hog : PackedScene
 @export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
 @export var can_spawn_again = true

@@ -5,7 +5,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_rfw6o"]
 
 [node name="animal_spawner" type="MultiplayerSpawner" unique_id=1876205315]
-spawn_path = NodePath(".")
+_spawnable_scenes = PackedStringArray("uid://bbsinlr2myoij")
 script = ExtResource("1_rfw6o")
 
 [node name="AnimalSpawner" type="Node2D" parent="." unique_id=1586108228]
@@ -14,3 +14,7 @@ script = ExtResource("1_rfw6o")
 position = Vector2(3, 2.000001)
 scale = Vector2(46.499996, 30.5)
 mesh = SubResource("QuadMesh_rfw6o")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=545577663]
+position = Vector2(122, -55)
+gizmo_extents = 34.0

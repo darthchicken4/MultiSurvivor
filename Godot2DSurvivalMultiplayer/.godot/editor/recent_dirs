@@ -1,3 +1,4 @@
+res://scenes/animals/hog/
 res://assets/tilesheets/
 res://scenes/level/main_level/
 res://
@@ -7,7 +8,6 @@ res://scenes/ui/settings/
 res://assets/fonts/
 res://scenes/ui/crafting_ui/
 res://assets/sprites/
-res://scenes/animals/hog/
 res://scenes/animals/chiken/
 res://scripts/propScripts/
 res://scripts/
