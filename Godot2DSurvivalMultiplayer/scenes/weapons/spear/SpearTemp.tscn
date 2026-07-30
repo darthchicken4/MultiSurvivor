@@ -1,16 +1,151 @@
 [gd_scene format=3 uid="uid://cgfrxdjgkag25"]
 
+[ext_resource type="Script" uid="uid://dupvq0iqkn3ko" path="res://scenes/weapons/spear/spear_temp.gd" id="1_vkufw"]
+[ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="2_shqob"]
+[ext_resource type="Texture2D" uid="uid://ky1bv0pirsyk" path="res://assets/spritesheets/particles/stab.png" id="3_6h3u0"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ke40s"]
+atlas = ExtResource("2_shqob")
+region = Rect2(32, 0, 16, 16.099472)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
 properties/0/path = NodePath("Weapon/Sprite:frame")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="Animation" id="Animation_lnhom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.08726646]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParticleNode:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(21, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_v8cr5"]
+resource_name = "spear_jab"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.1717614, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 6), Vector2(-1, 6), Vector2(20, 5.9999995), Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.16666667, 0.1717614, 0.26666665, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.08726646, 0.0, 0.08726646, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParticleNode:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.066452935, 0.16679688),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(21, 7), Vector2(21, 7), Vector2(33, 7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2s7s"]
+_data = {
+&"RESET": SubResource("Animation_lnhom"),
+&"spear_jab": SubResource("Animation_v8cr5")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1xj5"]
+atlas = ExtResource("3_6h3u0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y05n6"]
+atlas = ExtResource("3_6h3u0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d363e"]
+atlas = ExtResource("3_6h3u0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5n6u"]
+atlas = ExtResource("3_6h3u0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qah73"]
+atlas = ExtResource("3_6h3u0")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqks5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1xj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y05n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d363e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5n6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qah73")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
 [node name="SpearTemp" type="Node2D" unique_id=1774495734]
+script = ExtResource("1_vkufw")
 
 [node name="Weapon" type="Node2D" parent="." unique_id=621430649]
 position = Vector2(0, 6)
+rotation = -0.08726646
 
 [node name="Sprite" type="Sprite2D" parent="Weapon" unique_id=1052999554]
 rotation = 2.4626596
@@ -21,3 +156,14 @@ texture = SubResource("AtlasTexture_ke40s")
 replication_config = SubResource("SceneReplicationConfig_dalwq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=53198904]
+libraries/ = SubResource("AnimationLibrary_v2s7s")
+
+[node name="ParticleNode" type="Node2D" parent="." unique_id=1124803222]
+z_index = -1
+position = Vector2(21, 7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticleNode" unique_id=1331488264]
+modulate = Color(1, 1, 1, 0.09019608)
+position = Vector2(-2, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yqks5")

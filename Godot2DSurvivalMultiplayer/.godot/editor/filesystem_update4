@@ -1,12 +1,5 @@
-res://scenes/ui/inventory_slot_ui.tscn
+res://scenes/weapons/spear/SpearTemp.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
-res://scenes/weapons/generic/ItemTemp.tscn
-res://scenes/ui/interact_menu.gd
-res://scripts/autoloads/game_manager.gd
-res://scenes/ui/inspect_menu/inspect_menu.gd
-res://scenes/ui/inspect_menu/inspect_menu.tscn
-res://scripts/propScripts/tree.gd
-res://scenes/weapons/spear/SpearTemp.tscn
