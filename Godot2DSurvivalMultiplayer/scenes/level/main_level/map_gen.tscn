@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://bwwcckh63wplv" path="res://scenes/level/props/ferns.tscn" id="16_gsg05"]
 [ext_resource type="PackedScene" uid="uid://c77quiys2ynum" path="res://scenes/level/props/red_shrooms.tscn" id="17_e4snc"]
 [ext_resource type="PackedScene" uid="uid://bkkihfrvyn00o" path="res://scenes/level/props/yellow_shroom.tscn" id="18_7sxxm"]
+[ext_resource type="PackedScene" uid="uid://ekwi6e84g3ys" path="res://scenes/level/props/obelisc/wasd_obelisc.tscn" id="19_ehet1"]
+[ext_resource type="PackedScene" uid="uid://knn325uwdhla" path="res://scenes/level/props/obelisc/q obelisk.tscn" id="20_0lpkd"]
+[ext_resource type="PackedScene" uid="uid://cbppvrmn5bxwo" path="res://scenes/level/props/obelisc/inspect_obelisk.tscn" id="21_3ip4w"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0ogvq"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -110,3 +113,6 @@ tallgrass_scene = ExtResource("15_sb8r5")
 fern_scene = ExtResource("16_gsg05")
 redmushrooms_scene = ExtResource("17_e4snc")
 yellowmushrooms_scene = ExtResource("18_7sxxm")
+wasd_obelisk = ExtResource("19_ehet1")
+q_obelisk = ExtResource("20_0lpkd")
+inspect_obelisk = ExtResource("21_3ip4w")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mo7o1dmqq8hg"]
 
-[ext_resource type="Script" uid="uid://p16665fisxk8" path="res://scenes/level/props/spiked_floor.gd" id="1_vmgah"]
+[ext_resource type="Script" uid="uid://p16665fisxk8" path="res://scripts/propScripts/spiked_floor.gd" id="1_vmgah"]
 [ext_resource type="Texture2D" uid="uid://idrt5ddydyh7" path="res://assets/tilesheets/spikes.png" id="2_uk2lt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uk2lt"]

@@ -1,7 +1,7 @@
 extends Control
 
 
-var single_player = preload("res://scenes/level/dev_level/devlevel.tscn")
+var single_player = preload("res://scenes/level/single_player/single_player.tscn")
 
 
 

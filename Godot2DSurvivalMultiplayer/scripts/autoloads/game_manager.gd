@@ -3,7 +3,7 @@ extends Node
 
 @export var message = preload("res://scenes/ui/inspect_menu/inspect_menu.tscn")
 @export var player = null
-
+@export var progress_bar = null
 signal action_selected(action: String, target: Node)
 
 func _ready():
@@ -29,17 +29,16 @@ func _on_context_action(action: String, target: Node):
 func _start_pickup(target: Node):
 	pass
 
-	# Show a progress bar for pickup_time seconds
+	
 	#var timer = get_tree().create_timer(target.pickup_time)
 	#progress_bar.show()
 	#await timer.timeout
 	#progress_bar.hide()
 	
-	# Give item to player
 	#var local_player = _get_local_player()
 	#local_player.request_add_item.rpc_id(1, target.item_id, target.item_amount)
 	
-	# Remove from world
+
 	#var tile_pos = tilemap.local_to_map(tilemap.to_local(target.global_position))
 	#tilemap.request_remove_object.rpc_id(1, tile_pos)
 func setPlayer(target):

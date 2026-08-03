@@ -142,9 +142,12 @@ explosiveness = 0.81
 fract_delta = false
 process_material = SubResource("ParticleProcessMaterial_t6mes")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=211960273]
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="." unique_id=1450816673]
 position = Vector2(0, 4)
-radius = 6.72
+radius = 8.33
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_layers = 3
 
 [connection signal="body_entered" from="rustle_trigger" to="." method="_on_rustle_trigger_body_entered"]
 [connection signal="body_exited" from="rustle_trigger" to="." method="_on_rustle_trigger_body_exited"]

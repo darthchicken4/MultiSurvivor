@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://u5jqv3jr5hrp"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tjnap"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.68
+scale_max = 1.38
+color = Color(0.6439486, 0, 0.06660756, 1)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="BloodDrip" type="GPUParticles2D" unique_id=837505845]
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_tjnap")

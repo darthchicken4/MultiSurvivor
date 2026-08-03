@@ -146,6 +146,8 @@ layout_mode = 2
 theme_override_constants/separation = 21
 
 [node name="recipename" type="Label" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer" unique_id=367638787]
+custom_minimum_size = Vector2(100, 0)
+layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 0
 text = "ITEM:NAME PLACE HOLDER"
@@ -153,12 +155,13 @@ text = "ITEM:NAME PLACE HOLDER"
 [node name="description" type="Label" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer" unique_id=1601895301]
 layout_mode = 2
 text = "discription here"
+autowrap_mode = 3
 
 [node name="crafting_station2" type="Label" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer" unique_id=926437156]
 layout_mode = 2
 theme = ExtResource("1_ym6gd")
 text = "crafting:table required "
-autowrap_mode = 1
+autowrap_mode = 3
 
 [node name="craftingtable_list" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/HBoxContainer/item_requierment/VBoxContainer" unique_id=1864414250]
 layout_mode = 2

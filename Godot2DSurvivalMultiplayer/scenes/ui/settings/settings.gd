@@ -16,6 +16,7 @@ var resolutions = [
 		Vector2i(1920, 1080),
 		Vector2i(2560, 1440),
 		Vector2i(3840, 2160),
+		Vector2i(200, 200)
 	]
 
 

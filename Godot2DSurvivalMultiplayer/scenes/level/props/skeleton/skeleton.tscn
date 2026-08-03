@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://wj1m5464kjrc"]
 
+[ext_resource type="Script" uid="uid://bxqvms6usd60l" path="res://scenes/level/props/skeleton/skeleton.gd" id="1_0vd45"]
 [ext_resource type="Texture2D" uid="uid://byml7f0vl52lo" path="res://assets/sprites/objects/skeleton.png" id="1_5lkyj"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ovyi4"]
+radius = 5.0
+height = 42.0
+
 [node name="Skeleton" type="Node2D" unique_id=1549877129]
+script = ExtResource("1_0vd45")
 
 [node name="Skeleton" type="Sprite2D" parent="." unique_id=1455434169]
 scale = Vector2(2, 2)
 texture = ExtResource("1_5lkyj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=918068668]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1687945922]
+position = Vector2(2, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ovyi4")

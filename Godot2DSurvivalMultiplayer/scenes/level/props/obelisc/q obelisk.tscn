@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://knn325uwdhla"]
+
+[ext_resource type="Script" uid="uid://b7g1vswcfl6kw" path="res://scenes/level/props/obelisc/q_obelisk.gd" id="1_3hmhf"]
+[ext_resource type="Texture2D" uid="uid://ckdj86xftcaqf" path="res://assets/sprites/objects/obelisc_q.png" id="1_6adyk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hmhf"]
+radius = 9.0
+height = 42.0
+
+[node name="QObelisk" type="Node2D" unique_id=1358784294 groups=["objects"]]
+script = ExtResource("1_3hmhf")
+
+[node name="ObeliscQ" type="Sprite2D" parent="." unique_id=641115882]
+scale = Vector2(2, 2)
+texture = ExtResource("1_6adyk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=881174601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=259069993]
+position = Vector2(1, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3hmhf")

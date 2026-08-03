@@ -20,6 +20,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @onready var foot_steps = $audio/foot_steps
 @onready var tool_pivot = $ToolPivot
 
+@export var blood_particle : GPUParticles2D
+
 @export var stamina_value : float = 10.0
 @export var stamina_timer : float = 10.0 #sec
 @export var stamina_tick_rate : float = 0.3
@@ -349,6 +351,10 @@ func update_health() -> void:
 		await Utils.wait(0.3)
 		if hunger_value > hunger_max * 0.75:
 			health += 0.2
+		if health == max_health * 0.3:
+			blood_particle.emitting = true
+		else:
+			blood_particle.emitting = false 
 func death_check(can_die):
 	while true:
 		await Utils.wait(0.1)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 
 @export var speed: float = 50.0
+@export var wander_speed = 25.0
 @export  var wander_dir = 3
 @export var wander_timer = 4
 
@@ -27,8 +28,10 @@ var wander_direction = Vector2(0,0)
 
 var direction = Vector2(0,0)
 
+var _last_delta: float = 0.0
+
 func  _ready() -> void:
-	pass
+	nav_agent.avoidance_enabled = true
 
 
 func _on_damage_area_body_entered(body: Node2D) -> void:
@@ -52,10 +55,11 @@ func _on_detect_area_body_exited(body: Node2D) -> void:
 		player = null
 
 func _physics_process(delta: float) -> void:
+	
 	if not is_multiplayer_authority():
 		update_animation()
 		return
-
+	_last_delta = delta
 	if player:
 		_nav_update_timer -= delta
 		if _nav_update_timer <= 0.0:
@@ -65,8 +69,13 @@ func _physics_process(delta: float) -> void:
 		if not nav_agent.is_navigation_finished():
 			var next_pos: Vector2 = nav_agent.get_next_path_position()
 			direction = global_position.direction_to(next_pos)
-			velocity = direction * speed
-			global_position += velocity * delta
+			var desired_velocity = direction * speed
+
+			if nav_agent.avoidance_enabled:
+				nav_agent.velocity = desired_velocity  # request; actual move happens in _on_velocity_computed
+			else:
+				velocity = desired_velocity
+				global_position += velocity * delta
 		else:
 			velocity = Vector2.ZERO
 	else:
@@ -77,9 +86,10 @@ func _physics_process(delta: float) -> void:
 		anim.play("run")
 	else:
 		anim.play("idle")
-
 	if velocity.x != 0:
 		anim.flip_h = velocity.x < 0
+
+
 
 func wander(delta: float) -> void:
 	if is_thinking:
@@ -94,7 +104,7 @@ func wander(delta: float) -> void:
 		return
 
 	# Moving
-	velocity = wander_direction * speed
+	velocity = wander_direction * wander_speed
 	global_position += velocity * delta
 	wander_timer -= delta
 	if wander_timer <= 0:
@@ -118,3 +128,8 @@ func _on_damage_area_body_exited(body: Node2D) -> void:
 
 func damage_skin():
 	anim.self_modulate = Color(1.0, 0.0, 0.0, health / 100 )
+
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+	global_position += velocity * _last_delta

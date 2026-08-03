@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b5cc0xjrqim3n"]
+
+[ext_resource type="Script" uid="uid://djecbunmwxr5" path="res://scenes/level/dev_level/devlevel.gd" id="1_nped3"]
+[ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_386k8"]
+[ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_fwnut"]
+[ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="4_8btlo"]
+[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="6_sf45v"]
+[ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/structures/bunker/bunker.tscn" id="7_kfp5w"]
+[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="8_fn8uo"]
+[ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="9_fpn5f"]
+
+[node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
+script = ExtResource("1_nped3")
+players_container = NodePath("sort_contain")
+player_scene = ExtResource("2_386k8")
+tilemap = NodePath("TileMapLayer")
+
+[node name="SelectionMapLayer" parent="." unique_id=1045206275 instance=ExtResource("3_fwnut")]
+
+[node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("tree_container") instance=ExtResource("4_8btlo")]
+width = 32
+height = 32
+tree_container = NodePath("../sort_contain")
+
+[node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
+y_sort_enabled = true
+
+[node name="Ranger" parent="sort_contain" unique_id=58468175 instance=ExtResource("6_sf45v")]
+position = Vector2(-552, -117)
+
+[node name="Bunker" parent="sort_contain" unique_id=1249232412 node_paths=PackedStringArray("map") instance=ExtResource("7_kfp5w")]
+position = Vector2(350, -283)
+map = NodePath("../../TileMapLayer")
+
+[node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("8_fn8uo")]
+position = Vector2(103, -147)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=150256932]
+
+[node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("9_fpn5f")]
+visible = false
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 1.0
+offset_bottom = 10.0

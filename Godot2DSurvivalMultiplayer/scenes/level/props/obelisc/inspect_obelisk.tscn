@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbppvrmn5bxwo"]
+
+[ext_resource type="Script" uid="uid://dv78eup0pooxx" path="res://scenes/level/props/obelisc/inspect_obelisk.gd" id="1_p4v2f"]
+[ext_resource type="Texture2D" uid="uid://cstlhl0tfw1ik" path="res://assets/sprites/objects/obelisc_inspect.png" id="2_nsp4n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35h46"]
+radius = 9.0
+height = 40.0
+
+[node name="InspectObelisk" type="Node2D" unique_id=1956501138 groups=["objects"]]
+script = ExtResource("1_p4v2f")
+
+[node name="ObeliscInspect" type="Sprite2D" parent="." unique_id=974029412]
+scale = Vector2(2, 2)
+texture = ExtResource("2_nsp4n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=113229074]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1444505281]
+position = Vector2(0, 15)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_35h46")

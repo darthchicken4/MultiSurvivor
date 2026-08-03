@@ -9,7 +9,11 @@ var actions: Array[String] = ["Inspect"]
 @onready var tree_sprite = $AnimatedSprite2D
 @onready var audio_russle = $russle
 @onready var gpu_particle = $GPUParticles2D
+@onready var obstical = $NavigationObstacle2D
 var anim_can_play = true
+
+func _ready() -> void:
+	obstical.avoidance_enabled = true
 
 func _on_rustle_trigger_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("objects"):

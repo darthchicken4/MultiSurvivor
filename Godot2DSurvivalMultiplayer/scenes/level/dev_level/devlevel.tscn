@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_7byda"]
 [ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="2_ppamu"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_kslto"]
+[ext_resource type="PackedScene" uid="uid://cbppvrmn5bxwo" path="res://scenes/level/props/obelisc/inspect_obelisk.tscn" id="5_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="8_08plu"]
 [ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="9_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/structures/bunker/bunker.tscn" id="11_j7rnb"]
-[ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="12_08plu"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -21,6 +21,7 @@ tilemap = NodePath("TileMapLayer")
 [node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("tree_container") instance=ExtResource("2_ppamu")]
 width = 32
 height = 32
+inspect_obelisk = ExtResource("5_3j0n3")
 tree_container = NodePath("../sort_contain")
 
 [node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
@@ -33,11 +34,8 @@ position = Vector2(-552, -117)
 position = Vector2(350, -283)
 map = NodePath("../../TileMapLayer")
 
-[node name="animal_spawner" parent="sort_contain" unique_id=1876205315 node_paths=PackedStringArray("tilemap_index", "multiplayer_spawner", "sort_container") instance=ExtResource("12_08plu")]
-spawn_path = NodePath("..")
-tilemap_index = NodePath("../../TileMapLayer")
-multiplayer_spawner = NodePath(".")
-sort_container = NodePath("..")
+[node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("9_3j0n3")]
+position = Vector2(103, -147)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=150256932]
 
@@ -47,6 +45,3 @@ offset_left = 1.0
 offset_top = 10.0
 offset_right = 1.0
 offset_bottom = 10.0
-
-[node name="zombie" parent="." unique_id=1499102670 instance=ExtResource("9_3j0n3")]
-position = Vector2(122, -234)

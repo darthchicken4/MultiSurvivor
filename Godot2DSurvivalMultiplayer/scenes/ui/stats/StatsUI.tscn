@@ -37,7 +37,7 @@ region = Rect2(0, 0, 12.605993, 12.075043)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sq71o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsacm"]
-bg_color = Color(0.97166747, 0, 0.16441697, 1)
+bg_color = Color(0.31254885, 0, 0.025341418, 1)
 
 [node name="StatsUi" type="Control" unique_id=743448863]
 layout_mode = 3
@@ -180,4 +180,5 @@ show_percentage = false
 [node name="damage" type="TextureRect" parent="MarginContainer" unique_id=1631606790]
 visible = false
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_dw53x")

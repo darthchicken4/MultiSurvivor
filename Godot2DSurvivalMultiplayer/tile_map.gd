@@ -32,7 +32,9 @@ var tile_terrain: Dictionary = {}
 @export var redmushrooms_scene: PackedScene
 @export var yellowmushrooms_scene: PackedScene
 @export var wasd_obelisk: PackedScene
-@export var hog : PackedScene
+@export var q_obelisk: PackedScene
+@export var inspect_obelisk: PackedScene
+
 @export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
 @export var can_spawn_again = true
 @export var tree_container: Node2D
@@ -45,6 +47,7 @@ func _initiate(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
 	animal_spawn_tile()
+	_generate_spawn_structures()
 func _apply_seed_and_generate():
 	var rng = RandomNumberGenerator.new()
 	rng.seed = map_seed
@@ -70,7 +73,7 @@ func _apply_seed_and_generate():
 func sync_map_seed(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
-
+	_generate_spawn_structures()
 func _process(_delta):
 	var tile_pos = local_to_map(Vector2(0, 0))
 	if tile_pos != last_tile_pos:
@@ -90,6 +93,9 @@ func get_tile_object(mouse_position: Vector2) -> Node:
 	return null
 	
 func generate_chunk(position):
+	#sturucture 
+	
+	
 	for child in tree_container.get_children():
 		if child.is_in_group("map_objects"):
 			child.queue_free()
@@ -261,13 +267,37 @@ func remove_object(tile: Vector2i):
 		tile_objects[tile].queue_free()
 		tile_objects.erase(tile)
 
+func spawn_structure(key: Vector2i, scene: PackedScene):
+	# Like spawn_object, but ignores terrain restrictions — for fixed-position
+	# structures like the obelisk that should spawn no matter what's underneath.
+	if tile_objects.has(key):
+		return
+	if scene == null:
+		return
+	_place_object(key, scene)
 
+func _place_object(key: Vector2i, scene: PackedScene):
+	var obj = scene.instantiate()
+	obj.add_to_group("map_objects")
 
+	tree_container.add_child(obj)
+	if obj.has_meta("flipX"):
+		if randi() % 2 == 0:
+			obj.get_child(0).flip_h = true
+	if obj.has_meta("flipY"):
+		if randi() % 2 == 0:
+			obj.get_child(0).flip_v = true
+	obj.global_position = map_to_global(key)
+	tile_objects[key] = obj
 
 
 func _is_grass(terrain: String) -> bool:
 	return terrain == "lush_grass" or terrain == "dry_grass"
 
+func _generate_spawn_structures():
+	spawn_structure(Vector2i(0,0),wasd_obelisk)
+	spawn_structure(Vector2i(3,2),q_obelisk)
+	spawn_structure(Vector2i(-3,2),inspect_obelisk)
 
 func animal_spawn_tile():
 	# Cross offsets: center + up, down, left, right
@@ -301,3 +331,7 @@ func animal_spawn_tile():
 	var chosen: Vector2i = valid_tiles[randi() % valid_tiles.size()]
 	grass_spawn = Vector2(chosen.x, chosen.y)
 	print("animal_spawn_tile: grass_spawn set to ", grass_spawn)
+
+
+func rebake_navigation():
+	$NavigationRegion2D.bake_navigation_polygon(true)

@@ -6,9 +6,9 @@ extends Node2D
 @onready var exit_area = $exit_area
 
 @export var map: Node2D 
-@export var bunker_pos = Vector2i(200,200)
+@export var bunker_pos = Vector2(200,200)
 @export var dist = 7
-@export var bunker_side_offset = Vector2i(128,128)
+@export var bunker_side_offset = Vector2(128,128)
 @export var enter_timer = 2
 @export var area_around_bunker = 128
 
@@ -44,7 +44,7 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 
 
 func _ready() -> void:
-	bunker_pos = Vector2i(map.width / 2,map.height / 2)
+	bunker_pos = Vector2(map.width / 2,map.height / 2)
 	bunker_pos = bunker_pos  + bunker_side_offset * 5
 	gen_bunker()
 	
@@ -58,11 +58,13 @@ func reset_enter_delay() -> void:
 
 	
 func gen_bunker():
-	exit_area.global_position = bunker_pos
-	var cave_list = [prefab_1,prefab_2,prefab_3]
+	var bunker_list = [prefab_1,prefab_2,prefab_3]
 	rng.seed = 12345
-	var value = rng.randi_range(0, cave_list.size() - 1)
-	var cave_instance = cave_list[value].instantiate()  # use .instance() if this is Godot 3.x
-	add_child(cave_instance)
-	cave_instance.global_position = bunker_pos
+	var value = rng.randi_range(0, bunker_list.size() - 1)
+	var bunker_instance = bunker_list[value].instantiate()  # use .instance() if this is Godot 3.x
+	add_child(bunker_instance)
+	bunker_instance.global_position = bunker_pos
+	exit_area.global_position = bunker_pos + bunker_instance.spawn_place * 2
+	print(exit_area.global_position )
+	print(bunker_instance.spawn_place)
 	

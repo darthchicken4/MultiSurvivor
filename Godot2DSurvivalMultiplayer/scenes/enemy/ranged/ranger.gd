@@ -86,8 +86,8 @@ func wander(delta: float) -> void:
 func update_animation() -> void:
 	if velocity.length() > 0.1:
 		anim.play("run")
-	else:
-		anim.play("idle")
+	#else:
+		#anim.play("idle")
 
 
 func _on_detect_body_entered(body: Node2D) -> void:
