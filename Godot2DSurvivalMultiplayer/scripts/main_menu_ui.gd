@@ -10,6 +10,8 @@ signal quit_pressed
 @onready var nick_input: LineEdit = $MainContainer/MainMenu/Option1/NickInput
 @onready var address_input: LineEdit = $MainContainer/MainMenu/Option3/AddressInput
 
+
+
 func _ready():
 	Network.debug_message.connect(add_debug_output)
 	pass

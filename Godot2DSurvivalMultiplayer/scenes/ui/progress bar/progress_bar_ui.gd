@@ -9,7 +9,6 @@ var x_pos = 0.0
 func _ready() -> void:
 	cancel_sprite.visible = false
 	progress_reset()
-	progress_set(20)
 	
 func progress_set(time):
 	while true:

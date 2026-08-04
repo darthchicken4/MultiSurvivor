@@ -27,11 +27,11 @@ func _on_context_action(action: String, target: Node):
 			_inspect(target)
 	
 func _start_pickup(target: Node):
-	pass
 
 	
-	#var timer = get_tree().create_timer(target.pickup_time)
-	#progress_bar.show()
+	var timer = get_tree().create_timer(target.pickup_time)
+	player.has_method("progres_bar_call")
+	player.progres_bar_call(0,timer)
 	#await timer.timeout
 	#progress_bar.hide()
 	

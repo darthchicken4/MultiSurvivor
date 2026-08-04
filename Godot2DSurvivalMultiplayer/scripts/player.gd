@@ -37,6 +37,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var hunger_tick : float= 0.3 #time to hunger go down
 @export var hunger_max : float = 20.0
 
+@export var progres_bar : Control 
 @export var can_die = false
 
 var player_inventory: PlayerInventory
@@ -560,3 +561,15 @@ func _add_starting_items():
 		player_inventory.add_item(sword, 1)
 	if potion:
 		player_inventory.add_item(potion, 3)
+
+func progres_bar_call(method_select,time):
+	progres_bar.has_method("progress_set")
+	progres_bar.has_method("progress_reset")
+	progres_bar.has_method("progress_cancel")
+	if method_select == 0:
+		progres_bar.progress_set(time)	
+	if method_select == 1:
+		progres_bar.progress_reset()
+	if method_select == 2:
+		progres_bar.progress_cancel(time)	
+	

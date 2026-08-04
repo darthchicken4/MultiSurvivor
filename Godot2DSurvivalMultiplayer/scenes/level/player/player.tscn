@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://bdqclivw5ny8a" path="res://scenes/level/player/tool_pivot.gd" id="14_ek3jh"]
 [ext_resource type="Script" uid="uid://cscxrm8l1f0l7" path="res://scenes/level/player/audio.gd" id="14_ugt31"]
 [ext_resource type="AudioStream" uid="uid://drtwuc0fafdxa" path="res://assets/audio/nature sounds.mp3" id="16_h3ilt"]
+[ext_resource type="PackedScene" uid="uid://bgfqyh6orae3b" path="res://scenes/ui/progress bar/progress bar.tscn" id="21_5182i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -171,10 +172,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1738487347 node_paths=PackedStringArray("blood_particle") groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1738487347 node_paths=PackedStringArray("blood_particle", "progres_bar") groups=["player"]]
 script = ExtResource("1_tdh26")
 blood_particle = NodePath("BloodDrip")
 health = 15.0
+progres_bar = NodePath("ProgressBar")
 can_die = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
@@ -271,3 +273,9 @@ playback_type = 1
 script = ExtResource("14_ek3jh")
 
 [node name="SpearTemplate" parent="ToolPivot" unique_id=1774495734 instance=ExtResource("14_4x2hf")]
+
+[node name="ProgressBar" parent="." unique_id=232815070 instance=ExtResource("21_5182i")]
+offset_left = -76.0
+offset_top = -67.0
+offset_right = -76.0
+offset_bottom = -67.0

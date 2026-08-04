@@ -1,11 +1,11 @@
 res://scenes/ui/single_player_select_screen/single_player_select.tscn
 res://assets/themes/inventory.tres
+res://assets/themes/settings.tres
 res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
-res://assets/themes/settings.tres
+res://assets/themes/progress.tres
 res://scenes/weapons/spear/pixel_rotation.gdshader
-res://scenes/enemy/ranged/ranger.gd
-res://scenes/ui/crafting_ui/crafting_ui.tscn
-res://scenes/level/props/tree.tscn
+res://scripts/autoloads/game_manager.gd
 res://scenes/ui/single_player_select_screen/single_player_select.gd
+res://scenes/level/single_player/single_player.gd
 res://scenes/level/single_player/single_player.tscn

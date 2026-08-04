@@ -10,7 +10,7 @@ signal debug_message(msg)
 var players = {}
 var upnp: UPNP
 var upnp_active: bool = false
- 
+var singleplayer_mode : bool = false
 var player_info = {
 	"nick": "host",
 	"skin": Character.SkinColor.BLUE
@@ -31,7 +31,8 @@ func dprint(msg):
 func _process(_delta):
 	if Input.is_action_just_pressed("network_quit"):
 		dprint("Quit pressed -> exiting game")
-		_teardown_upnp()
+		if not singleplayer_mode:
+			_teardown_upnp()
 		get_tree().quit(0)
  
  
@@ -45,7 +46,29 @@ func _ready() -> void:
 	multiplayer.connected_to_server.connect(_on_connected_ok)
 func step_pause():
 	await get_tree().create_timer(0.1).timeout
- 
+
+func start_singleplayer(nickname: String, skin_color_str: String):
+	dprint("Starting singleplayer...")
+	await step_pause()
+
+	singleplayer_mode = true
+
+	if !nickname or nickname.strip_edges() == "":
+		nickname = "Player"
+
+	player_info["nick"] = nickname
+	player_info["skin"] = skin_str_to_e(skin_color_str)
+
+	dprint("Singleplayer player_info set: " + str(player_info))
+	await step_pause()
+
+	# No ENetMultiplayerPeer at all — multiplayer.get_unique_id() defaults to 1
+	# when multiplayer_peer is null, so id 1 stays consistent with your host path.
+	players[1] = player_info
+	dprint("Emitting singleplayer player_connected (id=1)")
+	await step_pause()
+	player_connected.emit(1, player_info)
+
 func start_host(nickname: String, skin_color_str: String):
 	dprint("Starting host...")
 	await step_pause()

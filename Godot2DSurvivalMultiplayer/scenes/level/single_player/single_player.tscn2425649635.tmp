@@ -19,8 +19,8 @@ tilemap = NodePath("TileMapLayer")
 [node name="SelectionMapLayer" parent="." unique_id=1045206275 instance=ExtResource("3_fwnut")]
 
 [node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("tree_container") instance=ExtResource("4_8btlo")]
-width = 12
-height = 8
+width = 32
+height = 32
 tree_container = NodePath("../sort_contain")
 
 [node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
