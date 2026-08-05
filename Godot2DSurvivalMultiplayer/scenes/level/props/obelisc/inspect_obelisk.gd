@@ -15,5 +15,5 @@ var objectname = "Inspect Obelisk"
 	},
 	
 ]
-@export var pickup_time: float = 2       # seconds to hold interact
+@export var pickup_time: float = 2.0       # seconds to hold interact
 @export var inspect_text: String = "Right click to inspect is inscribed in the obelisk."

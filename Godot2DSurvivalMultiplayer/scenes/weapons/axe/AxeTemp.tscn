@@ -1,13 +1,79 @@
 [gd_scene format=3 uid="uid://1xnan6b1ttrx"]
 
 [ext_resource type="Script" uid="uid://bajj8tkujca1l" path="res://scenes/weapons/axe/axe_temp.gd" id="1_ci64p"]
+[ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="2_vvasb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ux2"]
+atlas = ExtResource("2_vvasb")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dalwq"]
 properties/0/path = NodePath("Weapon/Sprite:frame")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+
+[sub_resource type="Animation" id="Animation_8x3h0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_623ud"]
+resource_name = "axe_swing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 6), Vector2(16, 6.0000005), Vector2(0, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.2525485, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4btje"]
+_data = {
+&"RESET": SubResource("Animation_8x3h0"),
+&"axe_swing": SubResource("Animation_623ud")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvasb"]
 
 [node name="AxeTemp" type="Node2D" unique_id=1774495734]
 script = ExtResource("1_ci64p")
@@ -19,8 +85,16 @@ position = Vector2(0, 6)
 texture_filter = 1
 position = Vector2(10, -7.0000005)
 rotation = 0.6859144
-scale = Vector2(-1.8, 1.8)
+scale = Vector2(-1.995, 1.995)
 texture = SubResource("AtlasTexture_65ux2")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=715405714]
 replication_config = SubResource("SceneReplicationConfig_dalwq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=520222670]
+libraries/ = SubResource("AnimationLibrary_4btje")
+
+[node name="ParticleNode" type="Node2D" parent="." unique_id=1267497898]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticleNode" unique_id=19380150]
+sprite_frames = SubResource("SpriteFrames_vvasb")

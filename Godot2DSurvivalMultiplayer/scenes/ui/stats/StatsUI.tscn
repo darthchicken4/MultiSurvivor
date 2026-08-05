@@ -142,6 +142,7 @@ mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_g0xps")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mtpfn")
 max_value = 20.0
+value = 4.0
 rounded = true
 show_percentage = false
 

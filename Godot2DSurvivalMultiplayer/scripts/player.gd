@@ -4,8 +4,10 @@ class_name Character
 @export var NORMAL_SPEED : float = 100.0
 const SPRINT_SPEED : float  = 150.0
 const EXHAUST_SPEED : float  = 70.0
+const AIM_SPEED : float  = 90.0
 enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
+var mouse_icon_attack = preload("res://scenes/ui/mouse_icons/attack.png")
 
 
 @onready var nickname: Label = $PlayerNick/Nickname
@@ -125,6 +127,7 @@ func _physics_process(_delta):
 	pause_menu_show()
 func _process(_delta):
 	_animate()
+	look_at_mouse()
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -257,6 +260,7 @@ func _unhandled_input(event):
 			var tool = tool_pivot.get_child(0)
 			if tool.has_method("_activate"):
 				tool._activate()
+				
 func _input(event):
 	if not is_multiplayer_authority():
 		return
@@ -310,7 +314,18 @@ func toggle_chat():
 #runn
 func show_respawn_ui():
 	pass
+	
+func look_at_mouse():
+	var mouse_position = get_global_mouse_position()
+	var direction = mouse_position - global_position
+	var target_angle = direction.angle()
 
+	if Input.is_action_pressed("look_at"):
+		_sprite.flip_h = abs(target_angle) > PI / 2
+		_current_speed = AIM_SPEED
+		Input.set_custom_mouse_cursor(mouse_icon_attack)
+	else:
+		Input.set_custom_mouse_cursor(null)
 func is_running() -> bool:
 	if Input.is_action_pressed("shift") and can_sprint_again and stamina_value > 0.0:
 		_current_speed = SPRINT_SPEED
@@ -562,14 +577,20 @@ func _add_starting_items():
 	if potion:
 		player_inventory.add_item(potion, 3)
 
-func progres_bar_call(method_select,time):
+func progres_bar_call(method_select,time_use):
 	progres_bar.has_method("progress_set")
 	progres_bar.has_method("progress_reset")
 	progres_bar.has_method("progress_cancel")
+	progres_bar.has_method("progress_hide")
+	progres_bar.has_method("progress_show")
 	if method_select == 0:
-		progres_bar.progress_set(time)	
+		progres_bar.progress_set(time_use)	
 	if method_select == 1:
 		progres_bar.progress_reset()
 	if method_select == 2:
-		progres_bar.progress_cancel(time)	
+		progres_bar.progress_cancel()	
+	if method_select == 3:
+		progres_bar.progress_hide()	
+	if method_select == 4:
+		progres_bar.progress_show()	
 	

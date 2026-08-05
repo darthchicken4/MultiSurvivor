@@ -176,7 +176,7 @@ animations = [{
 script = ExtResource("1_tdh26")
 blood_particle = NodePath("BloodDrip")
 health = 15.0
-progres_bar = NodePath("ProgressBar")
+progres_bar = NodePath("CanvasLayer/ProgressBar")
 can_die = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
@@ -249,6 +249,13 @@ visible = false
 visible = false
 player = NodePath("../..")
 
+[node name="ProgressBar" parent="CanvasLayer" unique_id=232815070 instance=ExtResource("21_5182i")]
+visible = false
+offset_left = -82.0
+offset_top = -99.0
+offset_right = -82.0
+offset_bottom = -99.0
+
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false
 offset_left = -595.0
@@ -273,9 +280,3 @@ playback_type = 1
 script = ExtResource("14_ek3jh")
 
 [node name="SpearTemplate" parent="ToolPivot" unique_id=1774495734 instance=ExtResource("14_4x2hf")]
-
-[node name="ProgressBar" parent="." unique_id=232815070 instance=ExtResource("21_5182i")]
-offset_left = -76.0
-offset_top = -67.0
-offset_right = -76.0
-offset_bottom = -67.0

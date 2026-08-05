@@ -1,11 +1,18 @@
-res://scenes/ui/single_player_select_screen/single_player_select.tscn
+res://scenes/ui/stats/StatsUI.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/settings.tres
 res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/progress.tres
 res://scenes/weapons/spear/pixel_rotation.gdshader
+res://scenes/ui/stats/stats_ui.gd
+res://scenes/level/props/statue/statue.tscn
+res://scenes/level/player/player.tscn
+res://scripts/player.gd
+res://scenes/level/player/tool_pivot.gd
+res://scenes/weapons/axe/AxeTemp.tscn
+res://scenes/weapons/axe/axe_temp.gd
+res://scenes/level/props/obelisc/inspect_obelisk.gd
 res://scripts/autoloads/game_manager.gd
-res://scenes/ui/single_player_select_screen/single_player_select.gd
-res://scenes/level/single_player/single_player.gd
-res://scenes/level/single_player/single_player.tscn
+res://scenes/ui/progress bar/progress bar.tscn
+res://scenes/ui/progress bar/progress_bar_ui.gd

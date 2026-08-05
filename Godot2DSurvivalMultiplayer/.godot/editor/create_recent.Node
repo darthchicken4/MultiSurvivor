@@ -1,3 +1,6 @@
+AnimationPlayer
+Node2D
+AnimatedSprite2D
 Control
 NavigationObstacle2D
 Sprite2D
@@ -10,6 +13,3 @@ NavigationAgent2D
 NavigationLink2D
 Camera2D
 NinePatchRect
-TabBar
-TabContainer
-Panel

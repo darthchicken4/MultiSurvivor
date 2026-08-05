@@ -32,6 +32,7 @@ func _start_pickup(target: Node):
 	var timer = get_tree().create_timer(target.pickup_time)
 	player.has_method("progres_bar_call")
 	player.progres_bar_call(0,timer)
+	print("pick up")
 	#await timer.timeout
 	#progress_bar.hide()
 	

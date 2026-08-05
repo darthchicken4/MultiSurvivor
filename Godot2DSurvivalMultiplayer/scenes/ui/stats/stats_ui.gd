@@ -21,32 +21,23 @@ var stamina := 100.0
 # Damage indicator settings
 @export var damage_delay := 0.5
 @export var damage_lerp_speed := 4.0
-
+@onready var tween: Tween
 var _damage_timer := 0.0
 var damage_color_value = 0.0
+var lerp_speed = 0.1
 func _ready():
 	if not is_multiplayer_authority():
 		# This isn't "my" player, hide their UI from my screen
 		self.visible = false
-
-func _process(delta):
-	if _damage_timer > 0:
-		_damage_timer -= delta
-	else:
-		damage_indicator.value = lerpf(
-			damage_indicator.value,
-			health_bar.value,
-			damage_lerp_speed * delta
-		)
-	var lerp_speed = 0.1  # higher = faster catch-up, lower = slower/smoother
-
 	health_bar.max_value = max_health
-	damage_indicator.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
+	health_bar.value = player.health
 
-	health_bar.value = lerp(health_bar.value, player.health, lerp_speed * delta)
-	hunger_bar.value = lerp(hunger_bar.value, player.hunger_value, lerp_speed * delta)
-	stamina_bar.value = lerp(stamina_bar.value, player.stamina_value, lerp_speed * delta)
-		#damage_color_value = 1 - health_bar.value  / health_bar.max_value
-		#damage_overlay.self_modulate = Color(1.0, 1.0, 1.0, damage_color_value)
+func _on_player_health_changed() -> void:
+	if tween:
+		tween.kill()  # stop any in-progress tween so they don't stack
+	tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(health_bar, "value", player.health, 0.3)
