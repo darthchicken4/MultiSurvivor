@@ -1,7 +1,7 @@
 extends TileMapLayer
 
 var pebble_noise = FastNoiseLite.new()
-var rock_noise = FastNoiseLite.new()
+@export var rock_noise = FastNoiseLite.new()
 var dry_noise = FastNoiseLite.new()
 var variant_noise = FastNoiseLite.new()
 var tree_noise = FastNoiseLite.new()
@@ -14,7 +14,7 @@ var last_tile_pos :Vector2i = Vector2i(INF, INF)
 
 var tile_objects: Dictionary = {}
 var tile_terrain: Dictionary = {}
-
+@export var mountain_layer: TileMapLayer  
 @export var tree_scene: PackedScene
 @export var shrub_scene: PackedScene
 @export var dead_bush_scene: PackedScene
@@ -38,6 +38,9 @@ var tile_terrain: Dictionary = {}
 @export var grass_spawn = Vector2(0,0) #grass tile surrounded by + shape
 @export var can_spawn_again = true
 @export var tree_container: Node2D
+
+
+
 
 var map_seed: int = 0
 
@@ -67,7 +70,11 @@ func _apply_seed_and_generate():
 	spawn_noise.seed = rng.randi()
 	spawn_noise.frequency = 3.0
 
+	if mountain_layer:
+		mountain_layer.setup_from_main(rock_noise, width, height)
+
 	generate_chunk(Vector2(0, 0))
+	
 
 @rpc("authority", "reliable")
 func sync_map_seed(seed: int):
@@ -117,7 +124,7 @@ func generate_chunk(position):
 
 			var col: int
 			if rock_val > 0.45:
-				col = 6
+				col = 5
 			elif rock_val > 0.35:
 				col = 5
 			elif rock_val > 0.28:
@@ -240,7 +247,8 @@ func generate_chunk(position):
 						spawn_object(key, slab_scene, ["pebble"])
 					elif s < 0.4:
 						spawn_object(key, clay_scene, ["pebble"])
-
+	if mountain_layer:
+		mountain_layer.generate_chunk(position)
 func spawn_object(key: Vector2i, scene: PackedScene, allowed_terrains: Array):
 	
 	if tile_objects.has(key):

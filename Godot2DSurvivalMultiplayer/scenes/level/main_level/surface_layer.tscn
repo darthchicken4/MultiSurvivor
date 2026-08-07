@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://deky50o8yhf6c"]
+
+[ext_resource type="Script" uid="uid://dvm55svmc0weq" path="res://scenes/level/main_level/surface_layer.gd" id="1_ge8qo"]
+[ext_resource type="Texture2D" uid="uid://w6towme7bui7" path="res://assets/tilesheets/moutain.png" id="1_w4xwk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdw6k"]
+texture = ExtResource("1_w4xwk")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, -8)
+
+[sub_resource type="TileSet" id="TileSet_0infs"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jdw6k")
+
+[node name="SurfaceLayer" type="TileMapLayer" unique_id=251055883]
+z_index = 2
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_0infs")
+script = ExtResource("1_ge8qo")

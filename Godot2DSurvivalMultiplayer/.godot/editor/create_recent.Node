@@ -1,3 +1,5 @@
+TileMapLayer
+TileMap
 AnimationPlayer
 Node2D
 AnimatedSprite2D
@@ -11,5 +13,3 @@ Marker2D
 Polygon2D
 NavigationAgent2D
 NavigationLink2D
-Camera2D
-NinePatchRect

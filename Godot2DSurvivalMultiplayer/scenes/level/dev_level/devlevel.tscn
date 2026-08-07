@@ -5,10 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_7byda"]
 [ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="2_ppamu"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_kslto"]
-[ext_resource type="PackedScene" uid="uid://cbppvrmn5bxwo" path="res://scenes/level/props/obelisc/inspect_obelisk.tscn" id="5_3j0n3"]
+[ext_resource type="PackedScene" uid="uid://deky50o8yhf6c" path="res://scenes/level/main_level/surface_layer.tscn" id="4_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="8_08plu"]
 [ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="9_3j0n3"]
-[ext_resource type="PackedScene" uid="uid://dpa6angju4bxg" path="res://scenes/structures/bunker/bunker.tscn" id="11_j7rnb"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -18,10 +17,11 @@ tilemap = NodePath("TileMapLayer")
 
 [node name="SelectionMapLayer" parent="." unique_id=1045206275 instance=ExtResource("3_kslto")]
 
-[node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("tree_container") instance=ExtResource("2_ppamu")]
-width = 32
-height = 32
-inspect_obelisk = ExtResource("5_3j0n3")
+[node name="SurfaceLayer" parent="." unique_id=251055883 instance=ExtResource("4_3j0n3")]
+
+[node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("mountain_layer", "tree_container") instance=ExtResource("2_ppamu")]
+tile_map_data = PackedByteArray()
+mountain_layer = NodePath("../SurfaceLayer")
 tree_container = NodePath("../sort_contain")
 
 [node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
@@ -29,10 +29,6 @@ y_sort_enabled = true
 
 [node name="Ranger" parent="sort_contain" unique_id=58468175 instance=ExtResource("8_08plu")]
 position = Vector2(-552, -117)
-
-[node name="Bunker" parent="sort_contain" unique_id=1249232412 node_paths=PackedStringArray("map") instance=ExtResource("11_j7rnb")]
-position = Vector2(350, -283)
-map = NodePath("../../TileMapLayer")
 
 [node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("9_3j0n3")]
 position = Vector2(103, -147)
