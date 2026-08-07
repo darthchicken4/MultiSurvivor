@@ -14,7 +14,6 @@ class_name PlayerStatsUI
 
 @export var player: CharacterBody2D
 
-
 var hunger := 100.0
 var stamina := 100.0
 
@@ -24,7 +23,7 @@ var stamina := 100.0
 @onready var tween: Tween
 var _damage_timer := 0.0
 var damage_color_value = 0.0
-var lerp_speed = 0.1
+var lerp_speed = 1
 func _ready():
 	if not is_multiplayer_authority():
 		# This isn't "my" player, hide their UI from my screen
@@ -32,12 +31,6 @@ func _ready():
 	health_bar.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
-	health_bar.value = player.health
-
-func _on_player_health_changed() -> void:
-	if tween:
-		tween.kill()  # stop any in-progress tween so they don't stack
-	tween = create_tween()
-	tween.set_ease(Tween.EASE_OUT)
-	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(health_bar, "value", player.health, 0.3)
+	while true:
+		await Utils.wait(0.2)
+		health_bar.value = player.health

@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="2_ppamu"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_kslto"]
 [ext_resource type="PackedScene" uid="uid://deky50o8yhf6c" path="res://scenes/level/main_level/surface_layer.tscn" id="4_3j0n3"]
-[ext_resource type="PackedScene" uid="uid://ccuu80e2ljvq5" path="res://scenes/enemy/ranged/ranger.tscn" id="8_08plu"]
-[ext_resource type="PackedScene" uid="uid://bahabkjx151cw" path="res://scenes/enemy/zombie/zombie.tscn" id="9_3j0n3"]
+[ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="7_ut4nh"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -27,12 +26,6 @@ tree_container = NodePath("../sort_contain")
 [node name="sort_contain" type="Node2D" parent="." unique_id=2137030896]
 y_sort_enabled = true
 
-[node name="Ranger" parent="sort_contain" unique_id=58468175 instance=ExtResource("8_08plu")]
-position = Vector2(-552, -117)
-
-[node name="zombie" parent="sort_contain" unique_id=1499102670 instance=ExtResource("9_3j0n3")]
-position = Vector2(103, -147)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=150256932]
 
 [node name="MainMenuUI" parent="CanvasLayer" unique_id=1347530881 instance=ExtResource("1_vp2e1")]
@@ -41,3 +34,6 @@ offset_left = 1.0
 offset_top = 10.0
 offset_right = 1.0
 offset_bottom = 10.0
+
+[node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("7_ut4nh")]
+position = Vector2(51, -84)

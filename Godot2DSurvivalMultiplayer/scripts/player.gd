@@ -50,6 +50,8 @@ var _respawn_point :Vector2 = Vector2(0, 0)
 var chat_visible :bool = false
 var inventory_visible :bool = false
 
+var _health_tick_timer := 0.0
+
 var max_stamina: float = 10.0
 var can_sprint_again :bool = false
 var _time_since_stopped_running: float = 0.0
@@ -74,7 +76,6 @@ func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
 	
 func _ready():
-	update_health()
 	update_stamina()
 	update_saturation()
 	death_check(can_die)
@@ -120,7 +121,6 @@ func _physics_process(_delta):
 		if should_freeze:
 			freeze()
 			return
-
 	_move()
 	move_and_slide()
 	_check_bounds_and_respawn()
@@ -128,6 +128,8 @@ func _physics_process(_delta):
 func _process(_delta):
 	_animate()
 	look_at_mouse()
+	update_health(_delta)
+	death_check(can_die)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -362,23 +364,23 @@ func update_saturation() -> void:
 			hunger_value = 0.0
 			health -= 1.2
 
-func update_health() -> void:
-	while true:
-		await Utils.wait(0.3)
+func update_health(delta: float) -> void:
+	_health_tick_timer += delta
+	if _health_tick_timer >= 0.3:
+		_health_tick_timer -= 0.3
 		if hunger_value > hunger_max * 0.75:
 			health += 0.2
-		if health == max_health * 0.3:
-			blood_particle.emitting = true
-		else:
-			blood_particle.emitting = false 
+
+
 func death_check(can_die):
-	while true:
-		await Utils.wait(0.1)
-		if can_die == true:
-			if health < 0:
-				_sprite.play("death")
-				can_die = false
-				await _sprite.animation_finished
+	if can_die == true:
+		if health <= 0:
+			_sprite.play("death")
+			can_die = false
+			_current_speed = 0
+			await _sprite.animation_finished
+
+
 func damage_player(amount):
 	health -= amount * damage_reduction
 
