@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://1xnan6b1ttrx"]
 
 [ext_resource type="Script" uid="uid://bajj8tkujca1l" path="res://scenes/weapons/axe/axe_temp.gd" id="1_ci64p"]
+[ext_resource type="Shader" uid="uid://smge5ri233ou" path="res://scenes/weapons/spear/pixel_rotation.gdshader" id="2_8x3h0"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="2_vvasb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_623ud"]
+shader = ExtResource("2_8x3h0")
+shader_parameter/pixel_size = 2.0000000475
+shader_parameter/handle_edges = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ux2"]
 atlas = ExtResource("2_vvasb")
@@ -83,6 +89,7 @@ position = Vector2(0, 6)
 
 [node name="Sprite" type="Sprite2D" parent="Weapon" unique_id=2102843618]
 texture_filter = 1
+material = SubResource("ShaderMaterial_623ud")
 position = Vector2(10, -7.0000005)
 rotation = 0.6859144
 scale = Vector2(-1.995, 1.995)

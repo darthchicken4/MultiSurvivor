@@ -1,37 +1,37 @@
 shader_type canvas_item;
 
-varying mat2 _Rot;
+uniform float pixel_size : hint_range(1.0, 16.0) = 4.0;
+uniform bool handle_edges = false;
 
-uniform float _Biais : hint_range(0, 0.1, 0.0001) = 0.01;
+varying vec2 p_world;
 
-vec2 rotate_uv(vec2 uv, mat2 rot){
-	return rot * (uv - 0.5) + 0.5;
+void vertex() {
+	p_world = (MODEL_MATRIX * vec4(VERTEX, 0.0, 1.0)).xy;
 }
 
-vec2 scale_uv(vec2 uv, vec2 s){
-	return (uv - 0.5) * s + 0.5;
+void fragment() {
+	vec2 p_snapped = floor(p_world / pixel_size) * pixel_size + pixel_size / 2.0;
+	vec2 delta = p_snapped - p_world;
+
+	mat2 M_p = mat2(dFdx(p_world), dFdy(p_world));
+	mat2 M_uv = mat2(dFdx(UV), dFdy(UV));
+	mat2 J = M_uv * inverse(M_p);
+	vec2 delta_uv = J * delta;
+
+	vec2 uv = UV + delta_uv;
+	vec4 color = texture(TEXTURE, uv);
+
+	if (handle_edges) {
+		float margin_x = (abs(J[0].x) + abs(J[1].x)) * pixel_size * 0.5;
+		float margin_y = (abs(J[0].y) + abs(J[1].y)) * pixel_size * 0.5;
+		if (uv.x < margin_x || uv.x > 1.0 - margin_x || uv.y < margin_y || uv.y > 1.0 - margin_y) {
+			color.a = 0.0;
+		} else {
+			color.a = step(0.5, color.a);
+		}
+	} else {
+		color.a = step(0.5, color.a);
+	}
+
+	COLOR = color;
 }
-
-void vertex(){
-	_Rot = mat2(MODEL_MATRIX);
-}
-
-void fragment(){
-	vec2 def = 1./TEXTURE_PIXEL_SIZE;
-	vec2 scale = vec2(def.x / def.y, 1.);
-	
-	vec2 new_uv = UV;
-	new_uv = scale_uv(new_uv, scale);
-	new_uv = rotate_uv(new_uv, _Rot);
-	def /= scale;
-	new_uv = floor(new_uv * def) / (def-1.);
-	new_uv = rotate_uv(new_uv, transpose(_Rot));
-	new_uv = scale_uv(new_uv, 1./scale);
-
-	bvec2 lim0 = greaterThanEqual(new_uv, vec2(0.-_Biais));
-	bvec2 lim1 = lessThanEqual(new_uv, vec2(1.+_Biais));
-	
-	float mask = float(all(lim0) && all(lim1));
-	COLOR = texture(TEXTURE, new_uv) * mask;
-}
-

@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	scale_tool = scale
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	var mouse_position = get_global_mouse_position()
 	var direction = mouse_position - global_position
 	var target_angle = direction.angle()
