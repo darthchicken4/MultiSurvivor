@@ -124,7 +124,7 @@ func generate_chunk(position):
 
 			var col: int
 			if rock_val > 0.45:
-				col = 5
+				col = 6
 			elif rock_val > 0.35:
 				col = 5
 			elif rock_val > 0.28:
