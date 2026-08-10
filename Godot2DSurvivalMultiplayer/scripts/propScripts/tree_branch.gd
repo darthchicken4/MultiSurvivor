@@ -9,7 +9,7 @@ var objectname = "Tree Branch"
 		"item_id": "tree_branch",
 		"amount": 1,
 		"chance": 1
-	},
+	}
 ]
 
 @export var pickup_time: float = 0.5       # seconds to hold interact

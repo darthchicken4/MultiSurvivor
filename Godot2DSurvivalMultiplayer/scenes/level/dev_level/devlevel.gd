@@ -6,6 +6,8 @@ extends Node2D
 @export var tilemap : TileMapLayer # adjust path to match your scene
  
 func _ready():
+	
+	GameManager.set_tile_map(tilemap)
 	if single_player == false:
 		if DisplayServer.get_name() == "headless":
 			print("Dedicated server starting...")

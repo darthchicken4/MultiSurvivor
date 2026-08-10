@@ -20,7 +20,9 @@
 [ext_resource type="Script" uid="uid://bdqclivw5ny8a" path="res://scenes/level/player/tool_pivot.gd" id="14_ek3jh"]
 [ext_resource type="Script" uid="uid://cscxrm8l1f0l7" path="res://scenes/level/player/audio.gd" id="14_ugt31"]
 [ext_resource type="AudioStream" uid="uid://drtwuc0fafdxa" path="res://assets/audio/nature sounds.mp3" id="16_h3ilt"]
+[ext_resource type="AudioStream" uid="uid://cegxtn233vdy1" path="res://assets/audio/wakling_on_gravel.mp3" id="20_5rdco"]
 [ext_resource type="PackedScene" uid="uid://bgfqyh6orae3b" path="res://scenes/ui/progress bar/progress bar.tscn" id="21_5182i"]
+[ext_resource type="AudioStream" uid="uid://cueyqs6itrlft" path="res://assets/audio/rock_step.mp3" id="21_ajmdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -176,7 +178,7 @@ animations = [{
 script = ExtResource("1_tdh26")
 blood_particle = NodePath("BloodDrip")
 health = 15.0
-progres_bar = NodePath("CanvasLayer/ProgressBar")
+progres_bar = NodePath("PlayerNick/ProgressBar")
 can_die = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=974547447]
@@ -201,6 +203,14 @@ text = "player
 label_settings = SubResource("LabelSettings_pe35h")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" parent="PlayerNick" unique_id=232815070 instance=ExtResource("21_5182i")]
+offset_left = -31.999992
+offset_top = 47.000023
+offset_right = -31.999992
+offset_bottom = 47.000023
+scale = Vector2(0.405, 0.405)
+mouse_filter = 2
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1005274895]
 replication_config = SubResource("SceneReplicationConfig_wb3a5")
@@ -249,13 +259,6 @@ visible = false
 visible = false
 player = NodePath("../..")
 
-[node name="ProgressBar" parent="CanvasLayer" unique_id=232815070 instance=ExtResource("21_5182i")]
-visible = false
-offset_left = -82.0
-offset_top = -99.0
-offset_right = -82.0
-offset_bottom = -99.0
-
 [node name="InteractMenu" parent="." unique_id=323687298 instance=ExtResource("7_pnmcy")]
 visible = false
 offset_left = -595.0
@@ -266,15 +269,21 @@ offset_bottom = -263.0
 [node name="audio" type="Node2D" parent="." unique_id=2101094527]
 script = ExtResource("14_ugt31")
 
-[node name="foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=1952119913]
-stream = ExtResource("11_d2uvk")
-bus = &"sfx"
-
 [node name="nature" type="AudioStreamPlayer" parent="audio" unique_id=1961446982]
 stream = ExtResource("16_h3ilt")
 volume_db = -9.645
 bus = &"ambience"
 playback_type = 1
+
+[node name="grass_foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=1952119913]
+stream = ExtResource("11_d2uvk")
+bus = &"sfx"
+
+[node name="gravel_foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=739409671]
+stream = ExtResource("20_5rdco")
+
+[node name="rock_foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=963411736]
+stream = ExtResource("21_ajmdn")
 
 [node name="ToolPivot" type="Node2D" parent="." unique_id=2085541174]
 script = ExtResource("14_ek3jh")

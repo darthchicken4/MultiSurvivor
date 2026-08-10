@@ -19,10 +19,19 @@ var mouse_icon_attack = preload("res://scenes/ui/mouse_icons/attack.png")
 @onready var pause_menu : Control = $CanvasLayer/PauseMenu
 @onready var stats = $CanvasLayer/StatsUi
 @onready var respawnUI = $CanvasLayer/RespawnUi
-@onready var foot_steps = $audio/foot_steps
 @onready var tool_pivot = $ToolPivot
 
+@onready var foot_step_sounds := {
+	"default": $audio/grass_foot_steps,
+	"gravel": $audio/gravel_foot_steps,
+	"rock": $audio/rock_foot_steps
+}
+
+@export var tile_map : TileMapLayer
+
 @export var blood_particle : GPUParticles2D
+
+
 
 @export var stamina_value : float = 10.0
 @export var stamina_timer : float = 10.0 #sec
@@ -55,6 +64,8 @@ var _health_tick_timer := 0.0
 var max_stamina: float = 10.0
 var can_sprint_again :bool = false
 var _time_since_stopped_running: float = 0.0
+var current_surface = "default"
+
 
 func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
@@ -74,11 +85,14 @@ func _on_chat_message_sent(message_text: String) -> void:
 @rpc("any_peer", "call_local", "reliable")
 func msg_rpc(nick, msg):
 	chat.add_message(nick, msg)
-	
+
+func find_tile_map():
+	tile_map = get_parent().get_parent().get_child(2)
 func _ready():
 	update_stamina()
 	update_saturation()
 	death_check(can_die)
+	find_tile_map()
 	if not is_multiplayer_authority(): return
 	
 	
@@ -125,6 +139,7 @@ func _physics_process(_delta):
 	move_and_slide()
 	_check_bounds_and_respawn()
 	pause_menu_show()
+	print(get_player_tile())
 func _process(_delta):
 	_animate()
 	look_at_mouse()
@@ -151,21 +166,63 @@ func _move() -> void:
 
 	velocity = velocity.move_toward(Vector2.ZERO, _current_speed)
 
+
+
 func _animate() -> void:
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
-
-		if not foot_steps.playing:
-			foot_steps.play()
-
+		if not foot_step_sounds[current_surface].playing:
+			_play_footstep_networked(current_surface)
 		if velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0
 	else:
 		_sprite.play("idle")
+		if foot_step_sounds[current_surface].playing:
+			_stop_footstep_networked(current_surface)
 
-		if foot_steps.playing:
-			foot_steps.stop()
 
+
+func _play_footstep_networked(surface_type: String) -> void:
+	# Only the player who owns this character triggers the RPC
+	if not is_multiplayer_authority():
+		return
+	_play_footstep.rpc(surface_type)
+
+
+func _stop_footstep_networked(surface_type: String) -> void:
+	if not is_multiplayer_authority():
+		return
+	_stop_footstep.rpc(surface_type)
+
+
+@rpc("call_local", "reliable")
+func _play_footstep(surface_type: String) -> void:
+	if foot_step_sounds.has(surface_type):
+		foot_step_sounds[surface_type].play()
+	else:
+		foot_step_sounds["default"].play()
+
+
+@rpc("call_local", "reliable")
+func _stop_footstep(surface_type: String) -> void:
+	if foot_step_sounds.has(surface_type):
+		foot_step_sounds[surface_type].stop()
+
+
+func get_player_tile() -> Vector2i:
+	var local_pos = tile_map.to_local(global_position)
+	return tile_map.local_to_map(local_pos)
+
+func convert_tile_data(terrain_type):
+	match terrain_type:
+		0:
+			return "default"
+		1:
+			return "gravel"
+		2:
+			return "rock"
+		_:
+			return "default"
 func _debug_add_item():
 	var local_player = player
 	if local_player:

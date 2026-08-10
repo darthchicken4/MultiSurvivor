@@ -14,6 +14,8 @@ func progress_set(time_to_use):
 	while progress_done == false:
 		await  Utils.wait(time_to_use / prorgess_bar.max_value)
 		prorgess_bar.value = prorgess_bar.value + 1
+		if prorgess_bar.value > prorgess_bar.max_value:
+			progress_done = true
 		if prorgess_bar.value == prorgess_bar.max_value:
 			progress_done = true
 			

@@ -4,6 +4,7 @@ extends Node
 @export var message = preload("res://scenes/ui/inspect_menu/inspect_menu.tscn")
 @export var player = null
 @export var progress_bar = null
+@export var tilemap = null
 signal action_selected(action: String, target: Node)
 
 func _ready():
@@ -29,21 +30,26 @@ func _on_context_action(action: String, target: Node):
 func _start_pickup(target: Node):
 
 	
-	var timer = get_tree().create_timer(target.pickup_time)
+	var timer = target.pickup_time
 	player.has_method("progres_bar_call")
-	player.progres_bar_call(0,timer)
-	print("pick up")
-	#await timer.timeout
-	#progress_bar.hide()
-	
+	print("showing")
+	player.progres_bar_call(4,timer)
+	await player.progres_bar_call(0,timer)
+	player.progres_bar_call(2,timer)
+	var local_player = player
 	#var local_player = _get_local_player()
-	#local_player.request_add_item.rpc_id(1, target.item_id, target.item_amount)
-	
+	local_player.request_add_item.rpc_id(1, target.pickup_loot_pool[0].item_id, #->
+		target.pickup_loot_pool[randi_range(0,len(target.pickup_loot_pool)-1)].amount)
 
-	#var tile_pos = tilemap.local_to_map(tilemap.to_local(target.global_position))
-	#tilemap.request_remove_object.rpc_id(1, tile_pos)
+	var tile_pos = tilemap.local_to_map(tilemap.to_local(target.global_position))
+	tilemap.remove_object.rpc_id(1, tile_pos)
+	
+func set_tile_map(target):
+	tilemap = target
 func setPlayer(target):
 	player = target
+	
+
 func _inspect(target: Node):
 	#if target.has_method("get") and target.get("inspect_text"):
 		#chat_popup.show_message(target.inspect_text)

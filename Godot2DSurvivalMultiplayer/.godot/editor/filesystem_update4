@@ -1,3 +1,4 @@
+res://scripts/player.gd
 res://scenes/level/player/player.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/interact_theme.tres
@@ -5,6 +6,3 @@ res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://assets/themes/progress.tres
 res://scenes/weapons/spear/pixel_rotation.gdshader
-res://scripts/player.gd
-res://scenes/level/dev_level/devlevel.tscn
-res://scenes/ui/stats/stats_ui.gd
