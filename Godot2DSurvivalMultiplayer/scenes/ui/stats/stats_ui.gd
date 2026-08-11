@@ -31,6 +31,6 @@ func _ready():
 	health_bar.max_value = max_health
 	hunger_bar.max_value = max_hunger
 	stamina_bar.max_value = max_stamina
-	while true:
-		await Utils.wait(0.2)
-		health_bar.value = player.health
+		
+func _process(delta: float) -> void:
+	health_bar.value = lerpf(health_bar.value ,player.health,lerp_speed)

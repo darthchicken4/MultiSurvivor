@@ -139,7 +139,6 @@ func _physics_process(_delta):
 	move_and_slide()
 	_check_bounds_and_respawn()
 	pause_menu_show()
-	print(get_player_tile())
 func _process(_delta):
 	_animate()
 	look_at_mouse()
@@ -169,6 +168,7 @@ func _move() -> void:
 
 
 func _animate() -> void:
+	change_sound()
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
 		if not foot_step_sounds[current_surface].playing:
@@ -213,6 +213,11 @@ func get_player_tile() -> Vector2i:
 	var local_pos = tile_map.to_local(global_position)
 	return tile_map.local_to_map(local_pos)
 
+func change_sound():
+	var cell := get_player_tile()
+	var data : TileData = tile_map.get_cell_tile_data(cell)
+	var int_type = data.get_custom_data("terrain_type")
+	current_surface = convert_tile_data(int_type)
 func convert_tile_data(terrain_type):
 	match terrain_type:
 		0:

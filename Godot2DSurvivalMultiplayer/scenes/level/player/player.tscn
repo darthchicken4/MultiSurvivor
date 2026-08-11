@@ -281,9 +281,11 @@ bus = &"sfx"
 
 [node name="gravel_foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=739409671]
 stream = ExtResource("20_5rdco")
+bus = &"sfx"
 
 [node name="rock_foot_steps" type="AudioStreamPlayer2D" parent="audio" unique_id=963411736]
 stream = ExtResource("21_ajmdn")
+bus = &"sfx"
 
 [node name="ToolPivot" type="Node2D" parent="." unique_id=2085541174]
 script = ExtResource("14_ek3jh")
