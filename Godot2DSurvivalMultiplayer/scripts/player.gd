@@ -169,7 +169,7 @@ func _move() -> void:
 
 
 func _animate() -> void:
-	change_sound()
+	#change_sound() pls fix 
 	if velocity.length() > 0.1:
 		_sprite.play("walk")
 		if not foot_step_sounds[current_surface].playing:
@@ -218,7 +218,9 @@ func change_sound():
 	var cell := get_player_tile()
 	var data : TileData = tile_map.get_cell_tile_data(cell)
 	var int_type = data.get_custom_data("terrain_type")
+
 	current_surface = convert_tile_data(int_type)
+
 func convert_tile_data(terrain_type):
 	match terrain_type:
 		0:
@@ -227,8 +229,7 @@ func convert_tile_data(terrain_type):
 			return "gravel"
 		2:
 			return "rock"
-		_:
-			return "default"
+
 func _debug_add_item():
 	var local_player = player
 	if local_player:
@@ -418,7 +419,7 @@ func update_stamina() -> void:
 				if stamina_value >= max_stamina:
 					stamina_value = max_stamina
 					can_sprint_again = true
-					
+
 func update_saturation() -> void:
 	while true:
 		await Utils.wait(1.0)
