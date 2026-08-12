@@ -91,8 +91,8 @@ func find_tile_map():
 func _ready():
 	update_stamina()
 	update_saturation()
-	death_check(can_die)
 	find_tile_map()
+	change_sound()
 	if not is_multiplayer_authority(): return
 	
 	
@@ -143,7 +143,8 @@ func _process(_delta):
 	_animate()
 	look_at_mouse()
 	update_health(_delta)
-	death_check(can_die)
+	death_check()
+	print(tile_map)
 
 func freeze():
 	velocity = Vector2.ZERO
@@ -434,15 +435,20 @@ func update_health(delta: float) -> void:
 			health += 0.2
 
 
-func death_check(can_die):
-	if can_die == true:
-		if health <= 0:
-			_sprite.play("death")
-			can_die = false
-			_current_speed = 0
-			await _sprite.animation_finished
+var _is_dead = false
 
+func death_check():
+	if health <= 0 and not _is_dead:
+		_is_dead = true
+		_current_speed = 0
 
+		_sprite.play("death")
+		await _sprite.animation_finished
+
+		_on_death_finished()
+
+func _on_death_finished():
+	_current_speed = 0
 func damage_player(amount):
 	health -= amount * damage_reduction
 

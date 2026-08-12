@@ -141,9 +141,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ajmdn")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -223,8 +223,6 @@ emitting = false
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
-animation = &"walk"
-frame_progress = 0.12966886
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 

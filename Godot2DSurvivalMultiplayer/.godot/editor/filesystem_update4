@@ -1,10 +1,1 @@
-res://scenes/level/main_level/map_gen.tscn
-res://assets/themes/inventory.tres
-res://assets/themes/interact_theme.tres
-res://assets/themes/crafdting_theme.tres
-res://assets/themes/settings.tres
-res://assets/themes/progress.tres
-res://scenes/weapons/spear/pixel_rotation.gdshader
-res://scenes/ui/stats/stats_ui.gd
 res://scripts/player.gd
-res://scenes/level/player/player.tscn

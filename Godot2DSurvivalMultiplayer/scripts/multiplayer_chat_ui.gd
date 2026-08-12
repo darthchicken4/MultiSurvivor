@@ -7,15 +7,19 @@ class_name MultiplayerChatUI
 
 signal message_sent(message_text: String)
 
-var chat_visible = false
+const MAX_MESSAGE_LENGTH := 300
+const MAX_HISTORY_LINES := 100
+const SERVER_ID := 1
 
-func _ready():
+var chat_visible := false
+
+func _ready() -> void:
 	send.pressed.connect(_on_send_pressed)
 	message.text_submitted.connect(_on_send_pressed)
 	clear_chat()
 	hide()
 
-func toggle_chat():
+func toggle_chat() -> void:
 	chat_visible = !chat_visible
 	if chat_visible:
 		show()
@@ -24,40 +28,65 @@ func toggle_chat():
 	else:
 		hide()
 		message.text = ""
-		get_viewport().set_input_as_handled()
+
+	get_viewport().set_input_as_handled()
 
 func is_chat_visible() -> bool:
 	return chat_visible
 
-func _on_send_pressed(_unused = null):
-	var message_text = message.text.strip_edges()
+func _on_send_pressed(_unused = null) -> void:
+	var message_text := message.text.strip_edges()
 	if message_text.is_empty():
 		return
+	if not multiplayer.has_multiplayer_peer():
+		return
+
+	if message_text.length() > MAX_MESSAGE_LENGTH:
+		message_text = message_text.substr(0, MAX_MESSAGE_LENGTH)
+
 	message_sent.emit(message_text)
 
-	# Send to everyone (including ourselves, since call_local is set)
-	var nick = str(multiplayer.get_unique_id())
-	send_chat.rpc(nick, message_text)
+
+	request_chat_message.rpc_id(SERVER_ID, message_text)
 
 	message.text = ""
 	message.grab_focus()
 
-func add_message(nick: String, msg: String):
-	var time = Time.get_time_string_from_system()
-	var formatted_message = "[" + time + "] " + nick + ": " + msg + "\n"
+func add_message(nick: String, msg: String) -> void:
+	var time := Time.get_time_string_from_system()
+	var formatted_message := "[" + time + "] " + nick + ": " + msg + "\n"
 	chat.text += formatted_message
-	chat.scroll_vertical = chat.get_line_count()
+	chat.scroll_vertical = chat.get_line_count() - 1
 	_limit_chat_history()
 
-func _limit_chat_history():
-	var lines = chat.text.split("\n")
-	if lines.size() > 100:
-		var start_index = lines.size() - 100
-		chat.text = "\n".join(lines.slice(start_index))
+func _limit_chat_history() -> void:
 
-func clear_chat():
+	var trimmed := chat.text.rstrip("\n")
+	var lines := trimmed.split("\n")
+	if lines.size() > MAX_HISTORY_LINES:
+		var start_index := lines.size() - MAX_HISTORY_LINES
+		chat.text = "\n".join(lines.slice(start_index)) + "\n"
+
+func clear_chat() -> void:
 	chat.text = ""
 
-@rpc("any_peer", "call_local", "reliable")
-func send_chat(nick: String, text: String):
+@rpc("any_peer", "reliable")
+func request_chat_message(text: String) -> void:
+	if not multiplayer.is_server():
+		return  # Only the server processes/relays requests.
+
+	var sender_id := multiplayer.get_remote_sender_id()
+	if sender_id == 0:
+		sender_id = multiplayer.get_unique_id()  # Server sent it to itself.
+
+	if text.is_empty():
+		return
+	if text.length() > MAX_MESSAGE_LENGTH:
+		text = text.substr(0, MAX_MESSAGE_LENGTH)
+
+	var nick := str(sender_id)
+	receive_chat_message.rpc(nick, text)
+
+@rpc("authority", "call_local", "reliable")
+func receive_chat_message(nick: String, text: String) -> void:
 	add_message(nick, text)

@@ -1,9 +1,9 @@
+Node2D
 AudioStreamPlayer2D
 NavigationObstacle2D
 TileMapLayer
 TileMap
 AnimationPlayer
-Node2D
 AnimatedSprite2D
 Control
 Sprite2D
@@ -12,4 +12,3 @@ CollisionShape2D
 StaticBody2D
 Marker2D
 Polygon2D
-NavigationAgent2D
