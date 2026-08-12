@@ -1,1 +1,10 @@
-res://scripts/player.gd
+res://scenes/ui/multiplayer_chat_ui.tscn
+res://assets/themes/inventory.tres
+res://assets/themes/interact_theme.tres
+res://assets/themes/crafdting_theme.tres
+res://assets/themes/settings.tres
+res://assets/themes/progress.tres
+res://scenes/weapons/spear/pixel_rotation.gdshader
+res://scenes/weapons/axe/AxeTemp.tscn
+res://scenes/weapons/axe/axe_temp.gd
+res://scripts/multiplayer_chat_ui.gd

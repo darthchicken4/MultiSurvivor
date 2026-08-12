@@ -71,20 +71,7 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$Camera2D.enabled = is_multiplayer_authority()
 	
-func is_chat_visible() -> bool:
-	return chat.is_chat_visible()
 
-func _on_chat_message_sent(message_text: String) -> void:
-	var trimmed_message = message_text.strip_edges()
-	if trimmed_message == "":
-		return # do not send empty messages
-
-	var nick = Network.players[multiplayer.get_unique_id()]["nick"]
-	rpc("msg_rpc", nick, trimmed_message)
-
-@rpc("any_peer", "call_local", "reliable")
-func msg_rpc(nick, msg):
-	chat.add_message(nick, msg)
 
 func find_tile_map():
 	tile_map = get_parent().get_parent().get_child(2)
@@ -92,7 +79,6 @@ func _ready():
 	update_stamina()
 	update_saturation()
 	find_tile_map()
-	change_sound()
 	if not is_multiplayer_authority(): return
 	
 	
@@ -114,10 +100,7 @@ func _ready():
 		if get_multiplayer_authority() == local_client_id:
 			request_inventory_sync.rpc_id(1)
 	inventory.inventory_closed.connect(_on_inventory_closed)
-	chat.hide()
-	chat.set_process_input(true)
-	if chat:
-		chat.message_sent.connect(_on_chat_message_sent)
+
 func _physics_process(_delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -144,7 +127,7 @@ func _process(_delta):
 	look_at_mouse()
 	update_health(_delta)
 	death_check()
-	print(tile_map)
+
 
 func freeze():
 	velocity = Vector2.ZERO

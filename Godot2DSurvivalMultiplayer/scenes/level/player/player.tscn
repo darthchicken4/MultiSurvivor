@@ -223,6 +223,7 @@ emitting = false
 texture_filter = 3
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
+animation = &"death"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 

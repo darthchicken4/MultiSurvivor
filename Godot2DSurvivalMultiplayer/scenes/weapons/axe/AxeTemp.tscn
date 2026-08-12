@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bajj8tkujca1l" path="res://scenes/weapons/axe/axe_temp.gd" id="1_ci64p"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="2_vvasb"]
+[ext_resource type="AudioStream" uid="uid://cg21cb8uyldp4" path="res://assets/audio/axe_hit.mp3" id="3_8x3h0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ux2"]
 atlas = ExtResource("2_vvasb")
@@ -98,3 +99,8 @@ libraries/ = SubResource("AnimationLibrary_4btje")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticleNode" unique_id=19380150]
 sprite_frames = SubResource("SpriteFrames_vvasb")
+
+[node name="audio" type="Node2D" parent="." unique_id=1472458396]
+
+[node name="swipe_1" type="AudioStreamPlayer2D" parent="audio" unique_id=830095193]
+stream = ExtResource("3_8x3h0")
