@@ -5,8 +5,8 @@ res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://assets/themes/progress.tres
 res://scenes/weapons/spear/pixel_rotation.gdshader
-res://scenes/animals/animal_spawner/animal_spawned.gd
 res://scenes/animals/hog/hog.gd
 res://scenes/level/dev_level/devlevel.tscn
-res://scenes/animals/animal_spawner/animal_spawned.tscn
-res://scenes/ui/main_menu_ui.tscn
+res://scripts/autoloads/game_manager.gd
+res://scenes/level/main_level/map_gen.tscn
+res://tile_map.gd

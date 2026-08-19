@@ -18,6 +18,8 @@ tilemap = NodePath("TileMapLayer")
 [node name="SelectionMapLayer" parent="." unique_id=1045206275 instance=ExtResource("3_kslto")]
 
 [node name="SurfaceLayer" parent="." unique_id=251055883 instance=ExtResource("4_3j0n3")]
+z_index = 0
+z_as_relative = false
 
 [node name="TileMapLayer" parent="." unique_id=2132692132 node_paths=PackedStringArray("mountain_layer", "tree_container") instance=ExtResource("2_ppamu")]
 tile_map_data = PackedByteArray()

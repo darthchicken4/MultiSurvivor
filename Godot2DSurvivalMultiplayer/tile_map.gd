@@ -270,6 +270,7 @@ func spawn_object(key: Vector2i, scene: PackedScene, allowed_terrains: Array):
 	obj.global_position = map_to_global(key)
 	tile_objects[key] = obj
 
+@rpc("authority", "call_local", "reliable")
 func remove_object(tile: Vector2i):
 	if tile_objects.has(tile):
 		tile_objects[tile].queue_free()

@@ -37,13 +37,11 @@ func _start_pickup(target: Node):
 	await player.progres_bar_call(0,timer)
 	player.progres_bar_call(2,timer)
 	var local_player = player
-	#var local_player = _get_local_player()
 	local_player.request_add_item.rpc_id(1, target.pickup_loot_pool[0].item_id, #->
 		target.pickup_loot_pool[randi_range(0,len(target.pickup_loot_pool)-1)].amount)
-
 	var tile_pos = tilemap.local_to_map(tilemap.to_local(target.global_position))
-	tilemap.remove_object.rpc_id(1, tile_pos)
-	
+	tilemap.remove_object.rpc_id(1,tile_pos)
+
 func set_tile_map(target):
 	tilemap = target
 func setPlayer(target):
