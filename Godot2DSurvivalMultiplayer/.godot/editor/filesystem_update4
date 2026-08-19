@@ -1,10 +1,12 @@
-res://scenes/ui/multiplayer_chat_ui.tscn
+res://scenes/animals/hog/hog.tscn
 res://assets/themes/inventory.tres
 res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://assets/themes/progress.tres
 res://scenes/weapons/spear/pixel_rotation.gdshader
-res://scenes/weapons/axe/AxeTemp.tscn
-res://scenes/weapons/axe/axe_temp.gd
-res://scripts/multiplayer_chat_ui.gd
+res://scenes/animals/animal_spawner/animal_spawned.gd
+res://scenes/animals/hog/hog.gd
+res://scenes/level/dev_level/devlevel.tscn
+res://scenes/animals/animal_spawner/animal_spawned.tscn
+res://scenes/ui/main_menu_ui.tscn

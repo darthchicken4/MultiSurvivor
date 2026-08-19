@@ -7,7 +7,7 @@ extends CharacterBody2D
 #away wilst the other lob spears 
 
 @export var speed: float = 50.0
-@export  var wander_dir = 3
+@export  var wander_dir = Vector2.ZERO
 @export var wander_timer = 4
 @export var health = 150.0
 
@@ -52,11 +52,8 @@ func wander(delta: float) -> void:
 		think_timer -= delta
 
 		if think_timer <= 0:
-			wander_direction = Vector2(
-				randf_range(-1.0, 1.0),
-				randf_range(-1.0, 1.0)
-			).normalized()
-
+			wander_direction = Vector2(randf_range(-1.0, 1.0),randf_range(-1.0, 1.0)).normalized()
+			wander_dir = wander_direction
 			wander_timer = randf_range(1.0, 3.0)
 			is_thinking = false
 

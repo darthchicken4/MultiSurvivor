@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var animation_player = $AnimationPlayer
 @onready var animated_sprite = $ParticleNode/AnimatedSprite2D
-
+@export var weapon_damage = 4.0 
 @onready var swipes_sounds = [$audio/swipe_1]
 
 var swipe_type = 0
@@ -21,6 +21,7 @@ func _activate():
 	_play_swipe_networked(swipe_type)
 	animated_sprite.play("default")
 	animated_sprite.frame =0
+	_stop_swipe_networked()
 	pass
 
 
