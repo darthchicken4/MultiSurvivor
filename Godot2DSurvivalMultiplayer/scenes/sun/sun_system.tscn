@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://hg7jf1pn35xr" path="res://scenes/sun/sun_system.gd" id="1_5qiwt"]
 [ext_resource type="Shader" uid="uid://cko1ocjehaa8" path="res://scenes/sun/sun_system.gdshader" id="2_tfrol"]
 
+[sub_resource type="Curve" id="Curve_tfrol"]
+_limits = [0.0, 1.0, 0.0, 24.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(5.037037, 1), 0.0, 0.0, 0, 0, Vector2(6.8148146, 0), 0.0, 0.0, 0, 0, Vector2(18.51852, 0), 0.0, 0.0, 0, 0, Vector2(20.444445, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_sis2u"]
+curve = SubResource("Curve_tfrol")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfrol"]
 shader = ExtResource("2_tfrol")
 shader_parameter/saturation = 1.0
@@ -15,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5qiwt")
+sun_curve = SubResource("CurveTexture_sis2u")
 
 [node name="sat" type="ColorRect" parent="." unique_id=1168797715]
 visible = false
@@ -33,7 +42,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=727077338]
-visible = false
 color = Color(1, 1, 1, 0)
 blend_mode = 1
 shadow_enabled = true

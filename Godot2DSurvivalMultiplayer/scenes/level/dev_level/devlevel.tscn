@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bx7mq8t8hjn7q" path="res://scenes/ui/main_menu_ui.tscn" id="1_vp2e1"]
 [ext_resource type="PackedScene" uid="uid://cffjduipbb3s5" path="res://scenes/level/player/player.tscn" id="2_7byda"]
 [ext_resource type="PackedScene" uid="uid://i4wkh7olk11t" path="res://scenes/level/main_level/map_gen.tscn" id="2_ppamu"]
+[ext_resource type="PackedScene" uid="uid://c7l3nsvmtn01w" path="res://scenes/sun/sun_system.tscn" id="3_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://p0amae4y61co" path="res://scenes/level/main_level/selection_map_layer.tscn" id="3_kslto"]
 [ext_resource type="PackedScene" uid="uid://deky50o8yhf6c" path="res://scenes/level/main_level/surface_layer.tscn" id="4_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="7_ut4nh"]
@@ -14,6 +15,8 @@ script = ExtResource("1_ppamu")
 players_container = NodePath("sort_contain")
 player_scene = ExtResource("2_7byda")
 tilemap = NodePath("TileMapLayer")
+
+[node name="SunSystem" parent="." unique_id=138067836 instance=ExtResource("3_3j0n3")]
 
 [node name="SelectionMapLayer" parent="." unique_id=1045206275 instance=ExtResource("3_kslto")]
 

@@ -76,11 +76,12 @@ func _apply_seed_and_generate():
 	generate_chunk(Vector2(0, 0))
 	
 
-@rpc("authority", "reliable")
+@rpc("authority", "call_local", "reliable")
 func sync_map_seed(seed: int):
 	map_seed = seed
 	_apply_seed_and_generate()
 	_generate_spawn_structures()
+	
 func _process(_delta):
 	var tile_pos = local_to_map(Vector2(0, 0))
 	if tile_pos != last_tile_pos:
