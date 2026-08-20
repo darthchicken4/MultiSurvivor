@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://1xnan6b1ttrx"]
 
 [ext_resource type="Script" uid="uid://bajj8tkujca1l" path="res://scenes/weapons/axe/axe_temp.gd" id="1_ci64p"]
-[ext_resource type="Shader" uid="uid://smge5ri233ou" path="res://scenes/weapons/spear/pixel_rotation.gdshader" id="2_8x3h0"]
 [ext_resource type="Texture2D" uid="uid://b35pq004ddbub" path="res://assets/spritesheets/toolsheet1.png" id="2_vvasb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_623ud"]
-shader = ExtResource("2_8x3h0")
-shader_parameter/pixel_size = 2.0000000475
-shader_parameter/handle_edges = true
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65ux2"]
 atlas = ExtResource("2_vvasb")
@@ -105,3 +101,9 @@ libraries/ = SubResource("AnimationLibrary_4btje")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParticleNode" unique_id=19380150]
 sprite_frames = SubResource("SpriteFrames_vvasb")
+
+[node name="right_hand" type="Node2D" parent="." unique_id=1765336912]
+position = Vector2(-18, 3)
+
+[node name="left_hand" type="Node2D" parent="." unique_id=1411011558]
+position = Vector2(-14, -11)

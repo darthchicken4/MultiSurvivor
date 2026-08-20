@@ -1,7 +1,8 @@
+Node2D
+Line2D
 TileMapLayer
 TileMap
 AnimationPlayer
-Node2D
 AnimatedSprite2D
 Control
 NavigationObstacle2D
@@ -11,5 +12,3 @@ CollisionShape2D
 StaticBody2D
 Marker2D
 Polygon2D
-NavigationAgent2D
-NavigationLink2D

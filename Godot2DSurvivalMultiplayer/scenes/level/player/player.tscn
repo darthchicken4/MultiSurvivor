@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bibrvm1a8hd1q" path="res://assets/fonts/death_sprites.png" id="4_jpxjg"]
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="5_pe35h"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="6_2l1sl"]
-[ext_resource type="Texture2D" uid="uid://by4mrj6op5kl8" path="res://assets/spritesheets/starterplayer (1).png" id="6_h3ilt"]
 [ext_resource type="PackedScene" uid="uid://cb26c63vrtmmv" path="res://scenes/ui/stats/StatsUI.tscn" id="7_2l1sl"]
+[ext_resource type="Texture2D" uid="uid://bg12dhr3tlhfk" path="res://mod.png" id="7_onox8"]
 [ext_resource type="PackedScene" uid="uid://cjrvgag6yqopa" path="res://scenes/ui/interact_menu.tscn" id="7_pnmcy"]
 [ext_resource type="PackedScene" uid="uid://c8eax56hm1bax" path="res://scenes/ui/respawn_ui/respawn_ui.tscn" id="9_rtsbg"]
 [ext_resource type="PackedScene" uid="uid://bckfo7cexiek" path="res://scenes/ui/crafting_ui/crafting_ui.tscn" id="10_d2uvk"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://cscxrm8l1f0l7" path="res://scenes/level/player/audio.gd" id="14_ugt31"]
 [ext_resource type="AudioStream" uid="uid://drtwuc0fafdxa" path="res://assets/audio/nature sounds.mp3" id="16_h3ilt"]
 [ext_resource type="PackedScene" uid="uid://bgfqyh6orae3b" path="res://scenes/ui/progress bar/progress bar.tscn" id="21_5182i"]
+[ext_resource type="Script" uid="uid://cbxlhk8t0vpoe" path="res://scenes/level/player/hand_handers.gd" id="22_onox8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h6ip"]
 
@@ -93,24 +94,16 @@ atlas = ExtResource("2_7h6ip")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pp7o"]
-atlas = ExtResource("6_h3ilt")
+atlas = ExtResource("7_onox8")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wupxq"]
-atlas = ExtResource("6_h3ilt")
+atlas = ExtResource("7_onox8")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6t0g"]
-atlas = ExtResource("6_h3ilt")
+atlas = ExtResource("7_onox8")
 region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhrs1"]
-atlas = ExtResource("6_h3ilt")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ig8ak"]
-atlas = ExtResource("6_h3ilt")
-region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj1sg"]
 animations = [{
@@ -160,12 +153,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r6t0g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fhrs1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ig8ak")
 }],
 "loop": true,
 "name": &"walk",
@@ -215,6 +202,12 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tj1sg")
 animation = &"walk"
 frame_progress = 0.12966886
+
+[node name="left_sholder" type="Node2D" parent="AnimatedSprite2D" unique_id=300209900]
+position = Vector2(-4.5, -4.5)
+
+[node name="right_sholder" type="Node2D" parent="AnimatedSprite2D" unique_id=1614912982]
+position = Vector2(3, -4.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654395129]
 
@@ -280,3 +273,24 @@ playback_type = 1
 script = ExtResource("14_ek3jh")
 
 [node name="SpearTemplate" parent="ToolPivot" unique_id=1774495734 instance=ExtResource("14_4x2hf")]
+
+[node name="hand_handers" type="Node2D" parent="." unique_id=1184561350 node_paths=PackedStringArray("left_sholder", "right_sholder", "tool_pivot", "player")]
+script = ExtResource("22_onox8")
+left_sholder = NodePath("../AnimatedSprite2D/left_sholder")
+right_sholder = NodePath("../AnimatedSprite2D/right_sholder")
+tool_pivot = NodePath("../ToolPivot")
+player = NodePath("..")
+
+[node name="hand_1" type="Line2D" parent="hand_handers" unique_id=1725671457]
+points = PackedVector2Array(7, 12, 0, 0)
+width = 4.0
+default_color = Color(0.6156863, 0.5411765, 0.30588236, 1)
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="hand_2" type="Line2D" parent="hand_handers" unique_id=163900004]
+points = PackedVector2Array(8, 0, 0, 0)
+width = 4.0
+default_color = Color(0.43108505, 0.3743923, 0.19427711, 1)
+begin_cap_mode = 1
+end_cap_mode = 1

@@ -1,8 +1,12 @@
-res://scenes/weapons/axe/AxeTemp.tscn
+res://scenes/level/player/player.tscn
+res://scenes/weapons/spear/pixel_rotation.gdshader
 res://assets/themes/inventory.tres
 res://assets/themes/interact_theme.tres
 res://assets/themes/crafdting_theme.tres
 res://assets/themes/settings.tres
 res://assets/themes/progress.tres
-res://scenes/weapons/spear/pixel_rotation.gdshader
+res://scenes/level/player/hand_handers.gd
+res://scenes/level/dev_level/devlevel.tscn
+res://scenes/weapons/axe/AxeTemp.tscn
+res://scenes/weapons/axe/axe_temp.gd
 res://scenes/level/player/tool_pivot.gd
