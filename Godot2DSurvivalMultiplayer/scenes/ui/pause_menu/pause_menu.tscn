@@ -85,6 +85,23 @@ text = ":"
 layout_mode = 2
 text = "copy code to clipboard"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=408437367]
+layout_mode = 0
+offset_right = 534.0
+offset_bottom = 31.0
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=1115093743]
+layout_mode = 2
+text = "copy lobby code"
+
+[node name="Button2" type="Button" parent="HBoxContainer" unique_id=1964945702]
+layout_mode = 2
+text = "show_lobby code
+"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer" unique_id=793157296]
+layout_mode = 2
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/back to game" to="." method="_on_back_to_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

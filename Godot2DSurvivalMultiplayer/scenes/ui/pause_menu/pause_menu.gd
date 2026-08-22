@@ -37,5 +37,4 @@ func leave_game():
 	#	players[id].queue_free()
 	#	players.clear()
 	# fix later 
-
 	get_tree().change_scene_to_file("res://scenes/start_menu/start_menu.tscn")
