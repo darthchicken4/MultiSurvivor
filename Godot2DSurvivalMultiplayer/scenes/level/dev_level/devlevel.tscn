@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://deky50o8yhf6c" path="res://scenes/level/main_level/surface_layer.tscn" id="4_3j0n3"]
 [ext_resource type="PackedScene" uid="uid://mo7o1dmqq8hg" path="res://scenes/level/props/spiked_floor.tscn" id="7_ut4nh"]
 [ext_resource type="PackedScene" uid="uid://bschu41uk2afi" path="res://scenes/animals/animal_spawner/animal_spawned.tscn" id="8_2eium"]
+[ext_resource type="PackedScene" uid="uid://bcd8ibjv0p4g0" path="res://scenes/ui/server_error/server_error.tscn" id="8_qb3xs"]
 
 [node name="Devlevel" type="Node2D" unique_id=1739694817 node_paths=PackedStringArray("players_container", "tilemap")]
 script = ExtResource("1_ppamu")
@@ -40,6 +41,9 @@ offset_left = 1.0
 offset_top = 10.0
 offset_right = 1.0
 offset_bottom = 10.0
+
+[node name="ServerError" parent="CanvasLayer" unique_id=1510472101 instance=ExtResource("8_qb3xs")]
+visible = false
 
 [node name="SpikedFloor" parent="." unique_id=10139130 instance=ExtResource("7_ut4nh")]
 position = Vector2(51, -84)

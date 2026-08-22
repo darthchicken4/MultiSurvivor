@@ -6,7 +6,8 @@ const MAX_PLAYERS: int = 10
  
 const DEBUG_NETWORK := true
 signal debug_message(msg)
- 
+
+
 var players = {}
 var upnp: UPNP
 var upnp_active: bool = false
@@ -16,6 +17,8 @@ var player_info = {
 	"skin": Character.SkinColor.BLUE
 }
  
+var server_error = false
+
 signal player_connected(peer_id, player_info)
 signal server_disconnected
 signal upnp_setup_done(success: bool, external_ip: String)
@@ -116,6 +119,7 @@ func _setup_upnp() -> void:
 	var discover_result := upnp.discover()
 	if discover_result != UPNP.UPNP_RESULT_SUCCESS:
 		dprint("UPnP discovery failed (code %d) - router may not support it" % discover_result)
+		
 		await step_pause()
 		upnp_setup_done.emit(false, "")
 		return
@@ -130,6 +134,7 @@ func _setup_upnp() -> void:
 	var map_result := upnp.add_port_mapping(SERVER_PORT, SERVER_PORT, "GodotMultiplayer", "UDP")
 	if map_result != UPNP.UPNP_RESULT_SUCCESS:
 		dprint("UPnP port mapping failed (code %d)" % map_result)
+		server_error = true
 		await step_pause()
 		upnp_setup_done.emit(false, "")
 		return

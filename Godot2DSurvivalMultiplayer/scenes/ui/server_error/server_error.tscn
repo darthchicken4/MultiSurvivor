@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bcd8ibjv0p4g0"]
+
+[ext_resource type="Script" uid="uid://bi4d16tma4660" path="res://scenes/ui/server_error/server_error.gd" id="1_py3hg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k47yn"]
+font_size = 29
+font_color = Color(0.55729663, 0.09155395, 9.62615e-08, 1)
+
+[node name="ServerError" type="Control" unique_id=1510472101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_py3hg")
+
+[node name="Label" type="Label" parent="." unique_id=1676628299]
+layout_mode = 0
+offset_right = 431.0
+offset_bottom = 163.0
+text = "ERROR WHILE HOST check wifi 
+connection restart game , 
+upnp failed for some reason,
+but lan connetion still works "
+label_settings = SubResource("LabelSettings_k47yn")
+
+[node name="Button" type="Button" parent="." unique_id=585948950]
+layout_mode = 0
+offset_top = 172.0
+offset_right = 53.0
+offset_bottom = 243.0
+text = "close this error"
+
+[node name="exit_game" type="Button" parent="." unique_id=345960497]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 173.0
+offset_right = 293.0
+offset_bottom = 244.0
+text = "close_game"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="exit_game" to="." method="_on_exit_game_pressed"]

@@ -9,12 +9,11 @@ signal quit_pressed
 @onready var skin_input: OptionButton = $MainContainer/MainMenu/Option2/SkinInput
 @onready var nick_input: LineEdit = $MainContainer/MainMenu/Option1/NickInput
 @onready var address_input: LineEdit = $MainContainer/MainMenu/Option3/AddressInput
-
+@export var server_error_screen : Control
 
 
 func _ready():
 	Network.debug_message.connect(add_debug_output)
-	pass
 
 func _on_host_pressed():
 	main_container.visible = false
@@ -53,6 +52,8 @@ func add_debug_output(message):
 	
 	$VBoxContainer.add_child(new_label)
 	
+
+
 
 func is_menu_visible() -> bool:
 	return visible

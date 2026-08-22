@@ -37,8 +37,8 @@ func _on_upnp_ready(success: bool, external_ip: String) -> void:
 		# so the host doesn't have to read it from the console.
 	else:
 		print("UPnP unavailable - forward port %d manually, or share your LAN IP for local games" % Network.SERVER_PORT)
- 
- 
+		Network.server_error = true
+
 func _on_player_connected(peer_id, player_info):
 	_add_player(peer_id, player_info)
 	if peer_id != 1:
